@@ -1,0 +1,6 @@
+[ 2016-05-10T14:41:00+08:00 ] 127.0.0.1 /Admin/Guanli/index.html
+ERR: 非法操作:index
+
+[ 2016-05-10T14:47:59+08:00 ] 127.0.0.1 /Admin/index/assets/css/amazeui.min.css
+ERR: 非法操作:assets
+
