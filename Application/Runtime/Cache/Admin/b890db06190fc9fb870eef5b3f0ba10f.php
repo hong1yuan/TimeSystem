@@ -156,7 +156,7 @@
                     </a>
                     </li>
                     <li>
-                        <a href="<?php echo U('Guanli/index');?>">
+                        <a href="<?php echo U('Guanli/reward');?>">
                             <span class="am-icon-trophy">月分红</span>
                         </a>
                     </li>

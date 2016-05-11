@@ -3,12 +3,7 @@ namespace Admin\Controller;
 use Think\Controller;
 class MemberController extends Controller {
 
-    /**
-     * 会员管理
-     */
-    public function member(){
-        $this->display();
-    }
+
     /**
      * 修改资料
      */
