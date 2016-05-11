@@ -286,9 +286,17 @@
                             <tbody>
                                 <?php if(is_array($msg_list)): foreach($msg_list as $key=>$vo): ?><tr>
                                         <td><?php echo ($vo["id"]); ?></td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td><?php echo ($vo["title"]); ?></td>
-                                        <td class="am-hide-sm-only"></td>
+                                        <td><a href="#"><?php echo ($vo["title"]); ?></a></td>
+                                        <td>
+                                            <?php switch($vo["mtype"]): case "1": ?>意见建议<?php break;?>
+                                                <?php case "2": ?>奖金问题<?php break;?>
+                                                <?php case "3": ?>帐号问题<?php break;?>
+                                                <?php case "3": ?>其他问题<?php break;?>
+                                                <?php default: endswitch;?>
+                                        </td>
+                                        <td class="am-hide-sm-only">
+                                            状态                                           
+                                        </td>
                                         <td class="am-hide-sm-only"><?php echo ($vo["updatetime"]); ?></td>
                                         <td>
                                             <div class="am-btn-toolbar">
