@@ -37,9 +37,19 @@
                                 <foreach name="msg_list" item="vo" >
                                     <tr>
                                         <td>{$vo.id}</td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td>{$vo.title}</td>
-                                        <td class="am-hide-sm-only"></td>
+                                        <td><a href="#">{$vo.title}</a></td>
+                                        <td>
+                                            <switch name="vo.mtype">
+                                                <case value="1">意见建议</case>
+                                                <case value="2">奖金问题</case>
+                                                <case value="3">帐号问题</case>
+                                                <case value="3">其他问题</case>
+                                                <default />
+                                            </switch>
+                                        </td>
+                                        <td class="am-hide-sm-only">
+                                            状态                                           
+                                        </td>
                                         <td class="am-hide-sm-only">{$vo.updatetime}</td>
                                         <td>
                                             <div class="am-btn-toolbar">

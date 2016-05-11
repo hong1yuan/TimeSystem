@@ -12,30 +12,44 @@
             </div>
             <div class="am-g">
                 <div class="am-u-sm-12">
-                    <form class="am-form">
                         <table class="am-table am-table-striped am-table-hover table-main">
                             <thead>
                             <tr>
-                                <th class="table-id" style="width:15%">编号</th>
+                                <th class="table-id" style="width:10%">编号</th>
                                 <th class="table-title" style="width:25%">标题</th>
                                 <th class="table-type" style="width:20%">类别</th>
                                 <th class="table-author am-hide-sm-only" style="width:20%">状态</th>
-                                <th class="table-date am-hide-sm-only" style="width:20%">最后更新</th>
+                                <th class="table-date am-hide-sm-only" style="width:10%">最后更新</th>
+                                <th class="table-date am-hide-sm-only" style="width:15%">操作</th>
                             </tr>
                             </thead>
                             <tbody>
                                 <foreach name="msg_list" item="vo" >
                                     <tr>
                                         <td>{$vo.id}</td>
-                                        <td><a href="#">Business management</a></td>
-                                        <td>{$vo.title}</td>
-                                        <td class="am-hide-sm-only"></td>
+                                        <td><a href="#">{$vo.title}</a></td>
+                                        <td>
+                                            <switch name="vo.mtype">
+                                                <case value="1">意见建议</case>
+                                                <case value="2">奖金问题</case>
+                                                <case value="3">帐号问题</case>
+                                                <case value="3">其他问题</case>
+                                                <default />
+                                            </switch>
+                                        </td>
+                                        <td class="am-hide-sm-only">
+                                        	<switch name="vo.mstate">
+                                                <case value="0">新问题</case>
+                                                <case value="1">已回复</case>
+                                                <case value="2">追加提问</case>
+                                                <default />
+                                            </switch>
+                                        </td>
                                         <td class="am-hide-sm-only">{$vo.updatetime}</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary edit" id="{$vo.id}"><span class="am-icon-pencil-square-o"></span> 编辑</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
                                                 </div>
                                             </div>
@@ -47,18 +61,8 @@
                         <div class="am-cf">
                             共 {$count} 条记录
                             <div class="am-fr" id="page" pages = "{$pages}">
-                               <!--  <ul class="am-pagination">
-                                    <li class="am-disabled"><a href="#">«</a></li>
-                                    <li class="am-active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">»</a></li>
-                                </ul> -->
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -75,3 +79,26 @@
 </a>
 
 <include file = "Common/footer" />
+<script type="text/javascript">
+	 laypage({
+        cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+        pages: $('#page').attr('pages'), //总页数
+        //first:false,
+        skin: '#AF0000',
+        groups: 7,//连续显示分页数
+        curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+            var page = location.search.match(/page=(\d+)/);
+            return page ? page[1] : 1;
+        }(), 
+        jump: function(e, first){ //触发分页后的回调
+            if(!first){ //一定要加此判断，否则初始时会无限刷新
+                location.href = '?page='+e.curr;
+            }
+        }
+    });
+    $('.edit').on('click',function(){
+        $.get('deal?type=edit&id='+$(this).attr('id'),function(data){
+
+        })  
+    })
+</script>
