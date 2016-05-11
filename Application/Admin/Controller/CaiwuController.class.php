@@ -64,6 +64,7 @@ class CaiwuController extends Controller {
 
         $arr =array();
         foreach($jinagjin_list as $key => $value){
+            $value['total'] = $value['']+$value[''];
             $value['num'] = $key+1;
             $arr[]=$value;
         }

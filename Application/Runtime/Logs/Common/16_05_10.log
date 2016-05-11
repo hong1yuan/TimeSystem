@@ -49,6 +49,7 @@ ERR: 无法加载模块:Assets
 [ 2016-05-10T14:40:41+08:00 ] 127.0.0.1 /favicon.ico
 ERR: 无法加载模块:Favicon
 
+<<<<<<< HEAD
 [ 2016-05-10T15:13:07+08:00 ] 127.0.0.1 /assets/i/examples/admin-firefox.png
 ERR: 无法加载模块:Assets
 
@@ -69,4 +70,161 @@ ERR: 无法加载模块:Favicon
 
 [ 2016-05-10T16:15:58+08:00 ] 127.0.0.1 /favicon.ico
 ERR: 无法加载模块:Favicon
+=======
+[ 2016-05-10T15:07:06+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-ie.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:06+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-firefox.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:06+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-chrome.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:06+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-safari.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:06+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-opera.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:17+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-chrome.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:17+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-ie.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:17+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-firefox.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:17+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-opera.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:17+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-safari.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:46+08:00 ] 127.0.0.1 /123/index/login
+ERR: 无法加载模块:Index
+
+[ 2016-05-10T15:07:52+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-chrome.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:52+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-opera.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:52+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-ie.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:52+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-firefox.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:07:52+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-safari.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:29+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-chrome.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:29+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-safari.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:29+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-firefox.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:29+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-ie.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:29+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-opera.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:32+08:00 ] 127.0.0.1 /123/index
+ERR: 无法加载模块:Index
+
+[ 2016-05-10T15:09:35+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-chrome.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:35+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-ie.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:35+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-safari.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:35+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-opera.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:09:35+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-firefox.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:08+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-chrome.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:08+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-firefox.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:08+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-ie.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:08+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-opera.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:08+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-safari.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:12+08:00 ] 127.0.0.1 /123/index
+ERR: 无法加载模块:Index
+
+[ 2016-05-10T15:11:14+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-chrome.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:14+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-ie.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:14+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-firefox.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:14+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-safari.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:11:14+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-opera.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:25:12+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-chrome.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:25:12+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-firefox.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:25:12+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-safari.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:25:12+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-opera.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:25:12+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-ie.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:28:20+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-chrome.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:28:20+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-firefox.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:28:20+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-ie.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:28:20+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-safari.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T15:28:20+08:00 ] 127.0.0.1 /123/assets/i/examples/admin-opera.png
+ERR: 无法加载模块:Assets
+
+[ 2016-05-10T16:01:26+08:00 ] 127.0.0.1 /123/Public/Admin/lib/layer/css/layer.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2016-05-10T16:01:38+08:00 ] 127.0.0.1 /123/Public/Admin/lib/layer/layer.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+>>>>>>> a9410bbeed97c60bf8254456c673fd9be1f1be3d
 

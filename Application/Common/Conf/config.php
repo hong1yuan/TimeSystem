@@ -14,7 +14,7 @@ return array(
     'DB_CHARSET'            =>  'utf8',      // 数据库编码默认采用utf8
     'URL_MODEL'             =>  '2',
 
-    'DEFAULT_MODULE'        =>  'Admin',  // 默认模块
-    'SHOW_PAGE_TRACE'       =>  true
+    'DEFAULT_MODULE' => 'Admin',  // 默认模块
+    //'SHOW_PAGE_TRACE'       =>  true
 
 );

@@ -280,7 +280,6 @@
                             </thead>
                             <tbody>
                             <?php if(is_array($CaiwuList)): foreach($CaiwuList as $key=>$v): ?><tr>
-
                                 <td><?php echo ($v["num"]); ?></td>
                                 <td class="am-hide-sm-only"><?php echo ($v["pdt"]); ?></td>
                                 <td><?php echo ($v['escript']); ?></td>
@@ -297,7 +296,7 @@
                                     <li class="am-disabled">
                                         <a href="<?php echo U('index',array('p'=>$prev));?>">«</a>
                                     </li>
-                                    <?php $__FOR_START_4107__=1;$__FOR_END_4107__=$pages+1;for($i=$__FOR_START_4107__;$i < $__FOR_END_4107__;$i+=1){ ?><li
+                                    <?php $__FOR_START_139__=1;$__FOR_END_139__=$pages+1;for($i=$__FOR_START_139__;$i < $__FOR_END_139__;$i+=1){ ?><li
                                             <?php if( $page == $i): ?>class="am-active"
                                                 <?php else: endif; ?>
                                     ><a href="<?php echo U('index',array('p'=>$i));?>"><?php echo ($i); ?></a></li><?php } ?>
@@ -335,5 +334,6 @@
 <!--<![endif]-->
 <script src="/Public/Admin/js/amazeui.min.js"></script>
 <script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
 </body>
 </html>

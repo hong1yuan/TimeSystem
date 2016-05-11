@@ -328,5 +328,6 @@
 <!--<![endif]-->
 <script src="/Public/Admin/js/amazeui.min.js"></script>
 <script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
 </body>
 </html>
