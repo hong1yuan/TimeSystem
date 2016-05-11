@@ -108,81 +108,82 @@
                 </ul>
             </li>
             <!-- 财务管理 -->
-            <!-- 个人中心 -->
-            <li class="admin-parent">
-                <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
-                    <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
-                    <span class="am-icon-angle-right am-fr am-margin-right"></span>
-                </a>
-                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-                    <li>
-                        <a href="<?php echo U('Member/profile');?>" class="am-cf">
-                            <span class="am-icon-user"></span> 个人资料
-                            <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Member/password');?>">
-                            <span class="am-icon-puzzle-piece"></span> 修改密码
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Member/register');?>">
-                            <span class="am-icon-th"></span> 注册会员
-                            <span class="am-badge am-badge-secondary am-margin-right am-fr">24</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Member/activate');?>">
-                            <span class="am-icon-calendar"></span> 激活帐号
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="am-icon-users"></span>团队结构
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- 个人中心 -->
-            <!-- 管理平台 -->
-            <li class="admin-parent">
-                <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">
-                    <span class="am-icon-btn am-primary am-icon-cog"></span> 平台管理
-                    <span class="am-icon-angle-right am-fr am-margin-right"></span>
-                </a>
-                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
-                    <li><a href="<?php echo U('Member/index');?>">
-                        <span class="am-icon-trophy">会员管理</span>
+            <?php if($_SESSION['member'] == 'member'): ?><!-- 个人中心 -->
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
+                        <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
+                        <span class="am-icon-angle-right am-fr am-margin-right"></span>
                     </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Guanli/reward');?>">
-                            <span class="am-icon-trophy">月分红</span>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+                        <li>
+                            <a href="<?php echo U('Member/profile');?>" class="am-cf">
+                                <span class="am-icon-user"></span> 个人资料
+                                <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/password');?>">
+                                <span class="am-icon-puzzle-piece"></span> 修改密码
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/register');?>">
+                                <span class="am-icon-th"></span> 注册会员
+                                <span class="am-badge am-badge-secondary am-margin-right am-fr">24</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/activate');?>">
+                                <span class="am-icon-calendar"></span> 激活帐号
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="am-icon-users"></span>团队结构
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 个人中心 --><?php endif; ?>
+            
+            <?php if($_SESSION['member'] == 'admin'): ?><!-- 管理平台 -->
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">
+                        <span class="am-icon-btn am-primary am-icon-cog"></span> 平台管理
+                        <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                    </a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
+                        <li><a href="<?php echo U('Member/index');?>">
+                            <span class="am-icon-trophy">会员管理</span>
                         </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('News/index');?>">
-                            <span class="am-icon-newspaper-o"></span>新闻管理
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Msg/index');?>">
-                            <span class="am-icon-text-width"></span>留言管理
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Guanli/qwithdraw');?>">
-                            <span class="am-icon-refresh"></span>提现确认
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Plat/index');?>">
-                            <span class="am-icon-cog"></span>交易平台设置
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- 管理平台 -->
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Guanli/reward');?>">
+                                <span class="am-icon-trophy">月分红</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('News/index');?>">
+                                <span class="am-icon-newspaper-o"></span>新闻管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Msg/index');?>">
+                                <span class="am-icon-text-width"></span>留言管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Guanli/qwithdraw');?>">
+                                <span class="am-icon-refresh"></span>提现确认
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Plat/index');?>">
+                                <span class="am-icon-cog"></span>交易平台设置
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 管理平台 --><?php endif; ?>
             <li><a href="#"><span class="am-icon-sign-out"></span> 注销</a></li>
         </ul>
 
