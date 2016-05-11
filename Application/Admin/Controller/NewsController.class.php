@@ -24,6 +24,4 @@ class NewsController extends Controller {
         $this->assign('news_list',$news_list);
         $this->display();
     }
-
-
 }

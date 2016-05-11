@@ -12,8 +12,14 @@
     <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
     <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+=======
+    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+>>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -108,6 +114,7 @@
                 </ul>
             </li>
             <!-- 财务管理 -->
+<<<<<<< HEAD
             <!-- 个人中心 -->
             <li class="admin-parent">
                 <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
@@ -153,36 +160,84 @@
                 <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
                     <li><a href="<?php echo U('Guanli/index');?>">
                         <span class="am-icon-trophy">会员管理</span>
+=======
+            <?php if($_SESSION['member']['member'] == 'member'): ?><!-- 个人中心 -->
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
+                        <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
+                        <span class="am-icon-angle-right am-fr am-margin-right"></span>
+>>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
                     </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Guanli/reward');?>">
-                            <span class="am-icon-trophy">月分红</span>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+                        <li>
+                            <a href="<?php echo U('Member/profile');?>" class="am-cf">
+                                <span class="am-icon-user"></span> 个人资料
+                                <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/password');?>">
+                                <span class="am-icon-puzzle-piece"></span> 修改密码
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/register');?>">
+                                <span class="am-icon-th"></span> 注册会员
+                                <span class="am-badge am-badge-secondary am-margin-right am-fr">24</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/activate');?>">
+                                <span class="am-icon-calendar"></span> 激活帐号
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="am-icon-users"></span>团队结构
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 个人中心 --><?php endif; ?>
+            
+            <?php if($_SESSION['member']['member'] == 'admin'): ?><!-- 管理平台 -->
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">
+                        <span class="am-icon-btn am-primary am-icon-cog"></span> 平台管理
+                        <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                    </a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
+                        <li><a href="<?php echo U('Member/index');?>">
+                            <span class="am-icon-trophy">会员管理</span>
                         </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('News/index');?>">
-                            <span class="am-icon-newspaper-o"></span>新闻管理
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Msg/index');?>">
-                            <span class="am-icon-text-width"></span>留言管理
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Guanli/qwithdraw');?>">
-                            <span class="am-icon-refresh"></span>提现确认
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Plat/index');?>">
-                            <span class="am-icon-cog"></span>交易平台设置
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- 管理平台 -->
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Guanli/reward');?>">
+                                <span class="am-icon-trophy">月分红</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('News/index');?>">
+                                <span class="am-icon-newspaper-o"></span>新闻管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Msg/index');?>">
+                                <span class="am-icon-text-width"></span>留言管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Guanli/qwithdraw');?>">
+                                <span class="am-icon-refresh"></span>提现确认
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Plat/index');?>">
+                                <span class="am-icon-cog"></span>交易平台设置
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 管理平台 --><?php endif; ?>
             <li><a href="#"><span class="am-icon-sign-out"></span> 注销</a></li>
         </ul>
 
@@ -471,8 +526,15 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
+<<<<<<< HEAD
 <script src="/Public/Admin/js/amazeui.min.js"></script>
 <script src="/Public/Admin/js/app.js"></script>
 <script src="/Public/Admin/lib/laypage/laypage.js"></script>
+=======
+<script src="/123/Public/Admin/js/amazeui.min.js"></script>
+<script src="/123/Public/Admin/js/app.js"></script>
+<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+>>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
 </body>
 </html>

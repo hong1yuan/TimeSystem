@@ -16,5 +16,12 @@ return array(
 
     'DEFAULT_MODULE' => 'Admin',  // 默认模块
     //'SHOW_PAGE_TRACE'       =>  true
-
+    'error' => array(
+        'status' => 0,
+        'info'=>'网络异常,请稍候再试'
+    ),
+    'success'=> array(
+        'status' => 1,
+        'info'=> '操作成功'
+    ),
 );
