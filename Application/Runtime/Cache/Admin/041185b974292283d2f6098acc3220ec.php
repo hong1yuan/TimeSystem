@@ -8,9 +8,9 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link rel="alternate icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-  <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-  <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css"/>
+  <link rel="alternate icon" type="image/png" href="/Public/Admin/i/favicon.png">
+  <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css"/>
   <style>
     .header {
       text-align: center;
@@ -38,14 +38,26 @@
     <h3>登录</h3>
     <hr>
     <div class="am-btn-group">
+<<<<<<< HEAD
+      <a href="#" class="am-btn am-btn-secondary am-btn-sm">
+        <i class="am-icon-github am-icon-sm"></i> Github
+      </a>
+      <a href="#" class="am-btn am-btn-success am-btn-sm">
+        <i class="am-icon-google-plus-square am-icon-sm"></i> Google+
+      </a>
+      <a href="#" class="am-btn am-btn-primary am-btn-sm">
+        <i class="am-icon-stack-overflow am-icon-sm"></i> stackOverflow
+      </a>
+=======
       <a href="#" class="am-btn am-btn-secondary am-btn-sm"><i class="am-icon-github am-icon-sm"></i> Github</a>
       <a href="#" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-google-plus-square am-icon-sm"></i> Google+</a>
       <a href="#" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-stack-overflow am-icon-sm"></i> stackOverflow</a>
+>>>>>>> a9410bbeed97c60bf8254456c673fd9be1f1be3d
     </div>
     <br>
     <br>
 
-    <form method="post"  id="documentForm" class="am-form" action="/123/Admin/index/login">
+    <form method="post"  id="documentForm" class="am-form" action="/Admin/index/login">
         <label for="email">用户名:</label>
           <input type="text" name="username" id="username" value="">
         <br>
@@ -75,8 +87,8 @@
   </div>
 </div>
 </body>
-<script type="text/javascript" src="/123/Public/Admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/layer/layer.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/jquery.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/lib/layer/layer.js"></script>
 <script type="text/javascript">
     function refer(){
            var username = $('#username').val();
