@@ -58,7 +58,7 @@
                 </ul>
             </li>
             <!-- 财务管理 -->
-            <if condition="$_SESSION['member'] eq 'member'">
+            <if condition="$_SESSION['member']['member'] eq 'member'">
                 <!-- 个人中心 -->
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
@@ -97,7 +97,7 @@
                 <!-- 个人中心 -->
             </if>
             
-            <if condition="$_SESSION['member'] eq 'admin'">
+            <if condition="$_SESSION['member']['member'] eq 'admin'">
                 <!-- 管理平台 -->
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">

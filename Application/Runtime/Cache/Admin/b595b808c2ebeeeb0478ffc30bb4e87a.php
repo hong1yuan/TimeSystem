@@ -14,6 +14,7 @@
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
     <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
     <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -108,8 +109,7 @@
                 </ul>
             </li>
             <!-- 财务管理 -->
-            <?php var_dump($_SESSION['member']); ?>
-            <?php if($_SESSION['member'] == 'member'): ?><!-- 个人中心 -->
+            <?php if($_SESSION['member']['member'] == 'member'): ?><!-- 个人中心 -->
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
@@ -146,7 +146,7 @@
                 </li>
                 <!-- 个人中心 --><?php endif; ?>
             
-            <?php if($_SESSION['member'] == 'admin'): ?><!-- 管理平台 -->
+            <?php if($_SESSION['member']['member'] == 'admin'): ?><!-- 管理平台 -->
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">
                         <span class="am-icon-btn am-primary am-icon-cog"></span> 平台管理
@@ -476,5 +476,6 @@
 <script src="/123/Public/Admin/js/amazeui.min.js"></script>
 <script src="/123/Public/Admin/js/app.js"></script>
 <script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/123/Public/Admin/lib/layer/layer.js"></script>
 </body>
 </html>

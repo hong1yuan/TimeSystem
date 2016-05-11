@@ -30,10 +30,10 @@ class IndexController extends Controller {
     				$this->error('用户名或密码错误');
     			}else{
     				if (!$rst[0]['isboss']) {
-    					session('member','member');
+    					session('member',array('id' => $rst[0]['id'],'member'=>'member'));
     					$this->redirect('index');
     				}else{
-                        session('member','admin');
+                        session('member',array('id' => $rst[0]['id'],'member'=>'admin'));
     					$this->redirect('index');
     				}
     			}

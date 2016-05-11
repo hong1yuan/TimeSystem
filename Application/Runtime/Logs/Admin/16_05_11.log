@@ -1,69 +1,25 @@
-[ 2016-05-11T11:44:02+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
+[ 2016-05-11T14:41:32+08:00 ] 127.0.0.1 /123/Admin/index/login
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0380s ]
-SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
-SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0020s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0180s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 112 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 149 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:44:02+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:44:02+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
+[ 2016-05-11T14:42:31+08:00 ] 127.0.0.1 /123/Admin/index/login
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:02+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:02+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:02+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:06+08:00 ] 127.0.0.1 /123/Admin/Index/login
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
 INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
@@ -71,18 +27,127 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:44:09+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T14:42:37+08:00 ] 127.0.0.1 /123/Admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `member` WHERE ( username = 'odaycaogen' )  [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:43:00+08:00 ] 127.0.0.1 /123/Admin/index/login
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0040s ]
-SQL: SELECT * FROM `member` WHERE ( username = 'odaycaogen' )  [ RunTime:0.0010s ]
 
-[ 2016-05-11T11:44:09+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
+[ 2016-05-11T14:43:00+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0020s ]
+SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `news`  [ RunTime:0.0160s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:43:00+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:43:00+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:43:00+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+
+[ 2016-05-11T14:43:00+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:43:00+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:43:07+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0060s ]
+SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `news`  [ RunTime:0.0150s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:43:07+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:43:07+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:43:07+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:43:07+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:43:07+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:43:45+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
@@ -92,14 +157,11 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
 SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0010s ]
 SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0020s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0150s ]
+SQL: SELECT * FROM `news`  [ RunTime:0.0170s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 112 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 149 行.
 INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
 INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
 INFO: [ view_filter ] --START--
@@ -109,227 +171,74 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:44:09+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:09+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:09+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
-
-[ 2016-05-11T11:44:09+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
+[ 2016-05-11T14:43:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:44:09+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:28+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0050s ]
-SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
-SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0040s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0170s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 112 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 149 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
-
-[ 2016-05-11T11:44:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
+[ 2016-05-11T14:43:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:44:32+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T14:43:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 
-[ 2016-05-11T11:44:36+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T14:43:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:43:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:11+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:11+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:11+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:11+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:11+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:12+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:12+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:45+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
 SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
-SQL: SELECT * FROM `member` WHERE ( username = 'odaycaogen' )  [ RunTime:0.0010s ]
-
-[ 2016-05-11T11:44:36+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0080s ]
-SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
-SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0020s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0150s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 112 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 149 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:44:36+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:36+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:44:36+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:36+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:36+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:44:51+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0060s ]
-SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
-SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0010s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0150s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 112 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 149 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:51+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:44:51+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:51+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:51+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:51+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:56+08:00 ] 127.0.0.1 /123/Admin/Index/
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0040s ]
 SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0010s ]
 SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0020s ]
 SQL: SELECT * FROM `news`  [ RunTime:0.0160s ]
@@ -337,10 +246,80 @@ INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 112 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 149 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:44:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:44:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:44:45+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:47+08:00 ] 127.0.0.1 /123/Admin/News/news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: page D:\WWW\123\Application\Admin\Controller\NewsController.class.php 第 20 行.
+SQL: SELECT * FROM `news` LIMIT 0,15   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:58+08:00 ] 127.0.0.1 /123/Admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0040s ]
+SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `news`  [ RunTime:0.0170s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
 INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
 INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
@@ -349,103 +328,89 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
-[ 2016-05-11T11:44:56+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
+[ 2016-05-11T14:44:58+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-chrome.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:44:56+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:56+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:56+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:44:56+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+[ 2016-05-11T14:44:58+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-firefox.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:45:00+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T14:44:58+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-opera.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:44:58+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:44:58+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-ie.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:45:29+08:00 ] 127.0.0.1 /123/Admin/
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
+SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `news`  [ RunTime:0.0140s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
 INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:45:14+08:00 ] 127.0.0.1 /123/Admin/Index/login
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 20 行.
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:45:24+08:00 ] 127.0.0.1 /123/Admin/Index/login
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 19 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 20 行.
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
 INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
-[ 2016-05-11T11:45:41+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T14:45:30+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-chrome.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:45:30+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-firefox.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:45:30+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:45:30+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-ie.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:45:30+08:00 ] 127.0.0.1 /123/Admin/assets/i/examples/admin-opera.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:45:31+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
@@ -456,43 +421,70 @@ INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:45:43+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T14:45:36+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
-SQL: SELECT * FROM `member` WHERE ( username = 'odaycaoge' )  [ RunTime:0.0000s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:45:45+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T14:50:19+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
 INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:50:23+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:57:28+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 111 行.
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
 INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
@@ -500,37 +492,23 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:45:50+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T14:57:37+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
-SQL: SELECT * FROM `member` WHERE ( username = 'odaycaogen' )  [ RunTime:0.0010s ]
-
-[ 2016-05-11T11:45:50+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
-SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
-SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0010s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 112 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 149 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 111 行.
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
 INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
@@ -538,84 +516,702 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
-[ 2016-05-11T11:45:50+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
+[ 2016-05-11T14:57:42+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\MsgController.class.php 第 33 行.
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('耳热','1','二二',NULL,'2016-05-11 14:57:42')
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('耳热','1','二二',NULL,'2016-05-11 14:57:42')
 
-[ 2016-05-11T11:45:50+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
+[ 2016-05-11T14:58:31+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 111 行.
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
-[ 2016-05-11T11:45:50+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
+[ 2016-05-11T14:58:42+08:00 ] 127.0.0.1 /123/Admin/index/login
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:45:50+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
+[ 2016-05-11T14:58:46+08:00 ] 127.0.0.1 /123/Admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `member` WHERE ( username = 'odaycaogen' )  [ RunTime:0.0000s ]
+
+[ 2016-05-11T14:58:46+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
+SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `news`  [ RunTime:0.0190s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T14:58:46+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 
-[ 2016-05-11T11:45:50+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+[ 2016-05-11T14:58:46+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 
-[ 2016-05-11T11:46:40+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
+[ 2016-05-11T14:58:46+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:58:46+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:58:46+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:58:48+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T14:58:53+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
-SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
-SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0020s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('莪问问俄文','1','额问问','1','2016-05-11 14:58:53') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:01:26+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 112 行.
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:02:20+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0050s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('喂喂喂','1','而为二位','1','2016-05-11 15:02:20') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:02:45+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:02:51+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('俄文问问','4','俄文问问','1','2016-05-11 15:02:51') [ RunTime:0.0010s ]
+
+[ 2016-05-11T15:02:54+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('俄文问问','4','俄文问问','1','2016-05-11 15:02:54') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:02:56+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('俄文问问','4','俄文问问','1','2016-05-11 15:02:56') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:02:58+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('俄文问问','4','俄文问问','1','2016-05-11 15:02:58') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:00+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('俄文问问','4','俄文问问','1','2016-05-11 15:03:00') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:24+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:03:29+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0050s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热热热儿','1','热热热热','1','2016-05-11 15:03:29') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:30+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热热热儿','1','热热热热','1','2016-05-11 15:03:30') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:32+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热热热儿','1','热热热热','1','2016-05-11 15:03:32') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:34+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热热热儿','1','热热热热','1','2016-05-11 15:03:34') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:35+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热热热儿','1','热热热热','1','2016-05-11 15:03:35') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:36+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热热热儿','1','热热热热','1','2016-05-11 15:03:36') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:38+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热热热儿','1','热热热热','1','2016-05-11 15:03:38') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:39+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热热热儿','1','热热热热','1','2016-05-11 15:03:39') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:41+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热热热儿','1','热热热热','1','2016-05-11 15:03:41') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:50+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:03:51+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
 INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
 INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
 INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:03:51+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:03:57+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热儿','1','而热热','1','2016-05-11 15:03:57') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:03:59+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热儿','1','而热热','1','2016-05-11 15:03:59') [ RunTime:0.0010s ]
+
+[ 2016-05-11T15:04:00+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热儿','1','而热热','1','2016-05-11 15:04:00') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:04:09+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:04:14+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('让人认同柔软','1','他热热投入','1','2016-05-11 15:04:14') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:04:16+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0050s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('让人认同柔软','1','他热热投入','1','2016-05-11 15:04:16') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:04:17+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('让人认同柔软','1','他热热投入','1','2016-05-11 15:04:17') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:04:19+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('让人认同柔软','1','他热热投入','1','2016-05-11 15:04:19') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:05:11+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:05:16+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('呃呃热儿','1','而热热热儿','1','2016-05-11 15:05:16') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:05:36+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:05:41+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('热热','1','热儿儿额','1','2016-05-11 15:05:41') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:06:25+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:06:47+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:07:47+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 111 行.
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
 INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
-[ 2016-05-11T11:46:40+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
+[ 2016-05-11T15:07:51+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\MsgController.class.php 第 33 行.
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('而热热','1','迩迩莪',NULL,'2016-05-11 15:07:51')
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('而热热','1','迩迩莪',NULL,'2016-05-11 15:07:51')
 
-[ 2016-05-11T11:46:40+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
+[ 2016-05-11T15:08:19+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 111 行.
+NOTIC: [8] Undefined index: member D:\WWW\123\Application\Runtime\Cache\Admin\c118778f604a58accba55949a09c50f4.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:46:40+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:46:40+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:46:40+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:46:49+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T15:08:26+08:00 ] 127.0.0.1 /123/Admin/index/login
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
@@ -627,8 +1223,8 @@ INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004001s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.004001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004000s ]
 INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
@@ -636,7 +1232,7 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
-[ 2016-05-11T11:46:52+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T15:08:28+08:00 ] 127.0.0.1 /123/Admin/index/login
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
@@ -644,28 +1240,199 @@ INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0060s ]
 SQL: SELECT * FROM `member` WHERE ( username = 'odaycaogen' )  [ RunTime:0.0010s ]
 
-[ 2016-05-11T11:47:26+08:00 ] 127.0.0.1 /123/Admin/Index/login
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:47:26+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
+[ 2016-05-11T15:08:28+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0020s ]
 SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
-SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0020s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `news`  [ RunTime:0.0150s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:08:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:08:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:08:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:08:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:08:28+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-05-11T15:08:31+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:08:37+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:37') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:08:41+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:41') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:08:43+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:43') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:08:44+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:44') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:08:46+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:46') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:08:47+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:47') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:08:48+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:48') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:08:51+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:51') [ RunTime:0.0010s ]
+
+[ 2016-05-11T15:08:52+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:52') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:08:53+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0020s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:53') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:08:59+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('我轻轻亲吻','4','亲切慰问全球网','1','2016-05-11 15:08:59') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:09:49+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
@@ -679,41 +1446,207 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
-[ 2016-05-11T11:47:27+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:47:27+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-
-[ 2016-05-11T11:47:27+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:47:31+08:00 ] 127.0.0.1 /123/Admin/Index/login
+[ 2016-05-11T15:09:57+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('俄文问问','3','俄文问问','1','2016-05-11 15:09:57') [ RunTime:0.0000s ]
 
-[ 2016-05-11T11:47:31+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
+[ 2016-05-11T15:10:28+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:10:30+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:10:51+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:10:55+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0050s ]
-SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
-SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0020s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('rreer','1','二人热儿','1','2016-05-11 15:10:55') [ RunTime:0.0010s ]
+
+[ 2016-05-11T15:11:17+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:11:24+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('额问问','1','额我问问俄文','1','2016-05-11 15:11:24') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:12:27+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:12:32+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('莪莪问问俄文','1','喂喂喂喂','1','2016-05-11 15:12:32') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:12:48+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-11T15:12:56+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('俄文问问','4','的速度是多少山东省山东','1','2016-05-11 15:12:56') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:12:58+08:00 ] 127.0.0.1 /123/Admin/Msg/deal
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: INSERT INTO `msg` (`title`,`mtype`,`msg`,`userid`,`updatetime`) VALUES ('俄文问问','4','的速度是多少山东省山东','1','2016-05-11 15:12:58') [ RunTime:0.0000s ]
+
+[ 2016-05-11T15:12:59+08:00 ] 127.0.0.1 /123/Admin/Msg/msg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `msg` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `msg`  [ RunTime:0.0010s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
@@ -721,123 +1654,9 @@ INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
 INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
 INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
 INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:47:31+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:47:31+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:47:31+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:47:31+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:47:31+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:47:37+08:00 ] 127.0.0.1 /123/Admin/Index/login
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:47:39+08:00 ] 127.0.0.1 /123/Admin/Index/login
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-NOTIC: [8] Undefined index: member D:\WWW\123\Application\Admin\Controller\IndexController.class.php 第 18 行.
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0050s ]
-SQL: SELECT * FROM `member` WHERE ( username = 'odaycaogen' )  [ RunTime:0.0010s ]
-
-[ 2016-05-11T11:48:12+08:00 ] 127.0.0.1 /123/Admin/Index/login
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:48:13+08:00 ] 127.0.0.1 /123/Admin/Index/index.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
-SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0030s ]
-SQL: SELECT `zongji`,`xianjin`,`fenhong`,`lixi`,`guquan`,`zuhe`,`huanqiu`,`cishan`,`baodan`,`newsid`,`isnew` FROM `member` WHERE ( id = 1000 ) LIMIT 1   [ RunTime:0.0000s ]
-SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0010s ]
-SQL: SELECT * FROM `news`  [ RunTime:0.0160s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:48:13+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-chrome.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:48:13+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-firefox.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:48:13+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-ie.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2016-05-11T11:48:13+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-opera.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-
-[ 2016-05-11T11:48:13+08:00 ] 127.0.0.1 /123/Admin/Index/assets/i/examples/admin-safari.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 

@@ -21,4 +21,23 @@ class MsgController extends Controller {
         $this->display();
     }
     
+    //提交问题
+    public function deal(){ 
+        $msg = M('msg');
+        //添加问题反馈
+        if ($_POST['type']=='add') {
+            //数据处理
+            $data['title'] = I('post.title');
+            $data['mtype'] = I('post.mtype');
+            $data['msg'] = I('post.msg');
+            $data['userid'] = $_SESSION['member']['id'];
+            $data['updatetime'] = date('Y-m-d H:i:s',time());
+            if (!$msg->add($data)) {
+                $this->ajaxReturn(C('error'));
+            }else{
+                $this->ajaxReturn(C('success'));
+            }
+        }
+        
+    }
 }
