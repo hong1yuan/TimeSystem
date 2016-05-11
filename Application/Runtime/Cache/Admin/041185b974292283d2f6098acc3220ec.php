@@ -45,7 +45,7 @@
     <br>
     <br>
 
-    <form method="post"  id="documentForm" class="am-form" action="/123/Admin/Index/login.html">
+    <form method="post"  id="documentForm" class="am-form" action="/123/Admin/Index/login">
         <label for="email">用户名:</label>
           <input type="text" name="username" id="username" value="">
         <br>

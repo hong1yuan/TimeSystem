@@ -33,8 +33,8 @@ class IndexController extends Controller {
     					session('member','member');
     					$this->redirect('index');
     				}else{
+                        session('member','admin');
     					$this->redirect('index');
-    					session('member','admin');
     				}
     			}
     		}
