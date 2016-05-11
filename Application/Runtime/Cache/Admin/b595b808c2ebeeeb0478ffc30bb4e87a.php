@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -156,7 +156,7 @@
                     </a>
                     </li>
                     <li>
-                        <a href="<?php echo U('Guanli/index');?>">
+                        <a href="<?php echo U('Guanli/reward');?>">
                             <span class="am-icon-trophy">月分红</span>
                         </a>
                     </li>
@@ -463,15 +463,15 @@
 
 
 <!--[if lt IE 9]>
-<script src="/Public/Admin/js/jquery.min.js"></script>
-<script src="/Public/Admin/js/modernizr.js"></script>
-<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/modernizr.js"></script>
+<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/Public/Admin/js/amazeui.min.js"></script>
-<script src="/Public/Admin/js/app.js"></script>
+<script src="/123/Public/Admin/js/amazeui.min.js"></script>
+<script src="/123/Public/Admin/js/app.js"></script>
 </body>
 </html>
