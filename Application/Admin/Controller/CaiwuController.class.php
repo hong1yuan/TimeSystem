@@ -79,7 +79,6 @@ class CaiwuController extends Controller {
      */
     public function aaa(){
 
-
        $list = D('Member')
                         ->field('rePath,pPath,xianjin,islock,username,password')
                         ->where("id = 1000")->find();
@@ -87,10 +86,7 @@ class CaiwuController extends Controller {
             $this->error('你的账号以锁',U('exchange'));
         }
         $pwd = substr(md5(trim($_POST['user-pwd'])),8,16);
-//        dump($_POST);
-//        echo $pwd;
-//        echo "<br/>";
-//        echo $list['password'];
+
         if($list['password'] != $pwd){
             $this->error('密码不正确',U('exchange'));
         }
@@ -124,6 +120,9 @@ class CaiwuController extends Controller {
      * 货币转换
      */
     public  function change(){
+        $user = D('Member');
+        $user_info = $user->where('id=1000')->find();
+        $this->assign('UserInfo',$user_info);
         $this->display();
     }
 

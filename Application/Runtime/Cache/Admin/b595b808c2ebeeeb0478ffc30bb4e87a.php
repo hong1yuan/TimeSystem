@@ -12,14 +12,9 @@
     <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-<<<<<<< HEAD
     <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
     <link rel="stylesheet" href="/Public/Admin/css/admin.css">
-=======
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
->>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -526,15 +521,9 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<<<<<<< HEAD
 <script src="/Public/Admin/js/amazeui.min.js"></script>
 <script src="/Public/Admin/js/app.js"></script>
 <script src="/Public/Admin/lib/laypage/laypage.js"></script>
-=======
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
->>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
+<script src="/Public/Admin/lib/layer/layer.js"></script>
 </body>
 </html>
