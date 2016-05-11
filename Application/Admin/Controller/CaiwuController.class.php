@@ -67,7 +67,7 @@ class CaiwuController extends Controller {
      *转账
      */
     public function exchange(){
-        $zhuanzhang_list = D('Member')->field('rePath,pPath,xianjin,islock,telephone,username')->where("id = 1000")->find();
+        $zhuanzhang_list = D('Member')->field('rePath,pPath,xianjin,islock,username')->where("id = 1000")->find();
 
         $this->assign('Zhuanzhang',$zhuanzhang_list);
         //dump($zhuanzhang_list);
@@ -77,7 +77,46 @@ class CaiwuController extends Controller {
     /**
      * 转账后更新数据
      */
-    public function up(){
+    public function aaa(){
+
+
+       $list = D('Member')
+                        ->field('rePath,pPath,xianjin,islock,username,password')
+                        ->where("id = 1000")->find();
+        if($list['islock'] != 0){
+            $this->error('你的账号以锁',U('exchange'));
+        }
+        $pwd = substr(md5(trim($_POST['user-pwd'])),8,16);
+//        dump($_POST);
+//        echo $pwd;
+//        echo "<br/>";
+//        echo $list['password'];
+        if($list['password'] != $pwd){
+            $this->error('密码不正确',U('exchange'));
+        }
+        //接受人的姓名
+        $jieshou= I('post.user-name');
+
+        $list2 = D('Member')->where("username= '$jieshou'")->getField('xianjin');
+
+        $array['xianjin'] = $list['xianjin'] - I('post.user-money');
+        $arr['xianjin'] = $list2 + I('post.user-money');
+
+        $result1 = M('Member')->where("id =1000")->save($array);
+        if($result1==false){
+            $this->error('a转账失败',U('exchange'));
+        }
+        $result2 = D('Member')->where ("username= '$jieshou'")->save($arr);
+        if($result2==false){
+            $this->error('b转账失败',U('exchange'));
+        }
+        if($result1 && $result2){
+            $this->success('转账成功',U('index/index'));
+        }else{
+            $this->error('转账失败',U('exchange'));
+        }
+
+
 
     }
 
