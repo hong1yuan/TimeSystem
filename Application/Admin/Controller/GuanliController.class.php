@@ -4,6 +4,13 @@ use Think\Controller;
 class GuanliController extends Controller {
 
     /**
+     * 会员管理
+     */
+    public function member(){
+        $this->display();
+    }
+
+    /**
      * 月分红
      */
     public function reward(){

@@ -3,6 +3,8 @@ namespace Admin\Controller;
 use Think\Controller;
 class MemberController extends Controller {
 
+<<<<<<< HEAD
+=======
   
     /**
      * 修改资料
@@ -19,6 +21,7 @@ class MemberController extends Controller {
 
         $this->display();
     }
+>>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
 
     /**
      *更新资料
