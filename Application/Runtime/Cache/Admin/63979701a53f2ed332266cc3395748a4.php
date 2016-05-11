@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -223,7 +223,7 @@
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal" method="POST" action="/123/Admin/Caiwu/aaa">
+                    <form class="am-form am-form-horizontal" method="POST" action="/Admin/Caiwu/aaa">
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-3 am-form-label">
                                 接收会员
@@ -271,17 +271,17 @@
 
 
 <!--[if lt IE 9]>
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/modernizr.js"></script>
+<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<script src="/Public/Admin/js/amazeui.min.js"></script>
+<script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/Public/Admin/lib/layer/layer.js"></script>
 </body>
 </html>
