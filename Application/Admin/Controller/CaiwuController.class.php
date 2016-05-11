@@ -9,48 +9,24 @@ class CaiwuController extends Controller {
     public function index(){
 
 
-        $caiwu_list = D('history')->field('id,action1,pdt,escript,epoints')
-            ->limit(25)->order("id desc")->select();
-
-        /***分页类的设置***/
-        $pagenu = isset($_GET['p']) ? $_GET['p'] :1;
+        $list = D('history')->field('id,action1,pdt,escript,epoints')
+            ->where('uid=1000')->select();
+        $count = count($list);
         $pageSize=10;
-        $total = count($caiwu_list);
-        $pages = ceil($total/$pageSize);
-        $pagess =  ($pagenu-1)*$pageSize;
+        $pages = ceil($count/$pageSize);
+        $curr = $_GET['page'] ? intval($_GET['page']) : 1;
+        $offset = ($curr-1)*$pageSize;
         $caiwu_list = D('history')->field('id,action1,pdt,escript,epoints')
-            ->limit($pagess,$pageSize)->order("id desc")->select();
-        $page = $pagenu;
-        $prev=$page-1;
-        if($prev<1){$prev==1;};
-        $next =$page+1;
-        if($next>$pages) {$next==$pages;}
-
-        $this->assign('p',$pagenu);
-        $this->assign('pagesize',$pageSize);
+            ->where('uid=1000')
+            ->limit($offset,$pageSize)->order("id desc")->select();
+        $this->assign('count',$count);
         $this->assign('pages',$pages);
-        $this->assign('prev',$prev);
-        $this->assign('next',$next);
-
-
-
-        /*$caiwu_list = D('history')->field('id,action1,pdt,escript,epoints')
-            ->page($pagenu,$pageSize)
-            ->order("id desc")->select();*/
 
         $arr = array();
         foreach($caiwu_list as $key=>$value){
             $value['num'] = $key+1;
             $arr[]=$value;
-            //dump($value);
-
         }
-        //$caiwu_list = $arr;
-        /*$page = new Page($total,$pageSize);
-        $show = $page->show();
-        $this->assign('show',$show);*/
-
-
 
         $this->assign('CaiwuList',$arr);
         $this->display();
@@ -60,15 +36,28 @@ class CaiwuController extends Controller {
      * 奖金明细
      */
     public function  award(){
-        $jinagjin_list = D('Gee_total')->where('uid=1000')->select();
+        $list = D('Gee_total')->where('uid=1000')->select();
+        $count = count($list);
+        $pageSize=1;
+        //总共多少页
+        $pages = ceil($count/$pageSize);
+        //当前第几页
+        $curr = $_GET['page'] ? intval($_GET['page']) : 1;
+        $offset = ($curr-1)*$pageSize;
 
+        $jinagjin_list = D('Gee_total')->where('uid=1000')
+            ->limit($offset,$pageSize)
+            ->select();
         $arr =array();
         foreach($jinagjin_list as $key => $value){
-            $value['total'] = $value['']+$value[''];
+            $value['total'] = $value['t_ztj']+$value['t_dpj']+$value['t_ldfh']+$value['t_rlx']+$value['t_yfh'];
             $value['num'] = $key+1;
             $arr[]=$value;
         }
-       // dump($jinagjin_list);
+
+
+        $this->assign('count',$count);
+        $this->assign('pages',$pages);
         $this->assign('JiangjinList',$arr);
         $this->display();
 
@@ -80,8 +69,15 @@ class CaiwuController extends Controller {
     public function exchange(){
         $zhuanzhang_list = D('Member')->field('rePath,pPath,xianjin,islock,telephone,username')->where("id = 1000")->find();
 
+        $this->assign('Zhuanzhang',$zhuanzhang_list);
         //dump($zhuanzhang_list);
         $this->display();
+
+    }
+    /**
+     * 转账后更新数据
+     */
+    public function up(){
 
     }
 

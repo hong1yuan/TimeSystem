@@ -283,20 +283,20 @@
                                 <td><?php echo ($v["num"]); ?></td>
                                 <td class="am-hide-sm-only"><?php echo ($v["pdt"]); ?></td>
                                 <td><?php echo ($v['escript']); ?></td>
-                                <td class="am-hide-sm-only"><?php echo ($v['epoints']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo number_format($v['epoints']);?></td>
 
                             </tr><?php endforeach; endif; ?>
 
                             </tbody>
                         </table>
-                       <div class="am-cf">
+                      <!-- <div class="am-cf">
                             共 <?php echo ($pages); ?> 条记录
                             <div class="am-fr">
                                 <ul class="am-pagination">
                                     <li class="am-disabled">
                                         <a href="<?php echo U('index',array('p'=>$prev));?>">«</a>
                                     </li>
-                                    <?php $__FOR_START_139__=1;$__FOR_END_139__=$pages+1;for($i=$__FOR_START_139__;$i < $__FOR_END_139__;$i+=1){ ?><li
+                                    <?php $__FOR_START_16113__=1;$__FOR_END_16113__=$pages+1;for($i=$__FOR_START_16113__;$i < $__FOR_END_16113__;$i+=1){ ?><li
                                             <?php if( $page == $i): ?>class="am-active"
                                                 <?php else: endif; ?>
                                     ><a href="<?php echo U('index',array('p'=>$i));?>"><?php echo ($i); ?></a></li><?php } ?>
@@ -304,6 +304,12 @@
                                 </ul>
                             </div>
                            <?php echo ($show); ?>
+                        </div>-->
+                        <div class="am-cf">
+                            共 <?php echo ($count); ?> 条记录
+                            <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
+
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -337,3 +343,23 @@
 <script src="/Public/Admin/lib/laypage/laypage.js"></script>
 </body>
 </html>
+
+
+<script type="text/javascript">
+    laypage({
+        cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+        pages: $('#page').attr('pages'), //总页数
+        //first:false,
+        skin: '#AF0000',
+        groups: 7,//连续显示分页数
+        curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+            var page = location.search.match(/page=(\d+)/);
+            return page ? page[1] : 1;
+        }(),
+        jump: function(e, first){ //触发分页后的回调
+            if(!first){ //一定要加此判断，否则初始时会无限刷新
+                location.href = '?page='+e.curr;
+            }
+        }
+    });
+</script>

@@ -25,52 +25,21 @@
       <file leaf-file-name="CaiwuController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CaiwuController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.1081085">
-              <caret line="66" column="52" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
+            <state vertical-scroll-proportion="-9.216216">
+              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="e#34#55#0#PHP" expanded="true" />
                 <element signature="e#119#142#0#PHP" expanded="false" />
-                <element signature="e#147#1564#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php">
+      <file leaf-file-name="exchange.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Caiwu/exchange.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.621622">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="news.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/news.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7518464">
-              <caret line="115" column="20" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="award.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Caiwu/award.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.54054">
-              <caret line="68" column="44" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Caiwu/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.216216">
-              <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.29689807">
+              <caret line="47" column="117" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="120" />
               <folding />
             </state>
           </provider>
@@ -98,7 +67,6 @@
         <option value="$PROJECT_DIR$/Application/Admin/View/Common/header.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Index/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/CommonController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/Caiwu/exchange.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Caiwu/change.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Caiwu/withdraw.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/News/msg.html" />
@@ -123,10 +91,12 @@
         <option value="$PROJECT_DIR$/Application/Admin/View/Common/left.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Index/login.html" />
         <option value="$PROJECT_DIR$/ThinkPHP/Library/Think/Page.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/News/news.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Caiwu/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Caiwu/award.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/CaiwuController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Caiwu/exchange.html" />
       </list>
     </option>
   </component>
@@ -380,7 +350,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="News" />
+              <option name="myItemId" value="Caiwu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -474,10 +444,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="21" width="1612" height="876" extended-state="1" />
+    <frame x="-5" y="21" width="1612" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21069588" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12371134" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -542,13 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.216216">
           <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="233" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Caiwu/exchange.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33888048">
-          <caret line="118" column="24" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -854,46 +817,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5675673">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Caiwu/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.216216">
-          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="0.2141802">
+          <caret line="86" column="60" selection-start-line="86" selection-start-column="60" selection-end-line="86" selection-end-column="61" />
+          <folding>
+            <element signature="e#4234#5332#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Caiwu/award.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.54054">
-          <caret line="68" column="44" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CaiwuController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.1081085">
-          <caret line="66" column="52" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
+        <state vertical-scroll-proportion="1.7843426">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
-            <element signature="e#34#55#0#PHP" expanded="true" />
-            <element signature="e#119#142#0#PHP" expanded="false" />
-            <element signature="e#147#1564#0#PHP" expanded="false" />
+            <element signature="e#404#2296#0" expanded="false" />
+            <element signature="e#4235#4989#0" expanded="false" />
+            <element signature="n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.621622">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7518464">
-          <caret line="115" column="20" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.12703101">
+          <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="80" selection-end-column="30" />
+          <folding>
+            <element signature="n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CaiwuController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.216216">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding>
+            <element signature="e#34#55#0#PHP" expanded="true" />
+            <element signature="e#119#142#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Caiwu/exchange.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29689807">
+          <caret line="47" column="117" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="120" />
           <folding />
         </state>
       </provider>

@@ -209,7 +209,7 @@
             <div class="am-cf am-padding">
                 <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">财务管理</strong> / <small>奖金明细</small></div>
             </div>
-            <div class="am-g">
+           <!-- <div class="am-g">
                 <div class="am-u-sm-12 am-u-md-6">
                     <div class="am-btn-toolbar">
                         <div class="am-btn-group am-btn-group-xs">
@@ -241,7 +241,7 @@
           </span>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <div class="am-g">
                 <div class="am-u-sm-12">
@@ -249,9 +249,6 @@
                         <table class="am-table am-table-striped am-table-hover table-main">
                             <thead>
                             <tr>
-                                <!--<th class="table-check">
-                                    <input type="checkbox" />
-                                </th>-->
                                 <th class="table-id" width="7%">编号</th>
                                 <th class="table-title" width="12%">日期</th>
                                 <th class="table-type" width="14%">市场奖</th>
@@ -267,25 +264,17 @@
                                 <!--<td><input type="checkbox" /></td>-->
                                 <td><?php echo ($jj["num"]); ?></td>
                                 <td><?php echo ($jj['countdate']); ?></td>
-                                <td><?php echo ($jj['t_ztj']); ?></td>
-                                <td class="am-hide-sm-only"><?php echo ($jj['t_dpj']); ?></td>
-                                <td class="am-hide-sm-only"><?php echo ($jj['t_ldfh']); ?></td>
-                                <td class="am-hide-sm-only"><?php echo ($jj['t_rlx']); ?></td>
-                                <td class="am-hide-sm-only"><?php echo ($jj['t_yfh']); ?></td>
-                                <td class="am-hide-sm-only"><?php echo ($jj['countdate']); ?></td>
-                              <!--  <td>
-                                    <div class="am-btn-toolbar">
-                                        <div class="am-btn-group am-btn-group-xs">
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                            <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                        </div>
-                                    </div>
-                                </td>-->
+                                <td>€ <?php echo ($jj['t_ztj']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['t_dpj']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['t_ldfh']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['t_rlx']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['t_yfh']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['total']); ?></td>
+
                             </tr><?php endforeach; endif; ?>
                             </tbody>
                         </table>
-                        <div class="am-cf">
+                       <!-- <div class="am-cf">
                             共 15 条记录
                             <div class="am-fr">
                                 <ul class="am-pagination">
@@ -297,6 +286,13 @@
                                     <li><a href="#">5</a></li>
                                     <li><a href="#">»</a></li>
                                 </ul>
+                            </div>
+                        </div>-->
+
+                        <div class="am-cf">
+                            共 <?php echo ($count); ?> 条记录
+                            <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
+
                             </div>
                         </div>
                     </form>
@@ -331,3 +327,22 @@
 <script src="/Public/Admin/lib/laypage/laypage.js"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+    laypage({
+        cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+        pages: $('#page').attr('pages'), //总页数
+        //first:false,
+        skin: '#AF0000',
+        groups: 7,//连续显示分页数
+        curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+            var page = location.search.match(/page=(\d+)/);
+            return page ? page[1] : 1;
+        }(),
+        jump: function(e, first){ //触发分页后的回调
+            if(!first){ //一定要加此判断，否则初始时会无限刷新
+                location.href = '?page='+e.curr;
+            }
+        }
+    });
+</script>

@@ -151,7 +151,7 @@
                     <span class="am-icon-angle-right am-fr am-margin-right"></span>
                 </a>
                 <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
-                    <li><a href="<?php echo U('Member/index');?>">
+                    <li><a href="<?php echo U('Guanli/index');?>">
                         <span class="am-icon-trophy">会员管理</span>
                     </a>
                     </li>
@@ -335,5 +335,6 @@
 <!--<![endif]-->
 <script src="/Public/Admin/js/amazeui.min.js"></script>
 <script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
 </body>
 </html>
