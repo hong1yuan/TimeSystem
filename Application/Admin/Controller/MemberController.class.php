@@ -85,7 +85,55 @@ class MemberController extends Controller {
      * 激活账号
      */
     public function activate(){
+        $user = 1000;
+        $news = M('Member');
+        $count = $news-> where("ReID = '$user' OR payid = '$user'") -> count();
+        $pages = ceil($count/10);
+        $curr = $_GET['page'] ? intval($_GET['page']) : 1;
+
+
+        $news_list = $news-> where("ReID = '$user' OR payid = '$user'") -> limit(($curr-1)*10,15)-> order('ispay,ID DESC') -> select();
+
+        $this->assign('pages',$pages);
+        $this->assign('count',$count);
+        $this->assign('news_list',$news_list);
         $this->display();
+
+    }
+
+     /**
+     * 激活
+     */
+    
+    public function activateadd(){
+     $poid = I('post.id');
+     $news = M('Member');
+     $arryn["ispay"] = 1;
+     $news -> where("id = '$poid'") -> save($arryn);
+     //echo "<script>alert('激活成功')</script>";
+     echo json_encode($arryn);
+     
+    }
+
+     /**
+     * 删除账号
+     */
+
+    public function activatedel(){
+        $user = 1000;
+        $poid = I('post.id');
+        $news = M('Member');
+
+        $value = $news -> where("isPay = 0 AND ReID= '$user' AND id = '$poid'") ->select();
+        if($value == false){
+         $arryn["del"] = 0;
+         echo json_encode($arryn);
+        }
+        else{
+        $value = $news -> where("isPay = 0 AND ReID= '$user' AND id = '$poid'") ->delete();
+          $arryn["del"] = 1;
+          echo json_encode($arryn);
+        }
 
     }
     
