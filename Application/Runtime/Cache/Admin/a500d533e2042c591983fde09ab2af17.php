@@ -155,7 +155,7 @@
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
-                        <li><a href="<?php echo U('Member/index');?>">
+                        <li><a href="<?php echo U('Guanli/member');?>">
                             <span class="am-icon-trophy">会员管理</span>
                         </a>
                         </li>
@@ -315,6 +315,8 @@
 <script src="/123/Public/Admin/js/app.js"></script>
 <script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
 <script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script>
 </body>
 </html>
 <script type="text/javascript">
