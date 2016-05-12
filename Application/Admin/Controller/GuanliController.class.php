@@ -40,6 +40,25 @@ class GuanliController extends Controller {
     public function detail_xiugai(){
         $id=$_POST['id'];
         $user_before = M('Member')->where("id='$id' ")->find();
+        //资金的修改记录
+        $user_after = $_POST;
+        $zongji = $user_before['zongji']-$user_after['zongji'];
+        if($zongji != 0){
+
+            $arr['action1'] = 1;
+            $arr['escript'] = "调整币值组合";
+            $arr['epoints'] = $zongji;
+            $arr['PDT'] = date('Y-m-d H:i:s',time());
+        }
+        $result1= M('History')->where("uid = '$id'")->add($arr);
+
+        $guquan = $user_before['guquan']-$user_after['guquan'];
+        if($guquan != 0){
+
+        }
+
+        dump($result1);
+        dump($user_after);
         dump($user_before);
         dump($_POST);
         die;
