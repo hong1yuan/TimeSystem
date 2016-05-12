@@ -155,7 +155,7 @@
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
-                        <li><a href="<?php echo U('Member/index');?>">
+                        <li><a href="<?php echo U('Guanli/member');?>">
                             <span class="am-icon-trophy">会员管理</span>
                         </a>
                         </li>

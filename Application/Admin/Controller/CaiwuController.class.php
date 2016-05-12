@@ -131,6 +131,10 @@ class CaiwuController extends Controller {
      * 申请提现
      */
     public function withdraw(){
+        $user = D('Member');
+        $user_info = $user->where('id=1000')->find();
+        $this->assign('UserInfo',$user_info);
+        $jilu =
         $this->display();
     }
     
