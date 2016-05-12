@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -108,11 +108,59 @@
                 </ul>
             </li>
             <!-- 财务管理 -->
+<<<<<<< HEAD
+            <!-- 个人中心 -->
+            <li class="admin-parent">
+                <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
+                    <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
+                    <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+                    <li>
+                        <a href="<?php echo U('Member/profile');?>" class="am-cf">
+                            <span class="am-icon-user"></span> 个人资料
+                            <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo U('Member/password');?>">
+                            <span class="am-icon-puzzle-piece"></span> 修改密码
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo U('Member/register');?>">
+                            <span class="am-icon-th"></span> 注册会员
+                            <span class="am-badge am-badge-secondary am-margin-right am-fr">24</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo U('Member/activate');?>">
+                            <span class="am-icon-calendar"></span> 激活帐号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="am-icon-users"></span>团队结构
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- 个人中心 -->
+            <!-- 管理平台 -->
+            <li class="admin-parent">
+                <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">
+                    <span class="am-icon-btn am-primary am-icon-cog"></span> 平台管理
+                    <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
+                    <li><a href="<?php echo U('Guanli/index');?>">
+                        <span class="am-icon-trophy">会员管理</span>
+=======
             <?php if($_SESSION['member']['member'] == 'member'): ?><!-- 个人中心 -->
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
+>>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -220,27 +268,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="am-u-sm-12 am-u-md-3">
-                    <div class="am-form-group">
-                        <select data-am-selected="{btnSize: 'sm'}">
-                            <option value="option1">所有类别</option>
-                            <option value="option2">IT业界</option>
-                            <option value="option3">数码产品</option>
-                            <option value="option3">笔记本电脑</option>
-                            <option value="option3">平板电脑</option>
-                            <option value="option3">只能手机</option>
-                            <option value="option3">超极本</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="am-u-sm-12 am-u-md-3">
-                    <div class="am-input-group am-input-group-sm">
-                          <input type="text" class="am-form-field">
-                          <span class="am-input-group-btn">
-                            <button class="am-btn am-btn-default" type="button">搜索</button>
-                          </span>
-                    </div>
-                </div> -->
             </div>
 
             <div class="am-g">
@@ -257,28 +284,37 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><a href="#">Business management</a></td>
-                                    <td>default</td>
-                                    <td class="am-hide-sm-only">测试1号</td>
-                                    <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-                                    <td>
-                                        <div class="am-btn-toolbar">
-                                            <div class="am-btn-group am-btn-group-xs">
-                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
-                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                <?php if(is_array($msg_list)): foreach($msg_list as $key=>$vo): ?><tr>
+                                        <td><?php echo ($vo["id"]); ?></td>
+                                        <td><a href="#"><?php echo ($vo["title"]); ?></a></td>
+                                        <td>
+                                            <?php switch($vo["mtype"]): case "1": ?>意见建议<?php break;?>
+                                                <?php case "2": ?>奖金问题<?php break;?>
+                                                <?php case "3": ?>帐号问题<?php break;?>
+                                                <?php case "3": ?>其他问题<?php break;?>
+                                                <?php default: endswitch;?>
+                                        </td>
+                                        <td class="am-hide-sm-only">
+                                            状态                                           
+                                        </td>
+                                        <td class="am-hide-sm-only"><?php echo ($vo["updatetime"]); ?></td>
+                                        <td>
+                                            <div class="am-btn-toolbar">
+                                                <div class="am-btn-group am-btn-group-xs">
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr><?php endforeach; endif; ?>
+                                
                             </tbody>
                         </table>
                         <div class="am-cf">
-                            共 15 条记录
-                            <div class="am-fr">
-                                <ul class="am-pagination">
+                            共 <?php echo ($count); ?> 条记录
+                            <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
+                               <!--  <ul class="am-pagination">
                                     <li class="am-disabled"><a href="#">«</a></li>
                                     <li class="am-active"><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
@@ -286,7 +322,7 @@
                                     <li><a href="#">4</a></li>
                                     <li><a href="#">5</a></li>
                                     <li><a href="#">»</a></li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </div>
                     </form>
@@ -307,18 +343,18 @@
 
 
 <!--[if lt IE 9]>
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/modernizr.js"></script>
+<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<script src="/Public/Admin/js/amazeui.min.js"></script>
+<script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/Public/Admin/lib/layer/layer.js"></script>
 </body>
 </html>
 <script type="text/javascript">
@@ -394,4 +430,20 @@
               },
         });
     })
+    laypage({
+        cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+        pages: $('#page').attr('pages'), //总页数
+        //first:false,
+        skin: '#AF0000',
+        groups: 7,//连续显示分页数
+        curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+            var page = location.search.match(/page=(\d+)/);
+            return page ? page[1] : 1;
+        }(), 
+        jump: function(e, first){ //触发分页后的回调
+            if(!first){ //一定要加此判断，否则初始时会无限刷新
+                location.href = '?page='+e.curr;
+            }
+        }
+    });
 </script>

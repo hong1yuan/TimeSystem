@@ -6,7 +6,16 @@ class MsgController extends Controller {
      * 留言管理
      */
     public function index(){
-        $news_list = D('News')->select();
+        $msg = M('msg');
+        $count = $msg->count();
+        $pages = ceil($count/10);
+        $curr = $_GET['page'] ? intval($_GET['page']) : 1;
+
+        $msg_list = $msg->limit(($curr-1)*10,15)->order('id DESC')->select();
+
+        $this->assign('pages',$pages);
+        $this->assign('count',$count);
+        $this->assign('msg_list',$msg_list);
         $this->display();
     }
 
@@ -15,9 +24,16 @@ class MsgController extends Controller {
      * 问题反馈
      */
     public function  msg(){
-        $msg_list = D('Msg')->select();
-        //dump($msg_list);
+        $msg = M('msg');
+        $count = $msg->count();
+        $pages = ceil($count/10);
+        $curr = $_GET['page'] ? intval($_GET['page']) : 1;
 
+        $msg_list = $msg->limit(($curr-1)*10,15)->order('id DESC')->select();
+
+        $this->assign('pages',$pages);
+        $this->assign('count',$count);
+        $this->assign('msg_list',$msg_list);
         $this->display();
     }
     
@@ -37,7 +53,10 @@ class MsgController extends Controller {
             }else{
                 $this->ajaxReturn(C('success'));
             }
+        }else if ($_GET['type']=='edit') {
+            $id = intval($_GET['id']);
+            $rst = $msg->field('member.username,msg.*')->join('member ON msg.userid = member.id')->where('msg.id='.$id)->find();
+            $this->ajaxReturn($rst);
         }
-        
     }
 }

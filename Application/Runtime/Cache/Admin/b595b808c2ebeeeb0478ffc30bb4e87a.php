@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -109,11 +109,13 @@
                 </ul>
             </li>
             <!-- 财务管理 -->
+
             <?php if($_SESSION['member']['member'] == 'member'): ?><!-- 个人中心 -->
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
+
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -334,27 +336,27 @@
                                     <th>访问量</th>
                                 </tr>
                                 <tr>
-                                    <td class="am-text-center"><img src="assets/i/examples/admin-chrome.png" alt=""></td>
+                                    <td class="am-text-center"><img src="/Public/Admin/i/examples/admin-chrome.png" alt=""></td>
                                     <td>Google Chrome</td>
                                     <td>3,005</td>
                                 </tr>
                                 <tr>
-                                    <td class="am-text-center"><img src="assets/i/examples/admin-firefox.png" alt=""></td>
+                                    <td class="am-text-center"><img src="/Public/Admin/i/examples/admin-firefox.png" alt=""></td>
                                     <td>Mozilla Firefox</td>
                                     <td>2,505</td>
                                 </tr>
                                 <tr>
-                                    <td class="am-text-center"><img src="assets/i/examples/admin-ie.png" alt=""></td>
+                                    <td class="am-text-center"><img src="/Public/Admin/i/examples/admin-ie.png" alt=""></td>
                                     <td>Internet Explorer</td>
                                     <td>1,405</td>
                                 </tr>
                                 <tr>
-                                    <td class="am-text-center"><img src="assets/i/examples/admin-opera.png" alt=""></td>
+                                    <td class="am-text-center"><img src="/Public/Admin/i/examples/admin-opera.png" alt=""></td>
                                     <td>Opera</td>
                                     <td>4,005</td>
                                 </tr>
                                 <tr>
-                                    <td class="am-text-center"><img src="assets/i/examples/admin-safari.png" alt=""></td>
+                                    <td class="am-text-center"><img src="/Public/Admin/i/examples/admin-safari.png" alt=""></td>
                                     <td>Safari</td>
                                     <td>505</td>
                                 </tr>
@@ -465,17 +467,17 @@
 
 
 <!--[if lt IE 9]>
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/modernizr.js"></script>
+<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<script src="/Public/Admin/js/amazeui.min.js"></script>
+<script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/Public/Admin/lib/layer/layer.js"></script>
 </body>
 </html>

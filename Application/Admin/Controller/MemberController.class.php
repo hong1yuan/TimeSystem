@@ -3,7 +3,7 @@ namespace Admin\Controller;
 use Think\Controller;
 class MemberController extends Controller {
 
-  
+
     /**
      * 修改资料
      */
@@ -11,14 +11,13 @@ class MemberController extends Controller {
 
         // $user = session("userid");
        
-      $user = 1000;
+        $user = 1000;
         $value = M('member') -> field('reid,rename,username,telephone,ulevel,alipay,bankuser,bankname,bankcard') -> where("id = '$user'") -> find();
 
         $this -> assign('value',$value);
-
-
         $this->display();
     }
+
 
     /**
      *更新资料
