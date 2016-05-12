@@ -123,13 +123,13 @@ class MemberController extends Controller {
         $poid = I('post.id');
         $news = M('Member');
 
-        $value = $news -> where("isPay = 0 AND ReID= '$user' AND id = '$poid'") ->select();
+        $value = $news -> where("ispay = 0 AND ReID= '$user' AND id = '$poid'") ->select();
         if($value == false){
          $arryn["del"] = 0;
          echo json_encode($arryn);
         }
         else{
-        $value = $news -> where("isPay = 0 AND ReID= '$user' AND id = '$poid'") ->delete();
+        $value = $news -> where("ispay = 0 AND ReID= '$user' AND id = '$poid'") ->delete();
           $arryn["del"] = 1;
           echo json_encode($arryn);
         }
