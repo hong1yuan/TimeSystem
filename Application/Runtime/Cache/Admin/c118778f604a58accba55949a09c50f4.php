@@ -108,59 +108,13 @@
                 </ul>
             </li>
             <!-- 财务管理 -->
-<<<<<<< HEAD
-            <!-- 个人中心 -->
-            <li class="admin-parent">
-                <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
-                    <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
-                    <span class="am-icon-angle-right am-fr am-margin-right"></span>
-                </a>
-                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-                    <li>
-                        <a href="<?php echo U('Member/profile');?>" class="am-cf">
-                            <span class="am-icon-user"></span> 个人资料
-                            <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Member/password');?>">
-                            <span class="am-icon-puzzle-piece"></span> 修改密码
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Member/register');?>">
-                            <span class="am-icon-th"></span> 注册会员
-                            <span class="am-badge am-badge-secondary am-margin-right am-fr">24</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Member/activate');?>">
-                            <span class="am-icon-calendar"></span> 激活帐号
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="am-icon-users"></span>团队结构
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- 个人中心 -->
-            <!-- 管理平台 -->
-            <li class="admin-parent">
-                <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">
-                    <span class="am-icon-btn am-primary am-icon-cog"></span> 平台管理
-                    <span class="am-icon-angle-right am-fr am-margin-right"></span>
-                </a>
-                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
-                    <li><a href="<?php echo U('Guanli/index');?>">
-                        <span class="am-icon-trophy">会员管理</span>
-=======
+
             <?php if($_SESSION['member']['member'] == 'member'): ?><!-- 个人中心 -->
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
->>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
+
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -200,7 +154,7 @@
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
-                        <li><a href="<?php echo U('Member/index');?>">
+                        <li><a href="<?php echo U('Guanli/member');?>">
                             <span class="am-icon-trophy">会员管理</span>
                         </a>
                         </li>

@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -109,59 +109,13 @@
                 </ul>
             </li>
             <!-- 财务管理 -->
-<<<<<<< HEAD
-            <!-- 个人中心 -->
-            <li class="admin-parent">
-                <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
-                    <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
-                    <span class="am-icon-angle-right am-fr am-margin-right"></span>
-                </a>
-                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-                    <li>
-                        <a href="<?php echo U('Member/profile');?>" class="am-cf">
-                            <span class="am-icon-user"></span> 个人资料
-                            <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Member/password');?>">
-                            <span class="am-icon-puzzle-piece"></span> 修改密码
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Member/register');?>">
-                            <span class="am-icon-th"></span> 注册会员
-                            <span class="am-badge am-badge-secondary am-margin-right am-fr">24</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Member/activate');?>">
-                            <span class="am-icon-calendar"></span> 激活帐号
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="am-icon-users"></span>团队结构
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- 个人中心 -->
-            <!-- 管理平台 -->
-            <li class="admin-parent">
-                <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">
-                    <span class="am-icon-btn am-primary am-icon-cog"></span> 平台管理
-                    <span class="am-icon-angle-right am-fr am-margin-right"></span>
-                </a>
-                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
-                    <li><a href="<?php echo U('Guanli/index');?>">
-                        <span class="am-icon-trophy">会员管理</span>
-=======
+
             <?php if($_SESSION['member']['member'] == 'member'): ?><!-- 个人中心 -->
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
->>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
+
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -201,7 +155,7 @@
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
-                        <li><a href="<?php echo U('Member/index');?>">
+                        <li><a href="<?php echo U('Guanli/member');?>">
                             <span class="am-icon-trophy">会员管理</span>
                         </a>
                         </li>
@@ -324,10 +278,7 @@
                         <div class="am-cf">
                             共 <?php echo ($count); ?> 条记录
                             <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
-<<<<<<< HEAD
 
-=======
->>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
                             </div>
                         </div>
                     </form>
@@ -349,18 +300,18 @@
 
 
 <!--[if lt IE 9]>
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/modernizr.js"></script>
+<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<script src="/Public/Admin/js/amazeui.min.js"></script>
+<script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/Public/Admin/lib/layer/layer.js"></script>
 </body>
 </html>
 <script type="text/javascript">

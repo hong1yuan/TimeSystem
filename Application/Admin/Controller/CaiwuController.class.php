@@ -115,7 +115,7 @@ class CaiwuController extends Controller {
         }else{
             $this->error('转账失败',U('exchange'));
         }
-        
+
 
     }
 
