@@ -173,8 +173,18 @@ class GuanliController extends Controller {
 
     }
 
+    /**
+     * 锁定
+     */
     public function lock(){
 
+    }
+
+    /**
+     * 级别管理
+     */
+    public function jibie(){
+        $this->display();
     }
 
 
@@ -182,7 +192,30 @@ class GuanliController extends Controller {
      * 月分红
      */
     public function reward(){
+        $lists = M('gee_fee')->field('id,jibie,yfenhong')->order('jine asc')->select();
+
+
+        $telephone = M('Member')->where('id=1000')->getField('telephone');
+        $fenhongdate = M('webconfig')->where('id=1')->getField('fenhongdate');
+        $this->assign('date',$fenhongdate);
+        $this->assign('telephone',$telephone);
+        $this->assign('lists',$lists);
         $this->display();
+    }
+
+    /**
+     * 分发月分红
+     */
+    public function fenfa(){
+
+
+        $mem1 = M('Member')->field('id,fenhong,xianjin')->where('ulevel = $_POST[1]')->select();
+        $income = $mem1['guquan'] * $_POST['jibie1'] /1000;
+        
+       // $mem1['xianjin']
+       // dump($mem1);
+        dump($_POST);
+
     }
 
     /**
