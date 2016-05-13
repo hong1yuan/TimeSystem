@@ -362,7 +362,8 @@
 <script src="/123/Public/Admin/js/app.js"></script>
 <script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
 <script src="/123/Public/Admin/lib/layer/layer.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script>
+<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>

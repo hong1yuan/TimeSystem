@@ -139,7 +139,7 @@ class MemberController extends Controller {
     /*
      * 团队结构
      */
-    public function teamt(){
+    public function team(){
         $this->display();
     }
 
