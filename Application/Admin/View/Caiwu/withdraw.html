@@ -94,7 +94,7 @@
                                 <th class="table-author am-hide-sm-only" style="width:20%;">帐号</th>
                                 <th class="table-date am-hide-sm-only" style="width:10%;">金额</th>
                                 <th class="table-set" style="width:20%;">申请日期</th>
-                                <th class="table-set" style="width:15%;">操作</th>
+                                <th class="table-set" style="width:15%;">状态</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -107,13 +107,16 @@
 	                                <td class="am-hide-sm-only">${$vo.jine}</td>
 	                                <td>{$vo.rdt}</td>
 	                                <td>
-	                                	 <!--  <div class="am-btn-toolbar">
+	                                	<div class="am-btn-toolbar">
 	                                        <div class="am-btn-group am-btn-group-xs">
-	                                            <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-	                                            <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
-	                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+	                                        	<if condition="$vo.ispay eq '1'">
+									   													    			<button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 已处理</button>
+									    		<else />
+									    			<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>未处理</button>
+
+									    		</if>
 	                                        </div>
-	                                    </div> -->
+	                                    </div>
 	                                </td>
 	                            </tr>
     						</foreach>

@@ -156,7 +156,7 @@ class CaiwuController extends Controller {
             $count = $tiqu->where('userid='.$id)->count();
             $pages = ceil($count/10);
             $curr = $_GET['page'] ? intval($_GET['page']) : 1;
-            $list = $tiqu ->where('userid='.$id)->limit(($curr-1)*10,10)->order('ispay,rdt DESC')->select();
+            $list = $tiqu ->where('userid='.$id)->limit(($curr-1)*10,10)->order('rdt DESC')->select();
 
             $this->assign('pages',$pages);
             $this->assign('count',$count);

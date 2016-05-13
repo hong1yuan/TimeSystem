@@ -220,7 +220,7 @@
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal" action="/123/Admin/Caiwu/withdraw.html?page=71" method="post" id="cashform">
+                    <form class="am-form am-form-horizontal" action="/123/Admin/Caiwu/withdraw.html?page=72" method="post" id="cashform">
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-3 am-form-label">
                                 会员编号
@@ -297,7 +297,7 @@
                                 <th class="table-author am-hide-sm-only" style="width:20%;">帐号</th>
                                 <th class="table-date am-hide-sm-only" style="width:10%;">金额</th>
                                 <th class="table-set" style="width:20%;">申请日期</th>
-                                <th class="table-set" style="width:15%;">操作</th>
+                                <th class="table-set" style="width:15%;">状态</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -309,13 +309,13 @@
 	                                <td class="am-hide-sm-only">$<?php echo ($vo["jine"]); ?></td>
 	                                <td><?php echo ($vo["rdt"]); ?></td>
 	                                <td>
-	                                	 <!--  <div class="am-btn-toolbar">
+	                                	<div class="am-btn-toolbar">
 	                                        <div class="am-btn-group am-btn-group-xs">
-	                                            <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-	                                            <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
-	                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+	                                        	<?php if($vo["ispay"] == '1'): ?><button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 已处理</button>
+									    		<?php else: ?>
+									    			<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>未处理</button><?php endif; ?>
 	                                        </div>
-	                                    </div> -->
+	                                    </div>
 	                                </td>
 	                            </tr><?php endforeach; endif; ?>
                             
