@@ -211,7 +211,7 @@ class GuanliController extends Controller {
 
         $mem1 = M('Member')->field('id,fenhong,xianjin')->where('ulevel = $_POST[1]')->select();
         $income = $mem1['guquan'] * $_POST['jibie1'] /1000;
-        
+
        // $mem1['xianjin']
        // dump($mem1);
         dump($_POST);
