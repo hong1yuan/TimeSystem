@@ -220,14 +220,13 @@
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal">
+                    <form class="am-form am-form-horizontal" action="/123/Admin/Caiwu/withdraw.html?page=71" method="post" id="cashform">
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-3 am-form-label">
                                 会员编号
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-name" value="aaa" disabled="">
-
+                                <input type="text" id="user-name" value="<?php echo ($memberinfo['username']); ?>" disabled="">
                             </div>
                         </div>
 
@@ -236,7 +235,7 @@
                                 提现金额
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="email" id="user-email" placeholder="输入你的电子邮件 / Email">
+                                <input type="text" id="money" name="money" value="100" placeholder="请输入提现金额">
                                 <small>(提现金额必须是100的整数倍)</small>
                             </div>
                         </div>
@@ -246,7 +245,7 @@
                                 开户银行
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="tel" id="user-phone" placeholder="输入你的电话号码 / Telephone">
+                                <input type="text" id="bankname" name="bankname" value="<?php echo ($memberinfo['bankname']); ?>" placeholder="开户银行">
                             </div>
                         </div>
 
@@ -255,7 +254,7 @@
                                 开户姓名
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text"  id="user-QQ" placeholder="请输入开户姓名">
+                                <input type="text"  name="bankuser" value="<?php echo ($memberinfo['bankuser']); ?>" id="bankuser" placeholder="请输入开户人姓名">
                             </div>
                         </div>
 
@@ -264,22 +263,22 @@
                                 银行卡号
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-kahao" placeholder="">
+                                <input type="text" id="bankcard"  name="bankcard" value="<?php echo ($memberinfo['bankcard']); ?>" placeholder="请输入卡号">
                             </div>
                         </div>
 
                         <div class="am-form-group">
                             <label for="user-intro" class="am-u-sm-3 am-form-label">
-                                密码
+                                交易密码
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" value="" name="user-intro" />
+                                <input type="password" value="" name="pwd" id="pwd" name="user-intro" />
                             </div>
                         </div>
 
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
-                                <button type="button" class="am-btn am-btn-primary">
+                                <button type="button"  id="cash" class="am-btn am-btn-primary">
                                     提交申请
                                 </button>
                             </div>
@@ -289,38 +288,44 @@
             </div>
             <div class="am-g">
                 <div class="am-u-sm-12">
-                    <form class="am-form">
                         <table class="am-table am-table-striped am-table-hover table-main">
                             <thead>
                             <tr>
-                                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">标题</th><th class="table-type">类别</th><th class="table-author am-hide-sm-only">作者</th><th class="table-date am-hide-sm-only">修改日期</th><th class="table-set">操作</th>
+                                <th class="table-id" style="width:10%;">编号</th>
+                                <th class="table-title" style="width:15%;">银行</th>
+                                <th class="table-type" style="width:10%;">收款人</th>
+                                <th class="table-author am-hide-sm-only" style="width:20%;">帐号</th>
+                                <th class="table-date am-hide-sm-only" style="width:10%;">金额</th>
+                                <th class="table-set" style="width:20%;">申请日期</th>
+                                <th class="table-set" style="width:15%;">操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>1</td>
-                                <td><a href="#">Business management</a></td>
-                                <td>default</td>
-                                <td class="am-hide-sm-only">测试1号</td>
-                                <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-                                <td>
-                                    <div class="am-btn-toolbar">
-                                        <div class="am-btn-group am-btn-group-xs">
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                            <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
+	                                <td><?php echo ($vo["id"]); ?></td>
+	                                <td><?php echo ($vo["bankname"]); ?></td>
+	                                <td><?php echo ($vo["bankuser"]); ?></td>
+	                                <td class="am-hide-sm-only"><?php echo ($vo["bankcard"]); ?></td>
+	                                <td class="am-hide-sm-only">$<?php echo ($vo["jine"]); ?></td>
+	                                <td><?php echo ($vo["rdt"]); ?></td>
+	                                <td>
+	                                	 <!--  <div class="am-btn-toolbar">
+	                                        <div class="am-btn-group am-btn-group-xs">
+	                                            <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+	                                            <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
+	                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+	                                        </div>
+	                                    </div> -->
+	                                </td>
+	                            </tr><?php endforeach; endif; ?>
+                            
 
                             </tbody>
                         </table>
                         <div class="am-cf">
-                            共 15 条记录
-                            <div class="am-fr">
-                                <ul class="am-pagination">
+                            共 <?php echo ($count); ?> 条记录
+                            <div class="am-fr" id="page" pages="<?php echo ($pages); ?>">
+                                <!-- <ul class="am-pagination">
                                     <li class="am-disabled"><a href="#">«</a></li>
                                     <li class="am-active"><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
@@ -328,10 +333,9 @@
                                     <li><a href="#">4</a></li>
                                     <li><a href="#">5</a></li>
                                     <li><a href="#">»</a></li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -366,3 +370,51 @@
 <!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+
+<script type="text/javascript">
+	$('#cash').on('click',function(){
+		var money = $('#money').val();
+			bankname = $('#bankname').val();
+			bankuser = $('#bankuser').val();
+			bankcard = $('#bankcard').val();
+			pwd = $('#pwd').val();
+		var re = /^[1-9]\d*00$/;
+		if (!re.test(money)) {
+			layer.alert('提现金额必须是100的整数倍');
+			return false;
+		};
+		if (!bankname) {
+			layer.alert('请输入开户银行');
+			return false;
+		};
+		if (!bankuser) {
+			layer.alert('请输入开户人姓名');
+			return false;
+		};
+		if (!bankcard) {
+			layer.alert('请输入收款帐号');
+			return false;
+		};
+		if (!pwd) {
+			layer.alert('请输入交易密码');
+			return false;
+		};
+		$('#cashform').submit();
+	})
+	laypage({
+	    cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+	    pages: $('#page').attr('pages'), //总页数
+	    //first:false,
+	    skin: '#AF0000',
+	    groups: 7,//连续显示分页数
+		curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+	        var page = location.search.match(/page=(\d+)/);
+	        return page ? page[1] : 1;
+	    }(), 
+	    jump: function(e, first){ //触发分页后的回调
+	        if(!first){ //一定要加此判断，否则初始时会无限刷新
+	            location.href = '?page='+e.curr;
+	        }
+	    }
+	});
+</script>
