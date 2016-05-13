@@ -42,7 +42,8 @@ class GuanliController extends Controller {
         $user_before = M('Member')->where("id='$id' ")->find();
         //资金的修改记录
         $user_after = $_POST;
-
+        dump($user_after);
+        die;
 
 
 
@@ -168,7 +169,7 @@ class GuanliController extends Controller {
         }else{
             $this->error('修改失败',U('exchange'));
         }
-        
+
 
     }
 
