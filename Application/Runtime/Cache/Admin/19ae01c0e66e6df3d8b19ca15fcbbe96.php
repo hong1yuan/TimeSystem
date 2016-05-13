@@ -299,7 +299,7 @@
                                     <li class="am-disabled">
                                         <a href="<?php echo U('index',array('p'=>$prev));?>">«</a>
                                     </li>
-                                    <?php $__FOR_START_18502__=1;$__FOR_END_18502__=$pages+1;for($i=$__FOR_START_18502__;$i < $__FOR_END_18502__;$i+=1){ ?><li
+                                    <?php $__FOR_START_10904__=1;$__FOR_END_10904__=$pages+1;for($i=$__FOR_START_10904__;$i < $__FOR_END_10904__;$i+=1){ ?><li
                                             <?php if( $page == $i): ?>class="am-active"
                                                 <?php else: endif; ?>
                                     ><a href="<?php echo U('index',array('p'=>$i));?>"><?php echo ($i); ?></a></li><?php } ?>

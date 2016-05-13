@@ -140,6 +140,9 @@ class MemberController extends Controller {
      * 团队结构
      */
     public function team(){
+        $id = $_SESSION['member']['id'];
+        $member = M('member');
+        
         $this->display();
     }
 

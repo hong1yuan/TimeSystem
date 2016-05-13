@@ -220,7 +220,7 @@
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal" action="/123/Admin/Caiwu/withdraw.html?page=72" method="post" id="cashform">
+                    <form class="am-form am-form-horizontal" action="/123/Admin/Caiwu/withdraw.html" method="post" id="cashform">
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-3 am-form-label">
                                 会员编号
