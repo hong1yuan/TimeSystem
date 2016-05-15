@@ -48,7 +48,12 @@
                                             </switch>
                                         </td>
                                         <td class="am-hide-sm-only">
-                                            状态                                           
+                                        	<switch name="vo.mstate">
+                                                <case value="0">未回复</case>
+                                                <case value="1">管理员回复</case>
+                                                <case value="2">追加提问</case>
+                                                <default />
+                                            </switch>                                      
                                         </td>
                                         <td class="am-hide-sm-only">{$vo.updatetime}</td>
                                         <td>
@@ -68,15 +73,6 @@
                         <div class="am-cf">
                             共 {$count} 条记录
                             <div class="am-fr" id="page" pages = "{$pages}">
-                               <!--  <ul class="am-pagination">
-                                    <li class="am-disabled"><a href="#">«</a></li>
-                                    <li class="am-active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">»</a></li>
-                                </ul> -->
                             </div>
                         </div>
                     </form>
@@ -96,8 +92,9 @@
 </a>
 
 <include file = "Common/footer" />
+<script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
 <script type="text/javascript">
-    $('#feedback').on('click',function(){
+    $('#feedback').on('click',function(){ 
         var content = '<div class="am-g" id="couple">'
             content+= '<div class="am-u-12">'
             content+= '        <form class="am-form">'
@@ -128,7 +125,11 @@
         layer.open({
               type: 1,
               title:'问题反馈',
+
               area: ['420px',''], //宽高
+
+              //skin: 'layui-layer-rim', //加上边框
+              area: ['500px',''], //宽高
               content: content,
               btn: ['提交', '取消'],
               yes:function(){

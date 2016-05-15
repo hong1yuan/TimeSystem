@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -114,7 +114,10 @@
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
+<<<<<<< HEAD
 
+=======
+>>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -140,7 +143,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"><span class="am-icon-users"></span>团队结构
+                            <a href="<?php echo U('Member/team');?>"><span class="am-icon-users"></span>团队结构
                             </a>
                         </li>
                     </ul>
@@ -253,7 +256,10 @@
                                                 <?php default: endswitch;?>
                                         </td>
                                         <td class="am-hide-sm-only">
-                                            状态                                           
+                                        	<?php switch($vo["mstate"]): case "0": ?>未回复<?php break;?>
+                                                <?php case "1": ?>管理员回复<?php break;?>
+                                                <?php case "2": ?>追加提问<?php break;?>
+                                                <?php default: endswitch;?>                                      
                                         </td>
                                         <td class="am-hide-sm-only"><?php echo ($vo["updatetime"]); ?></td>
                                         <td>
@@ -272,15 +278,6 @@
                         <div class="am-cf">
                             共 <?php echo ($count); ?> 条记录
                             <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
-                               <!--  <ul class="am-pagination">
-                                    <li class="am-disabled"><a href="#">«</a></li>
-                                    <li class="am-active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">»</a></li>
-                                </ul> -->
                             </div>
                         </div>
                     </form>
@@ -301,22 +298,26 @@
 
 
 <!--[if lt IE 9]>
-<script src="/Public/Admin/js/jquery.min.js"></script>
-<script src="/Public/Admin/js/modernizr.js"></script>
-<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/modernizr.js"></script>
+<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/Public/Admin/js/amazeui.min.js"></script>
-<script src="/Public/Admin/js/app.js"></script>
-<script src="/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/Public/Admin/lib/layer/layer.js"></script>
+<script src="/123/Public/Admin/js/amazeui.min.js"></script>
+<script src="/123/Public/Admin/js/app.js"></script>
+<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+<script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
 <script type="text/javascript">
-    $('#feedback').on('click',function(){
+    $('#feedback').on('click',function(){ 
         var content = '<div class="am-g" id="couple">'
             content+= '<div class="am-u-12">'
             content+= '        <form class="am-form">'
@@ -347,7 +348,12 @@
         layer.open({
               type: 1,
               title:'问题反馈',
+<<<<<<< HEAD
               area: ['420px',''], //宽高
+=======
+              //skin: 'layui-layer-rim', //加上边框
+              area: ['500px',''], //宽高
+>>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
               content: content,
               btn: ['提交', '取消'],
               yes:function(){

@@ -115,7 +115,10 @@
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
+<<<<<<< HEAD
 
+=======
+>>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -141,7 +144,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"><span class="am-icon-users"></span>团队结构
+                            <a href="<?php echo U('Member/team');?>"><span class="am-icon-users"></span>团队结构
                             </a>
                         </li>
                     </ul>
@@ -312,10 +315,20 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
+<<<<<<< HEAD
 <script src="/Public/Admin/js/amazeui.min.js"></script>
 <script src="/Public/Admin/js/app.js"></script>
 <script src="/Public/Admin/lib/laypage/laypage.js"></script>
 <script src="/Public/Admin/lib/layer/layer.js"></script>
+=======
+<script src="/123/Public/Admin/js/amazeui.min.js"></script>
+<script src="/123/Public/Admin/js/app.js"></script>
+<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
+>>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
 </body>
 </html>
 <script type="text/javascript">

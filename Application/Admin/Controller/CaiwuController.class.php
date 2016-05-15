@@ -79,7 +79,7 @@ class CaiwuController extends Controller {
      */
     public function aaa(){
 
-       $list = D('Member')
+        $list = D('Member')
                         ->field('rePath,pPath,xianjin,islock,username,password')
                         ->where("id = 1000")->find();
         if($list['islock'] != 0){
@@ -134,11 +134,41 @@ class CaiwuController extends Controller {
      * 申请提现
      */
     public function withdraw(){
-        $user = D('Member');
-        $user_info = $user->where('id=1000')->find();
-        $this->assign('UserInfo',$user_info);
-        $jilu =
-        $this->display();
+
+        $id = $_SESSION['member']['id'];
+        $memberinfo = M('member')->where('id='.$id)->find();
+        $tiqu = M('tiqu');
+        if (!empty($_POST)) {
+           if (substr(trim(md5($_POST['pwd'])),8,16) != $memberinfo['safekey']) {
+               $this->error('交易密码输入错误');
+           }
+           if ($memberinfo['xianjin']<trim($_POST['money'])) {
+               $this->error('您的可用现金不足支付');
+           }
+           M('member')->where('id='.$id)->setDec('xianjin',trim($_POST['money']));
+           //提现明细
+           $data['userid'] = $id;
+           $data['jine'] = trim($_POST['money']);
+           $data['bankname'] = trim($_POST['bankname']);
+           $data['bankuser'] = trim($_POST['bankuser']);
+           $data['bankcard'] = trim($_POST['bankcard']);
+           $data['rdt'] = date('Y-m-d H:i:s',time());
+           $tiqu->add($data);
+
+           $this->success('操作成功');
+        }else{
+            $count = $tiqu->where('userid='.$id)->count();
+            $pages = ceil($count/10);
+            $curr = $_GET['page'] ? intval($_GET['page']) : 1;
+            $list = $tiqu ->where('userid='.$id)->limit(($curr-1)*10,10)->order('rdt DESC')->select();
+
+            $this->assign('pages',$pages);
+            $this->assign('count',$count);
+            $this->assign('list',$list);
+
+            $this->assign('memberinfo',$memberinfo);
+            $this->display();
+        }        
     }
     
 }
