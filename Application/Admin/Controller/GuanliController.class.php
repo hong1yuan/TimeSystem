@@ -184,7 +184,12 @@ class GuanliController extends Controller {
      * 级别管理
      */
     public function jibie(){
+       // $count = M('gee_fee')->count();
+
         $jibie=M('gee_fee')->select();
+       /* dump($jibie);
+        die;*/
+        $this->assign('jibie',$jibie);
         $this->display();
     }
 

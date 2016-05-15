@@ -9,6 +9,17 @@
             <div class="am-cf am-padding">
                 <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">平台管理</strong> / <small>会员级别</small></div>
             </div>
+            <div class="am-g">
+                <div class="am-u-sm-12 am-u-md-6">
+                    <div class="am-btn-toolbar">
+                        <div class="am-btn-group am-btn-group-xs">
+                            <a><span class="am-icon-plus"></span> 新增会员级别</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
             <div class="am-g">
                 <div class="am-u-sm-12">
@@ -29,46 +40,29 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <foreach name="mems" item="v">
+                            <foreach name="jibie" item="v">
                                 <tr>
                                     <!--<td><input type="checkbox" /></td>-->
                                     <!--<td>1</td>-->
-                                    <td>{$v.username}</td>
+                                    <td>{$v.id}</td>
                                     <td>
-                                        <switch name="v.ulevel">
-                                            <case value="1">金星会员</case>
-                                            <case value="2">白金会员</case>
-                                            <case value="3">钻石会员</case>
-                                        </switch>
+                                       {$v.jibie}
 
                                     </td>
-                                    <td class="am-hide-sm-only">{$v.regtime}</td>
-                                    <td class="am-hide-sm-only">{$v.rename}</td>
-                                    <td class="am-hide-sm-only">{$v.rename}</td>
-                                    <td class="am-hide-sm-only">{$v.rename}</td>
-                                    <td class="am-hide-sm-only">{$v.rename}</td>
+                                    <td class="am-hide-sm-only">{$v.zlixi}</td>
+                                    <td class="am-hide-sm-only">{$v.yfenhong}</td>
+                                    <td class="am-hide-sm-only">{$v.zhituitc}</td>
+                                    <td class="am-hide-sm-only">{$v.duipengtc}</td>
+                                    <td class="am-hide-sm-only">{$v.guanlitc}</td>
                                     <td>
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <!--<button class="am-btn am-btn-default am-btn-xs am-text-secondary">-->
+
                                                 <a href="{:U('detail',array('id'=>$v['id']))}">
-                                                    <!-- <span class="am-icon-pencil-square-o"></span>-->
-                                                    查看
+
+                                                    修改
                                                 </a>
-                                                &nbsp;
-                                                <!--</button>-->
-                                                <!--<button class="am-btn am-btn-default am-btn-xs am-hide-sm-only">-->
-                                                <!--<span class="am-icon-copy"></span>-->
-                                                <a href="{:U('lock',array('id'=>$v['id']))}">
-                                                    锁定
-                                                </a>                                            &nbsp;
-                                                <!-- </button>-->
-                                                <!--<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">-->
-                                                <!--<span class="am-icon-trash-o"></span>-->
-                                                <a href="{:U('Index/index',array('id'=>$v['id']))}">
-                                                    登录
-                                                </a>
-                                                <!--</button>-->
+
                                             </div>
                                         </div>
                                     </td>
@@ -76,12 +70,6 @@
                             </foreach>
                             </tbody>
                         </table>
-                        <div class="am-cf">
-                            共 {$count} 条记录
-                            <div class="am-fr" id="page" pages = "{$pages}">
-
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>

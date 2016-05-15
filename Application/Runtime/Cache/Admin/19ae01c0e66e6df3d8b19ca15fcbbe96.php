@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -158,6 +158,10 @@
                             <span class="am-icon-trophy">会员管理</span>
                         </a>
                         </li>
+                        <li><a href="<?php echo U('Guanli/jibie');?>">
+                            <span class="am-icon-trophy">级别管理</span>
+                        </a>
+                        </li>
                         <li>
                             <a href="<?php echo U('Guanli/reward');?>">
                                 <span class="am-icon-trophy">月分红</span>
@@ -299,7 +303,7 @@
                                     <li class="am-disabled">
                                         <a href="<?php echo U('index',array('p'=>$prev));?>">«</a>
                                     </li>
-                                    <?php $__FOR_START_18502__=1;$__FOR_END_18502__=$pages+1;for($i=$__FOR_START_18502__;$i < $__FOR_END_18502__;$i+=1){ ?><li
+                                    <?php $__FOR_START_15844__=1;$__FOR_END_15844__=$pages+1;for($i=$__FOR_START_15844__;$i < $__FOR_END_15844__;$i+=1){ ?><li
                                             <?php if( $page == $i): ?>class="am-active"
                                                 <?php else: endif; ?>
                                     ><a href="<?php echo U('index',array('p'=>$i));?>"><?php echo ($i); ?></a></li><?php } ?>
@@ -333,21 +337,21 @@
 
 
 <!--[if lt IE 9]>
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/modernizr.js"></script>
+<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
-<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
-<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
+<script src="/Public/Admin/js/amazeui.min.js"></script>
+<script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/Public/Admin/lib/layer/layer.js"></script>
+<!-- <script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
 
