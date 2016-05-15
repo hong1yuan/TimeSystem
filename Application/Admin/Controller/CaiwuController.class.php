@@ -152,7 +152,8 @@ class CaiwuController extends Controller {
            $data['bankname'] = trim($_POST['bankname']);
            $data['bankuser'] = trim($_POST['bankuser']);
            $data['bankcard'] = trim($_POST['bankcard']);
-           $data['rdt'] = date('Y-m-d H:i:s',time());
+           $data['RDT'] = date('Y-m-d H:i:s',time());
+
            $tiqu->add($data);
 
            $this->success('操作成功');
