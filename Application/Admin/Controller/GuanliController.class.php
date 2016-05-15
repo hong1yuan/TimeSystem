@@ -207,14 +207,73 @@ class GuanliController extends Controller {
      * 分发月分红
      */
     public function fenfa(){
+        $level1 = intval($_POST[1]);
+        $level2 = intval($_POST[2]);
+        $level3 = intval($_POST[3]);
+        $level4 = intval($_POST[4]);
+
+        $mem1 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level1")->select();
+
+        foreach($mem1 as $key=>$value){
+            $id=$value['id'];
+            $income1 = $value['guquan'] * $_POST['jibie1'] /1000;
+            $value['xianjin']= $value['xianjin'] +$income1;
+            $value['fenhong'] = $value['fenhong']+$income1;
+
+            if(M('Member')->where("id = $id")->save($value)){
+            }else{
+                $this->error("$id 修改失败",U('reward'));
+            }
+        }
+
+        $mem2 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level2")->select();
+        dump($mem2);
 
 
-        $mem1 = M('Member')->field('id,fenhong,xianjin')->where('ulevel = $_POST[1]')->select();
-        $income = $mem1['guquan'] * $_POST['jibie1'] /1000;
+        foreach($mem2 as $key=>$value){
+            $id=$value['id'];
+            $income2 = $value['guquan'] * $_POST['jibie2'] /1000;
+            $value['xianjin'] = (string)($value['xianjin'] +$income2);
+            $value['fenhong'] = (string)($value['fenhong']+$income2);
+            if($income2 != 0){
+                if(M('Member')->where("id = $id")->save($value)){
+                }else{
+                    $this->error("$id 修改失败",U('reward'));
+                }
+            }
+        }
 
-       // $mem1['xianjin']
-       // dump($mem1);
-        dump($_POST);
+
+        $mem3 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level3")->select();
+
+        foreach($mem3 as $key=>$value){
+            $id=$value['id'];
+            $income3 = $value['guquan'] * $_POST['jibie3'] /1000;
+            $value['xianjin']= $value['xianjin'] +$income3;
+            $value['fenhong'] = $value['fenhong']+$income3;
+
+            if(M('Member')->where("id = $id")->save($value)){
+            }else{
+                $this->error("$id 修改失败",U('reward'));
+            }
+        }
+
+        $mem4 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level4")->select();
+
+        foreach($mem4 as $key=>$value){
+            $id=$value['id'];
+            $income4 = $value['guquan'] * $_POST['jibie4'] /1000;
+            $value['xianjin']= $value['xianjin'] +$income4;
+            $value['fenhong'] = $value['fenhong']+$income4;
+
+            if(M('Member')->where("id = $id")->save($value)){
+            }else{
+                $this->error("$id 修改失败",U('reward'));
+            }
+        }
+
+        $this->success("操作成功 ",U('reward'));
+
 
     }
 
