@@ -184,6 +184,7 @@ class GuanliController extends Controller {
      * 级别管理
      */
     public function jibie(){
+        $jibie=M('gee_fee')->select();
         $this->display();
     }
 
@@ -281,6 +282,7 @@ class GuanliController extends Controller {
      * 提现确认
      */
     public function qwithdraw(){
+        
         $this->display();
     }
 
