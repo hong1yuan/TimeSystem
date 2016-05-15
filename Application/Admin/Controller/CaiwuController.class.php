@@ -90,9 +90,13 @@ class CaiwuController extends Controller {
         if($list['password'] != $pwd){
             $this->error('密码不正确',U('exchange'));
         }
+
         //接受人的姓名
         $jieshou= I('post.user-name');
 
+        if($jieshou == false){
+            $this->error('接收人不能为空',U('exchange'));
+        }
         $list2 = D('Member')->where("username= '$jieshou'")->getField('xianjin');
 
         $array['xianjin'] = $list['xianjin'] - I('post.user-money');
@@ -113,7 +117,6 @@ class CaiwuController extends Controller {
         }
 
 
-
     }
 
     /**
@@ -131,6 +134,7 @@ class CaiwuController extends Controller {
      * 申请提现
      */
     public function withdraw(){
+
         $id = $_SESSION['member']['id'];
         $memberinfo = M('member')->where('id='.$id)->find();
         $tiqu = M('tiqu');

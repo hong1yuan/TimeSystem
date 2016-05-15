@@ -114,6 +114,10 @@
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
+<<<<<<< HEAD
+
+=======
+>>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -155,6 +159,10 @@
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
                         <li><a href="<?php echo U('Guanli/member');?>">
                             <span class="am-icon-trophy">会员管理</span>
+                        </a>
+                        </li>
+                        <li><a href="<?php echo U('Guanli/jibie');?>">
+                            <span class="am-icon-trophy">级别管理</span>
                         </a>
                         </li>
                         <li>
@@ -340,8 +348,12 @@
         layer.open({
               type: 1,
               title:'问题反馈',
+<<<<<<< HEAD
+              area: ['420px',''], //宽高
+=======
               //skin: 'layui-layer-rim', //加上边框
               area: ['500px',''], //宽高
+>>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
               content: content,
               btn: ['提交', '取消'],
               yes:function(){

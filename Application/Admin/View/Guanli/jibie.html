@@ -1,0 +1,101 @@
+<include file = "Common/header" />
+
+<div class="am-cf admin-main">
+    <include file = "Common/left" />
+
+    <!-- content start -->
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">平台管理</strong> / <small>会员级别</small></div>
+            </div>
+
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <form class="am-form">
+                        <table class="am-table am-table-striped am-table-hover table-main">
+                            <thead>
+                            <tr>
+                                <!--<th class="table-check"><input type="checkbox" /></th>-->
+                                <!--<th class="table-id">ID</th>-->
+                                <th class="table-title" width="5%">ID</th>
+                                <th class="table-type" width="15%">会员级别</th>
+                                <th class="table-date am-hide-sm-only" width="10%">周利息</th>
+                                <th class="table-author am-hide-sm-only" width="10%">月分红</th>
+                                <th class="table-author am-hide-sm-only" width="10%">市场奖</th>
+                                <th class="table-author am-hide-sm-only" width="10%">开拓奖</th>
+                                <th class="table-author am-hide-sm-only" width="10%">管理奖</th>
+                                <th class="table-set" width="25%">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <foreach name="mems" item="v">
+                                <tr>
+                                    <!--<td><input type="checkbox" /></td>-->
+                                    <!--<td>1</td>-->
+                                    <td>{$v.username}</td>
+                                    <td>
+                                        <switch name="v.ulevel">
+                                            <case value="1">金星会员</case>
+                                            <case value="2">白金会员</case>
+                                            <case value="3">钻石会员</case>
+                                        </switch>
+
+                                    </td>
+                                    <td class="am-hide-sm-only">{$v.regtime}</td>
+                                    <td class="am-hide-sm-only">{$v.rename}</td>
+                                    <td class="am-hide-sm-only">{$v.rename}</td>
+                                    <td class="am-hide-sm-only">{$v.rename}</td>
+                                    <td class="am-hide-sm-only">{$v.rename}</td>
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <!--<button class="am-btn am-btn-default am-btn-xs am-text-secondary">-->
+                                                <a href="{:U('detail',array('id'=>$v['id']))}">
+                                                    <!-- <span class="am-icon-pencil-square-o"></span>-->
+                                                    查看
+                                                </a>
+                                                &nbsp;
+                                                <!--</button>-->
+                                                <!--<button class="am-btn am-btn-default am-btn-xs am-hide-sm-only">-->
+                                                <!--<span class="am-icon-copy"></span>-->
+                                                <a href="{:U('lock',array('id'=>$v['id']))}">
+                                                    锁定
+                                                </a>                                            &nbsp;
+                                                <!-- </button>-->
+                                                <!--<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">-->
+                                                <!--<span class="am-icon-trash-o"></span>-->
+                                                <a href="{:U('Index/index',array('id'=>$v['id']))}">
+                                                    登录
+                                                </a>
+                                                <!--</button>-->
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </foreach>
+                            </tbody>
+                        </table>
+                        <div class="am-cf">
+                            共 {$count} 条记录
+                            <div class="am-fr" id="page" pages = "{$pages}">
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+        </footer>
+    </div>
+    <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+</a>
+
+<include file = "Common/footer" />

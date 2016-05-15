@@ -158,6 +158,10 @@
                             <span class="am-icon-trophy">会员管理</span>
                         </a>
                         </li>
+                        <li><a href="<?php echo U('Guanli/jibie');?>">
+                            <span class="am-icon-trophy">级别管理</span>
+                        </a>
+                        </li>
                         <li>
                             <a href="<?php echo U('Guanli/reward');?>">
                                 <span class="am-icon-trophy">月分红</span>

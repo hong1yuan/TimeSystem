@@ -24,4 +24,5 @@ return array(
         'status' => 1,
         'info'=> '操作成功'
     ),
+    'SHOW_PAGE_TRACE'       => TRUE,
 );

@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -115,6 +115,10 @@
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
+<<<<<<< HEAD
+
+=======
+>>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -156,6 +160,10 @@
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
                         <li><a href="<?php echo U('Guanli/member');?>">
                             <span class="am-icon-trophy">会员管理</span>
+                        </a>
+                        </li>
+                        <li><a href="<?php echo U('Guanli/jibie');?>">
+                            <span class="am-icon-trophy">级别管理</span>
                         </a>
                         </li>
                         <li>
@@ -277,10 +285,7 @@
                         <div class="am-cf">
                             共 <?php echo ($count); ?> 条记录
                             <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
-<<<<<<< HEAD
 
-=======
->>>>>>> 9dcfb3837158569979c3700174c0d839ac5754ca
                             </div>
                         </div>
                     </form>
@@ -302,14 +307,20 @@
 
 
 <!--[if lt IE 9]>
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/modernizr.js"></script>
+<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
+<<<<<<< HEAD
+<script src="/Public/Admin/js/amazeui.min.js"></script>
+<script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/Public/Admin/lib/layer/layer.js"></script>
+=======
 <script src="/123/Public/Admin/js/amazeui.min.js"></script>
 <script src="/123/Public/Admin/js/app.js"></script>
 <script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
@@ -317,6 +328,7 @@
 <!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
 <!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
+>>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
 </body>
 </html>
 <script type="text/javascript">

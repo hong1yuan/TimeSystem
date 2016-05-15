@@ -17177,6 +17177,358 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001076s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001182s ]
 
+<<<<<<< HEAD
+[ 2016-05-11T17:53:34+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000882s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001410s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000215s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028012s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028124s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001207s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001318s ]
+
+[ 2016-05-11T17:53:37+08:00 ] 127.0.0.1 /Admin/News/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000975s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000215s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000322s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024561s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024660s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002050s ]
+
+[ 2016-05-11T17:53:39+08:00 ] 127.0.0.1 /Admin/Guanli/reward.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001093s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018335s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018434s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001526s ]
+
+[ 2016-05-11T17:53:43+08:00 ] 127.0.0.1 /Admin/Guanli/qwithdraw.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000227s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000349s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024748s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001524s ]
+
+[ 2016-05-11T17:53:48+08:00 ] 127.0.0.1 /Admin/Caiwu/withdraw.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001406s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019068s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019198s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000760s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001510s ]
+
+[ 2016-05-11T17:58:14+08:00 ] 127.0.0.1 /Admin/Caiwu/withdraw.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001117s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001382s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `member` WHERE ( id=1000 ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000337s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021510s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021672s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000865s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001161s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001251s ]
+
+[ 2016-05-11T17:58:20+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000213s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000306s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025707s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025850s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000924s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001729s ]
+
+[ 2016-05-11T18:14:04+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000930s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001401s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026950s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027060s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000948s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002202s ]
+
+[ 2016-05-11T18:15:53+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0274s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000317s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025498s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001701s ]
+
+[ 2016-05-11T18:16:23+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000860s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001574s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0081s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027452s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000907s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001205s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001313s ]
+
+[ 2016-05-11T18:19:39+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001100s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001186s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001287s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0109s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000229s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034129s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001531s ]
+
+[ 2016-05-11T18:20:23+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001370s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020102s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020217s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000854s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000931s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001177s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001276s ]
+
+[ 2016-05-11T18:21:37+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000847s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001062s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001153s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0093s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019989s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020091s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001491s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001626s ]
+
+[ 2016-05-11T18:21:42+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000861s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001315s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0112s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022353s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022464s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000975s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001967s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002128s ]
+
+[ 2016-05-11T18:21:43+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000943s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0113s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000228s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000381s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021788s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021927s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001100s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001199s ]
+
+[ 2016-05-11T18:21:44+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001132s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0113s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018934s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001065s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001162s ]
+
+[ 2016-05-11T18:21:45+08:00 ] 127.0.0.1 /Admin/Guanli/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000767s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001043s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0086s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018210s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001119s ]
+=======
 [ 2016-05-11T17:45:43+08:00 ] 127.0.0.1 /123/Admin/Caiwu/exchange.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
@@ -18616,4 +18968,5 @@ INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
 INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+>>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
 
