@@ -1,0 +1,66 @@
+<include file = "Common/header" />
+
+<div class="am-cf admin-main">
+    <include file = "Common/left" />
+
+
+    <!-- content start -->
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">新闻公告</strong> /
+                    <small>添加新闻</small>
+                </div>
+            </div>
+
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <form class="am-form">
+                        <h3>新闻标题</h3>
+                        <input type="text" value="" name="title"/>
+                        <h3>新闻内容</h3>
+                        <textarea name="content" style="height:200px;">
+
+                        </textarea>
+                        <br/>
+                        <div class="am-u-sm-9 am-u-sm-push-3">
+                            <button type="submit" class="am-btn am-btn-primary" id="btnOk">
+                                添加新闻
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+        </footer>
+    </div>
+    <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+</a>
+
+<include file = "Common/footer" />
+<script type="text/javascript">
+	laypage({
+	    cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+	    pages: $('#page').attr('pages'), //总页数
+	    //first:false,
+	    skin: '#AF0000',
+	    groups: 7,//连续显示分页数
+		curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+	        var page = location.search.match(/page=(\d+)/);
+	        return page ? page[1] : 1;
+	    }(), 
+	    jump: function(e, first){ //触发分页后的回调
+	        if(!first){ //一定要加此判断，否则初始时会无限刷新
+	            location.href = '?page='+e.curr;
+	        }
+	    }
+	});
+</script>

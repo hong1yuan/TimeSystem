@@ -18,6 +18,14 @@ class MsgController extends Controller {
         $this->assign('msg_list',$msg_list);
         $this->display();
     }
+    public function editmsg(){
+        $this->display();
+    }
+
+    public function editok(){
+        dump($_POST);
+
+    }
 
 
     /**

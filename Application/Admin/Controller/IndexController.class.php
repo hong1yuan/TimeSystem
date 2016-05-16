@@ -41,4 +41,12 @@ class IndexController extends Controller {
     	}
     }
 
+	/**
+	 * 退出系统 清空session数据
+	 */
+	public function layout(){
+		session(null);
+		$this->redirect('login');
+	}
+
 }
