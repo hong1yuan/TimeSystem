@@ -9,9 +9,9 @@ class MemberController extends Controller {
      */
     public function profile(){
 
-        // $user = session("userid");
+        // $user = session("userid");   
        
-        $user = 1000;
+        $user = $_SESSION['member']['id'];
         $value = M('member') -> field('reid,rename,username,telephone,ulevel,alipay,bankuser,bankname,bankcard') -> where("id = '$user'") -> find();
 
         $this -> assign('value',$value);
@@ -24,7 +24,7 @@ class MemberController extends Controller {
      */
     public function updata(){
 
-      $user = 1000;
+      $user = $_SESSION['member']['id'];
       $arry["alipay"] = I('post.iemail');
       $arry["bankname"] = I('post.ibankname');
       $arry["bankuser"] = I('post.ibankuser');
@@ -44,7 +44,7 @@ class MemberController extends Controller {
      * 修改密码
      */
     public function password(){
-        $user = 1000;
+        $user = $_SESSION['member']['id'];
         $value = M('member') -> field('username') -> where("id = '$user'") ->find();
         $this -> assign('value',$value);
 
@@ -56,7 +56,7 @@ class MemberController extends Controller {
      */
 
     public function passwordup(){
-             $user = 1000;
+             $user = $_SESSION['member']['id'];
              $password =   substr(md5(trim($_POST['password'])),8,16);
              $value = M('member');
              $uname = $value -> where("id = '$user' AND password ='$password'") ->select();
@@ -77,7 +77,7 @@ class MemberController extends Controller {
      * 注册会员页面
      */
     public function register(){
-        $user = 1000;
+        $user = $_SESSION['member']['id'];
         $aa = M('member') -> field('username') ->  where("id = '$user'") -> find();
         $value[username] = $aa[username];
         $value[fatherman] = I('post.fatherMan');
@@ -90,7 +90,7 @@ class MemberController extends Controller {
     * 注册
     */
     public function registeradd(){
-        $user = 1000;
+        $user = $_SESSION['member']['id'];
         $arry["fatherMan"] = I('post.fatherMan');
         $arry["treeplace"] = I('post.treeplace');
         $arry["elvel"] = I('post.elvel');
@@ -144,7 +144,7 @@ class MemberController extends Controller {
                         }else{
                          $fatherid = $value["id"];
                          $fathername = $value["username"];
-                         $pPath = $value["pPath"];    
+                         $pPath = $value["ppath"];    
 
                          $valueOne = M('member') -> field('id') -> where("FatherID = '$fatherid' AND TreePlace = '$arry[treeplace]'") -> find();
 
@@ -167,7 +167,7 @@ class MemberController extends Controller {
                          }else{
                              $Reid = $valuetwo["id"];
                              $ReName = $valuetwo["username"];
-                             $rePath =  $valuetwo["rePath"];
+                             $rePath =  $valuetwo["repath"];
                              $guquan = $valueres["jine"];
                              $zhoujibi = $guquan / 0.1;
                               $valuethree =  M('news') -> field('newsid') -> select();
@@ -295,12 +295,13 @@ class MemberController extends Controller {
     	$id = intval($_GET['id']);
     	$member = M('member');
     	//$arr['memberinfo'] = $member->where('id='.$id)->select();
-    	$sql = $member->field('id,username')->where('fatherid='.$id)->buildSql();
+    	//$sql = $member->field('id,username')->where('fatherid='.$id)->buildSql();
+
+    	$arr['member'] = $member -> where('id='.$id)->field('id,username')->find();
     	//查询
-    	$arr['memberinfo'] = $member->where('fatherid='.$id)->select();
-    	
-    	var_dump($member->table($sql.'a')->select());
-    	//exit(json_encode($memberinfo));
+    	$arr['memberinfo'] = $member->where('fatherid='.$id)->field('id,username,treeplace')->order('treeplace')->select();
+    	$arr['childinfo'] = $member->query("select id,fatherid,username,treeplace from member where fatherid in (select id from member where(fatherid=$id))");
+    	$this->ajaxReturn($arr);
     }
 
 }

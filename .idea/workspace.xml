@@ -22,10 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GuanliController.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GuanliController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GuanliController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6537867">
+            <state vertical-scroll-proportion="-12.164179">
               <caret line="306" column="43" selection-start-line="306" selection-start-column="43" selection-end-line="306" selection-end-column="43" />
               <folding />
             </state>
@@ -35,8 +35,8 @@
       <file leaf-file-name="NewsController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.108109">
-              <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
+            <state vertical-scroll-proportion="-12.081081">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -45,8 +45,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+            <state vertical-scroll-proportion="-34.054054">
+              <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editmsg.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Msg/editmsg.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.081081">
+              <caret line="41" column="116" selection-start-line="39" selection-start-column="7" selection-end-line="41" selection-end-column="116" />
               <folding />
             </state>
           </provider>
@@ -55,8 +65,8 @@
       <file leaf-file-name="addnews.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/addnews.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0540543">
-              <caret line="17" column="74" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
+            <state vertical-scroll-proportion="-3.9189188">
+              <caret line="71" column="9" selection-start-line="60" selection-start-column="4" selection-end-line="71" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -65,8 +75,18 @@
       <file leaf-file-name="editnews.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/editnews.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.18919">
-              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+            <state vertical-scroll-proportion="-6.9459457">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="41" selection-end-column="116" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chakannews.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/chakannews.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6277696">
+              <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -122,14 +142,14 @@
         <option value="$PROJECT_DIR$/Application/Admin/View/Common/left.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Guanli/reward.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/News/news.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/News/chakannews.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/News/editnews.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Index/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Msg/editmsg.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/GuanliController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/News/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/News/addnews.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/GuanliController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/News/editnews.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/News/chakannews.html" />
       </list>
     </option>
   </component>
@@ -658,7 +678,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10025707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1433162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -778,16 +798,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="27" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="27" />
           <folding>
-            <marker date="1463364948669" expanded="true" signature="99:10343" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="109:127" placeholder=" 修改资料 ..." />
-            <marker date="1463364948669" expanded="true" signature="462:479" placeholder="更新资料 ..." />
-            <marker date="1463364948669" expanded="true" signature="511:852" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="862:880" placeholder=" 修改密码 ..." />
-            <marker date="1463364948669" expanded="true" signature="914:1094" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="1103:1122" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="1159:1738" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="1419:1516" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="1748:1760" placeholder=" 注册会员 ..." />
+            <marker date="1463389892633" expanded="true" signature="99:10698" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="109:127" placeholder=" 修改资料 ..." />
+            <marker date="1463389892633" expanded="true" signature="462:479" placeholder="更新资料 ..." />
+            <marker date="1463389892633" expanded="true" signature="511:852" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="862:880" placeholder=" 修改密码 ..." />
+            <marker date="1463389892633" expanded="true" signature="914:1094" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="1103:1122" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="1159:1738" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="1419:1516" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="1748:1760" placeholder=" 注册会员 ..." />
           </folding>
         </state>
       </provider>
@@ -932,7 +952,7 @@
           <folding>
             <element signature="e#119#142#0#PHP" expanded="false" />
             <element signature="e#1838#1858#0#PHP" expanded="false" />
-            <element signature="e#1863#2127#0#PHP" expanded="false" />
+            <element signature="e#1863#3057#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -992,16 +1012,16 @@
         <state vertical-scroll-proportion="0.08271787">
           <caret line="2" column="21" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="27" />
           <folding>
-            <marker date="1463364948669" expanded="true" signature="99:10343" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="109:127" placeholder=" 修改资料 ..." />
-            <marker date="1463364948669" expanded="true" signature="462:479" placeholder="更新资料 ..." />
-            <marker date="1463364948669" expanded="true" signature="511:852" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="862:880" placeholder=" 修改密码 ..." />
-            <marker date="1463364948669" expanded="true" signature="914:1094" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="1103:1122" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="1159:1738" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="1419:1516" placeholder="..." />
-            <marker date="1463364948669" expanded="true" signature="1748:1760" placeholder=" 注册会员 ..." />
+            <marker date="1463389892633" expanded="true" signature="99:10698" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="109:127" placeholder=" 修改资料 ..." />
+            <marker date="1463389892633" expanded="true" signature="462:479" placeholder="更新资料 ..." />
+            <marker date="1463389892633" expanded="true" signature="511:852" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="862:880" placeholder=" 修改密码 ..." />
+            <marker date="1463389892633" expanded="true" signature="914:1094" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="1103:1122" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="1159:1738" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="1419:1516" placeholder="..." />
+            <marker date="1463389892633" expanded="true" signature="1748:1760" placeholder=" 注册会员 ..." />
           </folding>
         </state>
       </provider>
@@ -1078,14 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Msg/editmsg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.405405">
-          <caret line="41" column="116" selection-start-line="41" selection-start-column="116" selection-end-line="41" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/news.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.6756756">
@@ -1094,50 +1106,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/chakannews.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GuanliController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83456427">
-          <caret line="26" column="100" selection-start-line="26" selection-start-column="100" selection-end-line="26" selection-end-column="100" />
+        <state vertical-scroll-proportion="-12.164179">
+          <caret line="306" column="43" selection-start-line="306" selection-start-column="43" selection-end-line="306" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/editnews.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Msg/editmsg.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.18919">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state vertical-scroll-proportion="-22.081081">
+          <caret line="41" column="116" selection-start-line="39" selection-start-column="7" selection-end-line="41" selection-end-column="116" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/addnews.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0540543">
-          <caret line="17" column="74" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
+        <state vertical-scroll-proportion="-34.054054">
+          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.108109">
-          <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
+        <state vertical-scroll-proportion="-12.081081">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GuanliController.class.php">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/addnews.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6537867">
-          <caret line="306" column="43" selection-start-line="306" selection-start-column="43" selection-end-line="306" selection-end-column="43" />
+        <state vertical-scroll-proportion="-3.9189188">
+          <caret line="71" column="9" selection-start-line="60" selection-start-column="4" selection-end-line="71" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/editnews.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.9459457">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="41" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/News/chakannews.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6277696">
+          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
           <folding />
         </state>
       </provider>

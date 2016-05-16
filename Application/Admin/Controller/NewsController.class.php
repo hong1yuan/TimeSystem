@@ -12,7 +12,9 @@ class NewsController extends Controller {
         $pagesize=10;
         $pages = ceil($count/$pagesize);
         $offset = ($curr-1) * $pagesize;
-        $news_list = M('News')->limit($offset,$pagesize)->order("istop desc , updatetime desc")->select();
+        $news_list = M('News')->limit($offset,$pagesize)
+            ->order("newsid desc, istop desc , updatetime desc")
+            ->select();
         $this->assign('count',$count);
         $this->assign('pages',$pages);
         $this->assign('news_list',$news_list);
@@ -29,7 +31,8 @@ class NewsController extends Controller {
         $count = $news->count();
         $pages = ceil($count/10);
         $curr = $_GET['page'] ? intval($_GET['page']) : 1;
-        $news_list = $news->limit(($curr-1)*10,10)->order("istop desc , updatetime desc ")->select();
+        $news_list = $news->limit(($curr-1)*10,10)
+            ->order("newsid desc, istop desc , updatetime desc ")->select();
         $this->assign('pages',$pages);
         $this->assign('count',$count);
         $this->assign('news_list',$news_list);
@@ -72,9 +75,9 @@ class NewsController extends Controller {
         $result = M('news')->where("NewsId = $id")->save($arr);
 
         if($result){
-            $this->success('修改成功',U('index'));
+            $this->success('修改成功',U('index'),2);
         }else{
-            $this->error('修改失败',U('editnews',array('id'=>$id)));
+            $this->error('修改失败',U('editnews',array('id'=>$id)),2);
         }
 
     }
@@ -102,7 +105,7 @@ class NewsController extends Controller {
         if($res){
             $this->redirect('index');
         }else{
-            $this->error('修改失败',U('index'));
+            $this->error('修改失败',U('index'),2);
         }
     }
 

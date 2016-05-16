@@ -67,55 +67,35 @@ class CaiwuController extends Controller {
      *转账
      */
     public function exchange(){
-        $zhuanzhang_list = D('Member')->field('rePath,pPath,xianjin,islock,username')->where("id = 1000")->find();
+        $id = intval($_SESSION['member']['id']);
+        $member = M('member');
+        $memberinfo = $member->where('id='.$id)->find();
+        if (!empty($_POST)) {
+             $username = trim($_POST['username']);
+             $zhoujibi = intval($_POST['zhoujibi']);
+             $password = trim($_POST['password']);
+             //获取用户信息
+             $rst = $member->where("username='{$username}'")->select();
+             if (!$rst) {
+                 $this->error('接收会员帐号不存在');
+             }
+             if (substr(md5($password),8,16) != $memberinfo['safekey']) {
+                 $this->error('交易密码输入错误');
+             }else{
+                if ($memberinfo['zhoujibi'] * 0.99 < $zhoujibi) {
+                    $this->error('您的洲际币余额不足');
+                }
+                //扣除1%慈善基金
+                $member->where('id='.$id)->setField('zhoujibi',$memberinfo['zhoujibi'] *0.99 -$zhoujibi);
+                $member->where("id={$rst[0]['id']}")->setInc('zhoujibi',$zhoujibi);
+                $this->success('操作成功');
+             }
 
-        $this->assign('Zhuanzhang',$zhuanzhang_list);
-        //dump($zhuanzhang_list);
-        $this->display();
-
-    }
-    /**
-     * 转账后更新数据
-     */
-    public function aaa(){
-
-        $list = D('Member')
-                        ->field('rePath,pPath,xianjin,islock,username,password')
-                        ->where("id = 1000")->find();
-        if($list['islock'] != 0){
-            $this->error('你的账号以锁',U('exchange'));
-        }
-        $pwd = substr(md5(trim($_POST['user-pwd'])),8,16);
-
-        if($list['password'] != $pwd){
-            $this->error('密码不正确',U('exchange'));
-        }
-
-        //接受人的姓名
-        $jieshou= I('post.user-name');
-
-        if($jieshou == false){
-            $this->error('接收人不能为空',U('exchange'));
-        }
-        $list2 = D('Member')->where("username= '$jieshou'")->getField('xianjin');
-
-        $array['xianjin'] = $list['xianjin'] - I('post.user-money');
-        $arr['xianjin'] = $list2 + I('post.user-money');
-
-        $result1 = M('Member')->where("id =1000")->save($array);
-        if($result1==false){
-            $this->error('a转账失败',U('exchange'));
-        }
-        $result2 = D('Member')->where ("username= '$jieshou'")->save($arr);
-        if($result2==false){
-            $this->error('b转账失败',U('exchange'));
-        }
-        if($result1 && $result2){
-            $this->success('转账成功',U('index/index'));
         }else{
-            $this->error('转账失败',U('exchange'));
+             $this->assign('memberinfo',$memberinfo);
+             $this->display();
         }
-
+       
 
     }
 
@@ -123,10 +103,35 @@ class CaiwuController extends Controller {
      * 货币转换
      */
     public  function change(){
-        $user = D('Member');
-        $user_info = $user->where('id=1000')->find();
-        $this->assign('UserInfo',$user_info);
-        $this->display();
+        $id = intval($_SESSION['member']['id']);
+        $member = M('member');        
+        $memberinfo = $member->where('id='.$id)->find();
+        if (!empty($_POST)) {
+            $zhuchebi = intval($_POST['money']);
+            $safekey = trim($_POST['password']);
+
+            if (substr(md5($safekey),8,16) != $memberinfo['safekey']) {
+                $this->error('交易密码输入错误');
+            }else{
+                if ($memberinfo['xianjin']*0.99 < $zhuchebi) {
+                    $this->error('可用现金不足您购买的支付币数量');
+                }
+               
+                //扣除1%慈善基金
+                $data['xianjin'] = $memberinfo['xianjin']*0.99 - $zhuchebi;
+                if ($_POST['type']=='1') {
+                    $data['baodan'] = $memberinfo['baodan'] + $zhuchebi;
+                }else if($_POST['type']=='2'){
+                    $data['zhoujibi'] = $memberinfo['zhoujibi'] + $zhuchebi;
+                }
+                
+                $member->where('id='.$id)->save($data);
+                $this->success('操作成功');
+            }
+        }else{
+            $this->assign('memberinfo',$memberinfo);
+            $this->display();
+        }  
     }
 
 

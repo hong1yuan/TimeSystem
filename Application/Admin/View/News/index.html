@@ -40,7 +40,7 @@
                             <foreach name="news_list" item="v">
                             <tr>
                                 <td>{$v.newsid}</td>
-                                <td><a href="#">{$v.title}</a></td>
+                                <td><a href="{:U('chakannews',array('id'=>$v['newsid']))}">{$v.title}</a></td>
                                 <td class="am-hide-sm-only">{$v.updatetime}</td>
                                 <td>
                                     <div class="am-btn-toolbar">

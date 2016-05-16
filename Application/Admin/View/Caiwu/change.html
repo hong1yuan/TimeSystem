@@ -19,32 +19,33 @@
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal">
+                    <form class="am-form am-form-horizontal" onSubmit="return chkForm()"  action="__SELF__" method="post">
                         <div class="am-form-group">
                             <label for="change-type" class="am-u-sm-3 am-form-label">转换方式</label>
                             <div class="am-u-sm-9">
-                                <select  id="change-type">
-                                    <option>现金币转报单币</option>
+                                <select  id="change-type" name="type">
+                                    <option value="1">现金币转报单币</option>
+                                    <option value="2">现金币转洲际币</option>
                                 </select>
-                                <small>余额: €{$UserInfo.xianjin} </small>
+                                <small>余额: ${$memberinfo.xianjin} </small>
 
                             </div>
                         </div>
 
                         <div class="am-form-group">
                             <label for="user-email" class="am-u-sm-3 am-form-label">
-                                转换金额
+                                转换数量
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="email" id="user-email" placeholder=" " value="100">
+                                <input type="text" id="user-email" name="money" placeholder=" " value="100">
 
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-phone" class="am-u-sm-3 am-form-label">密码</label>
+                            <label for="user-phone" class="am-u-sm-3 am-form-label">交易密码</label>
                             <div class="am-u-sm-9">
-                                <input type="tel" id="user-phone" placeholder="输入你的二级密码">
+                                <input type="password" id="user-phone" name="password" placeholder="输入交易密码">
                             </div>
                         </div>
 
@@ -58,14 +59,10 @@
                          </div>
                      </div>
 
-
-
-
-
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
-                                <!--<button type="button" class="am-btn am-btn-primary">确认转换</button>-->
-                                <input type="submit" value="确认转换" class="am-btn am-btn-primary"/>
+                                <!-- <button type="button" id="submit" class="am-btn am-btn-primary">确认转换</button> -->
+                                <input type="submit"  id="submit" value="确认转换" class="am-btn am-btn-primary"/>
                             </div>
                         </div>
                     </form>
@@ -75,3 +72,19 @@
 
 
 <include file = "Common/footer" />
+<script type="text/javascript">
+	function chkForm(){
+		var money = $('#user-email').val();
+			password = $('#user-phone').val();
+			type = $('#change-type option:selected').val();
+		if (!money || !(/^(\+|-)?\d+$/.test(money))) {
+			layer.alert('请输购买货币的数量且必须为整数');
+			return false;
+		};
+		if (!password) {
+			layer.alert('请输入交易密码');
+			return false;
+		};
+		return true;
+	}
+</script>
