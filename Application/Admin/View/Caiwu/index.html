@@ -91,27 +91,7 @@
 
                             </tbody>
                         </table>
-                      <!-- <div class="am-cf">
-                            共 {$pages} 条记录
-                            <div class="am-fr">
-                                <ul class="am-pagination">
-                                    <li class="am-disabled">
-                                        <a href="{:U('index',array('p'=>$prev))}">«</a>
-                                    </li>
-                                    <for start="1" end='$pages+1' name = "i">
-                                    <li
-                                            <if condition=" $page eq $i">
-                                                class="am-active"
-                                                <else/>
 
-                                            </if>
-                                    ><a href="{:U('index',array('p'=>$i))}">{$i}</a></li>
-                                    </for>
-                                    <li><a href="{:U('index',array('p'=>$prev))}">»</a></li>
-                                </ul>
-                            </div>
-                           {$show}
-                        </div>-->
                         <div class="am-cf">
                             共 {$count} 条记录
                             <div class="am-fr" id="page" pages = "{$pages}">
@@ -123,17 +103,6 @@
 
             </div>
         </div>
-        <footer class="admin-content-footer">
-            <hr>
-            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
-        </footer>
-    </div>
-    <!-- content end -->
-
-</div>
-
-<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
-</a>
 
 <include file = "Common/footer" />
 
