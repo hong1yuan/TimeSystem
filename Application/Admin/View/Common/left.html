@@ -3,7 +3,7 @@
 <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
     <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
-            <li><a href="#"><span class="am-icon-home"></span> 首页</a></li>
+            <li><a href="{:U('Index/index')}"><span class="am-icon-home"></span> 首页</a></li>
             <!-- 信息中心 -->
             <li class="admin-parent">
                 <a class="am-cf" data-am-collapse="{target: '#collapse-news'}"><span class="am-icon-btn am-primary am-icon-book"></span> 信息中心
@@ -65,7 +65,6 @@
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
-
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -91,7 +90,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"><span class="am-icon-users"></span>团队结构
+                            <a href="{:U('Member/team')}"><span class="am-icon-users"></span>团队结构
                             </a>
                         </li>
                     </ul>
@@ -109,6 +108,10 @@
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
                         <li><a href="{:U('Guanli/member')}">
                             <span class="am-icon-trophy">会员管理</span>
+                        </a>
+                        </li>
+                        <li><a href="{:U('Guanli/jibie')}">
+                            <span class="am-icon-trophy">级别管理</span>
                         </a>
                         </li>
                         <li>

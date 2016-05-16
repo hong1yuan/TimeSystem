@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -115,7 +115,6 @@
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
-
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -141,7 +140,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"><span class="am-icon-users"></span>团队结构
+                            <a href="<?php echo U('Member/team');?>"><span class="am-icon-users"></span>团队结构
                             </a>
                         </li>
                     </ul>
@@ -157,6 +156,10 @@
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
                         <li><a href="<?php echo U('Guanli/member');?>">
                             <span class="am-icon-trophy">会员管理</span>
+                        </a>
+                        </li>
+                        <li><a href="<?php echo U('Guanli/jibie');?>">
+                            <span class="am-icon-trophy">级别管理</span>
                         </a>
                         </li>
                         <li>
@@ -208,106 +211,169 @@
 <!-- sidebar end -->
 
     <!-- content start -->
+    <!--<div class="admin-content">
+        <div class="admin-content-body">
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">平台管理</strong> / <small>分红</small></div>
+            </div>
+
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <form class="am-form">
+                        <table class="am-table am-table-striped am-table-hover table-main">
+                            <thead>
+                            <tr>
+
+
+                                <th class="table-type" width="16%">会员级别</th>
+                                <th class="table-date am-hide-sm-only" width="64%">月分红</th>
+                                <th class="table-set" width="20%">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <?php if(is_array($lists)): foreach($lists as $key=>$v): ?><tr>
+                                    <td>
+                                        <?php echo ($v["jibie"]); ?>
+                                        <input type="hidden" value="<?php echo ($v["id"]); ?>" name="id"/>
+                                    </td>
+                                    <td class="am-hide-sm-only">
+                                        <input type="text" name=""  value="<?php echo ($v["yfenhong"]); ?>"/>
+                                        ‰(输入对应级别的月分红比例)
+                                        </td>
+                                        &lt;!&ndash;  <td class="am-hide-sm-only">  </td>&ndash;&gt;
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+
+                                                <a href="<?php echo U('lock',array('id'=>$v['id']));?>">
+                                                    修改
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr><?php endforeach; endif; ?>
+                                <tr>
+                                    <td>
+                                        手机号码
+                                    </td>
+                                    <td class="am-hide-sm-only">
+                                        <input type="text" name="telephone" value="<?php echo ($telephone); ?>" disabled/>
+                                    </td>
+
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        验证码
+                                    </td>
+                                    <td class="am-hide-sm-only">
+                                        <input type="text" name="" />
+                                    </td>
+
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                            <button type="button">发送验证码</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        上次分红日期
+                                    </td>
+                                    <td class="am-hide-sm-only">
+                                        <input type="text" name="" value="<?php echo ($date); ?>" disabled/>
+                                    </td>
+
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                            </div>
+                        </div>
+
+                        &lt;!&ndash;<div class="am-cf">
+                            共 <?php echo ($count); ?> 条记录
+                            <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
+
+                            </div>
+                        </div>&ndash;&gt;
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+        </footer>
+    </div>-->
+    <!-- content end -->
+
+
+    <!-- content start -->
     <div class="admin-content">
         <div class="admin-content-body">
             <div class="am-cf am-padding am-padding-bottom-0">
-                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">平台管理</strong> / <small>发放月分红</small></div>
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">财务管理</strong> / <small>分发月分红</small></div>
             </div>
 
             <hr>
 
             <div class="am-g">
                 <div class="am-u-sm-12 am-u-md-2 am-u-md-push-10">
-                    <!--  <div class="am-panel am-panel-default">
-                       <div class="am-panel-bd">
-                         <div class="am-g">
-                           <div class="am-u-md-4">
-                             <img class="am-img-circle am-img-thumbnail" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/200/h/200/q/80" alt="">
-                           </div>
-                           <div class="am-u-md-8">
-                             <p>你可以使用<a href="#">gravatar.com</a>提供的头像或者使用本地上传头像。 </p>
-                             <form class="am-form">
-                               <div class="am-form-group">
-                                 <input type="file" id="user-pic">
-                                 <p class="am-form-help">请选择要上传的文件...</p>
-                                 <button type="button" class="am-btn am-btn-primary am-btn-xs">保存</button>
-                               </div>
-                             </form>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
 
-                     <div class="am-panel am-panel-default">
-                       <div class="am-panel-bd">
-                         <div class="user-info">
-                           <p>等级信息</p>
-                           <div class="am-progress am-progress-sm">
-                             <div class="am-progress-bar" style="width: 60%"></div>
-                           </div>
-                           <p class="user-info-order">当前等级：<strong>LV8</strong> 活跃天数：<strong>587</strong> 距离下一级别：<strong>160</strong></p>
-                         </div>
-                         <div class="user-info">
-                           <p>信用信息</p>
-                           <div class="am-progress am-progress-sm">
-                             <div class="am-progress-bar am-progress-bar-success" style="width: 80%"></div>
-                           </div>
-                           <p class="user-info-order">信用等级：正常当前 信用积分：<strong>80</strong></p>
-                         </div>
-                       </div>
-                     </div> -->
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal">
-                        <div class="am-form-group">
-                            <label for="user-name" class="am-u-sm-3 am-form-label">姓名 / Name</label>
+                    <form class="am-form am-form-horizontal" method="POST" action="/Admin/Guanli/fenfa">
+                        <?php if(is_array($lists)): foreach($lists as $k=>$v): ?><div class="am-form-group">
+                            <label for="user-jibie" class="am-u-sm-3 am-form-label">
+                                <?php echo ($v["jibie"]); ?>
+
+                            </label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-name" placeholder="姓名 / Name">
-                                <small>输入你的名字，让我们记住你。</small>
+                                <input type="text" id="user-jibie"  name="jibie<?php echo ($v["id"]); ?>" value="<?php echo ($v["yfenhong"]); ?>" />
+                                <input type="hidden" name="<?php echo ($v["id"]); ?>" value="<?php echo ($v["id"]); ?>"/>
+                            </div>
+                        </div><?php endforeach; endif; ?>
+                        <div class="am-form-group">
+                            <label for="user-money" class="am-u-sm-3 am-form-label">手机号码</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="user-money"  name="telephone" value="<?php echo ($telephone); ?>" disabled>
+
+
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-email" class="am-u-sm-3 am-form-label">电子邮件 / Email</label>
+                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">验证码</label>
                             <div class="am-u-sm-9">
-                                <input type="email" id="user-email" placeholder="输入你的电子邮件 / Email">
-                                <small>邮箱你懂得...</small>
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-phone" class="am-u-sm-3 am-form-label">电话 / Telephone</label>
-                            <div class="am-u-sm-9">
-                                <input type="tel" id="user-phone" placeholder="输入你的电话号码 / Telephone">
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-QQ" class="am-u-sm-3 am-form-label">QQ</label>
-                            <div class="am-u-sm-9">
-                                <input type="number" pattern="[0-9]*" id="user-QQ" placeholder="输入你的QQ号码">
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-weibo" class="am-u-sm-3 am-form-label">微博 / Twitter</label>
-                            <div class="am-u-sm-9">
-                                <input type="text" id="user-weibo" placeholder="输入你的微博 / Twitter">
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-intro" class="am-u-sm-3 am-form-label">简介 / Intro</label>
-                            <div class="am-u-sm-9">
-                                <textarea class="" rows="5" id="user-intro" placeholder="输入个人简介"></textarea>
-                                <small>250字以内写出你的一生...</small>
+                                <input style="width:85%;float:left;" type="password" name="yanzheng" id="user-yanzheng" placeholder="请输入手机验证码">
+                                <button class="am-btn" type="button">发送验证码 </button>
                             </div>
                         </div>
 
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
-                                <button type="button" class="am-btn am-btn-primary">保存修改</button>
+                                <input type="submit" class="am-btn am-btn-primary " value="确认分发"/>
                             </div>
                         </div>
                     </form>
@@ -320,7 +386,6 @@
         </footer>
     </div>
     <!-- content end -->
-
 </div>
 
 <a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
@@ -328,17 +393,20 @@
 
 
 <!--[if lt IE 9]>
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/modernizr.js"></script>
+<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<script src="/Public/Admin/js/amazeui.min.js"></script>
+<script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/Public/Admin/lib/layer/layer.js"></script>
+<!-- <script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>

@@ -287,8 +287,20 @@ class MemberController extends Controller {
     /*
      * 团队结构
      */
-    public function teamt(){
+    public function team(){
         $this->display();
+    }
+
+    public function geteam(){
+    	$id = intval($_GET['id']);
+    	$member = M('member');
+    	//$arr['memberinfo'] = $member->where('id='.$id)->select();
+    	$sql = $member->field('id,username')->where('fatherid='.$id)->buildSql();
+    	//查询
+    	$arr['memberinfo'] = $member->where('fatherid='.$id)->select();
+    	
+    	var_dump($member->table($sql.'a')->select());
+    	//exit(json_encode($memberinfo));
     }
 
 }

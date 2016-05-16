@@ -115,7 +115,6 @@
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
-
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -141,7 +140,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"><span class="am-icon-users"></span>团队结构
+                            <a href="<?php echo U('Member/team');?>"><span class="am-icon-users"></span>团队结构
                             </a>
                         </li>
                     </ul>
@@ -157,6 +156,10 @@
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-manage">
                         <li><a href="<?php echo U('Guanli/member');?>">
                             <span class="am-icon-trophy">会员管理</span>
+                        </a>
+                        </li>
+                        <li><a href="<?php echo U('Guanli/jibie');?>">
+                            <span class="am-icon-trophy">级别管理</span>
                         </a>
                         </li>
                         <li>
@@ -479,7 +482,8 @@
 <script src="/123/Public/Admin/js/app.js"></script>
 <script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
 <script src="/123/Public/Admin/lib/layer/layer.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script>
+<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>

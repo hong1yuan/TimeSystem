@@ -3,17 +3,15 @@ namespace Admin\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-       $mem_info  = D('Member')
-           ->field('zongji,xianjin,fenhong,lixi,guquan,zuhe,huanqiu,cishan,baodan,newsid,isnew')
-           ->where("id = 1000")->find();
-      /*  echo json_encode($mem_info);
-        $this->assign('MemInfo',$mem_info);
-        $this->display();*/
-      //  dump($mem_info);
-        $news_list = D('News')->select();
-        //dump($news_list);
-        $this->display();
-    }
+       if(!$_SESSION){
+		   $this->redirect('login');
+	   }else{
+           $id=$_SESSION['member']['id'];
+           $info = M('Member')->where("id = '$id'")->find();
+           $this->assign('info',$info);
+           $this->display();
+	   }
+	}
     public function login(){
     	if ($_SESSION['member']) {
     		$this->redirect('index');
@@ -30,10 +28,10 @@ class IndexController extends Controller {
     				$this->error('用户名或密码错误');
     			}else{
     				if (!$rst[0]['isboss']) {
-    					session('member',array('id' => $rst[0]['id'],'member'=>'member'));
+    					session('member',array('id' => $rst[0]['id'],'member'=>'member','name'=>$username));
     					$this->redirect('index');
     				}else{
-                        session('member',array('id' => $rst[0]['id'],'member'=>'admin'));
+                        session('member',array('id' => $rst[0]['id'],'member'=>'admin','name'=>$username));
     					$this->redirect('index');
     				}
     			}
