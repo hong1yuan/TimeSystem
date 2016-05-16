@@ -233,7 +233,7 @@ class GuanliController extends Controller {
         }
 
         $mem2 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level2")->select();
-        dump($mem2);
+        //dump($mem2);
 
 
         foreach($mem2 as $key=>$value){

@@ -16,12 +16,15 @@
             <div class="am-g">
                 <div class="am-u-sm-12">
                     <form class="am-form">
-                        <h3>新闻标题</h3>
-                        <input type="text" value="{$news.title}" name="title"/>
-                        <h3>新闻内容</h3>
-                        <textarea id="content" name="content" style="height:200px;">
+
+                        <center>
+                        <h2>{$news.title}</h2>
+                        <!--<input type="text" value="{$news.title}" name="title"/>-->
+                            <p style="float:left;">{$news.content}</p>
+                        </center>
+                        <!--<textarea id="content" name="content" style="height:200px;">
                             {$news.content}
-                        </textarea>
+                        </textarea>-->
                         <br/>
                         <div class="am-u-sm-9 am-u-sm-push-3">
                             <button type="button" class="am-btn am-btn-primary" id="btnOk" onclick="history.back(-1)">
