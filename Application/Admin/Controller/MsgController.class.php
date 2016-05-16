@@ -48,7 +48,7 @@ class MsgController extends Controller {
     //提交问题
     public function deal(){ 
         $msg = M('msg');
-        //添加问题反馈
+        /*//添加问题反馈
         if ($_POST['type']=='add') {
             //数据处理
             $data['title'] = I('post.title');
@@ -61,10 +61,20 @@ class MsgController extends Controller {
             }else{
                 $this->ajaxReturn(C('success'));
             }
-        }else if ($_GET['type']=='edit') {
-            $id = intval($_GET['id']);
-            $rst = $msg->field('member.username,msg.*')->join('member ON msg.userid = member.id')->where('msg.id='.$id)->find();
-            $this->ajaxReturn($rst);
+        }*/
+        if (!empty($_POST)) {
+            $data['title'] = I('post.title');
+            $data['mtype'] = I('post.type');
+            $data['msg'] = I('post.content');
+            $data['userid'] = $_SESSION['member']['id'];
+            $data['updatetime'] = date('Y-m-d H:i:s',time());
+            if (!$msg->add($data)) {
+                $this->error('操作失败');
+            }else{
+                $this->success('操作成功','msg');
+            }
+        }else{
+            $this->display();
         }
     }
 }

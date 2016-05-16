@@ -48,7 +48,7 @@
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
                     <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
-                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                    <li><a href="<?php echo U('Index/layout');?>" onclick =" return confirm('你确定要退出吗？') "><span class="am-icon-power-off"></span> 退出</a></li>
                 </ul>
             </li>
             <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
@@ -236,7 +236,6 @@
             padding: 40px 60px;
             margin-bottom: 30px;
             background-color: #F8F8F8;
-
             -webkit-border-radius: 6px;
             -moz-border-radius: 6px;
             border-radius: 6px;
@@ -259,16 +258,16 @@
 
                 <div class="well hero-unit span12">
                     <h1>账户信息</h1>
-                    <p>币值组合：€ 6000</p>
-                    <p>总奖金：€ 13281</p>
-                    <p>洲际银行股权：€ 5000</p>
+                    <p>币值组合：€ <?php echo ($info["zuhe"]); ?></p>
+                    <p>总奖金：€ <?php echo ($info["zongji"]); ?></p>
+                    <p>洲际银行股权：€ <?php echo ($info["guquan"]); ?></p>
                     <p>洲际币：0</p>
-                    <p>现金币：€ 10490</p>
-                    <p>报单币：€ 100</p>
-                    <p>周利息：€ 285</p>
-                    <p>月分红：€ 2</p>
-                    <p>环球奖：€ 608</p>
-                    <p>慈善基金：€ 407</p>
+                    <p>现金币：€ <?php echo ($info["xianjin"]); ?></p>
+                    <p>报单币：€ <?php echo ($info["baodan"]); ?></p>
+                    <p>周利息：€ <?php echo ($info["lixi"]); ?></p>
+                    <p>月分红：€ <?php echo ($info["fenhong"]); ?></p>
+                    <p>环球奖：€ <?php echo ($info["huanqiu"]); ?></p>
+                    <p>慈善基金：€ <?php echo ($info["cishan"]); ?></p>
                     <p>洲际币行情：€ 0.14
                         <a href="http://deal.baiyd.com" target="_blank">详情</a>
                     </p>
