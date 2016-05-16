@@ -123,10 +123,35 @@ class CaiwuController extends Controller {
      * 货币转换
      */
     public  function change(){
-        $user = D('Member');
-        $user_info = $user->where('id=1000')->find();
-        $this->assign('UserInfo',$user_info);
-        $this->display();
+        $id = intval($_SESSION['member']['id']);
+        $member = M('member');        
+        $memberinfo = $member->where('id='.$id)->find();
+        if (!empty($_POST)) {
+            $zhuchebi = intval($_POST['money']);
+            $safekey = trim($_POST['password']);
+
+            if (substr(md5($safekey),8,16) != $memberinfo['safekey']) {
+                $this->error('交易密码输入错误');
+            }else{
+                if ($memberinfo['xianjin']*0.99 < $zhuchebi) {
+                    $this->error('可用现金不足您购买的支付币数量');
+                }
+               
+                //扣除1%慈善基金
+                $data['xianjin'] = $memberinfo['xianjin']*0.99 - $zhuchebi;
+                if ($_POST['type']=='1') {
+                    $data['baodan'] = $memberinfo['baodan'] + $zhuchebi;
+                }else if($_POST['type']=='2'){
+                    $data['zhoujibi'] = $memberinfo['zhoujibi'] + $zhuchebi;
+                }
+                
+                $member->where('id='.$id)->save($data);
+                $this->success('操作成功');
+            }
+        }else{
+            $this->assign('memberinfo',$memberinfo);
+            $this->display();
+        }  
     }
 
 

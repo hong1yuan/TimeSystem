@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -22,9 +22,17 @@
     以获得更好的体验！</p>
 <![endif]-->
 
+<!--<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand">
+        <strong>Amaze UI</strong> <small>后台管理</small>
+    </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-        <strong>Amaze UI</strong> <small>后台管理模板</small>
+        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
+        <!--<div class="logo_biaoti"></div>-->
+    </div>
+    <div class="logo_text">
+        <small>后台管理</small>
     </div>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
@@ -32,10 +40,10 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
+            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                    <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+                    <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
@@ -54,7 +62,7 @@
 <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
     <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
-            <li><a href="#"><span class="am-icon-home"></span> 首页</a></li>
+            <li><a href="<?php echo U('Index/index');?>"><span class="am-icon-home"></span> 首页</a></li>
             <!-- 信息中心 -->
             <li class="admin-parent">
                 <a class="am-cf" data-am-collapse="{target: '#collapse-news'}"><span class="am-icon-btn am-primary am-icon-book"></span> 信息中心
@@ -296,22 +304,7 @@
 
                             </tbody>
                         </table>
-                      <!-- <div class="am-cf">
-                            共 <?php echo ($pages); ?> 条记录
-                            <div class="am-fr">
-                                <ul class="am-pagination">
-                                    <li class="am-disabled">
-                                        <a href="<?php echo U('index',array('p'=>$prev));?>">«</a>
-                                    </li>
-                                    <?php $__FOR_START_15844__=1;$__FOR_END_15844__=$pages+1;for($i=$__FOR_START_15844__;$i < $__FOR_END_15844__;$i+=1){ ?><li
-                                            <?php if( $page == $i): ?>class="am-active"
-                                                <?php else: endif; ?>
-                                    ><a href="<?php echo U('index',array('p'=>$i));?>"><?php echo ($i); ?></a></li><?php } ?>
-                                    <li><a href="<?php echo U('index',array('p'=>$prev));?>">»</a></li>
-                                </ul>
-                            </div>
-                           <?php echo ($show); ?>
-                        </div>-->
+
                         <div class="am-cf">
                             共 <?php echo ($count); ?> 条记录
                             <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
@@ -323,35 +316,37 @@
 
             </div>
         </div>
-        <footer class="admin-content-footer">
-            <hr>
-            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
-        </footer>
-    </div>
-    <!-- content end -->
 
+
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+</div>
+<!-- content end -->
 </div>
 
 <a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
 </a>
 
 
+
 <!--[if lt IE 9]>
-<script src="/Public/Admin/js/jquery.min.js"></script>
-<script src="/Public/Admin/js/modernizr.js"></script>
-<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/modernizr.js"></script>
+<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/Public/Admin/js/amazeui.min.js"></script>
-<script src="/Public/Admin/js/app.js"></script>
-<script src="/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/Public/Admin/lib/layer/layer.js"></script>
-<!-- <script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
-<!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
+<script src="/123/Public/Admin/js/amazeui.min.js"></script>
+<script src="/123/Public/Admin/js/app.js"></script>
+<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
 

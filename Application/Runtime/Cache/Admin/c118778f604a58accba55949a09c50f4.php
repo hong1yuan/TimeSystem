@@ -22,9 +22,17 @@
     以获得更好的体验！</p>
 <![endif]-->
 
+<!--<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand">
+        <strong>Amaze UI</strong> <small>后台管理</small>
+    </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-        <strong>Amaze UI</strong> <small>后台管理模板</small>
+        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
+        <!--<div class="logo_biaoti"></div>-->
+    </div>
+    <div class="logo_text">
+        <small>后台管理</small>
     </div>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
@@ -32,10 +40,10 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
+            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                    <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+                    <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
@@ -53,7 +61,7 @@
 <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
     <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
-            <li><a href="#"><span class="am-icon-home"></span> 首页</a></li>
+            <li><a href="<?php echo U('Index/index');?>"><span class="am-icon-home"></span> 首页</a></li>
             <!-- 信息中心 -->
             <li class="admin-parent">
                 <a class="am-cf" data-am-collapse="{target: '#collapse-news'}"><span class="am-icon-btn am-primary am-icon-book"></span> 信息中心
@@ -114,10 +122,6 @@
                     <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
-<<<<<<< HEAD
-
-=======
->>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
                     </a>
                     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
@@ -297,6 +301,19 @@
 </a>
 
 
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+</div>
+<!-- content end -->
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+</a>
+
+
+
 <!--[if lt IE 9]>
 <script src="/123/Public/Admin/js/jquery.min.js"></script>
 <script src="/123/Public/Admin/js/modernizr.js"></script>
@@ -348,12 +365,11 @@
         layer.open({
               type: 1,
               title:'问题反馈',
-<<<<<<< HEAD
+
               area: ['420px',''], //宽高
-=======
+
               //skin: 'layui-layer-rim', //加上边框
               area: ['500px',''], //宽高
->>>>>>> a7e144096da5552261311860fb09619a7cd2fed6
               content: content,
               btn: ['提交', '取消'],
               yes:function(){
