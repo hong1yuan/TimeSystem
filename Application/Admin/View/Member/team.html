@@ -6,7 +6,7 @@
             border-radius: 50%;
             width: 100px;
             height: 100px;
-            background: salmon;
+            /*background: salmon;*/
             text-align: center;
             line-height: 100px;
             cursor:pointer;
@@ -73,14 +73,16 @@
                 <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">个人中心</strong> / <small>团队结构</small></div>
             </div>
             <div class="am-g">
-            	 <div class="box">
-                    <div class="team box1"></div>
-                    <div class="team box2"></div>
-                    <div class="team box3"></div>
-                    <div class="team box4"></div>
-                    <div class="team box5"></div>
-                    <div class="team box6"></div>
-                    <div class="team box7"></div>
+            	<div class="am-u-sm-4">4</div>
+  				<div class="am-u-sm-8">8</div>
+            	<div class="box">
+                    <div class="team box1" tree="1"></div>
+                    <div class="team box2" tree="2"></div>
+                    <div class="team box3" tree="3"></div>
+                    <div class="team box4" tree="4"></div>
+                    <div class="team box5" tree="5"></div>
+                    <div class="team box6" tree="6"></div>
+                    <div class="team box7" tree="7"></div>
                 </div>
             </div>
         </div>
@@ -99,10 +101,10 @@
 <include file = "Common/footer" />
 <script type="text/javascript">
     	var id = "<?php echo $_SESSION['member']['id']?>";
+    	var cont = '<a class="reg"  href="javascript:void(0)">注册会员</a>';
     	var init = {
 	    	getteam:function(id){
 	            $.get('geteam?id='+id,function(data){
-	            	var cont = '<a class="reg"  href="javascript:void(0)">注册会员</a>';
 	                //顶层
 	                $('.box1').html(data['member']['username']);
 	                $('.box1').attr('id',data['member']['id']);
@@ -224,12 +226,41 @@
 
         //获取团队信息
         obj.getteam(id);
+        $('.reg').on('click',function(){
+        	alert('lll');
+        })
         $('.team').on('click',function(){
             var id = $(this).attr('id');
             if (!id) {
-                return false;
+            	if ($(this).html()) {
+            		switch($(this).attr('tree')){
+            			case '2':
+            				location.href = "register?fatherMan="+$('.box1').html();
+            				break;
+            			case '3':
+            				location.href = "register?fatherMan="+$('.box1').html();
+            				break;
+            			case '4':
+            				location.href = "register?fatherMan="+$('.box2').html();
+            				break;
+            			case '5':
+            				location.href = "register?fatherMan="+$('.box2').html();
+            				break;
+            			case '6':
+            				location.href = "register?fatherMan="+$('.box3').html();
+            				break;
+            			case '7':
+            				location.href = "register?fatherMan="+$('.box3').html();
+            				break;
+            			default:
+            				break;
+            		}
+            	}else{
+            		return false;
+            	}
             }else{
                 obj.getteam(id);
             }
         })
+        
 </script>

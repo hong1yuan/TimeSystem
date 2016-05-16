@@ -234,31 +234,35 @@
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal" method="POST" action="/123/Admin/Caiwu/aaa">
+                    <form class="am-form am-form-horizontal" onSubmit="return chkForm()" method="POST" action="/123/Admin/Caiwu/exchange.html">
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-3 am-form-label">
                                 接收会员
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-name"   name="user-name" placeholder="请输入接收会员的账号"/>
+                                <input type="text" id="user-name"   name="username" placeholder="请输入接收会员的账号"/>
                             </div>
                         </div>
 
                         <div class="am-form-group">
                             <label for="user-money" class="am-u-sm-3 am-form-label">转出数目</label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-money" name="user-money" value="100">
-                                <small>余额: €<?php echo ($Zhuanzhang["xianjin"]); ?> </small>
+                                <input type="text" id="zhoujibi" name="zhoujibi" value="100">
+                                <small>余额: $<?php echo ($memberinfo['zhoujibi']); ?> </small>
                             </div>
                         </div>
 
                         <div class="am-form-group">
                             <label for="user-pwd" class="am-u-sm-3 am-form-label">密码</label>
                             <div class="am-u-sm-9">
-                                <input type="password" name="user-pwd" id="user-pwd" placeholder="请输入二级密码 ">
+                                <input type="password"  id="password" name="password" placeholder="请输入交易密码 ">
                             </div>
                         </div>
-
+                        <div class="am-form-group">
+	                         <div style="text-align: center" class="am-u-sm-9">
+	                            <small> 提示：会员转账将扣除1%作为亚洲慈善基金</small>
+	                         </div>
+                     	</div>
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
                                 <input type="submit" class="am-btn am-btn-primary " value="确认转账"/>
@@ -301,3 +305,23 @@
 <!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+<script type="text/javascript">
+	function chkForm(){
+		var username = $('#user-name').val();
+			password = $('#password').val();
+			zhoujibi = $('#zhoujibi').val();
+		if (!username) {
+			layer.alert('请输入接收会员的账号');
+			return false;
+		};
+		if (!zhoujibi || !(/^(\+|-)?\d+$/.test(zhoujibi))) {
+			layer.alert('请输转账的数量且必须为整数');
+			return false;
+		};
+		if (!password) {
+			layer.alert('请输入交易密码');
+			return false;
+		};
+		return true;
+	}
+</script>
