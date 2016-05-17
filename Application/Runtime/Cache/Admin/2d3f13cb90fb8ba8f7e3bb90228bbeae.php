@@ -28,7 +28,11 @@
     </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
+<<<<<<< HEAD
         <div class="logo"><img class="am-img-responsive" src="/Public/Admin/i/examples/logo.png"></div>
+=======
+        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
+>>>>>>> e5c362c6eacf8ab233b52ffc869c3b9aeba2bcb9
         <!--<div class="logo_biaoti"></div>-->
     </div>
     <div class="logo_text">
@@ -273,6 +277,7 @@
                             <div class="am-u-sm-9" >
                                 <input type="text" name="zhangfu" id="user-zhangfu" value="<?php echo ($config["zhangfu"]); ?>"/>
                                 <small> %</small>
+<<<<<<< HEAD
                             </div>
                         </div>
 
@@ -285,19 +290,33 @@
                             </label>
                             <div class="am-u-sm-9">
                                 <input type="text" name="chengjiao" id="user-chengjiao" value="<?php echo ($config["chengjiao"]); ?>"/>
+=======
+>>>>>>> e5c362c6eacf8ab233b52ffc869c3b9aeba2bcb9
                             </div>
                         </div>
 
+
+
+
                         <div class="am-form-group">
+<<<<<<< HEAD
                             <label for="user-phone" class="am-u-sm-3 am-form-label">
                                 手机号码
                             </label>
                             <div class="am-u-sm-9">
                                 <input type="text" id="user-phone"  value="<?php echo ($telephone); ?>" disabled/>
+=======
+                            <label for="user-chengjiao" class="am-u-sm-3 am-form-label">
+                                成交量
+                            </label>
+                            <div class="am-u-sm-9">
+                                <input type="text" name="chengjiao" id="user-chengjiao" value="<?php echo ($config["chengjiao"]); ?>"/>
+>>>>>>> e5c362c6eacf8ab233b52ffc869c3b9aeba2bcb9
                             </div>
                         </div>
 
                         <div class="am-form-group">
+<<<<<<< HEAD
                             <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
                                 验证码
                             </label>
@@ -305,6 +324,34 @@
                                 <input type="text" id="user-yanzheng" placeholder="请输入手机验证码"/>
                                 <br/>
                                 <button>发送验证</button>
+=======
+                            <label for="user-phone" class="am-u-sm-3 am-form-label">
+                                手机号码
+                            </label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="user-phone"  value="<?php echo ($telephone); ?>" disabled/>
+>>>>>>> e5c362c6eacf8ab233b52ffc869c3b9aeba2bcb9
+                            </div>
+                        </div>
+
+
+
+                        <div class="am-form-group">
+                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
+                                验证码
+                            </label>
+                            <div class="am-u-sm-9 am-form-inline" role="form">
+                            <div class="am-form-group">
+    							<input type="text" id="user-yanzheng" name="mobile_code" placeholder="请输入手机验证码"/>
+  							</div>
+
+						    <div class="am-form-group">
+						       <button type="button" class="am-btn am-btn-primary send">发送验证码</button> 
+						  	</div>						
+						  	<!-- 
+                                <input type="text" id="user-yanzheng" placeholder="请输入手机验证码"/>
+                                <br/>
+                                 <button type="button" class="am-btn am-btn-primary">发送验证码</button> -->
                             </div>
                         </div>
 
@@ -364,3 +411,36 @@
 <!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+<script type="text/javascript">
+	$('.send').on('click',function(){
+		var self = $(this);
+		if (self.text() != "发送验证码") {
+			return false;
+		};
+        $.ajax({
+        	type:'POST',
+        	url:'sendmsg',
+        	data:{
+        		tpl:$('#user-phone').val(),
+        	},
+        	success:function(data) {
+        		if (!data.status) {
+        			layer.alert(data.info);
+        			return false;
+        		}else{
+	        		var i = 180;
+			        var time = setInterval(function(){
+			            i--;
+			            if(i <= 0){
+			               self.text('发送验证码');
+			               clearInterval(time);
+			            }else{
+			               self.text(+i+'秒后重新获取');
+			            }
+			        },1000);
+        		}
+		       
+        	}
+        })
+	})
+</script>

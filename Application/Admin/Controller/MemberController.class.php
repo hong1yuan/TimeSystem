@@ -258,11 +258,16 @@ class MemberController extends Controller {
      $poid = I('post.id');
      $news = M('Member') -> where("id = '$poid'") -> find();
 
+      if($news == false){
+      $att["ispay"] = "未找到用户，请刷新";
+      exit(json_encode($att));
+      }
 
 
      $reid = $news["reid"];
+     $fatherid = $news["fatherid"];
      if($news["ispay"] != 0){
-      $att["ispay"] = "用户已激活";
+      $att["ispay"] = "用户已激活";  
       exit(json_encode($att));
      }
 
@@ -289,30 +294,36 @@ class MemberController extends Controller {
      $guanli=1;
 
      if($new["zongji"] < $new["guquan"]*2.2){
-      $zhitui["zuhe"] = $news["guquan"] * $chongxiao/100;
-      $zhitui["cishan"] = $news["guquan"] * $csbilv/100;
-      $zhitui["huanqiu"] = $news["guquan"] * $hqbilv/100;
-      $zhitui["ztj"] = $news["guquan"] - $zhitui["zuhe"] - $zhitui["cishan"] - $zhitui["huanqiu"];
+      $ztq = $news["guquan"] * $ulevel["zhituitc"] / 100;
+      $zhitui["zuhe"] = $ztq * $chongxiao/100;
+      $zhitui["cishan"] = $ztq * $csbilv/100;
+      $zhitui["huanqiu"] = $ztq * $hqbilv/100;
+      $zhitui["ztj"] = $ztq - $zhitui["zuhe"] - $zhitui["cishan"] - $zhitui["huanqiu"];
       $zhitui["guanli"] = $zhitui["ztj"] * $guanli/100;
+
       $ztsave["zongji"] = $new["zongji"] + $zhitui["ztj"] + $zhitui["guanli"];
       $ztsave["zuhe"] = $new["zuhe"] + $zhitui["zuhe"];
       $ztsave["xianjin"] = $new["xianjin"] + $zhitui["ztj"] + $zhitui["guanli"];
       $ztsave["zhitui"] = $new["zhitui"] + $zhitui["ztj"];
       $ztsave["cishan"] = $new["cishan"] + $zhitui["cishan"];
       $ztsave["huanqiu"] =  $new["huanqiu"] + $zhitui["huanqiu"];
-      $ztsave["ztNum"] = $new["ztNum"] + 1;
-      $ztsave["guanli"] = $zhitui["guanli"];
+      $ztsave["ztNum"] = $new["ztnum"] + 1;
+      $ztsave["guanli"] = $new["guanli"] + $zhitui["guanli"];
       $ztsave["windate"] = date('Y-m-d');
       M('Member') -> where("id = '$reid'") ->save($ztsave);
+
      }
 
      $duipeng1 = $news["treeplace"];
      if($duipeng1 == 1){
-         $tongji = M('Member') -> where("fatherid = '$reid' AND treeplace = 0 AND ispay = 1") ->find();
+         $tongji = M('Member') -> where("fatherid = '$fatherid' AND treeplace = 0 AND ispay = 1") ->find();
+
      }
      else{
-         $tongji = M('Member') -> where("fatherid = '$reid' AND treeplace = 1 AND ispay = 1") ->find();
+         $tongji = M('Member') -> where("fatherid = '$fatherid' AND treeplace = 1 AND ispay = 1") ->find();
+
      }
+      
 
      if($tongji != false){
         $ppath = $news["ppath"];
@@ -320,35 +331,48 @@ class MemberController extends Controller {
          $len  =count($path);
          for($i=$len-2 ;$i>=1;$i--){    
             $pid = $path[$i];
-            $pinfo = M('Member')->where(" id ='$pid'")->find(); 
+            $pinfo = M('Member')->where(" id =' $pid'")->find();
+
             $dpcs = $pinfo['dpcs'];
             $xj = $pinfo['xianjin'];
             $zj = $pinfo['zongji'];
-            $total = $pinfo['TotalDay'];
+            $total = $pinfo['totalday'];
             $lv = $pinfo['ulevel'];
-            $dpinfo = M('Gee_Fee')->where("id = '$lv'")->find();
+         
+            $dpinfo = M('gee_fee')->where("id = '$lv'")->find();
+
+
+           //echo $total;
+            
+            /*$att["ispay"] = $xj;
+            $att["t"] = $lv;
+            $att["lv"] = $lv;
+            exit(json_encode($att));*/
             $rfd = $dpinfo['rifd'];
             if($dpcs > 6){
-                $dplv = $dpinfo['DPbilv1'];
+                $dplv = $dpinfo['dpbilv1'];
             }else{
-                $dplv = $dpinfo['duipengTC'];
+                $dplv = $dpinfo['duipengtc'];
             }
+       
             if($zj < $pinfo['guquan'] * 2.2){
                 if(date('Y-m-d') != $pinfo['countdate']){
                     $total = 0 ;
                 }
 
                 if($total < $rfd){
-                    if($tongji['guquan'] < $news['guquan']){
+                    if($tongji['guquan'] <= $news['guquan']){
                         $dpcha = $tongji['guquan'] * $dplv / 100;
+                                
                     }else{
                          $dpcha = $news['guquan'] * $dplv / 100;
+
                     }
                     //
                     $gx['zuhe'] = $pinfo['zuhe'] + $dpcha * 30/100;
                     $gx['cishan'] = $pinfo['cishan'] + $dpcha * 2/100;
                     $gx['huanqiu'] = $pinfo['huanqiu'] + $dpcha * 3/100;
-                   
+                    
                     $gx['zongji'] =  $zj + $dpcha * 65/100 ;
                     $gx['TotalDay'] =  $total + $dpcha * 65/100 ;
                     $gx['xianjin']  = $xj +$dpcha * 65/100;
@@ -356,8 +380,8 @@ class MemberController extends Controller {
                     $gx['countdate'] = date('Y-m-d');
                     $gx['dpcs'] = $dpcs +1;
                     $res = M('Member')->where(" id = '$pid' ")->save($gx);
-
-
+                  
+        
                 }
 
             }
