@@ -38,21 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/Plat/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7837837">
-              <caret line="104" column="18" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
+            <state vertical-scroll-proportion="1.0753324">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlatController.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlatController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/PlatController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7518464">
-              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+            <state vertical-scroll-proportion="-6.189189">
+              <caret line="37" column="27" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -61,8 +61,8 @@
       <file leaf-file-name="MemberController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/MemberController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.189189">
-              <caret line="377" column="21" selection-start-line="377" selection-start-column="10" selection-end-line="377" selection-end-column="21" />
+            <state vertical-scroll-proportion="4.4054055">
+              <caret line="402" column="5" selection-start-line="401" selection-start-column="10" selection-end-line="401" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -153,7 +153,6 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/CaiwuController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Msg/msg.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Plat/index.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/PlatController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Common/left.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/News/news.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Index/index.html" />
@@ -172,6 +171,7 @@
         <option value="$PROJECT_DIR$/Application/Admin/View/Guanli/member.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Guanli/detail.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/GuanliController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/PlatController.class.php" />
       </list>
     </option>
   </component>
@@ -470,7 +470,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.028277636" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -868,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/MemberController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.189189">
-          <caret line="377" column="21" selection-start-line="377" selection-start-column="10" selection-end-line="377" selection-end-column="21" />
+        <state vertical-scroll-proportion="4.4054055">
+          <caret line="402" column="5" selection-start-line="401" selection-start-column="10" selection-end-line="401" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -904,18 +904,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Plat/index.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/PlatController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7837837">
-          <caret line="104" column="18" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
+        <state vertical-scroll-proportion="-6.189189">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/PlatController.class.php">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Plat/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7518464">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        <state vertical-scroll-proportion="1.0753324">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding />
         </state>
       </provider>

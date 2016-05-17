@@ -28,11 +28,7 @@
     </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-<<<<<<< HEAD
         <div class="logo"><img class="am-img-responsive" src="/Public/Admin/i/examples/logo.png"></div>
-=======
-        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
->>>>>>> e5c362c6eacf8ab233b52ffc869c3b9aeba2bcb9
         <!--<div class="logo_biaoti"></div>-->
     </div>
     <div class="logo_text">
@@ -277,7 +273,6 @@
                             <div class="am-u-sm-9" >
                                 <input type="text" name="zhangfu" id="user-zhangfu" value="<?php echo ($config["zhangfu"]); ?>"/>
                                 <small> %</small>
-<<<<<<< HEAD
                             </div>
                         </div>
 
@@ -290,51 +285,17 @@
                             </label>
                             <div class="am-u-sm-9">
                                 <input type="text" name="chengjiao" id="user-chengjiao" value="<?php echo ($config["chengjiao"]); ?>"/>
-=======
->>>>>>> e5c362c6eacf8ab233b52ffc869c3b9aeba2bcb9
                             </div>
                         </div>
 
-
-
-
                         <div class="am-form-group">
-<<<<<<< HEAD
                             <label for="user-phone" class="am-u-sm-3 am-form-label">
                                 手机号码
                             </label>
                             <div class="am-u-sm-9">
                                 <input type="text" id="user-phone"  value="<?php echo ($telephone); ?>" disabled/>
-=======
-                            <label for="user-chengjiao" class="am-u-sm-3 am-form-label">
-                                成交量
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="chengjiao" id="user-chengjiao" value="<?php echo ($config["chengjiao"]); ?>"/>
->>>>>>> e5c362c6eacf8ab233b52ffc869c3b9aeba2bcb9
                             </div>
                         </div>
-
-                        <div class="am-form-group">
-<<<<<<< HEAD
-                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
-                                验证码
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" id="user-yanzheng" placeholder="请输入手机验证码"/>
-                                <br/>
-                                <button>发送验证</button>
-=======
-                            <label for="user-phone" class="am-u-sm-3 am-form-label">
-                                手机号码
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" id="user-phone"  value="<?php echo ($telephone); ?>" disabled/>
->>>>>>> e5c362c6eacf8ab233b52ffc869c3b9aeba2bcb9
-                            </div>
-                        </div>
-
-
 
                         <div class="am-form-group">
                             <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
