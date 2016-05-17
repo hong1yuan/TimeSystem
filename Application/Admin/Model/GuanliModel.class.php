@@ -3,7 +3,8 @@ namespace Admin\Model;
 use Think\Model;
 class GuanliModel extends Model {
     protected $_auto =array(
-        array('leixing','0'),
+        array('leixing','0',3),
+        array('gorder','1',3),
         array('jibie',3),
         array('jine',3),
         array('chongfu',3),

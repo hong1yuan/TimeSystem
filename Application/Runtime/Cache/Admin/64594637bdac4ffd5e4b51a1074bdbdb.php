@@ -40,7 +40,7 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
+           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
@@ -246,7 +246,7 @@
                                             <?php switch($vo["mtype"]): case "1": ?>意见建议<?php break;?>
                                                 <?php case "2": ?>奖金问题<?php break;?>
                                                 <?php case "3": ?>帐号问题<?php break;?>
-                                                <?php case "3": ?>其他问题<?php break;?>
+                                                <?php case "4": ?>其他问题<?php break;?>
                                                 <?php default: endswitch;?>
                                         </td>
                                         <td class="am-hide-sm-only">
@@ -259,8 +259,8 @@
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary edit" id="<?php echo ($vo["id"]); ?>"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary edit" id="<?php echo ($vo["id"]); ?>"><span class="am-icon-pencil-square-o"></span>查看</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only del" id="<?php echo ($vo["id"]); ?>"><span class="am-icon-trash-o"></span> 删除</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -337,8 +337,19 @@
         }
     });
     $('.edit').on('click',function(){
-        $.get('deal?type=edit&id='+$(this).attr('id'),function(data){
-
-        })  
+        location.href = "detail?id="+$(this).attr('id');
+    })
+    $('.del').on('click',function(){
+    	var id = $(this).attr('id');
+    	layer.confirm('您确定要删除该记录吗？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(index){
+		   layer.closeAll();
+		   $.get('delete?id='+id,function(data){
+		   		location.reload();
+		   })
+		}, function(){
+		  
+		});
     })
 </script>

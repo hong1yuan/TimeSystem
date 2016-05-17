@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>洲际币后台管理系统</title>
+    <title>Amaze UI Admin index Examples</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -28,7 +28,7 @@
     </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-        <div class="logo"><img class="am-img-responsive" src="/Public/Admin/i/examples/logo.png"></div>
+        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
         <!--<div class="logo_biaoti"></div>-->
     </div>
     <div class="logo_text">
@@ -40,7 +40,7 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
+            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
@@ -218,185 +218,169 @@
 </div>
 <!-- sidebar end -->
 
-    <!-- content start -->
+
     <!-- content start -->
     <div class="admin-content">
         <div class="admin-content-body">
             <div class="am-cf am-padding am-padding-bottom-0">
-                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">财务管理</strong> / <small>修改级别数据</small></div>
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">个人中心</strong> / <small>注册新会员</small></div>
             </div>
 
             <hr>
 
             <div class="am-g">
                 <div class="am-u-sm-12 am-u-md-2 am-u-md-push-10">
-
+                
                 </div>
 
-                <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal" method="post" action="<?php echo U('EditjbOK');?>">
+               <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
+                   <form class="am-form am-form-horizontal" id="dify"  method="post">
                         <div class="am-form-group">
-                            <label for="user-jiage" class="am-u-sm-3 am-form-label">
-                                级别名称
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">安置人</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="jibie" id="user-jiage" value="<?php echo ($lv["jibie"]); ?>" >
-
+                                <input type="text" id="fatherMan" name="fatherMan" placeholder=""  value="">
                             </div>
                         </div>
+                        <br/>
+                         <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">位置</label>
+                                    <div class="am-u-sm-9">
+                                        
+                                        <select id="treeplace" name="treeplace" class="input-xlarge">
+                                          <option value="0" >左区</option>
+                                          <option value="1" >右区</option>
+                                        </select>
+                                     
+                                    </div>
+                         </div>
+                        <br/>
+                          <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">位置</label>
+                                    <div class="am-u-sm-9">
+                                        
+                                        <select id="elvel" name="elvel" class="input-xlarge">
+                                                  <option value="0" selected>请选择会员级别</option>
 
+                                                  <option value="4">水星会员（$500）</option>
+                                                  
+                                                  <option value="1">金星会员（$1000）</option>
+                                                  
+                                                  <option value="2">白金会员（$3000）</option>
+                                                  
+                                                  <option value="3">钻石会员（$5000）</option>
+
+                                        </select>
+                                     
+                                    </div>
+                          </div>
+                        <br/>
                         <div class="am-form-group">
-                            <label for="user-jine" class="am-u-sm-3 am-form-label">
-                                金额
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">用户名</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="jine" id="user-jine" value="<?php echo ($lv["jine"]); ?>"/>
-
+                                <input type="text" id="usernames" name="usernames" placeholder=""  >
                             </div>
                         </div>
-
+                        <br/>
                         <div class="am-form-group">
-                            <label for="user-chongfu" class="am-u-sm-3 am-form-label">
-                                市币组合
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">登录密码</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="chongfu" id="user-chongfu" value="<?php echo ($lv["chongfu"]); ?>"/>
-                                <small> %</small>
-
+                                <input type="password" id="password" name="password" placeholder="请输入登录密码"  >
                             </div>
                         </div>
-
+                        <br/>
                         <div class="am-form-group">
-                            <label for="user-zhjtuiTC" class="am-u-sm-3 am-form-label">
-                                市场奖
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">确认登录密码</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="zhituiTC" id="user-zhjtuiTC" value="<?php echo ($lv['zhituitc']); ?> "/>
-                                <small> %</small>
-
+                                <input type="password" id="password2"  placeholder="请输入确认登录密码" >
                             </div>
                         </div>
-
+                        <br/>
                         <div class="am-form-group">
-                            <label for="user-duipengTC" class="am-u-sm-3 am-form-label">
-                                开拓奖
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">二级密码</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="duipengTC" id="user-duipengTC" value="<?php echo ($lv['duipengtc']); ?>"/>
-                                <small> %</small>
+                                <input type="password" id="passwordtwo" name="passwordtwo" placeholder="请输入登录密码"  >
                             </div>
                         </div>
-
+                        <br/>
                         <div class="am-form-group">
-                            <label for="user-DPbilv1" class="am-u-sm-3 am-form-label">
-                                开拓奖(六次之后)
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">确认二级密码</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="DPbilv1" id="user-DPbilv1" value="<?php echo ($lv["dpbilv1"]); ?>"/>
-                                <small> %</small>
+                                <input type="password" id="passwordtwo2" name="passwordtwo2" placeholder="请输入确认二级密码"  >
                             </div>
                         </div>
-
-                       <!-- <div class="am-form-group">
-                            <label for="user-DPbilv2" class="am-u-sm-3 am-form-label">
-                                开拓奖第二级别
-                            </label>
+                        <br/>
+                        <div class="am-form-group">
+                            <label for="user-name" class="am-u-sm-3 am-form-label">手机号码</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="DPbilv2" id="user-DPbilv2" value=""/>
-                                <small> %</small>
+                                <input type="text" id="telephone" name="telephone" placeholder="请输入手机号码" >
                             </div>
                         </div>
-
+                        <br/>
                         <div class="am-form-group">
-                            <label for="user-DPbilv3" class="am-u-sm-3 am-form-label">
-                                开拓奖第三级别
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">推荐人</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="DPbilv3" id="user-DPbilv3" value=""/>
-                                <small> %</small>
-                            </div>
-                        </div>-->
-
-
-
-                        <div class="am-form-group">
-                            <label for="user-guanliTC" class="am-u-sm-3 am-form-label">
-                                管理奖
-                            </label>
-                            <div class="am-u-sm-9" >
-                                <input type="text" name="guanliTC" id="user-guanliTC" value="<?php echo ($lv["guanlitc"]); ?>"/>
-                                <small> %</small>
+                                <input type="text" id="reMan" name="reMan" placeholder="开户行" value="<?php echo ($value["username"]); ?>">
                             </div>
                         </div>
-
-
-
-
+                        <br/>
                         <div class="am-form-group">
-                            <label for="user-yfenhong" class="am-u-sm-3 am-form-label">
-                                月分红
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">电子邮箱</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="yfenhong" id="user-yfenhong" value="<?php echo ($lv["yfenhong"]); ?>"/>
-                                <small> ‰</small>
+                                <input type="text" id="alipay" name="alipay" placeholder="电子邮箱" >
                             </div>
                         </div>
-
+                        <br/>
                         <div class="am-form-group">
-                            <label for="user-zlixi" class="am-u-sm-3 am-form-label">
-                                周利息
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">开户行</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="zlixi" id="user-zlixi" value="<?php echo ($lv["zlixi"]); ?>"/>
-                                <small> ‰</small>
+                                <input type="text" id="ibankname" name="ibankname" placeholder="中国银行深圳分行国贸支行" >
                             </div>
                         </div>
-
+                        <br/>
                         <div class="am-form-group">
-                            <label for="rifd" class="am-u-sm-3 am-form-label">
-                                日封顶
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">开户姓名</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="rifd" id="rifd" value="<?php echo ($lv["rifd"]); ?>"/>
+                                <input type="text" id="ibankuser" name="ibankuser" placeholder="银行账号对应的姓名" >
                             </div>
                         </div>
-
+                        <br/>
                         <div class="am-form-group">
-                            <label  class="am-u-sm-3 am-form-label">
-                                是否显示
-                            </label>
+                            <label for="user-name" class="am-u-sm-3 am-form-label">银行卡号</label>
                             <div class="am-u-sm-9">
-                                <input type="radio" name="ifshow" value=" 1" checked/>是
-                                <input type="radio" name="ifshow" value="0 " />否
+                                <input type="text" id="ibankcard" name="ibankcard" placeholder="银行卡号" >
                             </div>
                         </div>
-
-                        <div class="am-form-group">
-                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
-                                密码
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="password" name="safekey" id="user-yanzheng" placeholder="请输入二级密码"/>
-                            </div>
-                        </div>
+                        <br/>
+                      
+                               
 
 
-                        <input type="hidden" name="id" value="<?php echo ($lv['id']); ?>"/>
-                        <div class="am-form-group">
+
+                    <!--     <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
-                                <button type="submit" class="am-btn am-btn-primary">
-                                    修改
-                                </button>
+                            <button type="button" class="am-btn am-btn-primary" data-loading-text="保存中..."  onclick="submitAdd()">提交注册</button>
+                            </div>
+                        </div> -->
+                            <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                            <button type="button" class="am-btn am-btn-primary" data-loading-text="保存中..."  onclick="submitAdd()">提交注册</button>
                             </div>
                         </div>
-                    </form>
+                        </form>
                 </div>
             </div>
-
         </div>
-
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+        </footer>
+    </div>
     <!-- content end -->
 
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+</a>
 
 
 <footer class="admin-content-footer">
@@ -413,20 +397,99 @@
 
 
 <!--[if lt IE 9]>
-<script src="/Public/Admin/js/jquery.min.js"></script>
-<script src="/Public/Admin/js/modernizr.js"></script>
-<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/modernizr.js"></script>
+<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/Public/Admin/js/amazeui.min.js"></script>
-<script src="/Public/Admin/js/app.js"></script>
-<script src="/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/Public/Admin/lib/layer/layer.js"></script>
-<!-- <script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
-<!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
+<script src="/123/Public/Admin/js/amazeui.min.js"></script>
+<script src="/123/Public/Admin/js/app.js"></script>
+<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+<script type="text/javascript">
+ $().ready(function(){
+
+  $('button[data-loading-text]').click(function () {
+    var btn = $(this).button('loading');
+    setTimeout(function () {
+        btn.button('reset');
+    }, 3000);
+ });
+   
+
+ })
+ 
+
+ function submitAdd(){
+
+      var password = $('#password').val();
+      var password2 = $('#password2').val();
+      var passwordtwo = $('#passwordtwo').val();
+      var passwordtwo2 = $('#passwordtwo2').val();
+
+       if(password != password2){
+        $('#password').val('');
+        $('#password2').val('');
+        $('#password').attr("placeholder", "两次密码不一样");
+        $('#password2').attr("placeholder", "两次密码不一样");
+        $('#password').focus();
+        return;
+      }
+
+       if(passwordtwo != passwordtwo2){
+        $('#passwordtwo').val('');
+        $('#passwordtwo2').val('');
+        $('#passwordtwo').attr("placeholder", "两次密码不一样");
+        $('#passwordtwo2').attr("placeholder", "两次密码不一样");
+        $('#passwordtwo').focus();
+        return;
+      }
+
+         $.ajax({
+        url : 'registeradd',
+        type : "post",
+        data : {
+         "fatherMan" : $('#fatherMan').val(),
+         "treeplace" : $('#treeplace').val(),
+         "elvel" : $('#elvel').val(),
+         "usernames" : $('#usernames').val(),
+         "password" : $('#password').val(),
+         "passwordtwo" : $('#passwordtwo').val(),
+         "telephone" : $('#telephone').val(),
+         "reMan" : $('#reMan').val(),
+         "alipay" : $('#alipay').val(),
+         "ibankname" : $('#ibankname').val(),
+         "ibankuser" : $('#ibankuser').val(),
+         "ibankcard" : $('#ibankcard').val()
+
+      },
+        dataType : "json",
+        success : function(data){
+          // alert(data.isRead);
+            if(data.read != 1){
+              var i = data.read;
+              alert(i);
+            }
+            else{
+              alert("注册成功");
+              location.href = "profile";
+            }
+          
+     
+        }
+     })
+       
+   
+      
+     
+    }
+
+</script>

@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>洲际币后台管理系统</title>
+    <title>Amaze UI Admin index Examples</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -28,7 +28,7 @@
     </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-        <div class="logo"><img class="am-img-responsive" src="/Public/Admin/i/examples/logo.png"></div>
+        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
         <!--<div class="logo_biaoti"></div>-->
     </div>
     <div class="logo_text">
@@ -40,7 +40,7 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
+            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
@@ -55,7 +55,6 @@
         </ul>
     </div>
 </header>
-
 <div class="am-cf admin-main">
     
 <!-- sidebar start -->
@@ -218,185 +217,73 @@
 </div>
 <!-- sidebar end -->
 
-    <!-- content start -->
+
     <!-- content start -->
     <div class="admin-content">
         <div class="admin-content-body">
             <div class="am-cf am-padding am-padding-bottom-0">
-                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">财务管理</strong> / <small>修改级别数据</small></div>
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">提交反馈</strong> / <small>matter</small></div>
             </div>
 
             <hr>
 
             <div class="am-g">
                 <div class="am-u-sm-12 am-u-md-2 am-u-md-push-10">
-
+                   
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal" method="post" action="<?php echo U('EditjbOK');?>">
+                    <form class="am-form am-form-horizontal" onSubmit="return chkForm()"  action="/123/Admin/Msg/deal" method="post">
                         <div class="am-form-group">
-                            <label for="user-jiage" class="am-u-sm-3 am-form-label">
-                                级别名称
+                            <label for="user-email" class="am-u-sm-3 am-form-label">
+                                标题
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="jibie" id="user-jiage" value="<?php echo ($lv["jibie"]); ?>" >
+                                <input type="text" id="title" name="title" placeholder="请输入标题" value="">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="change-type" class="am-u-sm-3 am-form-label">选择分类</label>
+                            <div class="am-u-sm-9">
+                                <select  id="change-type" name="type">
+                                    <option value="1">意见反馈</option>
+                                    <option value="2">奖金问题</option>
+                                    <option value="3">帐号问题</option>
+                                    <option value="4">其他问题</option>
+                                </select>
 
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-jine" class="am-u-sm-3 am-form-label">
-                                金额
+                            <label for="user-email" class="am-u-sm-3 am-form-label">
+                                正文
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="jine" id="user-jine" value="<?php echo ($lv["jine"]); ?>"/>
-
+                               <textarea name="content" class="" rows="5" id="content"></textarea>
                             </div>
                         </div>
 
-                        <div class="am-form-group">
-                            <label for="user-chongfu" class="am-u-sm-3 am-form-label">
-                                市币组合
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="chongfu" id="user-chongfu" value="<?php echo ($lv["chongfu"]); ?>"/>
-                                <small> %</small>
-
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-zhjtuiTC" class="am-u-sm-3 am-form-label">
-                                市场奖
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="zhituiTC" id="user-zhjtuiTC" value="<?php echo ($lv['zhituitc']); ?> "/>
-                                <small> %</small>
-
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-duipengTC" class="am-u-sm-3 am-form-label">
-                                开拓奖
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="duipengTC" id="user-duipengTC" value="<?php echo ($lv['duipengtc']); ?>"/>
-                                <small> %</small>
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-DPbilv1" class="am-u-sm-3 am-form-label">
-                                开拓奖(六次之后)
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="DPbilv1" id="user-DPbilv1" value="<?php echo ($lv["dpbilv1"]); ?>"/>
-                                <small> %</small>
-                            </div>
-                        </div>
-
-                       <!-- <div class="am-form-group">
-                            <label for="user-DPbilv2" class="am-u-sm-3 am-form-label">
-                                开拓奖第二级别
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="DPbilv2" id="user-DPbilv2" value=""/>
-                                <small> %</small>
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-DPbilv3" class="am-u-sm-3 am-form-label">
-                                开拓奖第三级别
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="DPbilv3" id="user-DPbilv3" value=""/>
-                                <small> %</small>
-                            </div>
-                        </div>-->
-
-
-
-                        <div class="am-form-group">
-                            <label for="user-guanliTC" class="am-u-sm-3 am-form-label">
-                                管理奖
-                            </label>
-                            <div class="am-u-sm-9" >
-                                <input type="text" name="guanliTC" id="user-guanliTC" value="<?php echo ($lv["guanlitc"]); ?>"/>
-                                <small> %</small>
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="am-form-group">
-                            <label for="user-yfenhong" class="am-u-sm-3 am-form-label">
-                                月分红
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="yfenhong" id="user-yfenhong" value="<?php echo ($lv["yfenhong"]); ?>"/>
-                                <small> ‰</small>
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-zlixi" class="am-u-sm-3 am-form-label">
-                                周利息
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="zlixi" id="user-zlixi" value="<?php echo ($lv["zlixi"]); ?>"/>
-                                <small> ‰</small>
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="rifd" class="am-u-sm-3 am-form-label">
-                                日封顶
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" name="rifd" id="rifd" value="<?php echo ($lv["rifd"]); ?>"/>
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label  class="am-u-sm-3 am-form-label">
-                                是否显示
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="radio" name="ifshow" value=" 1" checked/>是
-                                <input type="radio" name="ifshow" value="0 " />否
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
-                                密码
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="password" name="safekey" id="user-yanzheng" placeholder="请输入二级密码"/>
-                            </div>
-                        </div>
-
-
-                        <input type="hidden" name="id" value="<?php echo ($lv['id']); ?>"/>
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
-                                <button type="submit" class="am-btn am-btn-primary">
-                                    修改
-                                </button>
+                                <input type="submit"  id="submit" value="确认提交" class="am-btn am-btn-primary"/>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-
         </div>
-
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+        </footer>
+    </div>
     <!-- content end -->
 
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+</a>
 
 
 <footer class="admin-content-footer">
@@ -413,20 +300,39 @@
 
 
 <!--[if lt IE 9]>
-<script src="/Public/Admin/js/jquery.min.js"></script>
-<script src="/Public/Admin/js/modernizr.js"></script>
-<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/modernizr.js"></script>
+<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/123/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/Public/Admin/js/amazeui.min.js"></script>
-<script src="/Public/Admin/js/app.js"></script>
-<script src="/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/Public/Admin/lib/layer/layer.js"></script>
-<!-- <script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
-<!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
+<script src="/123/Public/Admin/js/amazeui.min.js"></script>
+<script src="/123/Public/Admin/js/app.js"></script>
+<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/123/Public/Admin/lib/layer/layer.js"></script>
+<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+<script type="text/javascript" charset="utf-8" src="/123/Public/plugin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/123/Public/plugin/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/123/Public/plugin/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+    var ue = UE.getEditor('content');
+    function chkForm(){
+        var title = $('#title').val();
+            type = $('#change-type option:selected').val();
+            content = ue.getContent();
+        if (!title) {
+            layer.alert('请输入标题');
+            return false;
+        };
+        if (!content) {
+            layer.alert('请输入提交内容');
+            return false;
+        };
+    }
+</script>

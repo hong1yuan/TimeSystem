@@ -40,7 +40,7 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
+           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
@@ -351,31 +351,31 @@
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal" method="POST" action="/Admin/Guanli/fenfa">
+                    <form class="am-form am-form-horizontal" method="POST" action="/Admin/Guanli/fenfa" onsubmit="return chcForm();">
                         <?php if(is_array($lists)): foreach($lists as $k=>$v): ?><div class="am-form-group">
-                            <label for="user-jibie" class="am-u-sm-3 am-form-label">
+                            <label  class="am-u-sm-3 am-form-label">
                                 <?php echo ($v["jibie"]); ?>
 
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-jibie"  name="jibie<?php echo ($v["id"]); ?>" value="<?php echo ($v["yfenhong"]); ?>" />
-                                <input type="hidden" name="<?php echo ($v["id"]); ?>" value="<?php echo ($v["id"]); ?>"/>
+                                <input type="text" class="user-jibie"  name="<?php echo ($v["id"]); ?>" value="<?php echo ($v["yfenhong"]); ?>" />
+                                <!--<input type="hidden" name="<?php echo ($v["id"]); ?>" value="<?php echo ($v["id"]); ?>"/>-->
                             </div>
                         </div><?php endforeach; endif; ?>
-                        <div class="am-form-group">
+                       <!-- <div class="am-form-group">
                             <label for="user-money" class="am-u-sm-3 am-form-label">手机号码</label>
                             <div class="am-u-sm-9">
                                 <input type="text" id="user-money"  name="telephone" value="<?php echo ($telephone); ?>" disabled>
 
 
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="am-form-group">
-                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">验证码</label>
+                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">密码</label>
                             <div class="am-u-sm-9">
-                                <input style="width:85%;float:left;" type="password" name="yanzheng" id="user-yanzheng" placeholder="请输入手机验证码">
-                                <button class="am-btn" type="button">发送验证码 </button>
+                                <input type="password" name="password" id="user-yanzheng" placeholder="请输入二级密码">
+                                <!--<button class="am-btn" type="button">发送验证码 </button>-->
                             </div>
                         </div>
 
@@ -421,3 +421,12 @@
 <!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+        <script>
+            function chcForm(){
+                var obj = $('.user-jibie');
+                $.each(obj,function(i,item){
+                    $(item).next().val();
+                })
+                //return false;
+            }
+        </script>
