@@ -231,7 +231,7 @@
 
             <div class="am-g">
                 <div class="am-u-sm-12">
-                    <form class="am-form" method="post" action="/123/Admin/Msg/detail?id=1129" onsubmit="return chkForm()">
+                    <form class="am-form" method="post" action="/123/Admin/Msg/detail?id=1131" onsubmit="return chkForm()">
                       <fieldset>
                         <legend>用户名：<?php echo ($msinfo['username']); ?></legend>
                         <legend>标题：<?php echo ($msinfo['title']); ?></legend>
