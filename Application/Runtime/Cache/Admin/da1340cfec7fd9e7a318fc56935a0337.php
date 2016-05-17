@@ -250,7 +250,7 @@
                         </div>
                         <div class="am-form-group">
                           <legend>管理员回复：</legend>
-                        <?php if(empty($answer)): ?>未回复
+                        <?php if(empty($answer)): ?>待回复
                         <?php else: ?> 
                             <?php echo ($answer['msg']); endif; ?>   
                         </div>
