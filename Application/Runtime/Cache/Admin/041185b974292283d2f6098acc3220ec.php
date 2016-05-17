@@ -8,9 +8,9 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link rel="alternate icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-  <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-  <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css"/>
+  <link rel="alternate icon" type="image/png" href="/Public/Admin/i/favicon.png">
+  <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css"/>
   <style>
     .header {
       text-align: center;
@@ -57,7 +57,7 @@
     <br>
     <br>
 
-    <form method="post"  id="documentForm" class="am-form" action="/123/Admin/Index/login.html">
+    <form method="post"  id="documentForm" class="am-form" action="/Admin/index/login">
         <label for="email">用户名:</label>
           <input type="text" name="username" id="username" value="">
         <br>
@@ -87,8 +87,8 @@
   </div>
 </div>
 </body>
-<script type="text/javascript" src="/123/Public/Admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/layer/layer.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/jquery.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/lib/layer/layer.js"></script>
 <script type="text/javascript">
     function refer(){
            var username = $('#username').val();

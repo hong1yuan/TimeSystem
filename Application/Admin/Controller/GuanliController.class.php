@@ -313,4 +313,39 @@ class GuanliController extends Controller {
          $this->display();
     }
 
+    public function addjibie(){
+        $this->display();
+    }
+
+    public  function jibieOK(){
+
+       /* $arr['jibie'] = I('post.jibie');
+        $arr['jine'] = I('post.jine');
+        $arr['chongfu'] = I('post.chongfu');
+        $arr['zhjtuiTC'] = I('post.zhjtuiTC');
+        $arr['duipengTC'] = I('post.duipengTC');
+        $arr['DPbilv1'] = I('post.DPbilv1');
+        $arr['guanliTC'] = I('post.guanliTC');
+        $arr['yfenhong'] = I('post.yfenhong');
+        $arr['zlixi'] = I('post.zlixi');
+        $arr['rifd'] = I('post.rifd');
+        $arr['ifshow'] = I('post.ifshow');
+        dump($_POST);
+        die;*/
+        $m = D('gee_fee');
+        $arr = $m->create();
+
+        if($arr){
+           $a= $m->add();
+            if($a ){
+                $this->success('添加成功',U('jibie'));
+            }
+            else{
+                $this->error('添加失败',U('addjibie'));
+            }
+        }
+
+    }
+
+
 }
