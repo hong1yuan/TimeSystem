@@ -1,0 +1,4 @@
+[ 2016-05-16T17:25:19+08:00 ] 127.0.0.1 /Admin/News/index.html
+ERR: 1054:Unknown column 'id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `news` ORDER BY id desc, istop desc , updatetime desc LIMIT 0,10  
+
