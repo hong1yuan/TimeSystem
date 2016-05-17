@@ -22,9 +22,10 @@
                    <form class="am-form am-form-horizontal" id="dify"  method="post">
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-3 am-form-label">安置人</label>
-                            <div class="am-u-sm-9">
-                                <input type="text" id="fatherMan" name="fatherMan" placeholder=""  value="">
+                            <div class="am-u-sm-7">
+                                <input type="text" id="fatherMan" name="fatherMan" placeholder=""  value="{$value.fatherman}">
                             </div>
+                            <a href = "team"><strong>查询安置人</strong></a>
                         </div>
                         <br/>
                          <div class="am-form-group">
@@ -104,7 +105,7 @@
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-3 am-form-label">推荐人</label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="reMan" name="reMan" placeholder="开户行" value="{$value.username}">
+                                <input type="text" id="reMan" name="reMan" placeholder="开户行" readonly value="{$value.username}" o>
                             </div>
                         </div>
                         <br/>
@@ -188,6 +189,89 @@
       var password2 = $('#password2').val();
       var passwordtwo = $('#passwordtwo').val();
       var passwordtwo2 = $('#passwordtwo2').val();
+      var cardidpatrn = /^\S+$/;
+      var fatherMan  = $('#fatherMan').val();
+      var treeplace  = $('#treeplace').val();
+      var elvel  = $('#elvel').val();
+      var usernames  = $('#usernames').val();
+      var telephone  = $('#telephone').val();
+      var reMan  = $('#reMan').val();
+      var alipay  = $('#alipay').val();
+      var ibankname  = $('#ibankname').val();
+      var ibankuser  = $('#ibankuser').val();
+      var ibankcard  = $('#ibankcard').val();
+      if (!cardidpatrn.test(fatherMan)) {
+        $('#fatherMan').val('');
+        $('#fatherMan').attr("placeholder", "不许为空");
+        $('#fatherMan').focus();
+        return;
+      }
+      if (!cardidpatrn.test(treeplace)) {
+        $('#treeplace').val('');
+        $('#treeplace').attr("placeholder", "不许为空");
+        $('#treeplace').focus();
+        return;
+      }
+      if (!cardidpatrn.test(elvel)) {
+        $('#elvel').val('');
+        $('#elvel').attr("placeholder", "不许为空");
+        $('#elvel').focus();
+        return;
+      }
+      if (!cardidpatrn.test(usernames)) {
+        $('#usernames').val('');
+        $('#usernames').attr("placeholder", "不许为空");
+        $('#usernames').focus();
+        return;
+      }
+      if (!cardidpatrn.test(telephone)) {
+        $('#telephone').val('');
+        $('#telephone').attr("placeholder", "不许为空");
+        $('#telephone').focus();
+        return;
+      }
+      if (!cardidpatrn.test(reMan)) {
+        $('#reMan').val('');
+        $('#reMan').attr("placeholder", "不许为空");
+        $('#reMan').focus();
+        return;
+      }
+      if (!cardidpatrn.test(alipay)) {
+        $('#alipay').val('');
+        $('#alipay').attr("placeholder", "不许为空");
+        $('#alipay').focus();
+        return;
+      }
+      if (!cardidpatrn.test(ibankname)) {
+        $('#ibankname').val('');
+        $('#ibankname').attr("placeholder", "不许为空");
+        $('#ibankname').focus();
+        return;
+      }
+      if (!cardidpatrn.test(ibankuser)) {
+        $('#ibankuser').val('');
+        $('#ibankuser').attr("placeholder", "不许为空");
+        $('#ibankuser').focus();
+        return;
+      }
+      if (!cardidpatrn.test(ibankcard)) {
+        $('#ibankcard').val('');
+        $('#ibankcard').attr("placeholder", "不许为空");
+        $('#ibankcard').focus();
+        return;
+      }
+      if (!cardidpatrn.test(password)) {
+        $('#password').val('');
+        $('#password').attr("placeholder", "不许为空");
+        $('#password').focus();
+        return;
+      }
+      if (!cardidpatrn.test(passwordtwo)) {
+        $('#passwordtwo').val('');
+        $('#passwordtwo').attr("placeholder", "不许为空");
+        $('#passwordtwo').focus();
+        return;
+      }
 
        if(password != password2){
         $('#password').val('');
