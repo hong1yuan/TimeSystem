@@ -80,7 +80,7 @@ class MemberController extends Controller {
         $user = $_SESSION['member']['id'];
         $aa = M('member') -> field('username') ->  where("id = '$user'") -> find();
         $value[username] = $aa[username];
-        $value[fatherman] = I('post.fatherMan');
+        $value[fatherman] = $_GET['fatherMan'];
 
         $this->assign('value',$value);
         $this->display();
@@ -232,7 +232,7 @@ class MemberController extends Controller {
      * 激活账号
      */
     public function activate(){
-        $user = 1000;
+        $user = $_SESSION['member']['id'];
         $news = M('Member');
         $count = $news-> where("ReID = '$user' OR payid = '$user'") -> count();
         $pages = ceil($count/10);
@@ -253,12 +253,129 @@ class MemberController extends Controller {
      */
     
     public function activateadd(){
+
+     $user = $_SESSION['member']['id'];
      $poid = I('post.id');
-     $news = M('Member');
-     $arryn["ispay"] = 1;
-     $news -> where("id = '$poid'") -> save($arryn);
+     $news = M('Member') -> where("id = '$poid'") -> find();
+
+
+
+     $reid = $news["reid"];
+     if($news["ispay"] != 0){
+      $att["ispay"] = "用户已激活";
+      exit(json_encode($att));
+     }
+
+     $new = M('Member') -> where("id = $reid") ->find();
+     if($new["baodan"] < $news["guquan"]){
+        $att["ispay"] = "报单币不足";
+        exit(json_encode($att));
+
+     }
+     
+     $baodan["baodan"] = $new["baodan"] - $news["guquan"];
+     M('Member') -> where("id = '$reid'") -> save($baodan);
+
+     $jihuo["ispay"] = 1;
+     $jihuo["passtime"] = date('Y-m-d');
+     $jihuo["windate"] = date('Y-m-d');
+     $jihuo["wDT"] = date('Y-m-d');
+     M('Member') -> where("id = '$poid'") -> save($jihuo);
+     
+     $ulevel = M('gee_fee') -> field("zhituiTC") -> where("id = '$new[ulevel]'") ->  find();
+     $chongxiao=30;
+     $csbilv=2;
+     $hqbilv=3;
+     $guanli=1;
+
+     if($new["zongji"] < $new["guquan"]*2.2){
+      $zhitui["zuhe"] = $news["guquan"] * $chongxiao/100;
+      $zhitui["cishan"] = $news["guquan"] * $csbilv/100;
+      $zhitui["huanqiu"] = $news["guquan"] * $hqbilv/100;
+      $zhitui["ztj"] = $news["guquan"] - $zhitui["zuhe"] - $zhitui["cishan"] - $zhitui["huanqiu"];
+      $zhitui["guanli"] = $zhitui["ztj"] * $guanli/100;
+      $ztsave["zongji"] = $new["zongji"] + $zhitui["ztj"] + $zhitui["guanli"];
+      $ztsave["zuhe"] = $new["zuhe"] + $zhitui["zuhe"];
+      $ztsave["xianjin"] = $new["xianjin"] + $zhitui["ztj"] + $zhitui["guanli"];
+      $ztsave["zhitui"] = $new["zhitui"] + $zhitui["ztj"];
+      $ztsave["cishan"] = $new["cishan"] + $zhitui["cishan"];
+      $ztsave["huanqiu"] =  $new["huanqiu"] + $zhitui["huanqiu"];
+      $ztsave["ztNum"] = $new["ztNum"] + 1;
+      $ztsave["guanli"] = $zhitui["guanli"];
+      $ztsave["windate"] = date('Y-m-d');
+      M('Member') -> where("id = '$reid'") ->save($ztsave);
+     }
+
+     $duipeng1 = $news["treeplace"];
+     if($duipeng1 == 1){
+         $tongji = M('Member') -> where("fatherid = '$reid' AND treeplace = 0 AND ispay = 1") ->find();
+     }
+     else{
+         $tongji = M('Member') -> where("fatherid = '$reid' AND treeplace = 1 AND ispay = 1") ->find();
+     }
+
+     if($tongji != false){
+        $ppath = $news["ppath"];
+         $path = explode(",", $ppath);
+         $len  =count($path);
+         for($i=$len-2 ;$i>=1;$i--){    
+            $pid = $path[$i];
+            $pinfo = M('Member')->where(" id ='$pid'")->find(); 
+            $dpcs = $pinfo['dpcs'];
+            $xj = $pinfo['xianjin'];
+            $zj = $pinfo['zongji'];
+            $total = $pinfo['TotalDay'];
+            $lv = $pinfo['ulevel'];
+            $dpinfo = M('Gee_Fee')->where("id = '$lv'")->find();
+            $rfd = $dpinfo['rifd'];
+            if($dpcs > 6){
+                $dplv = $dpinfo['DPbilv1'];
+            }else{
+                $dplv = $dpinfo['duipengTC'];
+            }
+            if($zj < $pinfo['guquan'] * 2.2){
+                if(date('Y-m-d') != $pinfo['countdate']){
+                    $total = 0 ;
+                }
+
+                if($total < $rfd){
+                    if($tongji['guquan'] < $news['guquan']){
+                        $dpcha = $tongji['guquan'] * $dplv / 100;
+                    }else{
+                         $dpcha = $news['guquan'] * $dplv / 100;
+                    }
+                    //
+                    $gx['zuhe'] = $pinfo['zuhe'] + $dpcha * 30/100;
+                    $gx['cishan'] = $pinfo['cishan'] + $dpcha * 2/100;
+                    $gx['huanqiu'] = $pinfo['huanqiu'] + $dpcha * 3/100;
+                   
+                    $gx['zongji'] =  $zj + $dpcha * 65/100 ;
+                    $gx['TotalDay'] =  $total + $dpcha * 65/100 ;
+                    $gx['xianjin']  = $xj +$dpcha * 65/100;
+                    $gx['duipeng'] = $pinfo['duipeng'] + $dpcha * 65/100;
+                    $gx['countdate'] = date('Y-m-d');
+                    $gx['dpcs'] = $dpcs +1;
+                    $res = M('Member')->where(" id = '$pid' ")->save($gx);
+
+
+                }
+
+            }
+
+            
+            
+
+         }
+            
+       
+     }
+
+
+
+
+     $att["ispay"] = "激活成功";
      //echo "<script>alert('激活成功')</script>";
-     echo json_encode($arryn);
+     exit(json_encode($att));
      
     }
 
@@ -267,7 +384,7 @@ class MemberController extends Controller {
      */
 
     public function activatedel(){
-        $user = 1000;
+        $user = $_SESSION['member']['id'];
         $poid = I('post.id');
         $news = M('Member');
 
