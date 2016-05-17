@@ -40,7 +40,7 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
+           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
@@ -289,25 +289,23 @@
                                 <td>
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
-                                            <!--<button class="am-btn am-btn-default am-btn-xs am-text-secondary">-->
-                                                <a href="<?php echo U('detail',array('id'=>$v['id']));?>">
-                                               <!-- <span class="am-icon-pencil-square-o"></span>-->
+                                            <?php if($v['islock'] == 0): ?><a href="<?php echo U('detail',array('id'=>$v['id']));?>">
+                                                <span class="am-icon-pencil-square-o"></span>
                                                 查看
                                             </a>
                                             &nbsp;
-                                            <!--</button>-->
-                                            <!--<button class="am-btn am-btn-default am-btn-xs am-hide-sm-only">-->
-                                                <!--<span class="am-icon-copy"></span>-->
+
                                             <a href="<?php echo U('lock',array('id'=>$v['id']));?>">
                                                 锁定
-                                            </a>                                            &nbsp;
-                                           <!-- </button>-->
-                                            <!--<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">-->
-                                                <!--<span class="am-icon-trash-o"></span>-->
-                                                <a href="<?php echo U('Index/index',array('id'=>$v['id']));?>">
-                                                登录
-                                                </a>
-                                            <!--</button>-->
+                                            </a>
+                                                <?php else: ?>
+
+                                                    已锁定 &nbsp;
+
+                                                <a href="<?php echo U('unlock',array('id'=>$v['id']));?>">
+                                                    解锁
+                                                </a><?php endif; ?>
+
                                         </div>
                                     </div>
                                 </td>

@@ -42,10 +42,8 @@ class GuanliController extends Controller {
         $user_before = M('Member')->where("id='$id' ")->find();
         //资金的修改记录
         $user_after = $_POST;
-        dump($user_after);
-        die;
-
-
+        //dump($user_after);
+        //  die;
 
         $result_all = M('Member')->where("id = '$id'")->save($user_after);
         if($result_all){
@@ -162,9 +160,6 @@ class GuanliController extends Controller {
             $result_baoban = M('History')->where("uid = '$id'")->add($arr);
 
 
-
-
-
             $this->success('修改成功',U('member'));
         }else{
             $this->error('修改失败',U('exchange'));
@@ -174,9 +169,32 @@ class GuanliController extends Controller {
     }
 
     /**
-     * 锁定
-     */
+    * 锁定
+    */
     public function lock(){
+        $id = $_GET['id'];
+        $arr['isLock'] = 1 ;
+        $res = M('Member')->where("id = '$id'")->save($arr);
+        if($res){
+            $this->success('用户已锁定',U('member'),2);
+        }else{
+            $this->error('锁定失败',U('member'),2);
+        }
+
+    }
+
+    /**
+     * 解锁
+     */
+    public function unlock(){
+        $id = $_GET['id'];
+        $arr['isLock'] = 0 ;
+        $res = M('Member')->where("id = '$id'")->save($arr);
+        if($res){
+            $this->success('用户已解锁',U('member'),2);
+        }else{
+            $this->error('解锁失败',U('member'),2);
+        }
 
     }
 

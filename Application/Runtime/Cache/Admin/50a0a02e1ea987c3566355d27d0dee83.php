@@ -40,7 +40,7 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
+           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
@@ -462,7 +462,10 @@
                         </div>
                         <input type="hidden" name="id" value="<?php echo ($user["id"]); ?>"/>
                         <div class="am-form-group">
+
                             <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button onclick="history.back(-1)" type="button" class="am-btn am-btn-primary" id="">返回</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 <button type="submit" class="am-btn am-btn-primary" id="btnOk">保存修改</button>
                             </div>
                         </div>
