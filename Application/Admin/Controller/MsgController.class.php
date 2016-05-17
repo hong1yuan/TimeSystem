@@ -90,4 +90,17 @@ class MsgController extends Controller {
         }
     }
 
+    //删除留言
+    public function delete(){
+        $id = intval($_GET['id']);
+        $msg = M('msg');
+        $msinfo = $msg -> where('fid='.$id)->find();
+        if ($msinfo) {
+            $msg->where("id={$msinfo['id']}")->delete();
+        }
+        $msg->where('id='.$id)->delete();
+        $info = array('status' => 0,'info'=>'操作成功');
+        $this->ajaxReturn($info);
+    }
+
 }

@@ -50,7 +50,7 @@
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-secondary edit" id="{$vo.id}"><span class="am-icon-pencil-square-o"></span>查看</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only del" id="{$vo.id}"><span class="am-icon-trash-o"></span> 删除</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -98,5 +98,18 @@
     });
     $('.edit').on('click',function(){
         location.href = "detail?id="+$(this).attr('id');
+    })
+    $('.del').on('click',function(){
+    	var id = $(this).attr('id');
+    	layer.confirm('您确定要删除该记录吗？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(index){
+		   layer.closeAll();
+		   $.get('delete?id='+id,function(data){
+		   		location.reload();
+		   })
+		}, function(){
+		  
+		});
     })
 </script>

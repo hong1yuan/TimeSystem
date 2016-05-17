@@ -91,7 +91,9 @@
 <include file = "Common/footer" />
 <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
 <script type="text/javascript">
-    
+    $('#feedback').on('click',function(){
+    	location.href = "deal";
+    })
     laypage({
         cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
         pages: $('#page').attr('pages'), //总页数
