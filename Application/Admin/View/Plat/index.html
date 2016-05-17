@@ -86,10 +86,18 @@
                             <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
                                 验证码
                             </label>
-                            <div class="am-u-sm-9">
+                            <div class="am-u-sm-9 am-form-inline" role="form">
+                            <div class="am-form-group">
+    							<input type="text" id="user-yanzheng" name="mobile_code" placeholder="请输入手机验证码"/>
+  							</div>
+
+						    <div class="am-form-group">
+						       <button type="button" class="am-btn am-btn-primary send">发送验证码</button> 
+						  	</div>						
+						  	<!-- 
                                 <input type="text" id="user-yanzheng" placeholder="请输入手机验证码"/>
                                 <br/>
-                                <button>发送验证</button>
+                                 <button type="button" class="am-btn am-btn-primary">发送验证码</button> -->
                             </div>
                         </div>
 
@@ -118,3 +126,36 @@
 </a>
 
 <include file = "Common/footer" />
+<script type="text/javascript">
+	$('.send').on('click',function(){
+		var self = $(this);
+		if (self.text() != "发送验证码") {
+			return false;
+		};
+        $.ajax({
+        	type:'POST',
+        	url:'sendmsg',
+        	data:{
+        		tpl:$('#user-phone').val(),
+        	},
+        	success:function(data) {
+        		if (!data.status) {
+        			layer.alert(data.info);
+        			return false;
+        		}else{
+	        		var i = 180;
+			        var time = setInterval(function(){
+			            i--;
+			            if(i <= 0){
+			               self.text('发送验证码');
+			               clearInterval(time);
+			            }else{
+			               self.text(+i+'秒后重新获取');
+			            }
+			        },1000);
+        		}
+		       
+        	}
+        })
+	})
+</script>

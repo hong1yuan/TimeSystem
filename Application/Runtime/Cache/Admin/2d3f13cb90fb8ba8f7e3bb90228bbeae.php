@@ -22,9 +22,17 @@
     以获得更好的体验！</p>
 <![endif]-->
 
+<!--<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand">
+        <strong>Amaze UI</strong> <small>后台管理</small>
+    </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-        <strong>Amaze UI</strong> <small>后台管理模板</small>
+        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
+        <!--<div class="logo_biaoti"></div>-->
+    </div>
+    <div class="logo_text">
+        <small>后台管理</small>
     </div>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
@@ -32,15 +40,15 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
+           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                    <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+                    <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
                     <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
-                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                    <li><a href="<?php echo U('Index/layout');?>" onclick =" return confirm('你确定要退出吗？') "><span class="am-icon-power-off"></span> 退出</a></li>
                 </ul>
             </li>
             <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
@@ -54,7 +62,7 @@
 <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
     <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
-            <li><a href="#"><span class="am-icon-home"></span> 首页</a></li>
+            <li><a href="<?php echo U('Index/index');?>"><span class="am-icon-home"></span> 首页</a></li>
             <!-- 信息中心 -->
             <li class="admin-parent">
                 <a class="am-cf" data-am-collapse="{target: '#collapse-news'}"><span class="am-icon-btn am-primary am-icon-book"></span> 信息中心
@@ -158,6 +166,10 @@
                             <span class="am-icon-trophy">会员管理</span>
                         </a>
                         </li>
+                        <li><a href="<?php echo U('Guanli/jibie');?>">
+                            <span class="am-icon-trophy">级别管理</span>
+                        </a>
+                        </li>
                         <li>
                             <a href="<?php echo U('Guanli/reward');?>">
                                 <span class="am-icon-trophy">月分红</span>
@@ -218,101 +230,103 @@
 
             <div class="am-g">
                 <div class="am-u-sm-12 am-u-md-2 am-u-md-push-10">
-                    <!--  <div class="am-panel am-panel-default">
-                       <div class="am-panel-bd">
-                         <div class="am-g">
-                           <div class="am-u-md-4">
-                             <img class="am-img-circle am-img-thumbnail" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/200/h/200/q/80" alt="">
-                           </div>
-                           <div class="am-u-md-8">
-                             <p>你可以使用<a href="#">gravatar.com</a>提供的头像或者使用本地上传头像。 </p>
-                             <form class="am-form">
-                               <div class="am-form-group">
-                                 <input type="file" id="user-pic">
-                                 <p class="am-form-help">请选择要上传的文件...</p>
-                                 <button type="button" class="am-btn am-btn-primary am-btn-xs">保存</button>
-                               </div>
-                             </form>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
 
-                     <div class="am-panel am-panel-default">
-                       <div class="am-panel-bd">
-                         <div class="user-info">
-                           <p>等级信息</p>
-                           <div class="am-progress am-progress-sm">
-                             <div class="am-progress-bar" style="width: 60%"></div>
-                           </div>
-                           <p class="user-info-order">当前等级：<strong>LV8</strong> 活跃天数：<strong>587</strong> 距离下一级别：<strong>160</strong></p>
-                         </div>
-                         <div class="user-info">
-                           <p>信用信息</p>
-                           <div class="am-progress am-progress-sm">
-                             <div class="am-progress-bar am-progress-bar-success" style="width: 80%"></div>
-                           </div>
-                           <p class="user-info-order">信用等级：正常当前 信用积分：<strong>80</strong></p>
-                         </div>
-                       </div>
-                     </div> -->
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal">
+                    <form class="am-form am-form-horizontal" method="post" action="<?php echo U('webxiugai');?>">
                         <div class="am-form-group">
-                            <label for="user-name" class="am-u-sm-3 am-form-label">姓名 / Name</label>
+                            <label for="user-jiage" class="am-u-sm-3 am-form-label">
+                                洲际比的价格
+                            </label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-name" placeholder="姓名 / Name">
-                                <small>输入你的名字，让我们记住你。</small>
+                                <input type="text" name="jiage" id="user-jiage" value="<?php echo ($config["jiage"]); ?>"/>
+
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-email" class="am-u-sm-3 am-form-label">电子邮件 / Email</label>
+                            <label for="user-zuidi" class="am-u-sm-3 am-form-label">
+                                最低价
+                            </label>
                             <div class="am-u-sm-9">
-                                <input type="email" id="user-email" placeholder="输入你的电子邮件 / Email">
-                                <small>邮箱你懂得...</small>
+                                <input type="text" name="zuidi" id="user-zuidi" value="<?php echo ($config["zuidi"]); ?> "/>
+
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-phone" class="am-u-sm-3 am-form-label">电话 / Telephone</label>
+                            <label for="user-gao" class="am-u-sm-3 am-form-label">
+                                最高价
+                            </label>
                             <div class="am-u-sm-9">
-                                <input type="tel" id="user-phone" placeholder="输入你的电话号码 / Telephone">
+                                <input type="text" name="zuigao" id="user-gao" value="<?php echo ($config["zuigao"]); ?>"/>
+                            </div>
+                        </div>
+
+
+
+                        <div class="am-form-group">
+                            <label for="user-zhangfu" class="am-u-sm-3 am-form-label">
+                                涨幅
+                            </label>
+                            <div class="am-u-sm-9" >
+                                <input type="text" name="zhangfu" id="user-zhangfu" value="<?php echo ($config["zhangfu"]); ?>"/>
+                                <small> %</small>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="am-form-group">
+                            <label for="user-chengjiao" class="am-u-sm-3 am-form-label">
+                                成交量
+                            </label>
+                            <div class="am-u-sm-9">
+                                <input type="text" name="chengjiao" id="user-chengjiao" value="<?php echo ($config["chengjiao"]); ?>"/>
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-QQ" class="am-u-sm-3 am-form-label">QQ</label>
+                            <label for="user-phone" class="am-u-sm-3 am-form-label">
+                                手机号码
+                            </label>
                             <div class="am-u-sm-9">
-                                <input type="number" pattern="[0-9]*" id="user-QQ" placeholder="输入你的QQ号码">
+                                <input type="text" id="user-phone"  value="<?php echo ($telephone); ?>" disabled/>
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-weibo" class="am-u-sm-3 am-form-label">微博 / Twitter</label>
-                            <div class="am-u-sm-9">
-                                <input type="text" id="user-weibo" placeholder="输入你的微博 / Twitter">
+                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
+                                验证码
+                            </label>
+                            <div class="am-u-sm-9 am-form-inline" role="form">
+                            <div class="am-form-group">
+    							<input type="text" id="user-yanzheng" name="mobile_code" placeholder="请输入手机验证码"/>
+  							</div>
+
+						    <div class="am-form-group">
+						       <button type="button" class="am-btn am-btn-primary send">发送验证码</button> 
+						  	</div>						
+						  	<!-- 
+                                <input type="text" id="user-yanzheng" placeholder="请输入手机验证码"/>
+                                <br/>
+                                 <button type="button" class="am-btn am-btn-primary">发送验证码</button> -->
                             </div>
                         </div>
 
-                        <div class="am-form-group">
-                            <label for="user-intro" class="am-u-sm-3 am-form-label">简介 / Intro</label>
-                            <div class="am-u-sm-9">
-                                <textarea class="" rows="5" id="user-intro" placeholder="输入个人简介"></textarea>
-                                <small>250字以内写出你的一生...</small>
-                            </div>
-                        </div>
+
 
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
-                                <button type="button" class="am-btn am-btn-primary">保存修改</button>
+                                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+
         </div>
         <footer class="admin-content-footer">
             <hr>
@@ -325,6 +339,19 @@
 
 <a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
 </a>
+
+
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+</div>
+<!-- content end -->
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+</a>
+
 
 
 <!--[if lt IE 9]>
@@ -345,3 +372,36 @@
 <!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+<script type="text/javascript">
+	$('.send').on('click',function(){
+		var self = $(this);
+		if (self.text() != "发送验证码") {
+			return false;
+		};
+        $.ajax({
+        	type:'POST',
+        	url:'sendmsg',
+        	data:{
+        		tpl:$('#user-phone').val(),
+        	},
+        	success:function(data) {
+        		if (!data.status) {
+        			layer.alert(data.info);
+        			return false;
+        		}else{
+	        		var i = 180;
+			        var time = setInterval(function(){
+			            i--;
+			            if(i <= 0){
+			               self.text('发送验证码');
+			               clearInterval(time);
+			            }else{
+			               self.text(+i+'秒后重新获取');
+			            }
+			        },1000);
+        		}
+		       
+        	}
+        })
+	})
+</script>
