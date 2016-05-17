@@ -237,7 +237,6 @@
 
             <div class="am-g">
                 <div class="am-u-sm-12">
-                    <form class="am-form">
                         <table class="am-table am-table-striped am-table-hover table-main">
                             <thead>
                             <tr>
@@ -246,6 +245,7 @@
                                 <th class="table-type" style="width:20%">类别</th>
                                 <th class="table-author am-hide-sm-only" style="width:20%">状态</th>
                                 <th class="table-date am-hide-sm-only" style="width:20%">最后更新</th>
+                                <th class="table-date am-hide-sm-only">操作</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -256,7 +256,7 @@
                                             <?php switch($vo["mtype"]): case "1": ?>意见建议<?php break;?>
                                                 <?php case "2": ?>奖金问题<?php break;?>
                                                 <?php case "3": ?>帐号问题<?php break;?>
-                                                <?php case "3": ?>其他问题<?php break;?>
+                                                <?php case "4": ?>其他问题<?php break;?>
                                                 <?php default: endswitch;?>
                                         </td>
                                         <td class="am-hide-sm-only">
@@ -269,9 +269,7 @@
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only edit" id="<?php echo ($vo["id"]); ?>"><span class="am-icon-copy"></span>查看</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -284,7 +282,6 @@
                             <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -334,82 +331,7 @@
 </html>
 <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
 <script type="text/javascript">
-    $('#feedback').on('click',function(){ 
-    	location.href = "deal";
-        /*var content = '<div class="am-g" id="couple">'
-            content+= '<div class="am-u-12">'
-            content+= '        <form class="am-form">'
-            content+= '          <fieldset>'
-            content+= '            <legend>问题反馈</legend>'
-            content+= '            <div class="am-form-group">'
-            content+= '              <label for="doc-ipt-pwd-1">信息标题</label>'
-            content+= '              <input type="text" name="title" class="" id="doc-ipt-pwd-1" placeholder="请输入您的反馈问题简介">'
-            content+= '            </div>'
-            content+= '            <div class="am-form-group">'
-            content+= '              <label for="doc-select-1">信息分类</label>'
-            content+= '              <select id="doc-select-1" name="mtype">'
-            content+= '                <option value="1">意见反馈</option>'
-            content+= '                <option value="2">奖金问题</option>'
-            content+= '                <option value="3">帐号问题</option>'
-            content+= '                <option value="4">其他问题</option>'
-            content+= '              </select>'
-            content+= '              <span class="am-form-caret"></span>'
-            content+= '            </div>'
-            content+= '            <div class="am-form-group">'
-            content+= '              <label for="doc-ta-1">反馈内容</label>'
-            content+= '              <textarea class=""  name="msg" rows="5" id="doc-ta-1"></textarea>'
-            content+= '            </div>'
-            content+= '          </fieldset>'
-            content+= '        </form>'
-            content+= '    </div>'
-            content+= '</div>'
-        layer.open({
-              type: 1,
-              title:'问题反馈',
-
-              area: ['420px',''], //宽高
-
-              //skin: 'layui-layer-rim', //加上边框
-              area: ['500px',''], //宽高
-              content: content,
-              btn: ['提交', '取消'],
-              yes:function(){
-                     var title = $('input[name="title"]').val();
-                     var mtype = $('#doc-select-1 option:selected').val();
-                     var msg = $('#doc-ta-1').val();
-                     if (!title) {
-                         layer.alert('请输入标题', {icon: 2});
-                         return false;
-                     };
-                     if (!msg) {
-                         layer.alert('请输入反馈问题', {icon: 2});
-                         return false;
-                     };
-                     $.ajax({
-                         type:'POST',
-                         url:'deal',
-                         data:{
-                            title:title,
-                            mtype:mtype,
-                            msg:msg,
-                            type:'add',
-                         },
-                         success:function(data){
-                            if (!data.status) {
-                                layer.alert(data.info, {icon: 1});
-                                return false;
-                            };
-                            layer.open({
-                                  content: data.info,
-                                  yes: function(index, layero){
-                                     location.reload();
-                                  }
-                            });   
-                         }
-                     })
-              },
-        });*/
-    })
+    
     laypage({
         cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
         pages: $('#page').attr('pages'), //总页数
@@ -426,4 +348,7 @@
             }
         }
     });
+    $('.edit').on('click',function(){
+        location.href = "detail?id="+$(this).attr('id');
+    })
 </script>

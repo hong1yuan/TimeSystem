@@ -33,7 +33,7 @@
                                                 <case value="1">意见建议</case>
                                                 <case value="2">奖金问题</case>
                                                 <case value="3">帐号问题</case>
-                                                <case value="3">其他问题</case>
+                                                <case value="4">其他问题</case>
                                                 <default />
                                             </switch>
                                         </td>
@@ -49,7 +49,7 @@
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary edit" id="{$vo.id}"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary edit" id="{$vo.id}"><span class="am-icon-pencil-square-o"></span>查看</button>
                                                     <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
                                                 </div>
                                             </div>
@@ -97,8 +97,6 @@
         }
     });
     $('.edit').on('click',function(){
-        $.get('deal?type=edit&id='+$(this).attr('id'),function(data){
-
-        })  
+        location.href = "detail?id="+$(this).attr('id');
     })
 </script>
