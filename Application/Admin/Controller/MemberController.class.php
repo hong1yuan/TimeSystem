@@ -414,12 +414,12 @@ class MemberController extends Controller {
 
         $value = $news -> where("ispay = 0 AND ReID= '$user' AND id = '$poid'") ->select();
         if($value == false){
-         $arryn["del"] = 0;
+         $arryn["del"] = "删除失败";
          echo json_encode($arryn);
         }
         else{
         $value = $news -> where("ispay = 0 AND ReID= '$user' AND id = '$poid'") ->delete();
-          $arryn["del"] = 1;
+          $arryn["del"] = "删除成功";
           echo json_encode($arryn);
         }
 
