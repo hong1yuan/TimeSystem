@@ -156,9 +156,11 @@
 	                        };
 	                    })
 	                }
+
 	                //底层左区
 	                if (left.length=='1') {
-	                    if (!left[0]['treeplace']) {
+	                	//左边
+	                    if (left[0]['treeplace']==0) {
 	                        $('.box4').html(left[0]['username']);
 	                        $('.box4').attr('id',left[0]['id']);
 	                        $('.box5').html(cont);
@@ -187,31 +189,32 @@
 	                		$('.box4').html('');
 	                		$('.box5').html('');
 	                	}else{
-	                		$('.box4').html();
-	                		$('.box5').html();
+	                		$('.box4').html(cont);
+	                		$('.box5').html(cont);
 	                	}
 	                }
+	                console.log(right);
 	                //底层右区
 	                if (right.length=='1') {
-	                    if (!right[0]['treeplace']) {
-	                        $('.box4').html(right[0]['username']);
-	                        $('.box4').attr('id',right[0]['id']);
-	                        $('.box5').html(cont);
+	                    if (right[0]['treeplace']==0) {
+	                        $('.box6').html(right[0]['username']);
+	                        $('.box6').attr('id',right[0]['id']);
+	                        $('.box7').html(cont);
 	                    }else{
-	                        $('.box5').html(right[0]['username']);
-	                        $('.box5').attr('id',right[0]['id']);
-	                        $('.box4').html(cont);
+	                        $('.box7').html(right[0]['username']);
+	                        $('.box7').attr('id',right[0]['id']);
+	                        $('.box6').html(cont);
 	                    }
 	                }else if (right.length=='2') { //左右同时存在
 	                    $.each(right,function(i,item){
 	                        switch(item['treeplace']){
 	                            case '0':
-	                                $('.box4').html(item['username']);
-	                                $('.box4').attr('id',item['id']);
+	                                $('.box6').html(item['username']);
+	                                $('.box6').attr('id',item['id']);
 	                            break;
 	                            case '1':
-	                                $('.box5').html(item['username']);
-	                                $('.box5').attr('id',item['id']);
+	                                $('.box7').html(item['username']);
+	                                $('.box7').attr('id',item['id']);
 	                            break;
 	                            default:
 	                            break;
@@ -234,9 +237,7 @@
 
         //获取团队信息
         obj.getteam(id);
-        $('.reg').on('click',function(){
-        	alert('lll');
-        })
+        
         $('.team').on('click',function(){
             var id = $(this).attr('id');
             if (!id) {
