@@ -290,6 +290,32 @@
         $('#passwordtwo').focus();
         return;
       }
+        if(usernames.length < 6){
+        $('#usernames').val('');
+        $('#usernames').attr("placeholder", "用户名不能少于6位");
+        $('#usernames').focus();
+        return;
+      }
+       if(passwordtwo.length < 6){
+        $('#passwordtwo').val('');
+        $('#passwordtwo').attr("placeholder", "密码不能少于6位");
+        $('#passwordtwo').focus();
+        return;
+      }
+       if(password.length < 6){
+        $('#password').val('');
+        $('#password').attr("placeholder", "密码不能少于6位");
+        $('#password').focus();
+        return;
+      }
+         if(telephone.length < 8){
+        $('#telephone').val('');
+        $('#telephone').attr("placeholder", "请填写正确手机号");
+        $('#telephone').focus();
+        return;
+      }
+      
+
 
          $.ajax({
         url : 'registeradd',
