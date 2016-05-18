@@ -3,31 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<<<<<<< HEAD
     <title>洲际币后台管理系统</title>
-=======
-    <title>Amaze UI Admin index Examples</title>
->>>>>>> 4e77aa96207877589995b0b5cd935797a90ba091
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-<<<<<<< HEAD
     <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
     <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
     <link rel="stylesheet" href="/Public/Admin/css/admin.css">
     <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
-=======
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
-    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
->>>>>>> 4e77aa96207877589995b0b5cd935797a90ba091
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -41,11 +28,7 @@
     </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-<<<<<<< HEAD
         <div class="logo"><img class="am-img-responsive" src="/Public/Admin/i/examples/logo.png"></div>
-=======
-        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
->>>>>>> 4e77aa96207877589995b0b5cd935797a90ba091
         <!--<div class="logo_biaoti"></div>-->
     </div>
     <div class="logo_text">
@@ -57,7 +40,7 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
+           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
@@ -351,7 +334,6 @@
 
 
 <!--[if lt IE 9]>
-<<<<<<< HEAD
 <script src="/Public/Admin/js/jquery.min.js"></script>
 <script src="/Public/Admin/js/modernizr.js"></script>
 <script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
@@ -367,23 +349,6 @@
 <!-- <script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
 <!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
-=======
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
-<![endif]-->
-
-<!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<!--<![endif]-->
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
-<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
-<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
->>>>>>> 4e77aa96207877589995b0b5cd935797a90ba091
 </body>
 </html>
 <script type="text/javascript">

@@ -1085,3 +1085,70 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001607s ]
 SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0067s ]
 SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0148s ]
 
+[ 2016-05-17T18:41:35+08:00 ] 127.0.0.1 /Admin/Plat/sendmsg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002143s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0097s ]
+SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2016-05-17T18:42:28+08:00 ] 127.0.0.1 /Admin/Plat/sendmsg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001918s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0062s ]
+SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Illegal offset type in isset or empty E:\ww\ThinkPHP\Library\Think\Model.class.php 第 445 行.
+SQL: UPDATE `member` SET `exptime`='1463481748' WHERE ( id=1 ) [ RunTime:0.0028s ]
+
+[ 2016-05-17T18:43:26+08:00 ] 127.0.0.1 /Admin/Plat/sendmsg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001507s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0064s ]
+SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2016-05-17T18:43:28+08:00 ] 127.0.0.1 /Admin/Plat/sendmsg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001425s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0076s ]
+SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-05-17T18:44:00+08:00 ] 127.0.0.1 /Admin/Plat/sendmsg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001489s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0094s ]
+SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-05-17T18:44:16+08:00 ] 127.0.0.1 /Admin/Plat/sendmsg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001514s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0067s ]
+SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] Illegal offset type in isset or empty E:\ww\ThinkPHP\Library\Think\Model.class.php 第 445 行.
+SQL: UPDATE `member` SET `exptime`='1463481856' WHERE ( id=1 ) [ RunTime:0.0005s ]
+
+[ 2016-05-17T18:44:32+08:00 ] 127.0.0.1 /Admin/Plat/sendmsg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001911s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0071s ]
+SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-05-17T18:44:36+08:00 ] 127.0.0.1 /Admin/Plat/sendmsg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001461s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0091s ]
+SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2016-05-17T18:44:39+08:00 ] 127.0.0.1 /Admin/Plat/sendmsg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001500s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0093s ]
+SQL: SELECT `exptime` FROM `member` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+
