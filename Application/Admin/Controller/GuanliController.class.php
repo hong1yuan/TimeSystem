@@ -39,16 +39,16 @@ class GuanliController extends Controller {
      */
     public function detail_xiugai(){
         $id=$_POST['id'];
-        $user_before = M('Member')->where("id='$id' ")->find();
+        $user_before = M('Member')->where("id='$id' and islock = 0 ")->find();
         //资金的修改记录
         $user_after = $_POST;
         //dump($user_after);
         //  die;
 
-        $result_all = M('Member')->where("id = '$id'")->save($user_after);
+        $result_all = M('Member')->where("id = '$id' ")->save($user_after);
         if($result_all){
 
-            $zongji = $user_before['zongji']-$user_after['zongji'];
+            $zongji = $user_before['zuhe']-$user_after['zuhe'];
             if($zongji != 0){
 
                 $arr['action1'] = 1;
@@ -67,7 +67,7 @@ class GuanliController extends Controller {
             }
             $result_guquan= M('History')->where("uid = '$id'")->add($arr);
             //调整洲际比
-            $zhoujibi = $user_before['zuhe'] - $user_after['zuhe'];
+            $zhoujibi = $user_before['zhoujibi'] - $user_after['zhoujibi'];
             if($zhoujibi != 0){
                 $arr['action1'] = 1;
                 $arr['escript'] = "调整洲际币";
@@ -360,15 +360,16 @@ class GuanliController extends Controller {
              );
              $this->ajaxReturn($info);
          }
-         $count = $tiqu->count();
-         $pages = ceil($count/10);
-        $pagesize = 10;
+       //  $count = $tiqu->count();
+
+         $pagesize = 10;
          $curr = $_GET['page'] ? intval($_GET['page']) : 1;
          $list = $tiqu -> field('tiqu.*,member.username')
              ->join('member ON tiqu.userid = member.id')
              ->limit(($curr-1)*10,$pagesize)->order('rdt DESC')->select();
 
-
+        $count = count($list);
+        $pages = ceil($count/10);
          $this->assign('pages',$pages);
          $this->assign('count',$count);
          $this->assign('list',$list);
@@ -379,6 +380,9 @@ class GuanliController extends Controller {
      * 添加级别
      */
     public function addjibie(){
+        $userid = $_SESSION['member']['id'];
+        $user = D('Member')->field('telephone,safekey')->where("id = '$userid'")->find;
+        $this->assign('user',$user);
         $this->display();
     }
 
@@ -421,7 +425,7 @@ class GuanliController extends Controller {
      */
     public  function editjibie(){
         $id = $_GET['id'];
-        $lv = M('gee_fee')->find($id);
+        $lv = D('gee_fee')->find($id);
         $this->assign('lv',$lv);
         $this->display();
     }
@@ -453,6 +457,17 @@ class GuanliController extends Controller {
 
 
     }
+
+    public function deljibie(){
+        $id = $_GET['id'];
+        $res = D('gee_fee')->where("id = '$id'")->delete($id);
+        if($res){
+            $this->success('删除成功',U('jibie'));
+        }else{
+            $this->error('删除成功',U('jibie'));
+        }
+    }
+
 
 
 }

@@ -22,10 +22,7 @@
     以获得更好的体验！</p>
 <![endif]-->
 
-<!--<header class="am-topbar am-topbar-inverse admin-header">
-    <div class="am-topbar-brand">
-        <strong>Amaze UI</strong> <small>后台管理</small>
-    </div>-->
+
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
         <div class="logo"><img class="am-img-responsive" src="/Public/Admin/i/examples/logo.png"></div>
@@ -40,14 +37,14 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
+
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
                 </a>
                 <ul class="am-dropdown-content">
-                    <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
-                    <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+                    <li><a href="<?php echo U('Member/profile');?>"><span class="am-icon-user"></span> 资料</a></li>
+                    <li><a href="<?php echo U('Member/password');?>"><span class="am-icon-cog"></span> 设置</a></li>
                     <li><a href="<?php echo U('Index/layout');?>" onclick =" return confirm('你确定要退出吗？') "><span class="am-icon-power-off"></span> 退出</a></li>
                 </ul>
             </li>
@@ -139,7 +136,7 @@
                         <li>
                             <a href="<?php echo U('Member/register');?>">
                                 <span class="am-icon-th"></span> 注册会员
-                                <span class="am-badge am-badge-secondary am-margin-right am-fr">24</span>
+
                             </a>
                         </li>
                         <li>
@@ -155,7 +152,45 @@
                 </li>
                 <!-- 个人中心 --><?php endif; ?>
             
-            <?php if($_SESSION['member']['member'] == 'admin'): ?><!-- 管理平台 -->
+            <?php if($_SESSION['member']['member'] == 'admin'): ?><!-- 个人中心 -->
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
+                        <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
+                        <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                    </a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+                        <li>
+                            <a href="<?php echo U('Member/profile');?>" class="am-cf">
+                                <span class="am-icon-user"></span> 个人资料
+                                <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/password');?>">
+                                <span class="am-icon-puzzle-piece"></span> 修改密码
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/register');?>">
+                                <span class="am-icon-th"></span> 注册会员
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/activate');?>">
+                                <span class="am-icon-calendar"></span> 激活帐号
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/team');?>"><span class="am-icon-users"></span>团队结构
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 个人中心 -->
+
+                <!-- 管理平台 -->
+
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">
                         <span class="am-icon-btn am-primary am-icon-cog"></span> 平台管理
@@ -198,20 +233,14 @@
                     </ul>
                 </li>
                 <!-- 管理平台 --><?php endif; ?>
-            <li><a href="#"><span class="am-icon-sign-out"></span> 注销</a></li>
+            <li><a href="<?php echo U('Index/layout');?>"><span class="am-icon-sign-out"></span> 注销</a></li>
         </ul>
 
-        <!-- <div class="am-panel am-panel-default admin-sidebar-panel">
-          <div class="am-panel-bd">
-            <p><span class="am-icon-bookmark"></span> 公告</p>
-            <p>时光静好，与君语；细水流年，与君同。—— Amaze UI</p>
-          </div>
-        </div> -->
+
 
         <div class="am-panel am-panel-default admin-sidebar-panel">
             <div class="am-panel-bd">
-                <p><span class="am-icon-tag"></span> wiki</p>
-                <p>Welcome to the Amaze UI wiki!</p>
+
             </div>
         </div>
     </div>
@@ -275,6 +304,11 @@
                                                 <a href="<?php echo U('editjibie',array('id'=>$v['id']));?>">
 
                                                     修改
+                                                </a>
+                                                &nbsp;
+                                                <a href="<?php echo U('deljibie',array('id'=>$v['id']));?>" onclick = "return confirm('你确定要删除吗?')">
+
+                                                    删除
                                                 </a>
 
                                             </div>

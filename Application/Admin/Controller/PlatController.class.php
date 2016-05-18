@@ -25,13 +25,13 @@ class PlatController extends Controller {
 
         $_SESSION['member']['mobile_code'] = NULL;
 
-        var_dump('验证码匹配');
+        //var_dump('验证码匹配');
         //$arr['fenhong']
         $result = M('webconfig')->where("id=1")->save($arr);
         if($result){
             $this->success('修改成功',U('index'));
         }else{
-            $this->error('修改失败',U('index'));
+            $this->error('验证码匹配,修改失败',U('index'));
         }
     }
 

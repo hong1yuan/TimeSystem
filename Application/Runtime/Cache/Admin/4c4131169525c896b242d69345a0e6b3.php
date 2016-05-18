@@ -22,10 +22,7 @@
     以获得更好的体验！</p>
 <![endif]-->
 
-<!--<header class="am-topbar am-topbar-inverse admin-header">
-    <div class="am-topbar-brand">
-        <strong>Amaze UI</strong> <small>后台管理</small>
-    </div>-->
+
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
         <div class="logo"><img class="am-img-responsive" src="/Public/Admin/i/examples/logo.png"></div>
@@ -40,14 +37,14 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
+
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
                 </a>
                 <ul class="am-dropdown-content">
-                    <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
-                    <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+                    <li><a href="<?php echo U('Member/profile');?>"><span class="am-icon-user"></span> 资料</a></li>
+                    <li><a href="<?php echo U('Member/password');?>"><span class="am-icon-cog"></span> 设置</a></li>
                     <li><a href="<?php echo U('Index/layout');?>" onclick =" return confirm('你确定要退出吗？') "><span class="am-icon-power-off"></span> 退出</a></li>
                 </ul>
             </li>
@@ -139,7 +136,7 @@
                         <li>
                             <a href="<?php echo U('Member/register');?>">
                                 <span class="am-icon-th"></span> 注册会员
-                                <span class="am-badge am-badge-secondary am-margin-right am-fr">24</span>
+
                             </a>
                         </li>
                         <li>
@@ -155,7 +152,45 @@
                 </li>
                 <!-- 个人中心 --><?php endif; ?>
             
-            <?php if($_SESSION['member']['member'] == 'admin'): ?><!-- 管理平台 -->
+            <?php if($_SESSION['member']['member'] == 'admin'): ?><!-- 个人中心 -->
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}">
+                        <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
+                        <span class="am-icon-angle-right am-fr am-margin-right"></span>
+                    </a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+                        <li>
+                            <a href="<?php echo U('Member/profile');?>" class="am-cf">
+                                <span class="am-icon-user"></span> 个人资料
+                                <span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/password');?>">
+                                <span class="am-icon-puzzle-piece"></span> 修改密码
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/register');?>">
+                                <span class="am-icon-th"></span> 注册会员
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/activate');?>">
+                                <span class="am-icon-calendar"></span> 激活帐号
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo U('Member/team');?>"><span class="am-icon-users"></span>团队结构
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 个人中心 -->
+
+                <!-- 管理平台 -->
+
                 <li class="admin-parent">
                     <a class="am-cf" data-am-collapse="{target: '#collapse-manage'}">
                         <span class="am-icon-btn am-primary am-icon-cog"></span> 平台管理
@@ -198,20 +233,14 @@
                     </ul>
                 </li>
                 <!-- 管理平台 --><?php endif; ?>
-            <li><a href="#"><span class="am-icon-sign-out"></span> 注销</a></li>
+            <li><a href="<?php echo U('Index/layout');?>"><span class="am-icon-sign-out"></span> 注销</a></li>
         </ul>
 
-        <!-- <div class="am-panel am-panel-default admin-sidebar-panel">
-          <div class="am-panel-bd">
-            <p><span class="am-icon-bookmark"></span> 公告</p>
-            <p>时光静好，与君语；细水流年，与君同。—— Amaze UI</p>
-          </div>
-        </div> -->
+
 
         <div class="am-panel am-panel-default admin-sidebar-panel">
             <div class="am-panel-bd">
-                <p><span class="am-icon-tag"></span> wiki</p>
-                <p>Welcome to the Amaze UI wiki!</p>
+
             </div>
         </div>
     </div>
@@ -236,63 +265,63 @@
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
                     <form class="am-form am-form-horizontal" method="post" action="<?php echo U('jibieOK');?>">
                         <div class="am-form-group">
-                            <label for="user-jiage" class="am-u-sm-3 am-form-label">
+                            <label for="jibie" class="am-u-sm-3 am-form-label">
                                 级别名称
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="jibie" id="user-jiage" value=" "/>
+                                <input type="text" name="jibie" id="jibie" value=" "/>
 
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-jine" class="am-u-sm-3 am-form-label">
+                            <label for="jine" class="am-u-sm-3 am-form-label">
                                 金额
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="jine" id="user-jine" value=""/>
+                                <input type="text" name="jine" id="jine" value=""/>
 
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-chongfu" class="am-u-sm-3 am-form-label">
+                            <label for="chongfu" class="am-u-sm-3 am-form-label">
                                 市币组合
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="chongfu" id="user-chongfu" value=""/>
+                                <input type="text" name="chongfu" id="chongfu" value=""/>
                                 <small> %</small>
 
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-zhjtuiTC" class="am-u-sm-3 am-form-label">
+                            <label for="zhjtuiTC" class="am-u-sm-3 am-form-label">
                                 市场奖
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="zhituiTC" id="user-zhjtuiTC" value=" "/>
+                                <input type="text" name="zhituiTC" id="zhjtuiTC" value=" "/>
                                 <small> %</small>
 
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-duipengTC" class="am-u-sm-3 am-form-label">
+                            <label for="duipengTC" class="am-u-sm-3 am-form-label">
                                 开拓奖
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="duipengTC" id="user-duipengTC" value=""/>
+                                <input type="text" name="duipengTC" id="duipengTC" value=""/>
                                 <small> %</small>
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-DPbilv1" class="am-u-sm-3 am-form-label">
+                            <label for="DPbilv1" class="am-u-sm-3 am-form-label">
                                 开拓奖(六次之后)
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="DPbilv1" id="user-DPbilv1" value=""/>
+                                <input type="text" name="DPbilv1" id="DPbilv1" value=""/>
                                 <small> %</small>
                             </div>
                         </div>
@@ -320,11 +349,11 @@
 
 
                         <div class="am-form-group">
-                            <label for="user-guanliTC" class="am-u-sm-3 am-form-label">
+                            <label for="guanliTC" class="am-u-sm-3 am-form-label">
                                 管理奖
                             </label>
                             <div class="am-u-sm-9" >
-                                <input type="text" name="guanliTC" id="user-guanliTC" value=""/>
+                                <input type="text" name="guanliTC" id="guanliTC" value=""/>
                                 <small> %</small>
                             </div>
                         </div>
@@ -333,21 +362,21 @@
 
 
                         <div class="am-form-group">
-                            <label for="user-yfenhong" class="am-u-sm-3 am-form-label">
+                            <label for="yfenhong" class="am-u-sm-3 am-form-label">
                                 月分红
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="yfenhong" id="user-yfenhong" value=""/>
+                                <input type="text" name="yfenhong" id="yfenhong" value=""/>
                                 <small> ‰</small>
                             </div>
                         </div>
 
                         <div class="am-form-group">
-                            <label for="user-zlixi" class="am-u-sm-3 am-form-label">
+                            <label for="zlixi" class="am-u-sm-3 am-form-label">
                                 周利息
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="zlixi" id="user-zlixi" value=""/>
+                                <input type="text" name="zlixi" id="zlixi" value=""/>
                                 <small> ‰</small>
                             </div>
                         </div>
@@ -366,37 +395,48 @@
                                 是否显示
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="radio" name="ifshow" value=" 1" checked/>是
+                                <input type="radio"  name="ifshow" value=" 1" checked/>是
                                 <input type="radio" name="ifshow" value="0 " />否
                             </div>
                         </div>
 
-
                         <div class="am-form-group">
+                            <label  class="am-u-sm-3 am-form-label">
+                                密码
+                            </label>
+                            <div class="am-u-sm-9">
+                                <input type="text" name="safekey" id="safekey" value=" " placeholder="请输入二级密码"/>
+
+                            </div>
+                        </div>
+
+                        <!--<div class="am-form-group">
                             <label for="user-phone" class="am-u-sm-3 am-form-label">
                                 手机号码
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-phone"  value=" " disabled/>
+                                <input type="text" id="user-phone"  value="<?php echo ($tel); ?> " disabled/>
                             </div>
                         </div>
-
                         <div class="am-form-group">
                             <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
                                 验证码
                             </label>
-                            <div class="am-u-sm-9">
-                                <input type="text" id="user-yanzheng" placeholder="请输入手机验证码"/>
-                                <br/>
-                                <button>发送验证</button>
+                            <div class="am-u-sm-9 am-form-inline" role="form">
+                                <div class="am-form-group">
+                                    <input type="text" id="user-yanzheng" name="mobile_code" placeholder="请输入手机验证码"/>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <button type="button" class="am-btn am-btn-primary send">发送验证码</button>
+                                </div>
+
                             </div>
-                        </div>
-
-
+                        </div>-->
 
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
-                                <button type="submit" class="am-btn am-btn-primary">
+                                <button type="button" class="am-btn am-btn-primary" onclick="submitAdd()">
                                     添加
                                 </button>
                             </div>
@@ -442,3 +482,186 @@
 <!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+
+
+<script type="text/javascript">
+    $('.send').on('click',function(){
+        var self = $(this);
+        if (self.text() != "发送验证码") {
+            return false;
+        };
+        $.ajax({
+            type:'POST',
+            url:'/Admin/Plat/sendmsg',
+            data:{
+                tpl:$('#user-phone').val(),
+            },
+            success:function(data) {
+                if (!data.status) {
+                    layer.alert(data.info);
+                    return false;
+                }else{
+                    var i = 180;
+                    var time = setInterval(function(){
+                        i--;
+                        if(i <= 0){
+                            self.text('发送验证码');
+                            clearInterval(time);
+                        }else{
+                            self.text(+i+'秒后重新获取');
+                        }
+                    },1000);
+                }
+
+            }
+        })
+    });
+
+
+
+
+    function submitAdd(){
+
+        var jibie = $('#jibie').val();
+        var jine = $('#jine').val();
+        var chongfu = $('#chongfu').val();
+        var zhituiTC = $('#zhituiTC').val();
+        var cardidpatrn = /^\S+$/;
+        var cardshuzi = /^([1-9][0-9]*)$/;
+        var cardrandom = /^(\d{1,2}(\.\d{1,2})?|100)$/;
+        var duipengTC  = $('#duipengTC').val();
+        var DPbilv1  = $('#DPbilv1').val();
+        var guanliTC  = $('#guanliTC').val();
+        var yfenhong  = $('#yfenhong').val();
+        var zlixi  = $('#zlixi').val();
+        var rifd  = $('#rifd').val();
+        var safekey  = $('#safekey').val();
+
+
+
+        if (!cardidpatrn.test(jibie)) {
+            $('#jibie').val('');
+            $('#jibie').attr("placeholder", "不许为空");
+            $('#jibie').focus();
+            return;
+        }
+        if (!cardidpatrn.test(jine)) {
+            $('#jine').val('');
+            $('#jine').attr("placeholder", "不许为空");
+            $('#jine').focus();
+            return;
+        }
+        if (!cardshuzi.test(jine)) {
+            $('#jine').val('');
+            $('#jine').attr("placeholder", "数字格式不对");
+            $('#jine').focus();
+            return;
+        }
+        
+        if (!cardidpatrn.test(chongfu)) {
+            $('#chongfu').val('');
+            $('#chongfu').attr("placeholder", "不许为空");
+            $('#chongfu').focus();
+            return;
+        }
+        if (!cardrandom.test(chongfu)) {
+            $('#chongfu').val('');
+            $('#chongfu').attr("placeholder", "数值范围不对");
+            $('#chongfu').focus();
+            return;
+        }
+
+        if (!cardidpatrn.test(zhituiTC)) {
+            $('#zhituiTC').val('');
+            $('#zhituiTC').attr("placeholder", "不许为空");
+            $('#zhituiTC').focus();
+            return;
+        }
+        if (!cardidpatrn.test(duipengTC)) {
+            $('#duipengTC').val('');
+            $('#duipengTC').attr("placeholder", "不许为空");
+            $('#duipengTC').focus();
+            return;
+        }
+        if (!cardidpatrn.test(DPbilv1)) {
+            $('#DPbilv1').val('');
+            $('#DPbilv1').attr("placeholder", "不许为空");
+            $('#DPbilv1').focus();
+            return;
+        }
+        if (!cardidpatrn.test(guanliTC)) {
+            $('#guanliTC').val('');
+            $('#guanliTC').attr("placeholder", "不许为空");
+            $('#guanliTC').focus();
+            return;
+        }
+        if (!cardidpatrn.test(yfenhong)) {
+            $('#yfenhong').val('');
+            $('#yfenhong').attr("placeholder", "不许为空");
+            $('#yfenhong').focus();
+            return;
+        }
+        if (!cardidpatrn.test(zlixi)) {
+            $('#zlixi').val('');
+            $('#zlixi').attr("placeholder", "不许为空");
+            $('#zlixi').focus();
+            return;
+        }
+        if (!cardidpatrn.test(rifd)) {
+            $('#rifd').val('');
+            $('#rifd').attr("placeholder", "不许为空");
+            $('#rifd').focus();
+            return;
+        }
+        if (!cardidpatrn.test(safekey)) {
+            $('#safekey').val('');
+            $('#safekey').attr("placeholder", "不许为空");
+            $('#safekey').focus();
+            return;
+        }
+
+
+        $.ajax({
+            url : 'jibieOK',
+            type : "post",
+            data : {
+                "jibie" : $('#jibie').val(),
+                "jine" : $('#jine').val(),
+                "chongfu" : $('#chongfu').val(),
+                "zhituiTC" : $('#zhituiTC').val(),
+                "password" : $('#password').val(),
+                "passwordtwo" : $('#passwordtwo').val(),
+                "duipengTC" : $('#duipengTC').val(),
+                "DPbilv1" : $('#DPbilv1').val(),
+                "guanliTC" : $('#guanliTC').val(),
+                "yfenhong" : $('#yfenhong').val(),
+                "zlixi" : $('#zlixi').val(),
+                "rifd" : $('#rifd').val()
+
+            },
+            dataType : "json",
+            success : function(data){
+                // alert(data.isRead);
+               /* if(data.read != 1){
+                    var i = data.read;
+                    alert(i);
+                }
+                else{
+                    alert("注册成功");
+                    location.href = "profile";
+                }*/
+
+
+            }
+        })
+
+
+
+
+    }
+
+
+
+
+
+</script>

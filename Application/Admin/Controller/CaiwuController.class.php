@@ -38,7 +38,7 @@ class CaiwuController extends Controller {
     public function  award(){
         $list = D('Gee_total')->where('uid=1000')->select();
         $count = count($list);
-        $pageSize=1;
+        $pageSize=10;
         //总共多少页
         $pages = ceil($count/$pageSize);
         //当前第几页

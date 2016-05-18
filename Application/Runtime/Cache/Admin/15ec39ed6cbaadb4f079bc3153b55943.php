@@ -351,7 +351,7 @@
                 </div>
 
                 <div class="am-u-sm-12 am-u-md-10 am-u-md-pull-2">
-                    <form class="am-form am-form-horizontal" method="POST" action="/Admin/Guanli/fenfa" onsubmit="return chcForm();">
+                    <form class="am-form am-form-horizontal" method="POST" action="/index.php/Admin/Guanli/fenfa" onsubmit="return chcForm();">
                         <?php if(is_array($lists)): foreach($lists as $k=>$v): ?><div class="am-form-group">
                             <label  class="am-u-sm-3 am-form-label">
                                 <?php echo ($v["jibie"]); ?>

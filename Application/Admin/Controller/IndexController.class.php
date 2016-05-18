@@ -8,6 +8,8 @@ class IndexController extends Controller {
 	   }else{
            $id=$_SESSION['member']['id'];
            $info = M('Member')->where("id = '$id'")->find();
+		   $zhoujibi = M('webconfig')->getField('jiage');
+		   $this->assign('zhoujibi',$zhoujibi);
            $this->assign('info',$info);
            $this->display();
 	   }
