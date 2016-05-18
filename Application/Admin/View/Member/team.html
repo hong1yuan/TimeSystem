@@ -318,10 +318,14 @@
 		$('.team').on('mouseover',function(){
 			var id = $(this).attr('id');
 			if (!id) {return false;};
-			layer.tips('我是另外一个tips，只不过我长得跟之前那位稍有些不一样。', $(this), {
-			   tips: [1, '#3595CC'],
-			   time: 4000
-			});
+			var self = $(this);
+			$.get('getcount?id='+id,function(data){
+				layer.tips('左区：'+data['r']/500+' 总 右区：'+data['l']/500, self, {
+				   tips: [1, '#3595CC'],
+				   time: 4000
+				});
+			})
+			
 		})
         
 </script>

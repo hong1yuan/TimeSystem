@@ -445,4 +445,10 @@ class MemberController extends Controller {
     	$this->ajaxReturn($arr);
     }
 
+    //获取总计
+    public function getcount(){
+        $id = intval($_GET['id']);
+        $memberinfo = M('member')->field('R,L')->where('id='.$id)->find();
+        $this->ajaxReturn($memberinfo);
+    }
 }
