@@ -438,10 +438,10 @@ class MemberController extends Controller {
     	//$arr['memberinfo'] = $member->where('id='.$id)->select();
     	//$sql = $member->field('id,username')->where('fatherid='.$id)->buildSql();
 
-    	$arr['member'] = $member -> where('id='.$id)->field('id,username')->find();
+    	$arr['member'] = $member -> where('id='.$id)->field('id,username,ulevel')->find();
     	//查询
-    	$arr['memberinfo'] = $member->where('fatherid='.$id)->field('id,username,treeplace')->order('treeplace')->select();
-    	$arr['childinfo'] = $member->query("select id,fatherid,username,treeplace from member where fatherid in (select id from member where(fatherid=$id))");
+    	$arr['memberinfo'] = $member->where('fatherid='.$id)->field('id,username,treeplace,ulevel')->order('treeplace')->select();
+    	$arr['childinfo'] = $member->query("select id,fatherid,username,treeplace,ulevel from member where fatherid in (select id from member where(fatherid=$id))");
     	$this->ajaxReturn($arr);
     }
 
