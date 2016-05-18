@@ -129,8 +129,7 @@ class MemberController extends Controller {
                       
                     }else{
 
-                       $value = M('member') -> field('id,username,pPath,isboss,ispay') -> where("username = '$arry[fatherMan]'") ->
-                        find();
+                       $value = M('member') -> field('id,username,pPath,isboss,ispay') -> where("username = '$arry[fatherMan]'") ->find();
 
                         if($value == false){
                          $rearry["read"] =  "没有找到该安置人";
@@ -144,8 +143,9 @@ class MemberController extends Controller {
                         }else{
                          $fatherid = $value["id"];
                          $fathername = $value["username"];
-                         $pPath = $value["ppath"];    
 
+                         $pPath = $value["ppath"];  
+                        
                          $valueOne = M('member') -> field('id') -> where("FatherID = '$fatherid' AND TreePlace = '$arry[treeplace]'") -> find();
 
                                 if($valueOne != false){
