@@ -15,23 +15,16 @@
 
             <div class="am-g">
                 <div class="am-u-sm-12">
-                    <form class="am-form">
-
-                        <center>
-                        <h2>{$news.title}</h2>
-                        <!--<input type="text" value="{$news.title}" name="title"/>-->
-                            <p style="float:left;">{$news.content}</p>
-                        </center>
-                        <!--<textarea id="content" name="content" style="height:200px;">
-                            {$news.content}
-                        </textarea>-->
-                        <br/>
-                        <div class="am-u-sm-9 am-u-sm-push-3">
-                            <button type="button" class="am-btn am-btn-primary" id="btnOk" onclick="history.back(-1)">
-                                返回
-                            </button>
+                	   <legend>标题：{$news.title}</legend>
+                	   <legend>发布时间：{$news.updatetime}</legend>
+                       <div class="am-form-group">
+                          <legend>内容：</legend>
+                          <?php echo html_entity_decode($news['content'], ENT_QUOTES, 'UTF-8');?>
                         </div>
-                    </form>
+
+                        <button type="button" class="am-btn am-btn-primary" id="btnOk" onclick="history.back(-1)">
+                                返回
+                        </button>
                 </div>
 
             </div>
@@ -61,18 +54,4 @@
 	        }
 	    }
 	});
-
-    var ue = UE.getEditor('content',{toolbars: [[
-        'source', '|', 'undo', 'redo', '|',
-        'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
-        'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
-        'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
-        'directionalityltr', 'directionalityrtl', 'indent', '|',
-        'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
-        'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-        'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
-        'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
-        'inserttable'
-    ]]});
-
 </script>

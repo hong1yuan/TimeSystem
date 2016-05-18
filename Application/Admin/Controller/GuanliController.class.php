@@ -405,17 +405,26 @@ class GuanliController extends Controller {
         $arr['ifshow'] = I('post.ifshow');
         dump($_POST);
         die;*/
-        $m = D('gee_fee');
-        $arr = $m->create();
 
-        if($arr){
-           $a= $m->add();
-            if($a ){
-                $this->success('添加成功',U('jibie'));
+        $key = trim(I('post.safekey'));
+        $id = $_SESSION['member']['id'];
+        $safekey = M('Member')->where("id = '$id'")->getField('safekey');
+        $key = substr(md5($key),8,16);
+        if($safekey==$key){
+            $m = D('gee_fee');
+            $arr = $m->create();
+
+            if($arr){
+               $a= $m->add();
+                if($a ){
+                    $this->success('添加成功',U('jibie'));
+                }
+                else{
+                    $this->error('添加失败',U('addjibie'));
+                }
             }
-            else{
-                $this->error('添加失败',U('addjibie'));
-            }
+        }else{
+            $this->error('密码错误',U('addjibie'));
         }
 
     }

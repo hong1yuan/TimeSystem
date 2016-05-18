@@ -45,7 +45,7 @@ class NewsController extends Controller {
 
     public function chakannews(){
         $id=$_GET['id'];
-       $news = M('News')->where("newsid = $id ")->find();
+        $news = M('News')->where("newsid = $id ")->find();
         $this->assign('news',$news);
         $this->display();
 
