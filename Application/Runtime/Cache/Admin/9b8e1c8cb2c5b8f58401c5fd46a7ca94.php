@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin index Examples</title>
+    <title>洲际币后台管理系统</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -28,7 +28,7 @@
     </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
+        <div class="logo"><img class="am-img-responsive" src="/Public/Admin/i/examples/logo.png"></div>
         <!--<div class="logo_biaoti"></div>-->
     </div>
     <div class="logo_text">
@@ -40,7 +40,7 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
+            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
@@ -55,6 +55,7 @@
         </ul>
     </div>
 </header>
+
 <div class="am-cf admin-main">
     
 <!-- sidebar start -->
@@ -222,80 +223,32 @@
     <div class="admin-content">
         <div class="admin-content-body">
             <div class="am-cf am-padding">
-                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">问题反馈</strong> / <small>matter</small>
-                </div>
-            </div>
-            <div class="am-g">
-                <div class="am-u-sm-12 am-u-md-6">
-                    <div class="am-btn-toolbar">
-                        <div class="am-btn-group am-btn-group-xs">
-                            <button type="button" class="am-btn am-btn-warning" id="feedback"><span class="am-icon-plus"></span> 反馈新问题</button>
-                        </div>
-                    </div>
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">新闻公告</strong> /
+                    <small>修改新闻</small>
                 </div>
             </div>
 
             <div class="am-g">
                 <div class="am-u-sm-12">
-                        <table class="am-table am-table-striped am-table-hover table-main">
-                            <thead>
-                            <tr>
-                                <th class="table-id" style="width:15%">编号</th>
-                                <th class="table-title" style="width:25%">标题</th>
-                                <th class="table-type" style="width:20%">类别</th>
-                                <th class="table-author am-hide-sm-only" style="width:20%">状态</th>
-                                <th class="table-date am-hide-sm-only" style="width:20%">最后更新</th>
-                                <th class="table-date am-hide-sm-only">操作</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <?php if(is_array($msg_list)): foreach($msg_list as $key=>$vo): ?><tr>
-                                        <td><?php echo ($vo["id"]); ?></td>
-                                        <td><a href="#"><?php echo ($vo["title"]); ?></a></td>
-                                        <td>
-                                            <?php switch($vo["mtype"]): case "1": ?>意见建议<?php break;?>
-                                                <?php case "2": ?>奖金问题<?php break;?>
-                                                <?php case "3": ?>帐号问题<?php break;?>
-                                                <?php case "4": ?>其他问题<?php break;?>
-                                                <?php default: endswitch;?>
-                                        </td>
-                                        <td class="am-hide-sm-only">
-                                        	<?php switch($vo["mstate"]): case "0": ?>未回复<?php break;?>
-                                                <?php case "1": ?>管理员回复<?php break;?>
-                                                <?php case "2": ?>追加提问<?php break;?>
-                                                <?php default: endswitch;?>                                      
-                                        </td>
-                                        <td class="am-hide-sm-only"><?php echo ($vo["updatetime"]); ?></td>
-                                        <td>
-                                            <div class="am-btn-toolbar">
-                                                <div class="am-btn-group am-btn-group-xs">
-                                                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only edit" id="<?php echo ($vo["id"]); ?>"><span class="am-icon-copy"></span>查看</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr><?php endforeach; endif; ?>
-                                
-                            </tbody>
-                        </table>
-                        <div class="am-cf">
-                            共 <?php echo ($count); ?> 条记录
-                            <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
-                            </div>
+                    <form class="am-form"  method="post" action="<?php echo U('editOK');?>">
+                        <h3>新闻标题</h3>
+                        <input type="text" value="<?php echo ($news["title"]); ?>" name="title"/>
+                        <h3>新闻内容</h3>
+                        <textarea id="content" name="content" style="height:200px;">
+                            <?php echo ($news["content"]); ?>
+                        </textarea>
+                        <br/>
+                        <div class="am-u-sm-9 am-u-sm-push-3">
+                            <input type="hidden"  name ="id" value="<?php echo ($news["newsid"]); ?>" />
+                            <button type="submit" class="am-btn am-btn-primary" id="btnOk" >
+                                修改
+                            </button>
                         </div>
+                    </form>
                 </div>
+
             </div>
         </div>
-        <footer class="admin-content-footer">
-            <hr>
-            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
-        </footer>
-    </div>
-    <!-- content end -->
-
-</div>
-
-<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
-</a>
 
 
 <footer class="admin-content-footer">
@@ -312,45 +265,62 @@
 
 
 <!--[if lt IE 9]>
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/modernizr.js"></script>
+<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
-<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
-<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
+<script src="/Public/Admin/js/amazeui.min.js"></script>
+<script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/Public/Admin/lib/layer/layer.js"></script>
+<!-- <script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
-<script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+
+        <script type="text/javascript" charset="utf-8" src="/Public/plugin/ueditor/ueditor.config.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/Public/plugin/ueditor/ueditor.all.min.js"> </script>
+        <script type="text/javascript" charset="utf-8" src="/Public/plugin/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+
+
+
 <script type="text/javascript">
-    $('#feedback').on('click',function(){
-    	location.href = "deal";
-    })
-    laypage({
-        cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
-        pages: $('#page').attr('pages'), //总页数
-        //first:false,
-        skin: '#AF0000',
-        groups: 7,//连续显示分页数
-        curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
-            var page = location.search.match(/page=(\d+)/);
-            return page ? page[1] : 1;
-        }(), 
-        jump: function(e, first){ //触发分页后的回调
-            if(!first){ //一定要加此判断，否则初始时会无限刷新
-                location.href = '?page='+e.curr;
-            }
-        }
-    });
-    $('.edit').on('click',function(){
-        location.href = "detail?id="+$(this).attr('id');
-    })
+	laypage({
+	    cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+	    pages: $('#page').attr('pages'), //总页数
+	    //first:false,
+	    skin: '#AF0000',
+	    groups: 7,//连续显示分页数
+		curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+	        var page = location.search.match(/page=(\d+)/);
+	        return page ? page[1] : 1;
+	    }(), 
+	    jump: function(e, first){ //触发分页后的回调
+	        if(!first){ //一定要加此判断，否则初始时会无限刷新
+	            location.href = '?page='+e.curr;
+	        }
+	    }
+	});
+
+
+    var ue = UE.getEditor('content',{toolbars: [[
+        'source', '|', 'undo', 'redo', '|',
+        'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+        'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+        'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+        'directionalityltr', 'directionalityrtl', 'indent', '|',
+        'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
+        'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+        'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
+        'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
+        'inserttable'
+    ]]});
+
+
 </script>

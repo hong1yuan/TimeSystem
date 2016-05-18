@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin index Examples</title>
+    <title>洲际币后台管理系统</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="/123/Public/Admin/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/123/Public/Admin/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/Public/Admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/Public/Admin/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="/123/Public/Admin/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/123/Public/Admin/css/admin.css">
-    <link rel="stylesheet" href="/123/Public/Admin/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="/Public/Admin/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/Public/Admin/css/admin.css">
+    <link rel="stylesheet" href="/Public/Admin/lib/layer/skin/layer.css">
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -28,7 +28,7 @@
     </div>-->
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-        <div class="logo"><img class="am-img-responsive" src="/123/Public/Admin/i/examples/logo.png"></div>
+        <div class="logo"><img class="am-img-responsive" src="/Public/Admin/i/examples/logo.png"></div>
         <!--<div class="logo_biaoti"></div>-->
     </div>
     <div class="logo_text">
@@ -40,7 +40,7 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
 
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-            <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li>
+           <!--  <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning"></span></a></li> -->
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
                     <span class="am-icon-users"></span> <?php echo ($_SESSION['member']['name']); ?> <span class="am-icon-caret-down"></span>
@@ -222,7 +222,7 @@
     <div class="admin-content">
         <div class="admin-content-body">
             <div class="am-cf am-padding">
-                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">财务管理</strong> / <small>奖金明细</small></div>
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">平台管理</strong> / <small>会员管理</small></div>
             </div>
            <!-- <div class="am-g">
                 <div class="am-u-sm-12 am-u-md-6">
@@ -264,46 +264,54 @@
                         <table class="am-table am-table-striped am-table-hover table-main">
                             <thead>
                             <tr>
-                                <th class="table-id" width="7%">编号</th>
-                                <th class="table-title" width="12%">日期</th>
-                                <th class="table-type" width="14%">市场奖</th>
-                                <th class="table-author am-hide-sm-only" width="13%">拓展奖</th>
-                                <th class="table-date am-hide-sm-only" width="13%">管理奖</th>
-                                <th class="table-set" width="13%">周利息</th>
-                                <th class="table-set" width="13%">月分红</th>
-                                <th class="table-set" width="15%">当日合计</th>
+                                <!--<th class="table-check"><input type="checkbox" /></th>-->
+                                <!--<th class="table-id">ID</th>-->
+                                <th class="table-title" width="17%">登陆账号</th>
+                                <th class="table-type" width="16%">会员级别</th>
+                                <th class="table-date am-hide-sm-only" width="22%">注册日期</th>
+                                <th class="table-author am-hide-sm-only" width="20%">推荐人</th>
+                                <th class="table-set" width="25%">操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php if(is_array($JiangjinList)): foreach($JiangjinList as $key=>$jj): ?><tr>
+                            <?php if(is_array($mems)): foreach($mems as $key=>$v): ?><tr>
                                 <!--<td><input type="checkbox" /></td>-->
-                                <td><?php echo ($jj["num"]); ?></td>
-                                <td><?php echo ($jj['countdate']); ?></td>
-                                <td>€ <?php echo ($jj['t_ztj']); ?></td>
-                                <td class="am-hide-sm-only">€<?php echo ($jj['t_dpj']); ?></td>
-                                <td class="am-hide-sm-only">€<?php echo ($jj['t_ldfh']); ?></td>
-                                <td class="am-hide-sm-only">€<?php echo ($jj['t_rlx']); ?></td>
-                                <td class="am-hide-sm-only">€<?php echo ($jj['t_yfh']); ?></td>
-                                <td class="am-hide-sm-only">€<?php echo ($jj['total']); ?></td>
+                                <!--<td>1</td>-->
+                                <td><?php echo ($v["username"]); ?></td>
+                                <td>
+                                    <?php switch($v["ulevel"]): case "1": ?>金星会员<?php break;?>
+                                        <?php case "2": ?>白金会员<?php break;?>
+                                        <?php case "3": ?>钻石会员<?php break; endswitch;?>
 
+                                </td>
+                                <td class="am-hide-sm-only"><?php echo ($v["regtime"]); ?></td>
+                                <td class="am-hide-sm-only"><?php echo ($v["rename"]); ?></td>
+                                <td>
+                                    <div class="am-btn-toolbar">
+                                        <div class="am-btn-group am-btn-group-xs">
+                                            <?php if($v['islock'] == 0): ?><a href="<?php echo U('detail',array('id'=>$v['id']));?>">
+                                                <span class="am-icon-pencil-square-o"></span>
+                                                查看
+                                            </a>
+                                            &nbsp;
+
+                                            <a href="<?php echo U('lock',array('id'=>$v['id']));?>">
+                                                锁定
+                                            </a>
+                                                <?php else: ?>
+
+                                                    已锁定 &nbsp;
+
+                                                <a href="<?php echo U('unlock',array('id'=>$v['id']));?>">
+                                                    解锁
+                                                </a><?php endif; ?>
+
+                                        </div>
+                                    </div>
+                                </td>
                             </tr><?php endforeach; endif; ?>
                             </tbody>
                         </table>
-                       <!-- <div class="am-cf">
-                            共 15 条记录
-                            <div class="am-fr">
-                                <ul class="am-pagination">
-                                    <li class="am-disabled"><a href="#">«</a></li>
-                                    <li class="am-active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">»</a></li>
-                                </ul>
-                            </div>
-                        </div>-->
-
                         <div class="am-cf">
                             共 <?php echo ($count); ?> 条记录
                             <div class="am-fr" id="page" pages = "<?php echo ($pages); ?>">
@@ -312,9 +320,9 @@
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
+
 
 
 <footer class="admin-content-footer">
@@ -331,23 +339,24 @@
 
 
 <!--[if lt IE 9]>
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
-<script src="/123/Public/Admin/js/modernizr.js"></script>
-<script src="/123/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/modernizr.js"></script>
+<script src="/Public/Admin/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="/123/Public/Admin/js/jquery.min.js"></script>
+<script src="/Public/Admin/js/jquery.min.js"></script>
 <!--<![endif]-->
-<script src="/123/Public/Admin/js/amazeui.min.js"></script>
-<script src="/123/Public/Admin/js/app.js"></script>
-<script src="/123/Public/Admin/lib/laypage/laypage.js"></script>
-<script src="/123/Public/Admin/lib/layer/layer.js"></script>
-<!-- <script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/123/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
-<!-- <script type="text/javascript" src="/123/Public/Admin/js/dialog.js"></script> -->
+<script src="/Public/Admin/js/amazeui.min.js"></script>
+<script src="/Public/Admin/js/app.js"></script>
+<script src="/Public/Admin/lib/laypage/laypage.js"></script>
+<script src="/Public/Admin/lib/layer/layer.js"></script>
+<!-- <script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/Public/Admin/lib/ueditor/ueditor.all.js"></script> -->
+<!-- <script type="text/javascript" src="/Public/Admin/js/dialog.js"></script> -->
 </body>
 </html>
+
 
 <script type="text/javascript">
     laypage({

@@ -42,10 +42,8 @@ class GuanliController extends Controller {
         $user_before = M('Member')->where("id='$id' ")->find();
         //资金的修改记录
         $user_after = $_POST;
-        dump($user_after);
-        die;
-
-
+        //dump($user_after);
+        //  die;
 
         $result_all = M('Member')->where("id = '$id'")->save($user_after);
         if($result_all){
@@ -162,9 +160,6 @@ class GuanliController extends Controller {
             $result_baoban = M('History')->where("uid = '$id'")->add($arr);
 
 
-
-
-
             $this->success('修改成功',U('member'));
         }else{
             $this->error('修改失败',U('exchange'));
@@ -174,9 +169,32 @@ class GuanliController extends Controller {
     }
 
     /**
-     * 锁定
-     */
+    * 锁定
+    */
     public function lock(){
+        $id = $_GET['id'];
+        $arr['isLock'] = 1 ;
+        $res = M('Member')->where("id = '$id'")->save($arr);
+        if($res){
+            $this->success('用户已锁定',U('member'),2);
+        }else{
+            $this->error('锁定失败',U('member'),2);
+        }
+
+    }
+
+    /**
+     * 解锁
+     */
+    public function unlock(){
+        $id = $_GET['id'];
+        $arr['isLock'] = 0 ;
+        $res = M('Member')->where("id = '$id'")->save($arr);
+        if($res){
+            $this->success('用户已解锁',U('member'),2);
+        }else{
+            $this->error('解锁失败',U('member'),2);
+        }
 
     }
 
@@ -213,7 +231,51 @@ class GuanliController extends Controller {
      * 分发月分红
      */
     public function fenfa(){
-        $level1 = intval($_POST[1]);
+        //dump($_POST);
+        $pwd = trim(I('post.password'));
+        $pwd = substr(md5($pwd),8,16);
+        $userid = $_SESSION['member']['id'];
+        $safekey = D('Member')->where("id = '$userid'")->getField('safekey');
+        if($safekey != $pwd){
+            $this->error('密码错误', U('reward'),2);
+        }
+        unset($_POST['password']);
+        //dump($_POST);
+        foreach ($_POST as $key=>$item) {
+
+            $id = $key;
+            $yfh= $item;
+
+            $mem = M('Member')->field('id,ulevel,guquan,fenhong,xianjin,ispay')
+                   ->where("ulevel = '$id' and ispay = 1 and guquan !=0")->select();
+
+
+                foreach($mem as $k=>$value){
+                        $mid=$value['id'];
+                    //echo "<br/>";
+                   // echo $mid;
+                        $income = floor( $value['guquan'] * $yfh /1000);
+                   // echo "<br/>先",$value['fenhong'];
+                   // echo "<br/> 分红",$yfh;
+                   // echo "<br/>",$income;
+                        $value['xianjin']= $value['xianjin'] +$income;
+                        $value['fenhong'] = $value['fenhong']+$income;
+                   // dump($value);
+                    //die;
+                        $res = M('Member')->where("id = '$mid' ")->save($value);
+                  //  echo $res;
+                   // dump($res);
+
+                        if($res){
+
+                        }else{
+                            $this->error("$id 修改失败",U('reward'));
+                        }
+                    }
+
+        }
+       // exit;
+       /* $level1 = intval($_POST[1]);
         $level2 = intval($_POST[2]);
         $level3 = intval($_POST[3]);
         $level4 = intval($_POST[4]);
@@ -233,7 +295,7 @@ class GuanliController extends Controller {
         }
 
         $mem2 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level2")->select();
-        dump($mem2);
+        //dump($mem2);
 
 
         foreach($mem2 as $key=>$value){
@@ -276,7 +338,7 @@ class GuanliController extends Controller {
             }else{
                 $this->error("$id 修改失败",U('reward'));
             }
-        }
+        }*/
 
         $this->success("操作成功 ",U('reward'));
 
@@ -312,5 +374,85 @@ class GuanliController extends Controller {
          $this->assign('list',$list);
          $this->display();
     }
+
+    /**
+     * 添加级别
+     */
+    public function addjibie(){
+        $this->display();
+    }
+
+    /**\
+     *级别添加成功
+     */
+
+    public  function jibieOK(){
+
+       /* $arr['jibie'] = I('post.jibie');
+        $arr['jine'] = I('post.jine');
+        $arr['chongfu'] = I('post.chongfu');
+        $arr['zhjtuiTC'] = I('post.zhjtuiTC');
+        $arr['duipengTC'] = I('post.duipengTC');
+        $arr['DPbilv1'] = I('post.DPbilv1');
+        $arr['guanliTC'] = I('post.guanliTC');
+        $arr['yfenhong'] = I('post.yfenhong');
+        $arr['zlixi'] = I('post.zlixi');
+        $arr['rifd'] = I('post.rifd');
+        $arr['ifshow'] = I('post.ifshow');
+        dump($_POST);
+        die;*/
+        $m = D('gee_fee');
+        $arr = $m->create();
+
+        if($arr){
+           $a= $m->add();
+            if($a ){
+                $this->success('添加成功',U('jibie'));
+            }
+            else{
+                $this->error('添加失败',U('addjibie'));
+            }
+        }
+
+    }
+
+    /**
+     * 级别修改页面
+     */
+    public  function editjibie(){
+        $id = $_GET['id'];
+        $lv = M('gee_fee')->find($id);
+        $this->assign('lv',$lv);
+        $this->display();
+    }
+
+    /**
+     * 级别修改成功页面
+     */
+    public function EditjbOK(){
+        $id = I('post.id');
+        $pwd = trim(I('post.safekey'));
+        $userid = $_SESSION['member']['id'];
+        $safekey = D('Member')->where("id = '$userid'")->getField('safekey');
+        $pwd = substr(md5($pwd),8,16);
+
+        if($safekey == $pwd) {
+
+            $arr = D('gee_fee')->where("id = '$id'")->create();
+            if ($arr) {
+                $res = D('gee_fee')->where("id = '$id'")->save();
+                if ($res) {
+                    $this->success('修改成功', U('jibie'));
+                } else {
+                    $this->error('修改失败', U('editjibie', array('id' => $id)));
+                }
+            }
+        }else{
+            $this->error('密码错误', U('editjibie', array('id' => $id)));
+        }
+
+
+    }
+
 
 }

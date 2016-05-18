@@ -77,25 +77,27 @@
                                 <td>
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
-                                            <!--<button class="am-btn am-btn-default am-btn-xs am-text-secondary">-->
+                                            <if condition ="$v['islock'] eq 0">
+
                                                 <a href="{:U('detail',array('id'=>$v['id']))}">
-                                               <!-- <span class="am-icon-pencil-square-o"></span>-->
+                                                <span class="am-icon-pencil-square-o"></span>
                                                 查看
                                             </a>
                                             &nbsp;
-                                            <!--</button>-->
-                                            <!--<button class="am-btn am-btn-default am-btn-xs am-hide-sm-only">-->
-                                                <!--<span class="am-icon-copy"></span>-->
+
                                             <a href="{:U('lock',array('id'=>$v['id']))}">
                                                 锁定
-                                            </a>                                            &nbsp;
-                                           <!-- </button>-->
-                                            <!--<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">-->
-                                                <!--<span class="am-icon-trash-o"></span>-->
-                                                <a href="{:U('Index/index',array('id'=>$v['id']))}">
-                                                登录
+                                            </a>
+                                                <else/>
+
+                                                    已锁定 &nbsp;
+
+                                                <a href="{:U('unlock',array('id'=>$v['id']))}">
+                                                    解锁
                                                 </a>
-                                            <!--</button>-->
+
+                                            </if>
+
                                         </div>
                                     </div>
                                 </td>
