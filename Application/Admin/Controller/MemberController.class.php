@@ -206,7 +206,8 @@ class MemberController extends Controller {
                              $ReName = $valuetwo["username"];
                              $rePath =  $valuetwo["repath"];
                              $guquan = $valueres["jine"];
-                             $zhoujibi = $guquan / 0.1;
+                             $qian = M('webconfig') ->where("id = 1") -> find();
+                             $zhoujibi = $guquan / $qian["jiage"];
                               $valuethree =  M('news') -> field('newsid') -> select();
                                $isDot = ",";
                                $isRead = "0,";
