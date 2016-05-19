@@ -451,4 +451,28 @@ class MemberController extends Controller {
         $memberinfo = M('member')->field('R,L')->where('id='.$id)->find();
         $this->ajaxReturn($memberinfo);
     }
+
+
+    //在线充值
+    public function remit(){
+        $id = intval($_SESSION['member']['id']);
+        $remit = M('remit');
+        if (!empty($_POST)) {
+           $data['uid'] = $id;
+           $data['money'] = intval($_POST['money']);
+           $data['addtime'] = time();
+           $remit->add($data);
+           $this->success('操作成功,等待管理员审核');
+        }else{
+           $count = $remit->where('uid='.$id)->count();
+           $pages = ceil($count/10);
+           $curr = $_GET['page'] ? intval($_GET['page']) : 1;
+           $list = $remit ->field('member.baodan,remit.*')->join('member ON remit.uid = member.id')->where('remit.uid='.$id)->limit(($curr-1)*10,10)->order('addtime DESC')->select();
+           
+           $this->assign('count',$count);
+           $this->assign('pages',$pages);
+           $this->assign('list',$list);
+           $this->display();
+        }
+    }
 }
