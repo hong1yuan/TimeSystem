@@ -126,10 +126,14 @@ class CaiwuController extends Controller {
                
                 //扣除1%慈善基金
                 $data['xianjin'] = $memberinfo['xianjin']*0.99 - $zhuchebi;
+                //报单币
                 if ($_POST['type']=='1') {
                     $data['baodan'] = $memberinfo['baodan'] + $zhuchebi;
-                }else if($_POST['type']=='2'){
-                    $data['zhoujibi'] = $memberinfo['zhoujibi'] + $zhuchebi;
+                }
+                //注册币
+                else if($_POST['type']=='2'){
+                    $qian = M('webconfig') ->where("id = 1") -> find();
+                    $data['zhoujibi'] = $memberinfo['zhoujibi'] + $zhuchebi/$qian["jiage"];
                 }
                 
                 $member->where('id='.$id)->save($data);
