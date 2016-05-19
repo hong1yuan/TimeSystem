@@ -360,21 +360,16 @@ class GuanliController extends Controller {
              );
              $this->ajaxReturn($info);
          }
-<<<<<<< HEAD
+
          $count = $tiqu->count();
          $pages = ceil($count/10);
-=======
-       //  $count = $tiqu->count();
 
->>>>>>> c81e99d33e37b6105f4637adceaf1d34cf79ec86
          $pagesize = 10;
          $curr = $_GET['page'] ? intval($_GET['page']) : 1;
          $list = $tiqu -> field('tiqu.*,member.username')
              ->join('member ON tiqu.userid = member.id')
              ->limit(($curr-1)*10,$pagesize)->order('rdt DESC')->select();
 
-        $count = count($list);
-        $pages = ceil($count/10);
          $this->assign('pages',$pages);
          $this->assign('count',$count);
          $this->assign('list',$list);
