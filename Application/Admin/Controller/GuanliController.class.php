@@ -360,8 +360,13 @@ class GuanliController extends Controller {
              );
              $this->ajaxReturn($info);
          }
+<<<<<<< HEAD
+         $count = $tiqu->count();
+         $pages = ceil($count/10);
+=======
        //  $count = $tiqu->count();
 
+>>>>>>> c81e99d33e37b6105f4637adceaf1d34cf79ec86
          $pagesize = 10;
          $curr = $_GET['page'] ? intval($_GET['page']) : 1;
          $list = $tiqu -> field('tiqu.*,member.username')
@@ -375,7 +380,43 @@ class GuanliController extends Controller {
          $this->assign('list',$list);
          $this->display();
     }
+    /**
+     * 充值确认
+     */
+    public function remit(){
+         $remit = M('remit');
+         if ($_GET['cid']) {
+             $id = intval($_GET['cid']);
+             $rst = $remit->where('id='.$id)->find(); 
 
+             $arr = array(
+                'status' =>1 ,
+                'retime' => time()
+             );
+             $remit -> where('id='.$id)->save($arr); 
+
+             //执行加钱操作
+             M('member')->where("id={$rst['uid']}")->setInc('baodan',$rst['money']);
+             $info = array(
+                'status' => 1,
+                'info'=> '操作成功'
+             );
+             $this->ajaxReturn($info);
+         }
+         $count = $remit->count();
+         $pages = ceil($count/10);
+         $pagesize = 10;
+         $curr = $_GET['page'] ? intval($_GET['page']) : 1;
+         $list = $remit -> field('remit.*,member.username,baodan')
+             ->join('member ON remit.uid = member.id')
+             ->limit(($curr-1)*10,$pagesize)->order('addtime DESC')->select();
+
+
+         $this->assign('pages',$pages);
+         $this->assign('count',$count);
+         $this->assign('list',$list);
+         $this->display();
+    }
     /**
      * 添加级别
      */

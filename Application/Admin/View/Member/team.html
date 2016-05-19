@@ -256,6 +256,7 @@
                 var team = $('.team');
                 $.each(team,function(i,item){
                     var color = $(item).attr('ulevel');
+                    console.log(color);
                     /*switch(i){
                         case "1":
                            $(item).css('background','#eabf56');
@@ -281,7 +282,7 @@
 
         //获取团队信息
         obj.getteam(id);
-        //obj.getcolor();
+        obj.getcolor();
         $('.team').on('click',function(){
             var id = $(this).attr('id');
             if (!id) {
@@ -325,7 +326,6 @@
 				   time: 4000
 				});
 			})
-			
 		})
         
 </script>

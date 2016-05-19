@@ -1,0 +1,143 @@
+<include file = "Common/header" />
+
+<div class="am-cf admin-main">
+    <include file = "Common/left" />
+
+
+    <!-- content start -->
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">平台管理</strong> / <small>提现确认</small></div>
+            </div>
+            <div class="am-g">
+                <!-- <div class="am-u-sm-12 am-u-md-6">
+                    <div class="am-btn-toolbar">
+                        <div class="am-btn-group am-btn-group-xs">
+                            <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
+                            <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
+                            <button type="button" class="am-btn am-btn-default"><span class="am-icon-archive"></span> 审核</button>
+                            <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-u-sm-12 am-u-md-3">
+                    <div class="am-form-group">
+                        <select data-am-selected="{btnSize: 'sm'}">
+                            <option value="option1">所有类别</option>
+                            <option value="option2">IT业界</option>
+                            <option value="option3">数码产品</option>
+                            <option value="option3">笔记本电脑</option>
+                            <option value="option3">平板电脑</option>
+                            <option value="option3">只能手机</option>
+                            <option value="option3">超极本</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="am-u-sm-12 am-u-md-3">
+                    <div class="am-input-group am-input-group-sm">
+                        <input type="text" class="am-form-field">
+                      <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-default" type="button">搜索</button>
+                      </span>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                        <table class="am-table am-table-striped am-table-hover table-main">
+                            <thead>
+                            <tr>
+                                <th class="table-id" style="width:10%;">编号</th>
+                                <th class="table-title" style="width:10%;">用户名</th>
+                                <th class="table-type" style="width:20%;">充值金额</th>
+                                <th class="table-author am-hide-sm-only" style="width:20%;">余额</th>
+                                <th class="table-set" style="width:20%;">充值时间</th>
+                                <th class="table-set">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <foreach name="list" item="vo" >
+                                <tr>
+                                    <td>{$vo.id}</td>
+                                    <td><a href="#">{$vo.username}</a></td>
+                                    <td>€{$vo.money}</td>
+                                    <td class="am-hide-sm-only">€{$vo.baodan}</td>
+                                    <td class="am-hide-sm-only">
+                                        {$vo.addtime|date="Y-m-d H:i:s",###}
+                                    </td>
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs status">
+                                                <if condition="$vo.status eq '1'">
+                                                        <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>已处理</button>
+                                                <else /> 
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary cash"  cid="{$vo.id}"><span class="am-icon-pencil-square-o"></span>未处理</button>
+                                                </if>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </foreach>
+                            
+                            </tbody>
+                        </table>
+                        <div class="am-cf">
+                            共 {$count} 条记录
+                            <div class="am-fr" id="page" pages="{$pages}">          
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+        </footer>
+    </div>
+    <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+</a>
+
+<include file = "Common/footer" />
+<script type="text/javascript">
+    laypage({
+        cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+        pages: $('#page').attr('pages'), //总页数
+        //first:false,
+        skin: '#AF0000',
+        groups: 7,//连续显示分页数
+        curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+            var page = location.search.match(/page=(\d+)/);
+            return page ? page[1] : 1;
+        }(), 
+        jump: function(e, first){ //触发分页后的回调
+            if(!first){ //一定要加此判断，否则初始时会无限刷新
+                location.href = '?page='+e.curr;
+            }
+        }
+    });
+    $('.cash').on('click',function(){
+        var cid  = $(this).attr('cid');
+        var self = $(this);
+        layer.confirm('您确定该用户已充值成功吗？', {
+          btn: ['确定','取消'] //按钮
+        }, function(){
+            $.get('remit?cid='+cid,function(data){
+                layer.closeAll();
+                //layer.alert(data.info);
+                //self.parent().html('<button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>已处理</button>');
+                location.reload();
+            })
+        }, function(){
+        });
+        
+    })
+</script>
