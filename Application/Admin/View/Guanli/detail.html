@@ -22,16 +22,16 @@
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-3 am-form-label">会员账号</label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="username" id="user-name" value="{$user.username}" disabled />
+                                <input type="text" name="username" id="user-name" value="{$user.username}"  />
                             </div>
                         </div>
 
                         <div class="am-form-group">
                             <label for="user-pwd" class="am-u-sm-3 am-form-label">
-                                登录密码
+                                会员密码
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="password" id="user-pwd" placeholder="请输入登录密码">
+                                <input type="password" name="password" id="user-pwd" placeholder="请输入登录密码">
                             </div>
                         </div>
 
@@ -210,14 +210,11 @@
                         </div>
                         <div class="am-form-group">
                             <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
-                                验证码
+                                密码
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-yanzheng" placeholder="请输入手机验证码">
+                                <input type="password" id="user-yanzheng" name="safekey" placeholder="请输入二级密码">
                                 <br/>
-                                <button>
-                                    <span>发送验证码</span>
-                                </button>
                             </div>
 
                         </div>

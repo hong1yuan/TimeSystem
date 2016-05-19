@@ -14,8 +14,7 @@ class GuanliController extends Controller {
         $pagesize= 10 ;
         $pages=ceil($count/$pagesize);
         $offset = ($curr-1)*$pagesize;
-
-        $mems = $mem->limit($offset,$pagesize)->select();
+        $mems = M('Member')->limit($offset,$pagesize)->order('regtime desc')->select();
         $this->assign('count',$count);
         $this->assign('pages',$pages);
         $this->assign('mems',$mems);
@@ -38,131 +37,143 @@ class GuanliController extends Controller {
      * 修改页面
      */
     public function detail_xiugai(){
-        $id=$_POST['id'];
-        $user_before = M('Member')->where("id='$id' and islock = 0 ")->find();
-        //资金的修改记录
-        $user_after = $_POST;
-        //dump($user_after);
-        //  die;
+        $safe = trim(I('post.safekey'));
+        $safe =substr(md5($safe),8,16);
+        $userid = $_SESSION['member']['id'];
+        $user_safe = M('Member')->where("id = '$userid'")->getField('safekey');
+        if($user_safe == $safe){
+            $id=$_POST['id'];
+            $user_before = M('Member')->where("id='$id' and islock = 0 ")->find();
+            //资金的修改记录
+            $user_after = $_POST;
 
-        $result_all = M('Member')->where("id = '$id' ")->save($user_after);
-        if($result_all){
+            $pwd = trim(I('post.password'));
+            $user_after['password'] = substr(md5($pwd),8,16);
 
-            $zongji = $user_before['zuhe']-$user_after['zuhe'];
-            if($zongji != 0){
+            //dump($user_after);
+            //  die;
 
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整币值组合";
-                $arr['epoints'] = $zongji;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result1= M('History')->where("uid = '$id'")->add($arr);
-            //调整股权
-            $guquan = $user_before['guquan']-$user_after['guquan'];
-            if($guquan != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整股权";
-                $arr['epoints'] = $guquan;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result_guquan= M('History')->where("uid = '$id'")->add($arr);
-            //调整洲际比
-            $zhoujibi = $user_before['zhoujibi'] - $user_after['zhoujibi'];
-            if($zhoujibi != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整洲际币";
-                $arr['epoints'] = $zhoujibi;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result_zhoujibi = M('History')->where("uid = '$id'")->add($arr);
-            //调整推荐奖
-            $tuijian = $user_before['tuijian'] - $user_after['tuijian'];
-            if($tuijian != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整推荐奖";
-                $arr['epoints'] = $tuijian;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result_tuijian = M('History')->where("uid = '$id'")->add($arr);
-            //调整管理奖
-            $guanli = $user_before['guanli'] - $user_after['guanli'];
-            if($guanli != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整管理奖";
-                $arr['epoints'] = $guanli;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
+            $result_all = M('Member')->where("id = '$id' ")->save($user_after);
+            if($result_all){
 
-            //调整对碰奖
-            $duipeng = $user_before['duipeng'] - $user_after['duipeng'];
-            if($duipeng != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整洲际币";
-                $arr['epoints'] = $duipeng;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result_duipeng = M('History')->where("uid = '$id'")->add($arr);
-            //调整周利息
-            $lixi = $user_before['lixi'] - $user_after['lixi'];
-            if($lixi != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整周利息";
-                $arr['epoints'] = $lixi;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result_lixi = M('History')->where("uid = '$id'")->add($arr);
-            //调整月分红
-            $fenhong = $user_before['fenhong'] - $user_after['fenhong'];
-            if($fenhong != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整月分红";
-                $arr['epoints'] = $fenhong;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result_fenhong = M('History')->where("uid = '$id'")->add($arr);
-            //调整慈善基金
-            $cishan = $user_before['cishan'] - $user_after['cishan'];
-            if($cishan != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整慈善基金";
-                $arr['epoints'] = $cishan;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result_cishan = M('History')->where("uid = '$id'")->add($arr);
-            //调整环球奖
-            $huanqiu = $user_before['huanqiu'] - $user_after['huanqiu'];
-            if($huanqiu != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整环球奖";
-                $arr['epoints'] = $huanqiu;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result_huanqiu = M('History')->where("uid = '$id'")->add($arr);
+                $zongji = $user_before['zuhe']-$user_after['zuhe'];
+                if($zongji != 0){
 
-            //调整现金币
-            $xianjin = $user_before['xianjin'] - $user_after['xianjin'];
-            if($xianjin != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整现金币";
-                $arr['epoints'] = $xianjin;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整币值组合";
+                    $arr['epoints'] = $zongji;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result1= M('History')->where("uid = '$id'")->add($arr);
+                //调整股权
+                $guquan = $user_before['guquan']-$user_after['guquan'];
+                if($guquan != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整股权";
+                    $arr['epoints'] = $guquan;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_guquan= M('History')->where("uid = '$id'")->add($arr);
+                //调整洲际比
+                $zhoujibi = $user_before['zhoujibi'] - $user_after['zhoujibi'];
+                if($zhoujibi != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整洲际币";
+                    $arr['epoints'] = $zhoujibi;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_zhoujibi = M('History')->where("uid = '$id'")->add($arr);
+                //调整推荐奖
+                $tuijian = $user_before['tuijian'] - $user_after['tuijian'];
+                if($tuijian != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整推荐奖";
+                    $arr['epoints'] = $tuijian;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_tuijian = M('History')->where("uid = '$id'")->add($arr);
+                //调整管理奖
+                $guanli = $user_before['guanli'] - $user_after['guanli'];
+                if($guanli != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整管理奖";
+                    $arr['epoints'] = $guanli;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+
+                //调整对碰奖
+                $duipeng = $user_before['duipeng'] - $user_after['duipeng'];
+                if($duipeng != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整洲际币";
+                    $arr['epoints'] = $duipeng;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_duipeng = M('History')->where("uid = '$id'")->add($arr);
+                //调整周利息
+                $lixi = $user_before['lixi'] - $user_after['lixi'];
+                if($lixi != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整周利息";
+                    $arr['epoints'] = $lixi;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_lixi = M('History')->where("uid = '$id'")->add($arr);
+                //调整月分红
+                $fenhong = $user_before['fenhong'] - $user_after['fenhong'];
+                if($fenhong != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整月分红";
+                    $arr['epoints'] = $fenhong;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_fenhong = M('History')->where("uid = '$id'")->add($arr);
+                //调整慈善基金
+                $cishan = $user_before['cishan'] - $user_after['cishan'];
+                if($cishan != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整慈善基金";
+                    $arr['epoints'] = $cishan;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_cishan = M('History')->where("uid = '$id'")->add($arr);
+                //调整环球奖
+                $huanqiu = $user_before['huanqiu'] - $user_after['huanqiu'];
+                if($huanqiu != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整环球奖";
+                    $arr['epoints'] = $huanqiu;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_huanqiu = M('History')->where("uid = '$id'")->add($arr);
+
+                //调整现金币
+                $xianjin = $user_before['xianjin'] - $user_after['xianjin'];
+                if($xianjin != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整现金币";
+                    $arr['epoints'] = $xianjin;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_xianjin = M('History')->where("uid = '$id'")->add($arr);
+
+                ////调整报单币
+                $baoban = $user_before['baoban'] - $user_after['baoban'];
+                if($baoban != 0){
+                    $arr['action1'] = 1;
+                    $arr['escript'] = "调整报单币";
+                    $arr['epoints'] = $baoban;
+                    $arr['PDT'] = date('Y-m-d H:i:s',time());
+                }
+                $result_baoban = M('History')->where("uid = '$id'")->add($arr);
+
+
+                $this->success('修改成功',U('member'));
+            }else{
+                $this->error('修改失败',U('exchange'));
             }
-            $result_xianjin = M('History')->where("uid = '$id'")->add($arr);
-
-            ////调整报单币
-            $baoban = $user_before['baoban'] - $user_after['baoban'];
-            if($baoban != 0){
-                $arr['action1'] = 1;
-                $arr['escript'] = "调整报单币";
-                $arr['epoints'] = $baoban;
-                $arr['PDT'] = date('Y-m-d H:i:s',time());
-            }
-            $result_baoban = M('History')->where("uid = '$id'")->add($arr);
-
-
-            $this->success('修改成功',U('member'));
         }else{
-            $this->error('修改失败',U('exchange'));
+            $this->error('密码错误',U('detail',array('id'=>$userid)));
         }
 
 
@@ -442,16 +453,50 @@ class GuanliController extends Controller {
         dump($_POST);
         die;*/
 
+        //die;
         $key = trim(I('post.safekey'));
         $id = $_SESSION['member']['id'];
         $safekey = M('Member')->where("id = '$id'")->getField('safekey');
         $key = substr(md5($key),8,16);
         if($safekey==$key){
+            if($_POST['jibie'] ==false){
+                $this->error('级别不能为空',U('addjibie'));
+            }
+            if($_POST['jine'] ==false){
+                $this->error('级别不能为空',U('addjibie'));
+            }
+            if($_POST['chongfu'] ==false){
+                $this->error('币值组合不能为空',U('addjibie'));
+            }
+            if($_POST['zhituiTC'] ==false){
+                $this->error('市场奖不能为空',U('addjibie'));
+            }
+            if($_POST['duipengTC'] ==false){
+                $this->error('对碰不能为空',U('addjibie'));
+            }
+            if($_POST['DPbilv1'] ==false){
+                $this->error('对碰不能为空',U('addjibie'));
+            }
+            if($_POST['guanliTC'] ==false){
+                $this->error('管理不能为空',U('addjibie'));
+            }
+            if($_POST['yfenhong'] ==false){
+                $this->error('月分红不能为空',U('addjibie'));
+            }
+            if($_POST['zlixi'] ==false){
+                $this->error('周利息不能为空',U('addjibie'));
+            }
+            if($_POST['rifd'] ==false){
+                $this->error('日封顶不能为空',U('addjibie'));
+            }
+
             $m = D('gee_fee');
             $arr = $m->create();
 
             if($arr){
+
                $a= $m->add();
+
                 if($a ){
                     $this->success('添加成功',U('jibie'));
                 }

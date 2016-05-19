@@ -113,50 +113,40 @@
             </div>
 
         </div>
-        <footer class="admin-content-footer">
-            <hr>
-            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
-        </footer>
-    </div>
-    <!-- content end -->
 
-</div>
-
-<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
-</a>
 
 <include file = "Common/footer" />
 
 <script type="text/javascript">
-	$('.send').on('click',function(){
-		var self = $(this);
-		if (self.text() != "发送验证码") {
-			return false;
-		};
+    $('.send').on('click',function(){
+        var self = $(this);
+        if (self.text() != "发送验证码") {
+            return false;
+        };
         $.ajax({
-        	type:'POST',
-        	url:'sendmsg',
-        	data:{
-        		tpl:$('#user-phone').val(),
-        	},
-        	success:function(data) {
-        		if (!data.status) {
-        			layer.alert(data.info);
-        			return false;
-        		}else{
-	        		var i = 180;
-			        var time = setInterval(function(){
-			            i--;
-			            if(i <= 0){
-			               self.text('发送验证码');
-			               clearInterval(time);
-			            }else{
-			               self.text(+i+'秒后重新获取');
-			            }
-			        },1000);
-        		}
-		       
-        	}
+            type:'POST',
+            url:'sendmsg',
+            data:{
+                tpl:$('#user-phone').val(),
+            },
+            success:function(data) {
+                if (!data.status) {
+                    layer.alert(data.info);
+                    return false;
+                }else{
+                    var i = 180;
+                    var time = setInterval(function(){
+                        i--;
+                        if(i <= 0){
+                            self.text('发送验证码');
+                            clearInterval(time);
+                        }else{
+                            self.text(+i+'秒后重新获取');
+                        }
+                    },1000);
+                }
+
+            }
         })
-	})
+    })
 </script>

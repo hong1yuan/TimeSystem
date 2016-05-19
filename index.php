@@ -23,6 +23,8 @@ define('APP_DEBUG',True);
 
 // 定义应用目录
 define('APP_PATH','./Application/');
+define('SITE_URL','http://iccoin.cc/houtai/');
+define('PLUGIN_URL',SITE_URL."Common/Plugin/");
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';

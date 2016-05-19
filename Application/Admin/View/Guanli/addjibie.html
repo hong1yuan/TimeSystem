@@ -42,7 +42,7 @@
 
                         <div class="am-form-group">
                             <label for="chongfu" class="am-u-sm-3 am-form-label">
-                                市币组合
+                                币值组合
                             </label>
                             <div class="am-u-sm-9">
                                 <input type="text" name="chongfu" id="chongfu" value=""/>
@@ -140,14 +140,14 @@
                                 密码
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="safekey" id="safekey" value=" " placeholder="请输入二级密码"/>
+                                <input type="password" name="safekey" id="safekey" value=" " placeholder="请输入二级密码"/>
 
                             </div>
                         </div>
 
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
-                                <button type="button" class="am-btn am-btn-primary" onclick="submitAdd()">
+                                <button type="submit" class="am-btn am-btn-primary" >
                                     添加
                                 </button>
                             </div>
@@ -165,181 +165,6 @@
 
 
 <script type="text/javascript">
-    $('.send').on('click',function(){
-        var self = $(this);
-        if (self.text() != "发送验证码") {
-            return false;
-        };
-        $.ajax({
-            type:'POST',
-            url:'/Admin/Plat/sendmsg',
-            data:{
-                tpl:$('#user-phone').val(),
-            },
-            success:function(data) {
-                if (!data.status) {
-                    layer.alert(data.info);
-                    return false;
-                }else{
-                    var i = 180;
-                    var time = setInterval(function(){
-                        i--;
-                        if(i <= 0){
-                            self.text('发送验证码');
-                            clearInterval(time);
-                        }else{
-                            self.text(+i+'秒后重新获取');
-                        }
-                    },1000);
-                }
-
-            }
-        })
-    });
-
-
-
-
-    function submitAdd(){
-
-        var jibie = $('#jibie').val();
-        var jine = $('#jine').val();
-        var chongfu = $('#chongfu').val();
-        var zhituiTC = $('#zhituiTC').val();
-        var cardidpatrn = /^\S+$/;
-        var cardshuzi = /^([1-9][0-9]*)$/;
-        var cardrandom = /^(\d{1,2}(\.\d{1,2})?|100)$/;
-        var duipengTC  = $('#duipengTC').val();
-        var DPbilv1  = $('#DPbilv1').val();
-        var guanliTC  = $('#guanliTC').val();
-        var yfenhong  = $('#yfenhong').val();
-        var zlixi  = $('#zlixi').val();
-        var rifd  = $('#rifd').val();
-        var safekey  = $('#safekey').val();
-
-        if (!cardidpatrn.test(jibie)) {
-            $('#jibie').val('');
-            $('#jibie').attr("placeholder", "不许为空");
-            $('#jibie').focus();
-            return;
-        }
-
-        if (!cardidpatrn.test(jine)) {
-            $('#jine').val('');
-            $('#jine').attr("placeholder", "不许为空");
-            $('#jine').focus();
-            return;
-        }
-        if (!cardshuzi.test(jine)) {
-            $('#jine').val('');
-            $('#jine').attr("placeholder", "数字格式不对");
-            $('#jine').focus();
-            return;
-        }
-        
-        if (!cardidpatrn.test(chongfu)) {
-            $('#chongfu').val('');
-            $('#chongfu').attr("placeholder", "不许为空");
-            $('#chongfu').focus();
-            return;
-        }
-        if (!cardrandom.test(chongfu)) {
-            $('#chongfu').val('');
-            $('#chongfu').attr("placeholder", "数值范围不对");
-            $('#chongfu').focus();
-            return;
-        }
-
-        if (!cardidpatrn.test(zhituiTC)) {
-            $('#zhituiTC').val('');
-            $('#zhituiTC').attr("placeholder", "不许为空");
-            $('#zhituiTC').focus();
-            return;
-        }
-        if (!cardidpatrn.test(duipengTC)) {
-            $('#duipengTC').val('');
-            $('#duipengTC').attr("placeholder", "不许为空");
-            $('#duipengTC').focus();
-            return;
-        }
-        if (!cardidpatrn.test(DPbilv1)) {
-            $('#DPbilv1').val('');
-            $('#DPbilv1').attr("placeholder", "不许为空");
-            $('#DPbilv1').focus();
-            return;
-        }
-        if (!cardidpatrn.test(guanliTC)) {
-            $('#guanliTC').val('');
-            $('#guanliTC').attr("placeholder", "不许为空");
-            $('#guanliTC').focus();
-            return;
-        }
-        if (!cardidpatrn.test(yfenhong)) {
-            $('#yfenhong').val('');
-            $('#yfenhong').attr("placeholder", "不许为空");
-            $('#yfenhong').focus();
-            return;
-        }
-        if (!cardidpatrn.test(zlixi)) {
-            $('#zlixi').val('');
-            $('#zlixi').attr("placeholder", "不许为空");
-            $('#zlixi').focus();
-            return;
-        }
-        if (!cardidpatrn.test(rifd)) {
-            $('#rifd').val('');
-            $('#rifd').attr("placeholder", "不许为空");
-            $('#rifd').focus();
-            return;
-        }
-        if (!cardidpatrn.test(safekey)) {
-            $('#safekey').val('');
-            $('#safekey').attr("placeholder", "不许为空");
-            $('#safekey').focus();
-            return;
-        }
-
-
-        $.ajax({
-            url : 'jibieOK',
-            type : "post",
-            data : {
-                "jibie" : $('#jibie').val(),
-                "jine" : $('#jine').val(),
-                "chongfu" : $('#chongfu').val(),
-                "zhituiTC" : $('#zhituiTC').val(),
-                "password" : $('#password').val(),
-                "passwordtwo" : $('#passwordtwo').val(),
-                "duipengTC" : $('#duipengTC').val(),
-                "DPbilv1" : $('#DPbilv1').val(),
-                "guanliTC" : $('#guanliTC').val(),
-                "yfenhong" : $('#yfenhong').val(),
-                "zlixi" : $('#zlixi').val(),
-                "rifd" : $('#rifd').val()
-
-            },
-            dataType : "json",
-            success : function(data){
-                // alert(data.isRead);
-               /* if(data.read != 1){
-                    var i = data.read;
-                    alert(i);
-                }
-                else{
-                    alert("注册成功");
-                    location.href = "profile";
-                }*/
-
-
-            }
-        })
-
-
-
-
-    }
-
-
 
 
 

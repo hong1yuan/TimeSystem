@@ -2,7 +2,7 @@
 namespace Admin\Model;
 use Think\Model;
 class GuanliModel extends Model {
-   /* protected $_validate = array(
+    protected $_validate = array(
         array('jibie','require','不能为空！'),
         array('jine','require','不能为空！'),
         array('chongfu','require','不能为空！'),
@@ -13,7 +13,7 @@ class GuanliModel extends Model {
         array('yfenhong','require','不能为空！'),
         array('zlixi','require','不能为空！'),
 
-    );*/
+    );
 
 
     protected $_auto =array(
