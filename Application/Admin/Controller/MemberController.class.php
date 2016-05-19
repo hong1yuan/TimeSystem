@@ -314,86 +314,112 @@ class MemberController extends Controller {
 
      }
 
+
+
      $duipeng1 = $news["treeplace"];
-     if($duipeng1 == 1){
-         $tongji = M('Member') -> where("fatherid = '$fatherid' AND treeplace = 0 AND ispay = 1") ->find();
+     $ppath = $news["ppath"];
+     $path = explode(",", $ppath);
 
+     $len  =count($path);
+     $fid = $path[$len-2];
+     $finfo = M('Member')->where("id = '$fid'")->find();
+     //dump($finfo);
+     if($duipeng1==1){
+        $farr["R"] = $finfo["r"] + $news["guquan"];
+        $farr["SpareR"] = $finfo["sparer"] + $news["guquan"]; 
+     }else{
+        $farr["L"] = $finfo["l"] + $news["guquan"];
+        $farr["SpareL"] = $finfo["sparel"] + $news["guquan"]; 
      }
-     else{
-         $tongji = M('Member') -> where("fatherid = '$fatherid' AND treeplace = 1 AND ispay = 1") ->find();
-
-     }
+     ///dump($farr);
+     $result = M('Member')->where("id = '$fid'")->save($farr);
+     //echo $result;
+    // dump($result);
+     for($i=$len-2 ;$i>1;$i--){  
+      $pid = $path[$i];
+      $ppid = $path[$i-1];
+      $pinfo = M('Member')->where(" id =' $pid'")->find();
+      $ppinfo = M('Member')->where(" id =' $ppid'")->find();
       
-
-     if($tongji != false){
-        $ppath = $news["ppath"];
-         $path = explode(",", $ppath);
-         $len  =count($path);
-         for($i=$len-2 ;$i>=1;$i--){    
-            $pid = $path[$i];
-            $pinfo = M('Member')->where(" id =' $pid'")->find();
-
-            $dpcs = $pinfo['dpcs'];
-            $xj = $pinfo['xianjin'];
-            $zj = $pinfo['zongji'];
-            $total = $pinfo['totalday'];
-            $lv = $pinfo['ulevel'];
-         
-            $dpinfo = M('gee_fee')->where("id = '$lv'")->find();
-
-
-           //echo $total;
-            
-            /*$att["ispay"] = $xj;
-            $att["t"] = $lv;
-            $att["lv"] = $lv;
-            exit(json_encode($att));*/
-            $rfd = $dpinfo['rifd'];
-            if($dpcs > 6){
-                $dplv = $dpinfo['dpbilv1'];
-            }else{
-                $dplv = $dpinfo['duipengtc'];
-            }
-       
-            if($zj < $pinfo['guquan'] * 2.2){
-                if(date('Y-m-d') != $pinfo['countdate']){
-                    $total = 0 ;
-                }
-
-                if($total < $rfd){
-                    if($tongji['guquan'] <= $news['guquan']){
-                        $dpcha = $tongji['guquan'] * $dplv / 100;
-                                
-                    }else{
-                         $dpcha = $news['guquan'] * $dplv / 100;
-
-                    }
-                    //
-                    $gx['zuhe'] = $pinfo['zuhe'] + $dpcha * 30/100;
-                    $gx['cishan'] = $pinfo['cishan'] + $dpcha * 2/100;
-                    $gx['huanqiu'] = $pinfo['huanqiu'] + $dpcha * 3/100;
-                    
-                    $gx['zongji'] =  $zj + $dpcha * 65/100 ;
-                    $gx['TotalDay'] =  $total + $dpcha * 65/100 ;
-                    $gx['xianjin']  = $xj +$dpcha * 65/100;
-                    $gx['duipeng'] = $pinfo['duipeng'] + $dpcha * 65/100;
-                    $gx['countdate'] = date('Y-m-d');
-                    $gx['dpcs'] = $dpcs +1;
-                    $res = M('Member')->where(" id = '$pid' ")->save($gx);
-                  
-        
-                }
-
-            }
-
-            
-            
-
-         }
-            
+        if($pinfo["treeplace"]==1){
+            $arr["R"] = $ppinfo["r"] + $news["guquan"];
+            $arr["SpareR"] = $ppinfo["sparer"] + $news["guquan"]; 
+        }else{
+          $arr["L"] = $ppinfo["l"] + $news["guquan"];
+          $arr["SpareL"] = $ppinfo["sparel"] + $news["guquan"]; 
+        }
+        $res = M('Member')->where("id = '$ppid'")->save($arr);
        
      }
+     
 
+    
+     $sarr = M('Member')->field('id,SpareR,SpareL')->where("SpareR>0 and SpareL>0 and ispay=1 ")->select();
+    
+     $len2 = count($arr);
+     for($i=0;$i<$len;$i++){
+        $id = $sarr[$i]['id'];
+        //echo $id,"<br/>";
+        $se = M('Member')->where("id = $id")->find();
+        echo "对碰人";
+        dump($se);
+
+        if($se['sparer'] >= $se['sparel']){
+
+          $scha = $se['sparel'];
+          $se['sparer'] = $se['sparer'] - $se['sparel'];
+          $se['sparel'] = 0;
+        }else{
+          $scha = $se['sparer'];
+          $se['sparel'] = $se['sparel'] - $se['sparer'];
+          $se['sparer'] = 0;
+        }
+    
+        $ulv = $se['ulevel'];
+        $dpcs = $se['dpcs'];
+        $xj = $se['xianjin'];
+        $zj = $se['zongji'];
+        $total = $se['totalday'];
+        $dpinfo = M('gee_fee')->where("id = '$ulv'")->find();
+        $rfd = $dpinfo['rifd'];
+
+         if($dpcs > 6){
+               $dplv = $dpinfo['dpbilv1'];
+         }else{
+              $dplv = $dpinfo['duipengtc'];
+         }
+
+        if($zj < $se['guquan'] * 2.2){
+            if(date('Y-m-d') != $se['countdate']){
+                 $total = 0 ;
+            }
+
+            if($total < $rfd){
+                $dpcha = $scha * $dplv / 100;                 
+                $gx['zuhe'] = $se['zuhe'] + $dpcha * 30/100;
+                $gx['cishan'] = $se['cishan'] + $dpcha * 2/100;
+                $gx['huanqiu'] = $se['huanqiu'] + $dpcha * 3/100;                    
+                $gx['zongji'] =  $zj + $dpcha * 65/100 ;
+                $gx['TotalDay'] =  $total + $dpcha * 65/100 ;
+                if($gx['TotalDay'] >= $rfd){
+                   $gx['TotalDay']=$rfd;
+                }
+                $gx['xianjin']  = $xj +$dpcha * 65/100;
+                $gx['duipeng'] = $se['duipeng'] + $dpcha * 65/100;
+                $gx['countdate'] = date('Y-m-d');
+                $gx['dpcs'] = $dpcs +1;
+                $res = M('Member')->where(" id = '$id' ")->save($gx);
+                  
+                }
+
+            }
+
+
+     }
+
+
+
+     
 
 
 
