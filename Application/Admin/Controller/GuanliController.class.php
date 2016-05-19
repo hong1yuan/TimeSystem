@@ -363,8 +363,11 @@ class GuanliController extends Controller {
 
          $count = $tiqu->count();
          $pages = ceil($count/10);
+<<<<<<< HEAD
 
        //  $count = $tiqu->count();
+=======
+>>>>>>> 6b72893ce5eb6e3becce2ce5fac7cc61e3b33ec5
 
          $pagesize = 10;
          $curr = $_GET['page'] ? intval($_GET['page']) : 1;
@@ -372,8 +375,6 @@ class GuanliController extends Controller {
              ->join('member ON tiqu.userid = member.id')
              ->limit(($curr-1)*10,$pagesize)->order('rdt DESC')->select();
 
-        $count = count($list);
-        $pages = ceil($count/10);
          $this->assign('pages',$pages);
          $this->assign('count',$count);
          $this->assign('list',$list);
