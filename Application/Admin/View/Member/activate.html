@@ -84,6 +84,20 @@
         }
     });
 
+        function activet(a){
+     $.ajax({
+        url : 'activateadd',
+        type : "post",
+        data : {"id":a},
+        dataType : "json",
+        success : function(data){
+           var i = data.ispay;
+           alert(i);
+           location.reload();
+        }
+     })
+    }
+
  function dell(b){
      $.ajax({
         url : 'activatedel',
@@ -98,19 +112,7 @@
      })
     }
 
-    function activet(a){
-     $.ajax({
-        url : 'activateadd',
-        type : "post",
-        data : {"id":a},
-        dataType : "json",
-        success : function(data){
-           var i = data.ispay;
-           alert(i);
-           location.reload();
-        }
-     })
-    }
+
     
       
 
