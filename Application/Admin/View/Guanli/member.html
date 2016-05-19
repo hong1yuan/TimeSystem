@@ -9,6 +9,19 @@
             <div class="am-cf am-padding">
                 <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">平台管理</strong> / <small>会员管理</small></div>
             </div>
+<<<<<<< HEAD
+
+                <div class="am-u-sm-12 am-u-md-3" style="float:right; ">
+                    <div class="am-input-group am-input-group-sm">
+                        <small>请输入用户名搜索:</small>
+                        <input type="text" class="am-form-field" name="ss" id="ss" value=""/>
+                        <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-default" type="button" id="btss" onclick="ss()" >
+                            搜索</button>
+                        </span>
+                    </div>
+                </div>
+=======
             <div class="am-g" style="padding:0 auto 0 auto;">
                 <div class="am-u-xm-12 am-u-sm-12 am-u-md-3">
                 	<div class="am-form-group">
@@ -40,13 +53,14 @@
                    
                 </div>
             </div>
+>>>>>>> 6b72893ce5eb6e3becce2ce5fac7cc61e3b33ec5
 
             <div class="am-g">
                 <div class="am-u-sm-12">
                     <form class="am-form">
                         <table class="am-table am-table-striped am-table-hover table-main">
                             <thead>
-                            <tr>
+                            <tr id="head">
                                 <!--<th class="table-check"><input type="checkbox" /></th>-->
                                 <!--<th class="table-id">ID</th>-->
                                 <th class="table-title" width="17%">登陆账号</th>
@@ -56,17 +70,60 @@
                                 <th class="table-set" width="25%">操作</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ad" hidden>
+                                <tr id="tr">
+                                    <td></td>
+                                    <td id="user-level">
+                                        <!--<switch name="data['user']['ulevel']">
+                                            <case value="1">金星会员</case>
+                                            <case value="2">白金会员</case>
+                                            <case value="3">钻石会员</case>
+                                            <case value="4">水星会员</case>
+                                        </switch>-->
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <if condition ="$v['islock'] eq 0">
+
+                                                    <a href="{:U('detail',array('id'=>$v['id']))}">
+                                                        <span class="am-icon-pencil-square-o"></span>
+                                                        查看
+                                                    </a>
+                                                    &nbsp;
+
+                                                    <a href="{:U('lock',array('id'=>$v['id']))}">
+                                                        锁定
+                                                    </a>
+                                                    <else/>
+
+                                                    已锁定 &nbsp;
+
+                                                    <a href="{:U('unlock',array('id'=>$v['id']))}">
+                                                        解锁
+                                                    </a>
+
+                                                </if>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody id="tb">
+
                             <foreach name="mems" item="v">
                             <tr>
-                                <!--<td><input type="checkbox" /></td>-->
-                                <!--<td>1</td>-->
+
                                 <td>{$v.username}</td>
                                 <td>
                                     <switch name="v.ulevel">
                                         <case value="1">金星会员</case>
                                         <case value="2">白金会员</case>
                                         <case value="3">钻石会员</case>
+                                        <case value="4">水星会员</case>
                                     </switch>
 
                                 </td>
@@ -119,6 +176,7 @@
 
 
 <script type="text/javascript">
+    
     laypage({
         cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
         pages: $('#page').attr('pages'), //总页数
@@ -135,6 +193,56 @@
             }
         }
     });
+<<<<<<< HEAD
+
+    function ss(){
+        var ss = $('#ss').val();
+        var cardidpatrn = /^\S+$/;
+        if(!cardidpatrn.test(ss)){
+            $('#ss').val('');
+            $('#ss').attr("placeholder", "请输入用户名");
+            $('#ss').focus();
+            return;
+        }
+
+        $.ajax({
+            url : 'sousuo',
+            type : "post",
+            data : {"sousuo":$('#ss').val()},
+            dataType : "json",
+            success : function(data){
+                console.log(data);
+                if(data['msg']== 0){
+                    alert("该用户不存在");
+                    return false;
+                }else{
+                    $('#tb').hide();
+                    $('#ad').show();
+                   // console.log(data['user']['username']);
+                    $('#tr > td:eq(0)').html(data['user'].username);
+                    var level = data['user'].ulevel;
+                    if(level == 1){
+                        var abc = "金星会员";
+                    }else if(level == 2){
+                      var abc = "白金会员";
+                    }else if(level == 3){
+                        var abc = "钻石会员";
+                    }else if(level == 4){
+                        var abc = "水星会员";
+                    }
+
+                    $('#tr > td:eq(1)').html(abc);
+                    $('#tr > td:eq(2)').html(data['user'].regtime);
+                    $('#tr > td:eq(3)').html(data['user'].rename);
+
+                }
+
+
+            }
+        })
+    }
+
+=======
     $('#search').on('click',function(){
     	var type = $('#select option:selected').val();
     		cont = $('#cont').val();
@@ -146,4 +254,5 @@
 
     	})
     })
+>>>>>>> 6b72893ce5eb6e3becce2ce5fac7cc61e3b33ec5
 </script>

@@ -11,7 +11,7 @@ class GuanliController extends Controller {
 
         $count = $mem->count();
         $curr = $_GET['page'] ? intval($_GET['page']) :1;
-        $pagesize= 5 ;
+        $pagesize= 10 ;
         $pages=ceil($count/$pagesize);
         $offset = ($curr-1)*$pagesize;
 
@@ -363,6 +363,11 @@ class GuanliController extends Controller {
 
          $count = $tiqu->count();
          $pages = ceil($count/10);
+<<<<<<< HEAD
+
+       //  $count = $tiqu->count();
+=======
+>>>>>>> 6b72893ce5eb6e3becce2ce5fac7cc61e3b33ec5
 
          $pagesize = 10;
          $curr = $_GET['page'] ? intval($_GET['page']) : 1;
@@ -511,6 +516,24 @@ class GuanliController extends Controller {
         }else{
             $this->error('删除成功',U('jibie'));
         }
+    }
+
+
+    public function sousuo(){
+        $username = $_POST['sousuo'];
+        $user = M('Member')->where("username = '$username'")->find();
+        if($user){
+            $data=array(
+                'msg'=>"1",
+                'user'=>$user,
+            );
+        }else{
+            $data=array(
+                'msg'=>"0",
+                //'user'=>$user,
+            );
+        }
+        echo json_encode($data);
     }
 
 

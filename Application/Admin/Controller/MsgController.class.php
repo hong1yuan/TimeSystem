@@ -35,12 +35,13 @@ class MsgController extends Controller {
     public function  msg(){
         $msg = M('msg');
         $id = $_SESSION['member']['id'];
-        $count = $msg->count();
-        $pages = ceil($count/10);
+
         $curr = $_GET['page'] ? intval($_GET['page']) : 1;
 
-        $msg_list = $msg->limit(($curr-1)*10,15)->where('userid='.$id)->order('id DESC')->select();
+        $msg_list = $msg->limit(($curr-1)*10,10)->where('userid='.$id)->order('id DESC')->select();
 
+        $count = count($msg_list);
+        $pages = ceil($count/10);
         $this->assign('pages',$pages);
         $this->assign('count',$count);
         $this->assign('msg_list',$msg_list);

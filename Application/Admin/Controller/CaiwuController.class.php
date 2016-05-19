@@ -8,8 +8,7 @@ class CaiwuController extends Controller {
      */
     public function index(){
 
-
-        $list = D('history')->field('id,action1,pdt,escript,epoints')
+      /*  $list = D('history')->field('id,action1,pdt,escript,epoints')
             ->where('uid=1000')->select();
         $count = count($list);
         $pageSize=10;
@@ -28,7 +27,7 @@ class CaiwuController extends Controller {
             $arr[]=$value;
         }
 
-        $this->assign('CaiwuList',$arr);
+        $this->assign('CaiwuList',$arr);*/
         $this->display();
     }
 
