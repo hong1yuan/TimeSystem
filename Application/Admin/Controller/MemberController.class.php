@@ -252,23 +252,23 @@ class MemberController extends Controller {
      * 激活
      */
     
-    public function activateadd(){
+    public function activateadd() {
 
      $user = $_SESSION['member']['id'];
      $poid = I('post.id');
      $news = M('Member') -> where("id = '$poid'") -> find();
 
       if($news == false){
-      $att["ispay"] = "未找到用户，请刷新";
-      exit(json_encode($att));
+        $att["ispay"] = "未找到用户，请刷新";
+        exit(json_encode($att));
       }
 
 
      $reid = $news["reid"];
      $fatherid = $news["fatherid"];
      if($news["ispay"] != 0){
-      $att["ispay"] = "用户已激活";  
-      exit(json_encode($att));
+        $att["ispay"] = "用户已激活";  
+        exit(json_encode($att));
      }
 
      $new = M('Member') -> where("id = $reid") ->find();
@@ -294,23 +294,23 @@ class MemberController extends Controller {
      $guanli=1;
 
      if($new["zongji"] < $new["guquan"]*2.2){
-      $ztq = $news["guquan"] * $ulevel["zhituitc"] / 100;
-      $zhitui["zuhe"] = $ztq * $chongxiao/100;
-      $zhitui["cishan"] = $ztq * $csbilv/100;
-      $zhitui["huanqiu"] = $ztq * $hqbilv/100;
-      $zhitui["ztj"] = $ztq - $zhitui["zuhe"] - $zhitui["cishan"] - $zhitui["huanqiu"];
-      $zhitui["guanli"] = $zhitui["ztj"] * $guanli/100;
+        $ztq = $news["guquan"] * $ulevel["zhituitc"] / 100;
+        $zhitui["zuhe"] = $ztq * $chongxiao/100;
+        $zhitui["cishan"] = $ztq * $csbilv/100;
+        $zhitui["huanqiu"] = $ztq * $hqbilv/100;
+        $zhitui["ztj"] = $ztq - $zhitui["zuhe"] - $zhitui["cishan"] - $zhitui["huanqiu"];
+        $zhitui["guanli"] = $zhitui["ztj"] * $guanli/100;
 
-      $ztsave["zongji"] = $new["zongji"] + $zhitui["ztj"] + $zhitui["guanli"];
-      $ztsave["zuhe"] = $new["zuhe"] + $zhitui["zuhe"];
-      $ztsave["xianjin"] = $new["xianjin"] + $zhitui["ztj"] + $zhitui["guanli"];
-      $ztsave["zhitui"] = $new["zhitui"] + $zhitui["ztj"];
-      $ztsave["cishan"] = $new["cishan"] + $zhitui["cishan"];
-      $ztsave["huanqiu"] =  $new["huanqiu"] + $zhitui["huanqiu"];
-      $ztsave["ztNum"] = $new["ztnum"] + 1;
-      $ztsave["guanli"] = $new["guanli"] + $zhitui["guanli"];
-      $ztsave["windate"] = date('Y-m-d');
-      M('Member') -> where("id = '$reid'") ->save($ztsave);
+        $ztsave["zongji"] = $new["zongji"] + $zhitui["ztj"] + $zhitui["guanli"];
+        $ztsave["zuhe"] = $new["zuhe"] + $zhitui["zuhe"];
+        $ztsave["xianjin"] = $new["xianjin"] + $zhitui["ztj"] + $zhitui["guanli"];
+        $ztsave["zhitui"] = $new["zhitui"] + $zhitui["ztj"];
+        $ztsave["cishan"] = $new["cishan"] + $zhitui["cishan"];
+        $ztsave["huanqiu"] =  $new["huanqiu"] + $zhitui["huanqiu"];
+        $ztsave["ztNum"] = $new["ztnum"] + 1;
+        $ztsave["guanli"] = $new["guanli"] + $zhitui["guanli"];
+        $ztsave["windate"] = date('Y-m-d');
+        M('Member') -> where("id = '$reid'") ->save($ztsave);
 
      }
 
@@ -361,8 +361,7 @@ class MemberController extends Controller {
         $id = $sarr[$i]['id'];
         //echo $id,"<br/>";
         $se = M('Member')->where("id = $id")->find();
-        echo "对碰人";
-        dump($se);
+
 
         if($se['sparer'] >= $se['sparel']){
 
@@ -408,6 +407,8 @@ class MemberController extends Controller {
                 $gx['duipeng'] = $se['duipeng'] + $dpcha * 65/100;
                 $gx['countdate'] = date('Y-m-d');
                 $gx['dpcs'] = $dpcs +1;
+                $gx['SpareL'] =  $se['sparel'];
+                $gx['SpareR'] =  $se['sparer'];
                 $res = M('Member')->where(" id = '$id' ")->save($gx);
                   
                 }
