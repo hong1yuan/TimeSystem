@@ -74,6 +74,39 @@ class MemberController extends Controller {
         }
 
     /**
+     * 修改支付密码
+     */
+    public function paypassword(){
+        $user = $_SESSION['member']['id'];
+        $value = M('member') -> field('username') -> where("id = '$user'") ->find();
+        $this -> assign('value',$value);
+
+        $this->display();
+    }
+
+    /*
+      修改支付密码逻辑
+     */
+
+    public function paypasswordup(){
+             $user = $_SESSION['member']['id'];
+             $password =   substr(md5(trim($_POST['password'])),8,16);
+             $value = M('member');
+             $uname = $value -> where("id = '$user' AND safekey ='$password'") ->select();
+
+             if($uname == false){
+              $this -> error('密码错误');
+              $this -> redirect('paypassword');
+             }
+
+             $arryn["safekey"] =  substr(md5(trim($_POST['newpassword'])),8,16); 
+             
+             $value -> where("id = '$user'") ->save($arryn);
+             $this -> success('修改成功',U('profile'));
+
+        }
+
+    /**
      * 注册会员页面
      */
     public function register(){
@@ -427,7 +460,7 @@ class MemberController extends Controller {
      $att["ispay"] = "激活成功";
      //echo "<script>alert('激活成功')</script>";
      exit(json_encode($att));
-     
+    
     }
 
      /**
