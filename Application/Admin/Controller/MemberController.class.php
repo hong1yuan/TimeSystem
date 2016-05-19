@@ -139,8 +139,12 @@ class MemberController extends Controller {
         
         
         $valuer =   M('member') -> field('id') -> where("username = '$arry[usernames]'") -> find();
+        $aa = M('member') -> where("id = '$user'") -> find();
+          if($aa["islock"] != 0 ){
+             $rearry["read"] =  $aa["username"]."已被锁定，不能注册用户";
+             exit(json_encode($rearry));   
+            }
        
-       $valuer =   M('member') -> field('id') -> where("username = '$arry[usernames]'") -> find();
        
         if($valuer != false){
          $rearry["read"] =  "用户名已注册";
@@ -290,7 +294,7 @@ class MemberController extends Controller {
      $user = $_SESSION['member']['id'];
      $poid = I('post.id');
      $news = M('Member') -> where("id = '$poid'") -> find();
-
+     $ac = M('member') -> where("id = '$user'") -> find();
       if($news == false){
         $att["ispay"] = "未找到用户，请刷新";
         exit(json_encode($att));
@@ -304,12 +308,18 @@ class MemberController extends Controller {
         exit(json_encode($att));
      }
 
+     if($ac["islock"] != 0){
+        $att["ispay"] = $ac["username"]."已被锁定,不能激活";  
+        exit(json_encode($att));
+     }
+
      $new = M('Member') -> where("id = $reid") ->find();
      if($new["baodan"] < $news["guquan"]){
         $att["ispay"] = "报单币不足";
         exit(json_encode($att));
 
      }
+
      
      $baodan["baodan"] = $new["baodan"] - $news["guquan"];
      M('Member') -> where("id = '$reid'") -> save($baodan);
@@ -344,7 +354,6 @@ class MemberController extends Controller {
         $ztsave["guanli"] = $new["guanli"] + $zhitui["guanli"];
         $ztsave["windate"] = date('Y-m-d');
         M('Member') -> where("id = '$reid'") ->save($ztsave);
-
      }
 
 
@@ -364,15 +373,15 @@ class MemberController extends Controller {
         $farr["L"] = $finfo["l"] + $news["guquan"];
         $farr["SpareL"] = $finfo["sparel"] + $news["guquan"]; 
      }
-     ///dump($farr);
+    
      $result = M('Member')->where("id = '$fid'")->save($farr);
      //echo $result;
     // dump($result);
      for($i=$len-2 ;$i>1;$i--){  
-      $pid = $path[$i];
-      $ppid = $path[$i-1];
-      $pinfo = M('Member')->where(" id =' $pid'")->find();
-      $ppinfo = M('Member')->where(" id =' $ppid'")->find();
+        $pid = $path[$i];
+        $ppid = $path[$i-1];
+        $pinfo = M('Member')->where(" id =' $pid'")->find();
+        $ppinfo = M('Member')->where(" id =' $ppid'")->find();
       
         if($pinfo["treeplace"]==1){
             $arr["R"] = $ppinfo["r"] + $news["guquan"];
@@ -384,36 +393,36 @@ class MemberController extends Controller {
         $res = M('Member')->where("id = '$ppid'")->save($arr);
        
      }
-     
-
     
+//获取到所有对碰的数据
      $sarr = M('Member')->field('id,SpareR,SpareL')->where("SpareR>0 and SpareL>0 and ispay=1 ")->select();
-    
-     $len2 = count($arr);
-     for($i=0;$i<$len;$i++){
+//获取到他的长度
+     $len2 = count($sarr);
+
+for($i=0;$i < $len2;$i++){
         $id = $sarr[$i]['id'];
         //echo $id,"<br/>";
-        $se = M('Member')->where("id = $id")->find();
-
+        //
+       $se = M('Member')->where("id = $id")->find();
 
         if($se['sparer'] >= $se['sparel']){
-
-          $scha = $se['sparel'];
-          $se['sparer'] = $se['sparer'] - $se['sparel'];
-          $se['sparel'] = 0;
+            $scha = $se['sparel'];
+            $se['sparer'] = $se['sparer'] - $se['sparel'];
+            $se['sparel'] = 0;
         }else{
-          $scha = $se['sparer'];
-          $se['sparel'] = $se['sparel'] - $se['sparer'];
-          $se['sparer'] = 0;
+            $scha = $se['sparer'];
+            $se['sparel'] = $se['sparel'] - $se['sparer'];
+            $se['sparer'] = 0;
         }
     
-        $ulv = $se['ulevel'];
-        $dpcs = $se['dpcs'];
-        $xj = $se['xianjin'];
-        $zj = $se['zongji'];
-        $total = $se['totalday'];
-        $dpinfo = M('gee_fee')->where("id = '$ulv'")->find();
-        $rfd = $dpinfo['rifd'];
+            $ulv = $se['ulevel'];
+            $dpcs = $se['dpcs'];
+            $xj = $se['xianjin'];
+            $zj = $se['zongji'];
+            $total = $se['totalday'];
+            //根据会员级别获取到级别里面的数据
+            $dpinfo = M('gee_fee')->where("id = '$ulv'")->find();
+            $rfd = $dpinfo['rifd'];
 
          if($dpcs > 6){
                $dplv = $dpinfo['dpbilv1'];
@@ -425,43 +434,41 @@ class MemberController extends Controller {
             if(date('Y-m-d') != $se['countdate']){
                  $total = 0 ;
             }
-
+        //如果今天的总数小于日封顶
             if($total < $rfd){
-                $dpcha = $scha * $dplv / 100;                 
-                $gx['zuhe'] = $se['zuhe'] + $dpcha * 30/100;
-                $gx['cishan'] = $se['cishan'] + $dpcha * 2/100;
-                $gx['huanqiu'] = $se['huanqiu'] + $dpcha * 3/100;                    
-                $gx['zongji'] =  $zj + $dpcha * 65/100 ;
-                $gx['TotalDay'] =  $total + $dpcha * 65/100 ;
-                if($gx['TotalDay'] >= $rfd){
-                   $gx['TotalDay']=$rfd;
-                }
-                $gx['xianjin']  = $xj +$dpcha * 65/100;
-                $gx['duipeng'] = $se['duipeng'] + $dpcha * 65/100;
-                $gx['countdate'] = date('Y-m-d');
-                $gx['dpcs'] = $dpcs +1;
-                $gx['SpareL'] =  $se['sparel'];
-                $gx['SpareR'] =  $se['sparer'];
-                $res = M('Member')->where(" id = '$id' ")->save($gx);
-                  
+                    $dpcha = $scha * $dplv / 100;                 
+                    $gx['zuhe'] = $se['zuhe'] + $dpcha * 30/100;
+                    $gx['cishan'] = $se['cishan'] + $dpcha * 2/100;
+                    $gx['huanqiu'] = $se['huanqiu'] + $dpcha * 3/100;                    
+                    $gx['zongji'] =  $zj + $dpcha * 65/100 ;
+                    $gx['TotalDay'] =  $total + $dpcha * 65/100 ;
+
+                    if($gx['TotalDay'] >= $rfd){
+                       $gx['TotalDay']=$rfd;
+                    }
+                    $gx['xianjin']  = $xj +$dpcha * 65/100;
+                    $gx['duipeng'] = $se['duipeng'] + $dpcha * 65/100;
+                    $gx['countdate'] = date('Y-m-d');
+                    $gx['dpcs'] = $dpcs +1;
+                    $gx['SpareL'] =  $se['sparel'];
+                    $gx['SpareR'] =  $se['sparer'];
+                    $res = M('Member')->where(" id = '$id' ")->save($gx);  
                 }
 
-            }
+        }
 
 
      }
 
 
 
-     
-
-
-
-     $att["ispay"] = "激活成功";
-     //echo "<script>alert('激活成功')</script>";
-     exit(json_encode($att));
+ $att["ispay"] = "激活成功";
+ exit(json_encode($att));
     
-    }
+}
+
+
+
 
      /**
      * 删除账号
