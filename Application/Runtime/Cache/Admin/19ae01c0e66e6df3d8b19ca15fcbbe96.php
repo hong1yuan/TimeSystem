@@ -327,7 +327,7 @@
                                 <td><?php echo ($v["num"]); ?></td>
                                 <td class="am-hide-sm-only"><?php echo ($v["pdt"]); ?></td>
                                 <td><?php echo ($v['escript']); ?></td>
-                                <td class="am-hide-sm-only">$<?php echo number_format($v['epoints']);?></td>
+                                <td class="am-hide-sm-only">€<?php echo number_format($v['epoints']);?></td>
 
                             </tr><?php endforeach; endif; ?>
 

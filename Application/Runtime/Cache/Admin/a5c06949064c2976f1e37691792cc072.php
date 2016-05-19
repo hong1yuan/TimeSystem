@@ -158,7 +158,7 @@
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
                     </a>
-                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
                             <a href="<?php echo U('Member/profile');?>" class="am-cf">
                                 <span class="am-icon-user"></span> 个人资料
@@ -237,10 +237,10 @@
         </ul>
 
 
+
         <div class="am-panel am-panel-default admin-sidebar-panel">
             <div class="am-panel-bd">
-                <p><span class="am-icon-tag"></span> <?php echo ($_SESSION['member']['name']); ?></p>
-                <p>欢迎来到洲际比的后台管理系统</p>
+
             </div>
         </div>
     </div>
@@ -271,7 +271,7 @@
                                     <option value="1">现金币转报单币</option>
                                     <option value="2">现金币转洲际币</option>
                                 </select>
-                                <small>余额: $<?php echo ($memberinfo["xianjin"]); ?> </small>
+                                <small>余额: €<?php echo ($memberinfo["xianjin"]); ?> </small>
 
                             </div>
                         </div>

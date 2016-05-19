@@ -158,7 +158,7 @@
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
                     </a>
-                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
                             <a href="<?php echo U('Member/profile');?>" class="am-cf">
                                 <span class="am-icon-user"></span> 个人资料
@@ -237,10 +237,10 @@
         </ul>
 
 
+
         <div class="am-panel am-panel-default admin-sidebar-panel">
             <div class="am-panel-bd">
-                <p><span class="am-icon-tag"></span> <?php echo ($_SESSION['member']['name']); ?></p>
-                <p>欢迎来到洲际比的后台管理系统</p>
+
             </div>
         </div>
     </div>
@@ -309,11 +309,11 @@
                                 <td><?php echo ($jj["num"]); ?></td>
                                 <td><?php echo ($jj['countdate']); ?></td>
                                 <td>$ <?php echo ($jj['t_ztj']); ?></td>
-                                <td class="am-hide-sm-only">$<?php echo ($jj['t_dpj']); ?></td>
-                                <td class="am-hide-sm-only">$<?php echo ($jj['t_ldfh']); ?></td>
-                                <td class="am-hide-sm-only">$<?php echo ($jj['t_rlx']); ?></td>
-                                <td class="am-hide-sm-only">$<?php echo ($jj['t_yfh']); ?></td>
-                                <td class="am-hide-sm-only">$<?php echo ($jj['total']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['t_dpj']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['t_ldfh']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['t_rlx']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['t_yfh']); ?></td>
+                                <td class="am-hide-sm-only">€<?php echo ($jj['total']); ?></td>
 
                             </tr><?php endforeach; endif; ?>
                             </tbody>

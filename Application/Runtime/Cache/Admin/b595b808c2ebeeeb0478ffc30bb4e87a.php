@@ -287,17 +287,17 @@
 
                 <div class="well hero-unit span12">
                     <h1>账户信息</h1>
-                    <p>币值组合：$ <?php echo ($info["zuhe"]); ?></p>
-                    <p>总奖金：$ <?php echo ($info["zongji"]); ?></p>
-                    <p>洲际银行股权：$ <?php echo ($info["guquan"]); ?></p>
+                    <p>币值组合：€ <?php echo ($info["zuhe"]); ?></p>
+                    <p>总奖金：€ <?php echo ($info["zongji"]); ?></p>
+                    <p>洲际银行股权：€ <?php echo ($info["guquan"]); ?></p>
                     <p>洲际币：<?php echo ($info["zhoujibi"]); ?></p>
-                    <p>现金币：$ <?php echo ($info["xianjin"]); ?></p>
-                    <p>报单币：$ <?php echo ($info["baodan"]); ?></p>
-                    <p>周利息：$ <?php echo ($info["lixi"]); ?></p>
-                    <p>月分红：$ <?php echo ($info["fenhong"]); ?></p>
-                    <p>环球奖：$ <?php echo ($info["huanqiu"]); ?></p>
-                    <p>慈善基金：$ <?php echo ($info["cishan"]); ?></p>
-                    <p>洲际币行情：$ <?php echo ($zhoujibi); ?>
+                    <p>现金币：€ <?php echo ($info["xianjin"]); ?></p>
+                    <p>报单币：€ <?php echo ($info["baodan"]); ?></p>
+                    <p>周利息：€ <?php echo ($info["lixi"]); ?></p>
+                    <p>月分红：€ <?php echo ($info["fenhong"]); ?></p>
+                    <p>环球奖：€ <?php echo ($info["huanqiu"]); ?></p>
+                    <p>慈善基金：€ <?php echo ($info["cishan"]); ?></p>
+                    <p>洲际币行情：€ <?php echo ($zhoujibi); ?>
                     </p>
                 </div>
         </div>

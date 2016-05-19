@@ -65,10 +65,10 @@
             cursor:pointer;
         }
         .box div{
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            background: salmon;
+            border-radius: 8%;
+            width: 150px;
+            height: 150px;
+            background:salmon;
             text-align: center;
             line-height: 100px;
             cursor:pointer;
@@ -220,7 +220,7 @@
                         <span class="am-icon-btn am-primary am-icon-user"></span> 个人中心
                         <span class="am-icon-angle-right am-fr am-margin-right"></span>
                     </a>
-                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
                         <li>
                             <a href="<?php echo U('Member/profile');?>" class="am-cf">
                                 <span class="am-icon-user"></span> 个人资料
@@ -299,10 +299,10 @@
         </ul>
 
 
+
         <div class="am-panel am-panel-default admin-sidebar-panel">
             <div class="am-panel-bd">
-                <p><span class="am-icon-tag"></span> <?php echo ($_SESSION['member']['name']); ?></p>
-                <p>欢迎来到洲际比的后台管理系统</p>
+
             </div>
         </div>
     </div>
@@ -391,6 +391,7 @@
 	                //顶层
 	                $('.box1').html(data['member']['username']);
 	                $('.box1').attr('id',data['member']['id']);
+                    $('.box1').attr('ulevel',data['member']['ulevel']);
 
 	                //中间层
 	                if (!data['memberinfo'].length) {
@@ -402,21 +403,25 @@
 	                    if (data['memberinfo'][0]['treeplace'] == '0') {
 	                         $('.box2').html(data['memberinfo'][0]['username']);
 	                         $('.box2').attr('id',data['memberinfo'][0]['id']);
+                             $('.box2').attr('ulevel',data['memberinfo'][0]['ulevel']);
 	                         $('.box3').html(cont);
 	                         $('.box3').attr('id','');
 	                    }
 	                    if (data['memberinfo'][0]['treeplace'] == '1') {
 	                         $('.box3').html(data['memberinfo'][0]['username']);
 	                         $('.box3').attr('id',data['memberinfo'][0]['id']);
+                             $('.box3').attr('ulevel',data['memberinfo'][0]['ulevel']);
 	                         $('.box2').html(cont);
 	                         $('.box2').attr('id','');
 	                    }
 	                }else if(data['memberinfo'].length == "2") {
 	                    $('.box2').html(data['memberinfo'][0]['username']);
 	                    $('.box2').attr('id',data['memberinfo'][0]['id']);
+                        $('.box2').attr('ulevel',data['memberinfo'][0]['ulevel']);
 
 	                    $('.box3').html(data['memberinfo'][1]['username']);
 	                    $('.box3').attr('id',data['memberinfo'][1]['id']);
+                        $('.box3').attr('ulevel',data['memberinfo'][1]['ulevel']);
 	                }
 	                //底层数据
 	                if (data['childinfo']) {
@@ -431,16 +436,22 @@
 	                        };
 	                    })
 	                }
+
 	                //底层左区
 	                if (left.length=='1') {
-	                    if (!left[0]['treeplace']) {
+	                	//左边
+	                    if (left[0]['treeplace']==0) {
 	                        $('.box4').html(left[0]['username']);
 	                        $('.box4').attr('id',left[0]['id']);
+                            $('.box4').attr('ulevel',left[0]['ulevel']);
 	                        $('.box5').html(cont);
+	                        $('.box5').attr('id','');
 	                    }else{
 	                        $('.box5').html(left[0]['username']);
 	                        $('.box5').attr('id',left[0]['id']);
+                            $('.box5').attr('ulevel',left[0]['ulevel']);
 	                        $('.box4').html(cont);
+	                        $('.box4').attr('id','');
 	                    }
 	                }else if (left.length=='2') { //左右同时存在
 	                    $.each(left,function(i,item){
@@ -448,10 +459,12 @@
 	                            case '0':
 	                                $('.box4').html(item['username']);
 	                                $('.box4').attr('id',item['id']);
+                                    $('.box4').attr('ulevel',item['ulevel']);
 	                            break;
 	                            case '1':
 	                                $('.box5').html(item['username']);
 	                                $('.box5').attr('id',item['id']);
+                                    $('.box5').attr('id',item['id']);
 	                            break;
 	                            default:
 	                            break;
@@ -461,32 +474,39 @@
 	                	if (!$('.box2').attr('id')) {
 	                		$('.box4').html('');
 	                		$('.box5').html('');
+	                		$('.box4').attr('id','');
+	                		$('.box5').attr('id','');
 	                	}else{
-	                		$('.box4').html();
-	                		$('.box5').html();
+	                		$('.box4').html(cont);
+	                		$('.box4').attr('id','');
+	                		$('.box5').html(cont);
+	                		$('.box5').attr('id','');
 	                	}
 	                }
+
 	                //底层右区
 	                if (right.length=='1') {
-	                    if (!right[0]['treeplace']) {
-	                        $('.box4').html(right[0]['username']);
-	                        $('.box4').attr('id',right[0]['id']);
-	                        $('.box5').html(cont);
+	                    if (right[0]['treeplace']==0) {
+	                        $('.box6').html(right[0]['username']);
+	                        $('.box6').attr('id',right[0]['id']);
+	                        $('.box7').html(cont);
+	                        $('.box7').attr('id','');
 	                    }else{
-	                        $('.box5').html(right[0]['username']);
-	                        $('.box5').attr('id',right[0]['id']);
-	                        $('.box4').html(cont);
+	                        $('.box7').html(right[0]['username']);
+	                        $('.box7').attr('id',right[0]['id']);
+	                        $('.box6').html(cont);
+	                        $('.box6').attr('id','');
 	                    }
 	                }else if (right.length=='2') { //左右同时存在
 	                    $.each(right,function(i,item){
 	                        switch(item['treeplace']){
 	                            case '0':
-	                                $('.box4').html(item['username']);
-	                                $('.box4').attr('id',item['id']);
+	                                $('.box6').html(item['username']);
+	                                $('.box6').attr('id',item['id']);
 	                            break;
 	                            case '1':
-	                                $('.box5').html(item['username']);
-	                                $('.box5').attr('id',item['id']);
+	                                $('.box7').html(item['username']);
+	                                $('.box7').attr('id',item['id']);
 	                            break;
 	                            default:
 	                            break;
@@ -495,23 +515,48 @@
 	                }else{
 	                    if (!$('.box3').attr('id')) {
 	                		$('.box6').html('');
+	                		$('.box6').attr('id','');
 	                		$('.box7').html('');
+	                		$('.box7').attr('id','');
 	                	}else{
 	                		$('.box6').html(cont);
+	                		$('.box6').attr('id','');
 	                		$('.box7').html(cont);
+	                		$('.box7').attr('id','');
 	                	}
 	                }
 	            })
 	        },
+            getcolor:function(){
+                var team = $('.team');
+                $.each(team,function(i,item){
+                    var color = $(item).attr('ulevel');
+                    /*switch(i){
+                        case "1":
+                           $(item).css('background','#eabf56');
+                           break;
+                        case "2":
+                           $(item).css('background','#d9d9d9');
+                           break; 
+                        case "3":
+                           $(item).css('background','#9ec5f8');
+                           break;
+                        case "4":
+                           $(item).css('background','#87d5d1');
+                           break; 
+                        default :
+                            break;  
+                    }*/
+                })
+                
+            }
     	}
         
         var obj = Object.create(init);
 
         //获取团队信息
         obj.getteam(id);
-        $('.reg').on('click',function(){
-        	alert('lll');
-        })
+        //obj.getcolor();
         $('.team').on('click',function(){
             var id = $(this).attr('id');
             if (!id) {
@@ -545,5 +590,17 @@
                 obj.getteam(id);
             }
         })
+		$('.team').on('mouseover',function(){
+			var id = $(this).attr('id');
+			if (!id) {return false;};
+			var self = $(this);
+			$.get('getcount?id='+id,function(data){
+				layer.tips('左区：'+data['r']/500+' 总 右区：'+data['l']/500, self, {
+				   tips: [1, '#3595CC'],
+				   time: 4000
+				});
+			})
+			
+		})
         
 </script>
