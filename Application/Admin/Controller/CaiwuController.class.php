@@ -28,6 +28,12 @@ class CaiwuController extends Controller {
         }
 
         $this->assign('CaiwuList',$arr);*/
+
+        $id=$_SESSION['member']['id'];
+        $info = M('Member')->where("id = '$id'")->find();
+        $zhoujibi = M('webconfig')->getField('jiage');
+        $this->assign('zhoujibi',$zhoujibi);
+        $this->assign('info',$info);
         $this->display();
     }
 
@@ -35,7 +41,8 @@ class CaiwuController extends Controller {
      * 奖金明细
      */
     public function  award(){
-        $list = D('Gee_total')->where('uid=1000')->select();
+        $id = $_SESSION['member']['id'];
+        $list = D('Gee_total')->where("uid= '$id'")->select();
         $count = count($list);
         $pageSize=10;
         //总共多少页
@@ -44,16 +51,17 @@ class CaiwuController extends Controller {
         $curr = $_GET['page'] ? intval($_GET['page']) : 1;
         $offset = ($curr-1)*$pageSize;
 
-        $jinagjin_list = D('Gee_total')->where('uid=1000')
+        $jiangjin_list = D('Gee_total')->where("uid= '$id'")
             ->limit($offset,$pageSize)
             ->select();
+
         $arr =array();
-        foreach($jinagjin_list as $key => $value){
-            $value['total'] = $value['t_ztj']+$value['t_dpj']+$value['t_ldfh']+$value['t_rlx']+$value['t_yfh'];
+        foreach($jiangjin_list as $key => $value){
+            $value['total'] = $value['t_ztj']+$value['t_dpj']+$value['t_ldfh'];
+                /*+$value['t_rlx']+$value['t_yfh']*/
             $value['num'] = $key+1;
             $arr[]=$value;
         }
-
 
         $this->assign('count',$count);
         $this->assign('pages',$pages);

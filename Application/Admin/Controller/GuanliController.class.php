@@ -249,7 +249,6 @@ class GuanliController extends Controller {
             $mem = M('Member')->field('id,ulevel,guquan,fenhong,xianjin,ispay')
                    ->where("ulevel = '$id' and ispay = 1 and guquan !=0")->select();
 
-
                 foreach($mem as $k=>$value){
                         $mid=$value['id'];
                     //echo "<br/>";
@@ -363,11 +362,7 @@ class GuanliController extends Controller {
 
          $count = $tiqu->count();
          $pages = ceil($count/10);
-<<<<<<< HEAD
 
-       //  $count = $tiqu->count();
-=======
->>>>>>> 6b72893ce5eb6e3becce2ce5fac7cc61e3b33ec5
 
          $pagesize = 10;
          $curr = $_GET['page'] ? intval($_GET['page']) : 1;
@@ -518,7 +513,9 @@ class GuanliController extends Controller {
         }
     }
 
-
+    /**
+     * 搜索
+     */
     public function sousuo(){
         $username = $_POST['sousuo'];
         $user = M('Member')->where("username = '$username'")->find();

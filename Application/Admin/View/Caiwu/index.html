@@ -1,110 +1,73 @@
 <include file = "Common/header" />
 
 <div class="am-cf admin-main">
+
     <include file = "Common/left" />
+    <style>
+        .well {
+            min-height: 20px;
+            padding: 19px;
+            margin-bottom: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #eee;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        .hero-unit {
+            padding: 40px 60px;
+            margin-bottom: 30px;
+            background-color: #F8F8F8;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+        }
+
+    </style>
     <!-- content start -->
     <div class="admin-content">
         <div class="admin-content-body">
             <div class="am-cf am-padding">
                 <div class="am-fl am-cf">
-                    <strong class="am-text-primary am-text-lg">财务管理</strong>
-                    / <small>财务明细</small></div>
+                    <strong class="am-text-primary am-text-lg">财务管理/</strong>
+                    <small> 财务明细</small>
+                </div>
             </div>
-            <!--<div class="am-g">
-                <div class="am-u-sm-12 am-u-md-6">
-                    <div class="am-btn-toolbar">
-                        <div class="am-btn-group am-btn-group-xs">
-                            <button type="button" class="am-btn am-btn-default">
-                                <span class="am-icon-plus"></span>
-                                新增
-                            </button>
-                            <button type="button" class="am-btn am-btn-default">
-                                <span class="am-icon-save"></span>
-                                保存
-                            </button>
-                            <button type="button" class="am-btn am-btn-default">
-                                <span class="am-icon-archive"></span>
-                                审核
-                            </button>
-                            <button type="button" class="am-btn am-btn-default">
-                                <span class="am-icon-trash-o"></span>
-                                删除
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
-               &lt;!&ndash; <div class="am-u-sm-12 am-u-md-3">
-                    <div class="am-form-group">
-                        <select data-am-selected="{btnSize: 'sm'}">
-                            <option value="option1">所有类别</option>
-                            <option value="option2">IT业界</option>
-                            <option value="option3">数码产品</option>
-                            <option value="option3">笔记本电脑</option>
-                            <option value="option3">平板电脑</option>
-                            <option value="option3">只能手机</option>
-                            <option value="option3">超极本</option>
-                        </select>
-                    </div>
-                </div>&ndash;&gt;
-
-
-
-                <div class="am-u-sm-12 am-u-md-3">
-                    <div class="am-input-group am-input-group-sm">
-                        <input type="text" class="am-form-field">
-          <span class="am-input-group-btn">
-            <button class="am-btn am-btn-default" type="button">搜索</button>
-          </span>
-                    </div>
-                </div>
-            </div>-->
-
             <div class="am-g">
-                <div class="am-u-sm-12">
-                    <form class="am-form">
-                        <table class="am-table am-table-striped am-table-hover table-main"  >
-                            <thead>
-                            <tr>
-                                <!--<th class="table-check" width="2%">
-                                    <input type="checkbox" />
-                                </th>-->
-                                <th class="table-id" width="9%">编号</th>
-                                <th class="table-title" width="25%">日期</th>
-                                <th class="table-type" width="45%">财务项目</th>
-                                <th class="table-author am-hide-sm-only" width="21%">金额</th>
+                <div class="am-u-sm-12 am-u-md-2 am-u-md-push-10">
 
-                                <!--<th class="table-set">操作</th>-->
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <foreach item="v" name="CaiwuList" >
-                            <tr>
-                                <td>{$v.num}</td>
-                                <td class="am-hide-sm-only">{$v.pdt}</td>
-                                <td>{$v['escript']}</td>
-                                <td class="am-hide-sm-only">€{:number_format($v['epoints'])}</td>
-
-                            </tr>
-                            </foreach>
-
-                            </tbody>
-                        </table>
-
-                        <div class="am-cf">
-                            共 {$count} 条记录
-                            <div class="am-fr" id="page" pages = "{$pages}">
-
-                            </div>
-                        </div>
-                    </form>
                 </div>
 
-            </div>
-        </div>
+                <div class="well hero-unit span12">
 
-<include file = "Common/footer" />
+                    <!--<p>账户名称:{$info.username}</p>-->
+                    <h2>账户ID:{$info.id}</h2>
+                    <p>币值组合：€ {$info.zuhe}</p>
+                    <p>总奖金：€ {$info.zongji}</p>
+                    <p>洲际银行股权：€ {$info.guquan}</p>
+                    <p>洲际币：{$info.zhoujibi}</p>
+                    <p>现金币：€ {$info.xianjin}</p>
+                    <p>报单币：€ {$info.baodan}</p>
+                    <p>周利息：€ {$info.lixi}</p>
+                    <p>月分红：€ {$info.fenhong}</p>
+                    <p>环球奖：€ {$info.huanqiu}</p>
+                    <p>慈善基金：€ {$info.cishan}</p>
+                    <p>洲际币行情：€ {$zhoujibi}
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <include file = "Common/footer" />
 
 
 <script type="text/javascript">
