@@ -178,7 +178,14 @@
         btn.button('reset');
     }, 3000);
  });
-   
+  var url = window.document.location.href;
+  var n = url.indexOf('&seat=');
+  
+  if (url.charAt(url.length - 1)=='0') {
+     $("#treeplace").find("option[value='0']").attr("selected",true);
+  }else if (url.charAt(url.length - 1)=='1') {
+     $("#treeplace").find("option[value='1']").attr("selected",true);
+  }
 
  })
  
