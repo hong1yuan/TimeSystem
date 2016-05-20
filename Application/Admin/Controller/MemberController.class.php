@@ -335,7 +335,7 @@ class MemberController extends Controller {
      $chongxiao=30;
      $csbilv=2;
      $hqbilv=3;
-     $guanli=1;
+     $guanli=5;
 
      if($new["zongji"] < $new["guquan"]*2.2){
         $ztq = $news["guquan"] * $ulevel["zhituitc"] / 100;
@@ -343,7 +343,7 @@ class MemberController extends Controller {
         $zhitui["cishan"] = $ztq * $csbilv/100;
         $zhitui["huanqiu"] = $ztq * $hqbilv/100;
         $zhitui["ztj"] = $ztq - $zhitui["zuhe"] - $zhitui["cishan"] - $zhitui["huanqiu"];
-        $zhitui["guanli"] = $zhitui["ztj"] * $guanli/100;
+        $zhitui["guanli"] = $ztq * $guanli/100;
 
         $ztsave["zongji"] = $new["zongji"] + $zhitui["ztj"] + $zhitui["guanli"];
         $ztsave["zuhe"] = $new["zuhe"] + $zhitui["zuhe"];
