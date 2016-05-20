@@ -211,9 +211,7 @@ class MemberController extends Controller {
                               $valuethree =  M('news') -> field('newsid') -> select();
                                $isDot = ",";
                                $isRead = "0,";
-                           
-                                                    
-
+                                                                               
                                $arryy["username"] = $arry["usernames"];
                                $arryy["password"] = $arry["password"];
                                $arryy["safekey"] = $arry["passwordtwo"];
@@ -249,8 +247,7 @@ class MemberController extends Controller {
                                echo json_encode($rearry);
                                }
                       
-                          
-                          
+                                                  
                             
                     }
                   }
@@ -326,6 +323,7 @@ class MemberController extends Controller {
      M('Member') -> where("id = '$reid'") -> save($baodan);
 
      $jihuo["ispay"] = 1;
+     $jihuo["regtime"] = date('Y-m-d H:i',time());
      $jihuo["passtime"] = date('Y-m-d H:i',time());
      $jihuo["windate"] = date('Y-m-d H:i',time());
      $jihuo["wDT"] = date('Y-m-d H:i',time());
@@ -336,7 +334,7 @@ class MemberController extends Controller {
      $csbilv=2;
      $hqbilv=3;
      $guanli=1;
-
+//直推
      if($new["zongji"] < $new["guquan"]*2.2){
         $ztq = $news["guquan"] * $ulevel["zhituitc"] / 100;
         $zhitui["zuhe"] = $ztq * $chongxiao/100;
@@ -344,7 +342,6 @@ class MemberController extends Controller {
         $zhitui["huanqiu"] = $ztq * $hqbilv/100;
         $zhitui["ztj"] = $ztq - $zhitui["zuhe"] - $zhitui["cishan"] - $zhitui["huanqiu"];
         $zhitui["guanli"] = $zhitui["ztj"] * $guanli/100;
-
         $ztsave["zongji"] = $new["zongji"] + $zhitui["ztj"] + $zhitui["guanli"];
         $ztsave["zuhe"] = $new["zuhe"] + $zhitui["zuhe"];
         $ztsave["xianjin"] = $new["xianjin"] + $zhitui["ztj"] + $zhitui["guanli"];
@@ -358,17 +355,17 @@ class MemberController extends Controller {
      }
 
 
-
+//对碰开始
      $duipeng1 = $news["treeplace"];
      $ppath = $news["ppath"];
      $path = explode(",", $ppath);
-
      $len = count($path);
      $fid = $path[$len-2];
      
      //查询父ID数据
      $finfo = M('Member')->where("id = '$fid'")->find();
-
+     echo "父级信息";
+     dump($finfo);
      //右
      if($duipeng1=='1'){
         //父级右总
@@ -381,33 +378,32 @@ class MemberController extends Controller {
         //余
         $farr["SpareL"] = $finfo["sparel"] + $news["guquan"]; 
      }
-     
+     echo "左右";
+     dump($farr);
      $result = M('Member')->where("id = $fid")->save($farr);
+    // echo $result;
+       for($i =1;$i<$len-1;$i++){
+            $pid = $path[$i];
+            $ppid = $path[$i+1];
+            $fpid = M('Member')->where(" id ='$pid'")->find();
+            $fppid = M('Member')->where(" id ='$ppid'")->find();
+            if($fppid["treeplace"] == 1){
+               $arrt["R"] = $fpid["r"] + $news["guquan"];
+               $arrt["SpareR"] = $fpid["sparer"] + $news["guquan"];
+            }
+            if($fppid["treeplace"] == 0){
+               $arrt["L"] = $fpid["l"] + $news["guquan"];
+               $arrt["SpareL"] = $fpid["sparel"] + $news["guquan"];
+            } 
+            echo $news['guquan'];
+            dump($fpid);
+            dump($arrt);
+           M('Member')->where("id = '$pid'")->save($arrt);
 
+    }
 
-     /*
-        *
-        * 循环查出多少层父级数据
-        * 
-      */
-     for($i=$len-2 ;$i>1;$i--){
-
-        $pid = $path[$i];        
-        $ppid = $path[$i-1];
-        $pinfo = M('Member')->where(" id = $pid")->find();
-        $ppinfo = M('Member')->where(" id = $ppid")->find();       
-        if($pinfo["treeplace"]==1){
-            $arrR["R"] = $ppinfo["r"] + $news["guquan"];
-            $arrR["SpareR"] = $ppinfo["sparer"] + $news["guquan"]; 
-            $res = M('Member')->where("id = '$ppid'")->save($arrR);
-        }else{
-            $arrL["L"] = $ppinfo["l"] + $news["guquan"];
-            $arrL["SpareL"] = $ppinfo["sparel"] + $news["guquan"]; 
-            $res = M('Member')->where("id = '$ppid'")->save($arrL);
-        }
-       
-     }
-
+exit;
+     
 //获取到所有对碰的数据
      $sarr = M('Member')->field('id,SpareR,SpareL')->where("SpareR>0 and SpareL>0 and ispay=1 ")->select();
 //获取到他的长度

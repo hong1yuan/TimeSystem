@@ -52,6 +52,7 @@ class CaiwuController extends Controller {
         $offset = ($curr-1)*$pageSize;
 
         $jiangjin_list = D('Gee_total')->where("uid= '$id'")
+            ->order('countdate desc ,id desc')
             ->limit($offset,$pageSize)
             ->select();
 
@@ -80,8 +81,12 @@ class CaiwuController extends Controller {
         $exchange = M('exchange');
         if (!empty($_POST)) {
              $username = trim($_POST['username']);
+
              $num = intval($_POST['xianjin']); //转账数量
              $xianjin = intval(ceil($num*1.01)); //扣除现金币
+
+             $xianjin = intval($_POST['xianjin']);
+
              $password = trim($_POST['password']);
 
              //获取用户信息
@@ -92,6 +97,7 @@ class CaiwuController extends Controller {
              if (substr(md5($password),8,16) != $memberinfo['safekey']) {
                     $this->error('交易密码输入错误');
              }else{
+
                     if ($memberinfo['xianjin'] < $xianjin) {
                         $this->error('您的可用现金币不足');
                     }
@@ -119,6 +125,14 @@ class CaiwuController extends Controller {
                     }else{
                         $this->success('操作失败');
                     }
+
+                if ($memberinfo['xianjin'] * 0.99 < $xianjin) {
+                    $this->error('您的洲际币余额不足');
+                }
+                //扣除1%慈善基金
+                $member->where('id='.$id)->setField('xianjin',$memberinfo['xianjin'] *0.99 -$xianjin);
+                $member->where("id={$rst[0]['id']}")->setInc('xianjin',$xianjin);
+                $this->success('操作成功');
              }
         }else{
              $count = $exchange->where("uid=$id AND type=3")->count();

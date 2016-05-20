@@ -31,7 +31,7 @@
                                 会员密码
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="password" name="password" id="user-pwd" placeholder="请输入登录密码">
+                                <input type="password" name="password" id="user-pwd" placeholder="会员的登录密码">
                             </div>
                         </div>
 
@@ -40,23 +40,39 @@
                                 会员级别
                             </label>
                             <div class="am-u-sm-9">
-                                <select id="user-jibie" name="ulevel">
-                                    <option value="1"
-                                    <if condition=" $user.ulevel eq 1">
-                                        checked
-                                    </if>
-                                    >金星会员 (€ 1000)</option>
-                                    <option value="2"
-                                    <if condition=" $user.ulevel eq 2">
-                                        checked
-                                    </if>
-                                    >白金会员 (€ 3000)</option>
-                                    <option value="3"
-                                    <if condition=" $user.ulevel eq 1">
-                                        checked
-                                    </if>
-                                    >钻石会员 (€ 5000)</option>
-                                </select>
+                               <select id="user-jibie" name="ulevel">
+                                   <option value="1">金星会员 (€ 1000)</option>
+                                   <option value="2">白金会员 (€ 3000)</option>
+                                   <option value="3">钻石会员 (€ 5000)</option>
+                                   <option value="4">水星会员 (€ 500)</option>
+                                   <!-- <option value="1"
+                                   <if condition="$user['ulevel'] eq 1">
+                                       selected ="selected"
+                                       <else/>
+                                       selected =" "
+                                   </if>
+                                   >金星会员 (€ 1000)</option>
+                                   <option value="2"
+                                   <if condition="$user['ulevel'] eq 2">
+                                       selected ="selected"
+                                       <else/>
+                                       selected =" "
+                                   </if>
+                                   >白金会员 (€ 3000)</option>
+                                   <option value="3"
+                                   <if condition="$user['ulevel'] eq 3">
+                                       selected ="selected"
+                                       <else/>
+                                       selected =" "
+                                   </if>
+                                   >钻石会员 (€ 5000)</option>
+                                   <if condition="$user['ulevel'] eq 4">
+                                       selected ="selected"
+                                       <else/>
+                                       selected =" "
+                                   </if>
+                                   >水星会员 (€ 500)</option> -->
+                               </select>
                             </div>
                         </div>
 
@@ -117,7 +133,7 @@
                                 币值组合
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="zuhe" id="user-total" value="{$user.zongji}">
+                                <input type="text" name="zuhe" id="user-total" value="{$user.zuhe}">
                             </div>
                         </div>
                         <div class="am-form-group">
@@ -133,7 +149,7 @@
                                 洲际币
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="text" name="zhoujibi" id="user-zhoujibi" value="{$user.zuhe}">
+                                <input type="text" name="zhoujibi" id="user-zhoujibi" value="{$user.zhoujibi}">
                             </div>
                         </div>
                         <div class="am-form-group">
@@ -208,6 +224,14 @@
                                 <input type="text" name="baodan" id="user-baodan" value="{$user.baodan}">
                             </div>
                         </div>
+                         <div class="am-form-group">
+                            <label for="user-zongji" class="am-u-sm-3 am-form-label">
+                                总奖金
+                            </label>
+                            <div class="am-u-sm-9">
+                                <input type="text" name="zongji" id="user-zongji" value="{$user.zongji}">
+                            </div>
+                        </div>
                         <div class="am-form-group">
                             <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
                                 密码
@@ -253,7 +277,14 @@
 
 
 <include file = "Common/footer" />
-
+<script>
+   var ulevel = '<?php echo $user['ulevel']-1;?>';
+   $('#user-jibie option').each(function(i,item){
+        if (ulevel==$(item).val()) {
+            $('#user-jibie option:eq('+ulevel+')').attr('selected','selected');
+        };
+   })
+</script>      
 <!--
 <script type="text/javascript">
     $('#btnOk').bind('submit',function(){

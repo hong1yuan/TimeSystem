@@ -53,10 +53,6 @@
                     <p>月分红：€ {$info.fenhong}</p>
                     <p>环球奖：€ {$info.huanqiu}</p>
                     <p>慈善基金：€ {$info.cishan}</p>
-                    <p>左区总计：€ {$info.l}</p>
-                    <p>左区剩余：€ {$info.sparel}</p>
-                    <p>右区总计：€ {$info.r}</p>
-                    <p>右区剩余：€ {$info.sparer}</p>
                     <p>洲际币行情：€ {$zhoujibi}
                     </p>
                 </div>

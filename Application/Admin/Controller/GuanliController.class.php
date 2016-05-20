@@ -46,9 +46,12 @@ class GuanliController extends Controller {
             $user_before = M('Member')->where("id='$id' and islock = 0 ")->find();
             //资金的修改记录
             $user_after = $_POST;
-
             $pwd = trim(I('post.password'));
-            $user_after['password'] = substr(md5($pwd),8,16);
+            if($pwd==false){
+                unset($user_after['password']);
+            }else{
+                $user_after['password'] = substr(md5($pwd),8,16);
+            }
 
             //dump($user_after);
             //  die;
