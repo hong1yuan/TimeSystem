@@ -41,11 +41,11 @@
                                     <label for="user-name" class="am-u-sm-3 am-form-label">选择充值金额</label>
                                     <div class="am-u-sm-9">
                                         <select id="elvel" name="elvel" class="input-xlarge">
-                                                  <option value="0">请选择购买报单币数量</option>  
-                                                  <option value="500">报单币数量（500€）</option>                                    
-                                                  <option value="1000">报单币数量（1000€）</option>  
-                                                  <option value="3000">报单币数量（3000€）</option>                             
-                                                  <option value="5000">报单币数量（5000€）</option>
+                                                  <option value="0">请选择购买现金币数量</option>  
+                                                  <option value="500">现金币数量（500€）</option>                                    
+                                                  <option value="1000">现金币数量（1000€）</option>  
+                                                  <option value="3000">现金币数量（3000€）</option>                             
+                                                  <option value="5000">现金币数量（5000€）</option>
                                         </select>
                                      
                                     </div>
@@ -127,7 +127,7 @@
 								<tr>
 	                                <td>{$vo.id}</td>
 	                                <td>€{$vo.money}</td>
-                                    <td>€{$vo.baodan}</td>
+                                    <td>€{$vo.xianjin}</td>
 	                                <td>{$vo.addtime|date="Y-m-d H:i:s",###}</td>
                                     <td>
                                         <if condition="$vo.retime eq ''">

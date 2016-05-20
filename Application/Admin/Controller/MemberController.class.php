@@ -563,7 +563,7 @@ for($i=0;$i < $len2;$i++){
            $count = $remit->where('uid='.$id)->count();
            $pages = ceil($count/10);
            $curr = $_GET['page'] ? intval($_GET['page']) : 1;
-           $list = $remit ->field('member.baodan,remit.*')->join('member ON remit.uid = member.id')->where('remit.uid='.$id)->limit(($curr-1)*10,10)->order('addtime DESC')->select();
+           $list = $remit ->field('member.xianjin,remit.*')->join('member ON remit.uid = member.id')->where('remit.uid='.$id)->limit(($curr-1)*10,10)->order('addtime DESC')->select();
            
            $this->assign('count',$count);
            $this->assign('pages',$pages);

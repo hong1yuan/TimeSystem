@@ -480,7 +480,7 @@ class GuanliController extends Controller {
              $remit -> where('id='.$id)->save($arr); 
 
              //执行加钱操作
-             M('member')->where("id={$rst['uid']}")->setInc('baodan',$rst['money']);
+             M('member')->where("id={$rst['uid']}")->setInc('xianjin',$rst['money']);
              $info = array(
                 'status' => 1,
                 'info'=> '操作成功'
@@ -491,7 +491,7 @@ class GuanliController extends Controller {
          $pages = ceil($count/10);
          $pagesize = 10;
          $curr = $_GET['page'] ? intval($_GET['page']) : 1;
-         $list = $remit -> field('remit.*,member.username,baodan')
+         $list = $remit -> field('remit.*,member.username,xianjin')
              ->join('member ON remit.uid = member.id')
              ->limit(($curr-1)*10,$pagesize)->order('addtime DESC')->select();
 
