@@ -355,6 +355,14 @@ class MemberController extends Controller {
         $ztsave["guanli"] = $new["guanli"] + $zhitui["guanli"];
         $ztsave["windate"] = date('Y-m-d H:i',time());
         M('Member') -> where("id = '$reid'") ->save($ztsave);
+        $a["T_ztj"] = $zhitui["ztj"];
+        $a["T_zuhe"] = $zhitui["zuhe"];
+        $a["T_cishan"] = $zhitui["cishan"];
+        $a["T_huanqiu"] = $zhitui["huanqiu"];
+        $a["countdate"] = date("Y-m-d");
+        $a["uid"] = $reid;
+        M('gee_total') -> add($a);
+
      }
 
 
@@ -415,9 +423,7 @@ class MemberController extends Controller {
 
 for($i=0;$i < $len2;$i++){
         $id = $sarr[$i]['id'];
-        //echo $id,"<br/>";
-        //
-       $se = M('Member')->where("id = $id")->find();
+        $se = M('Member')->where("id = $id")->find();
 
         if($se['sparer'] >= $se['sparel']){
             $scha = $se['sparel'];
@@ -466,7 +472,16 @@ for($i=0;$i < $len2;$i++){
                     $gx['dpcs'] = $dpcs +1;
                     $gx['SpareL'] =  $se['sparel'];
                     $gx['SpareR'] =  $se['sparer'];
-                    $res = M('Member')->where(" id = '$id' ")->save($gx);  
+                    $res = M('Member')->where(" id = '$id' ")->save($gx);
+                    $b["countdate"] = date("Y-m-d");
+                    $b["T_dpj"] = $dpcha * 65/100;
+                    $b["T_zuhe"] = $dpcha * 30/100;
+                    $b["T_cishan"] = $dpcha * 2/100;                    
+                    $b["T_huanqiu"] = $dpcha * 3/100;
+                    $b["uid"] = $id;
+                    $bb = M('gee_total') -> add($b);
+                
+
                 }
 
         }

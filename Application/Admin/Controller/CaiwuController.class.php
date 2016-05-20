@@ -58,9 +58,8 @@ class CaiwuController extends Controller {
 
         $arr =array();
         foreach($jiangjin_list as $key => $value){
-            $value['total'] = $value['t_ztj']+$value['t_dpj']+$value['t_ldfh'];
-                /*+$value['t_rlx']+$value['t_yfh']*/
-            $value['num'] = $key+1;
+            $value['total'] = $value['t_ztj']+$value['t_dpj']+$value['t_huanqiu']+$value['t_cishan']+$value['t_zuhe']+$value['t_rlx']+$value['t_yfh'];
+
             $arr[]=$value;
         }
 

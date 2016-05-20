@@ -230,10 +230,12 @@ class GuanliController extends Controller {
      * 月分红
      */
     public function reward(){
+
+        $id =$_SESSION['member']['id'];
         $lists = M('gee_fee')->field('id,jibie,yfenhong')->order('jine asc')->select();
 
 
-        $telephone = M('Member')->where('id=1000')->getField('telephone');
+        $telephone = M('Member')->where("id= $id")->getField('telephone');
         $fenhongdate = M('webconfig')->where('id=1')->getField('fenhongdate');
         $this->assign('date',$fenhongdate);
         $this->assign('telephone',$telephone);
@@ -265,25 +267,26 @@ class GuanliController extends Controller {
 
                 foreach($mem as $k=>$value){
                         $mid=$value['id'];
-                    //echo "<br/>";
-                   // echo $mid;
                         $income = floor( $value['guquan'] * $yfh /1000);
-                   // echo "<br/>先",$value['fenhong'];
-                   // echo "<br/> 分红",$yfh;
-                   // echo "<br/>",$income;
                         $value['xianjin']= $value['xianjin'] +$income;
                         $value['fenhong'] = $value['fenhong']+$income;
-                   // dump($value);
-                    //die;
+                        // $value['countdate'] = date('Y-m-d');
                         $res = M('Member')->where("id = '$mid' ")->save($value);
-                  //  echo $res;
-                   // dump($res);
+                        
+                        $b["countdate"] = date("Y-m-d");
+                        $b["T_yfh"] = $income;
+                        /*$b["T_dpj"] = $dpcha * 65/100;
+                        $b["T_zuhe"] = $dpcha * 30/100;
+                        $b["T_cishan"] = $dpcha * 2/100;
+                        $b["T_huanqiu"] = $dpcha * 3/100;*/
+                        $b["uid"] = $mid;
+                        $bb = M('gee_total') -> add($b);
 
-                        if($res){
+                        /*if($res){
 
                         }else{
                             $this->error("$id 修改失败",U('reward'));
-                        }
+                        }*/
                     }
 
         }
@@ -357,6 +360,78 @@ class GuanliController extends Controller {
 
 
     }
+
+    /**
+     * 周利息
+     */
+    public function zhoulixi(){
+
+        $id =$_SESSION['member']['id'];
+        $lists = M('gee_fee')->field('id,jibie,zlixi')->order('jine asc')->select();
+
+        $telephone = M('Member')->where("id= $id")->getField('telephone');
+        $lixidate = M('webconfig')->where('id=1')->getField('lixidate');
+        $this->assign('date',$lixidate);
+        $this->assign('telephone',$telephone);
+        $this->assign('lists',$lists);
+        $this->display();
+    }
+
+     /**
+     * 分发周利息
+     */
+    public function fenfa2(){
+    
+        $pwd = trim(I('post.password'));
+        $pwd = substr(md5($pwd),8,16);
+        $userid = $_SESSION['member']['id'];
+        $safekey = D('Member')->where("id = '$userid'")->getField('safekey');
+        if($safekey != $pwd){
+            $this->error('密码错误', U('reward'),2);
+        }
+        unset($_POST['password']);
+        //dump($_POST);
+        foreach ($_POST as $key=>$item) {
+
+            $id = $key;
+            $lixi= $item;
+
+            $mem = M('Member')->field('id,ulevel,guquan,fenhong,xianjin,ispay')
+                   ->where("ulevel = '$id' and ispay = 1 and guquan !=0")->select();
+
+                foreach($mem as $k=>$value){
+                        $mid=$value['id'];
+                        $income = floor( $value['guquan'] * $lixi /1000);
+                        $value['xianjin']= $value['xianjin'] +$income;
+                        $value['fenhong'] = $value['fenhong']+$income;
+                        $res = M('Member')->where("id = '$mid' ")->save($value);
+                        
+                        $b["countdate"] = date("Y-m-d");
+                        $b["T_rlx"] = $income;
+                        
+                        $b["uid"] = $mid;
+                        $bb = M('gee_total') -> add($b);
+
+                    }
+
+        }
+
+        $this->success("操作成功 ",U('reward'));
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * 提现确认
