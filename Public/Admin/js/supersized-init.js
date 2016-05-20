@@ -19,9 +19,9 @@ jQuery(function($){
 
         // Components
         slide_links        : 'blank',    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
-        slides             : [    // Slideshow Images
+      /*  slides             : [    // Slideshow Images
                                 {image : "/Public/Admin/img/backgrounds/bjt.jpg"}
-                             ]
+                             ]*/
 
     });
 

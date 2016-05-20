@@ -52,6 +52,7 @@ class CaiwuController extends Controller {
         $offset = ($curr-1)*$pageSize;
 
         $jiangjin_list = D('Gee_total')->where("uid= '$id'")
+            ->order('countdate desc ,id desc')
             ->limit($offset,$pageSize)
             ->select();
 
@@ -79,7 +80,7 @@ class CaiwuController extends Controller {
         $memberinfo = $member->where('id='.$id)->find();
         if (!empty($_POST)) {
              $username = trim($_POST['username']);
-             $zhoujibi = intval($_POST['zhoujibi']);
+             $xianjin = intval($_POST['xianjin']);
              $password = trim($_POST['password']);
              //获取用户信息
              $rst = $member->where("username='{$username}'")->select();
@@ -89,12 +90,12 @@ class CaiwuController extends Controller {
              if (substr(md5($password),8,16) != $memberinfo['safekey']) {
                  $this->error('交易密码输入错误');
              }else{
-                if ($memberinfo['zhoujibi'] * 0.99 < $zhoujibi) {
+                if ($memberinfo['xianjin'] * 0.99 < $xianjin) {
                     $this->error('您的洲际币余额不足');
                 }
                 //扣除1%慈善基金
-                $member->where('id='.$id)->setField('zhoujibi',$memberinfo['zhoujibi'] *0.99 -$zhoujibi);
-                $member->where("id={$rst[0]['id']}")->setInc('zhoujibi',$zhoujibi);
+                $member->where('id='.$id)->setField('xianjin',$memberinfo['xianjin'] *0.99 -$xianjin);
+                $member->where("id={$rst[0]['id']}")->setInc('xianjin',$xianjin);
                 $this->success('操作成功');
              }
 

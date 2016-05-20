@@ -30,10 +30,10 @@
                         </div>
 
                         <div class="am-form-group">
-                            <label for="zhoujibi" class="am-u-sm-3 am-form-label">转出数目</label>
+                            <label for="xianjin" class="am-u-sm-3 am-form-label">转出数目</label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="zhoujibi" name="zhoujibi" value="100">
-                                <small>余额: €{$memberinfo['zhoujibi']} </small>
+                                <input type="text" id="xianjin" name="xianjin" value="100">
+                                <small>余额: €{$memberinfo['xianjin']} </small>
                             </div>
                         </div>
 
@@ -44,9 +44,7 @@
                             </div>
                         </div>
                         <div class="am-form-group">
-	                         <div style="text-align: center" class="am-u-sm-9">
-
-	                         </div>
+	                         
                      	</div>
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">
@@ -63,12 +61,12 @@
 	function chkForm(){
 		var username = $('#user-name').val();
 			password = $('#password').val();
-			zhoujibi = $('#zhoujibi').val();
+			xianjin = $('#xianjin').val();
 		if (!username) {
 			layer.alert('请输入接收会员的账号');
 			return false;
 		};
-		if (!zhoujibi || !(/^(\+|-)?\d+$/.test(zhoujibi))) {
+		if (!xianjin || !(/^(\+|-)?\d+$/.test(xianjin))) {
 			layer.alert('请输转账的数量且必须为整数');
 			return false;
 		};
