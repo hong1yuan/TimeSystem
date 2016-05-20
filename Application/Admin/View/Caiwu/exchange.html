@@ -30,10 +30,10 @@
                         </div>
 
                         <div class="am-form-group">
-                            <label for="zhoujibi" class="am-u-sm-3 am-form-label">转出数目</label>
+                            <label for="xianjin" class="am-u-sm-3 am-form-label">转出数目</label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="zhoujibi" name="zhoujibi" value="100">
-                                <small>余额: €{$memberinfo['zhoujibi']} </small>
+                                <input type="text" id="xianjin" name="xianjin" value="100">
+                                <small>余额: €{$memberinfo['xianjin']} </small>
                             </div>
                         </div>
 
@@ -45,7 +45,7 @@
                         </div>
                         <div class="am-form-group">
 	                         <div style="text-align: center" class="am-u-sm-9">
-	                            <small> 提示：会员转账将扣除1%作为亚洲慈善基金</small>
+	                            
 	                         </div>
                      	</div>
                         <div class="am-form-group">
@@ -56,6 +56,49 @@
                     </form>
                 </div>
             </div>
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <table class="am-table am-table-striped am-table-hover table-main">
+                        <thead>
+                        <tr>
+                            <th class="table-id" style="width:10%;">编号</th>
+                            <th class="table-title" style="width:10%;">类型</th>
+                            <th class="table-type" style="width:15%;">转换数量</th>
+                            <th class="table-author am-hide-sm-only" style="width:15%;">现金币余额</th>
+                            <th class="table-date am-hide-sm-only" style="width:30%;">备注</th>
+                            <th class="table-set" style="width:30%;">操作日期</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="list" item="vo" >
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>
+                                    会员转账
+                                </td>
+                                <td>{$vo.num}</td>
+                                <td class="am-hide-sm-only">{$vo.total}</td>
+                                <td class="am-hide-sm-only">
+                                    <code>€{$vo.remark}</code>
+                                </td>
+                                <td>
+                                    {$vo.addtime|date="Y-m-d H:i:s",###}
+                                </td>
+                            </tr>
+                        </foreach>
+                        
+
+                        </tbody>
+                    </table>
+                    <div class="am-cf">
+                        共 {$count} 条记录
+                        <div class="am-fr" id="page" pages="{$pages}">
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 <include file = "Common/footer" />
@@ -63,12 +106,12 @@
 	function chkForm(){
 		var username = $('#user-name').val();
 			password = $('#password').val();
-			zhoujibi = $('#zhoujibi').val();
+			xianjin = $('#xianjin').val();
 		if (!username) {
 			layer.alert('请输入接收会员的账号');
 			return false;
 		};
-		if (!zhoujibi || !(/^(\+|-)?\d+$/.test(zhoujibi))) {
+		if (!xianjin || !(/^(\+|-)?\d+$/.test(xianjin))) {
 			layer.alert('请输转账的数量且必须为整数');
 			return false;
 		};
@@ -78,4 +121,20 @@
 		};
 		return true;
 	}
+	laypage({
+        cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+        pages: $('#page').attr('pages'), //总页数
+        //first:false,
+        skin: '#AF0000',
+        groups: 7,//连续显示分页数
+        curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+            var page = location.search.match(/page=(\d+)/);
+            return page ? page[1] : 1;
+        }(), 
+        jump: function(e, first){ //触发分页后的回调
+            if(!first){ //一定要加此判断，否则初始时会无限刷新
+                location.href = '?page='+e.curr;
+            }
+        }
+    });
 </script>

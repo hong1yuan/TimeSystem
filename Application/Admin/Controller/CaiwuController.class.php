@@ -71,34 +71,64 @@ class CaiwuController extends Controller {
     }
 
     /**
-     *转账
+     * 会员转账
      */
     public function exchange(){
         $id = intval($_SESSION['member']['id']);
         $member = M('member');
         $memberinfo = $member->where('id='.$id)->find();
+        $exchange = M('exchange');
         if (!empty($_POST)) {
              $username = trim($_POST['username']);
-             $zhoujibi = intval($_POST['zhoujibi']);
+             $num = intval($_POST['xianjin']); //转账数量
+             $xianjin = intval(ceil($num*1.01)); //扣除现金币
              $password = trim($_POST['password']);
+
              //获取用户信息
              $rst = $member->where("username='{$username}'")->select();
              if (!$rst) {
                  $this->error('接收会员帐号不存在');
              }
              if (substr(md5($password),8,16) != $memberinfo['safekey']) {
-                 $this->error('交易密码输入错误');
+                    $this->error('交易密码输入错误');
              }else{
-                if ($memberinfo['zhoujibi'] * 0.99 < $zhoujibi) {
-                    $this->error('您的洲际币余额不足');
-                }
-                //扣除1%慈善基金
-                $member->where('id='.$id)->setField('zhoujibi',$memberinfo['zhoujibi'] *0.99 -$zhoujibi);
-                $member->where("id={$rst[0]['id']}")->setInc('zhoujibi',$zhoujibi);
-                $this->success('操作成功');
+                    if ($memberinfo['xianjin'] < $xianjin) {
+                        $this->error('您的可用现金币不足');
+                    }
+                    if ($member->where('id='.$id)->setField('xianjin',$memberinfo['xianjin'] - $xianjin)) {
+                        $member->where("id={$rst[0]['id']}")->setInc('xianjin',$num);
+                        $changeinfo = array(
+                            'uid' => $id,
+                            'num'=> $num,
+                            'type'=> 3,
+                            'total' => $memberinfo['xianjin'] - $xianjin,
+                            'remark' => '现金币转账给会员'.$rst[0]['username'].',数量'.$num,
+                            'addtime'=> time() 
+                        );
+                        $reinfo = array(
+                            'uid' => $rst[0]['id'],
+                            'num'=> $num,
+                            'type'=> 3,
+                            'total' => $rst[0]['xianjin'] + $num,
+                            'remark' => '接受会员'.$memberinfo['username'].'现金币转账,数量'.$num,
+                            'addtime'=> time() 
+                        );
+                        $exchange->add($changeinfo);
+                        $exchange->add($reinfo);
+                        $this->success('操作成功');
+                    }else{
+                        $this->success('操作失败');
+                    }
              }
-
         }else{
+             $count = $exchange->where("uid=$id AND type=3")->count();
+             $pages = ceil($count/10); //分页数量
+             $curr = $_GET['page'] ? intval($_GET['page']) : 1; 
+             $list = $exchange ->where("uid=$id AND type=3")->limit(($curr-1)*10,10)->order('addtime DESC')->select();
+             
+             $this->assign('count',$count);
+             $this->assign('pages',$pages);
+             $this->assign('list',$list);
              $this->assign('memberinfo',$memberinfo);
              $this->display();
         }
@@ -111,36 +141,72 @@ class CaiwuController extends Controller {
      */
     public  function change(){
         $id = intval($_SESSION['member']['id']);
-        $member = M('member');        
+        $member = M('member');   
+        $exchange = M('exchange');     
         $memberinfo = $member->where('id='.$id)->find();
         if (!empty($_POST)) {
-            $zhuchebi = intval($_POST['money']);
-            $safekey = trim($_POST['password']);
-
-            if (substr(md5($safekey),8,16) != $memberinfo['safekey']) {
+        	$qian = M('webconfig') ->where("id = 1") -> find();
+        	$safekey = trim($_POST['password']); //验证码
+        	if (substr(md5($safekey),8,16) != $memberinfo['safekey']) {
                 $this->error('交易密码输入错误');
-            }else{
-                if ($memberinfo['xianjin']*0.99 < $zhuchebi) {
-                    $this->error('可用现金不足您购买的支付币数量');
-                }
-               
-                //扣除1%慈善基金
-                $data['xianjin'] = $memberinfo['xianjin']*0.99 - $zhuchebi;
-                //报单币
-                if ($_POST['type']=='1') {
-                    $data['baodan'] = $memberinfo['baodan'] + $zhuchebi;
-                }
-                //注册币
-                else if($_POST['type']=='2'){
-                    $qian = M('webconfig') ->where("id = 1") -> find();
-                    $data['zhoujibi'] = $memberinfo['zhoujibi'] + $zhuchebi/$qian["jiage"];
-                }
-                
-                $member->where('id='.$id)->save($data);
-                $this->success('操作成功');
             }
+            $num = intval($_POST['money']);
+            //注册币互转
+            if ($_POST['type']=='1') {
+            	$zhucebi = intval(ceil($num*1.01));
+            	//可用现金
+                if ($memberinfo['xianjin'] < $zhuchebi) {
+                    $this->error('可用现金不足您购买的币数量');
+                }
+                $data['xianjin'] = $memberinfo['xianjin'] - $zhucebi; //扣除现金币
+                $data['baodan'] = $memberinfo['baodan'] + $num;
+
+                //货币转换信息
+                $changeinfo = array(
+                	'uid' => $id,
+                	'num' => $num,
+                	'type'=>1,
+                	'total'=> $data['xianjin'],
+                	'remark'=>'现金币转换报单币,转换数量'.$num.',扣除现金币'.$zhucebi,
+                	'addtime'=>time() 
+                );
+            }
+            //洲际币互转
+            else if ($_POST['type']=='2') {
+            	//洲际币的数量*单价*折扣
+            	$zhoujibi = intval(ceil($num*$qian['jiage']*1.01));
+            	if ($memberinfo['xianjin'] < $zhoujibi) {
+            		$this->error('可用现金不足您购买的币数量');
+            	}
+            	$data['zhoujibi'] = $memberinfo['zhoujibi'] + $num;
+            	$data['xianjin'] = $memberinfo['xianjin'] - $zhoujibi;
+
+            	//现金币转洲际币
+            	$changeinfo  = array(
+            		'uid' => $id ,
+            		'num' => $num,
+            		'type'=> 2,
+            		'total'=> $data['xianjin'],
+            		'remark' => '现金币转洲际币,转换数量'.$num.',扣除现金币'.$zhoujibi,
+            		'addtime'=>time()
+            	);
+            }
+            $exchange->add($changeinfo);
+
+            if($member->where('id='.$id)->save($data)){
+            	$this->success('操作成功');
+            }else{
+            	$this->error('操作失败');
+            }      	
         }else{
+        	$count = $exchange->where("uid=$id AND type!=3")->count();
+        	$pages = ceil($count/10); //分页数量
+            $curr = $_GET['page'] ? intval($_GET['page']) : 1; 
             $this->assign('memberinfo',$memberinfo);
+            $list = $exchange ->where("uid=$id AND type!=3")->limit(($curr-1)*10,10)->order('addtime DESC')->select();
+            $this->assign('count',$count);
+            $this->assign('pages',$pages);
+            $this->assign('list',$list);
             $this->display();
         }  
     }
