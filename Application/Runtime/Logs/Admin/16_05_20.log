@@ -4033,3 +4033,194 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001203s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001297s ]
 
+[ 2016-05-20T17:08:06+08:00 ] 127.0.0.1 /Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001208s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `member` WHERE ( id = '3418' ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `webconfig` [ RunTime:0.0069s ]
+SQL: SELECT `jiage` FROM `webconfig` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024279s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024395s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000885s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000967s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005229s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005358s ]
+
+[ 2016-05-20T17:08:09+08:00 ] 127.0.0.1 /Admin/Member/team.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001311s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000440s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000588s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000854s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001787s ]
+
+[ 2016-05-20T17:08:10+08:00 ] 127.0.0.1 /Admin/Member/geteam?id=3418
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001475s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0081s ]
+SQL: SELECT `id`,`username`,`ulevel` FROM `member` WHERE ( id=3418 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `id`,`username`,`treeplace`,`ulevel` FROM `member` WHERE ( fatherid=3418 ) ORDER BY treeplace  [ RunTime:0.0018s ]
+SQL: select id,fatherid,username,treeplace,ulevel from member where fatherid in (select id from member where(fatherid=3418)) [ RunTime:0.0150s ]
+
+[ 2016-05-20T17:08:16+08:00 ] 127.0.0.1 /Admin/Member/register?fatherMan=xzm888&seat=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001176s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0070s ]
+SQL: SELECT `username` FROM `member` WHERE ( id = '3418' ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant username - assumed 'username' E:\ww\Application\Admin\Controller\MemberController.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' E:\ww\Application\Admin\Controller\MemberController.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant fatherman - assumed 'fatherman' E:\ww\Application\Admin\Controller\MemberController.class.php 第 116 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022291s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022444s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001235s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001542s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001669s ]
+
+[ 2016-05-20T17:08:46+08:00 ] 127.0.0.1 /Admin/Member/team
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001809s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000234s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000331s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031794s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031935s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001851s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001980s ]
+
+[ 2016-05-20T17:08:47+08:00 ] 127.0.0.1 /Admin/Member/geteam?id=3418
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001847s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0086s ]
+SQL: SELECT `id`,`username`,`ulevel` FROM `member` WHERE ( id=3418 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `id`,`username`,`treeplace`,`ulevel` FROM `member` WHERE ( fatherid=3418 ) ORDER BY treeplace  [ RunTime:0.0026s ]
+SQL: select id,fatherid,username,treeplace,ulevel from member where fatherid in (select id from member where(fatherid=3418)) [ RunTime:0.0150s ]
+
+[ 2016-05-20T17:08:49+08:00 ] 127.0.0.1 /Admin/Member/geteam?id=3495
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001069s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0063s ]
+SQL: SELECT `id`,`username`,`ulevel` FROM `member` WHERE ( id=3495 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`username`,`treeplace`,`ulevel` FROM `member` WHERE ( fatherid=3495 ) ORDER BY treeplace  [ RunTime:0.0017s ]
+SQL: select id,fatherid,username,treeplace,ulevel from member where fatherid in (select id from member where(fatherid=3495)) [ RunTime:0.0099s ]
+
+[ 2016-05-20T17:08:50+08:00 ] 127.0.0.1 /Admin/Member/geteam?id=3495
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001452s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0063s ]
+SQL: SELECT `id`,`username`,`ulevel` FROM `member` WHERE ( id=3495 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`username`,`treeplace`,`ulevel` FROM `member` WHERE ( fatherid=3495 ) ORDER BY treeplace  [ RunTime:0.0022s ]
+SQL: select id,fatherid,username,treeplace,ulevel from member where fatherid in (select id from member where(fatherid=3495)) [ RunTime:0.0106s ]
+
+[ 2016-05-20T17:08:51+08:00 ] 127.0.0.1 /Admin/Member/register?fatherMan=lxd888&seat=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001084s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0080s ]
+SQL: SELECT `username` FROM `member` WHERE ( id = '3418' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant username - assumed 'username' E:\ww\Application\Admin\Controller\MemberController.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' E:\ww\Application\Admin\Controller\MemberController.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant fatherman - assumed 'fatherman' E:\ww\Application\Admin\Controller\MemberController.class.php 第 116 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000283s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021955s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022077s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001215s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001177s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001275s ]
+
+[ 2016-05-20T17:09:53+08:00 ] 127.0.0.1 /Admin/Index/layout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000867s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001183s ]
+
+[ 2016-05-20T17:09:53+08:00 ] 127.0.0.1 /Admin/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+NOTIC: [8] Undefined index: member E:\ww\Application\Admin\Controller\IndexController.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011555s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011673s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000741s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001015s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001104s ]
+

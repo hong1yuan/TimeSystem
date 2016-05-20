@@ -117,6 +117,47 @@
             top: 300px;
             cursor:pointer;
         }
+
+
+        .zl{
+        	width:300px;
+        	padding: 10px;
+        	margin-top:-200px;
+        	margin-left: 40px;
+        }
+        .zl div{
+        	width:100%;
+        	height:40px;
+        	text-align: center;
+        	line-height: 40px;
+        }
+        .zl1{
+        	
+        	background-color: #eabf56;
+        	margin-top: 10px;
+        	position: relative;
+
+        }
+        .zl2{
+        	
+        	background-color: #c9c9c9;
+			margin-top: 10px;
+			position: relative;
+        }
+        .zl3{
+        	
+        	background-color: #9ec5f8;
+        	margin-top: 10px;
+        	position: relative;
+
+        }
+        .zl4{
+        	
+        	background-color: #87d5d1;
+        	margin-top: 10px;
+        	position: relative;
+
+        }
 </style>
 <div class="am-cf admin-main">
     
@@ -173,7 +214,7 @@
                     </li>
                     <li>
                         <a href="<?php echo U('Caiwu/change');?>">
-                            <span class="am-icon-database"></span>货币转账
+                            <span class="am-icon-database"></span>货币转换
                         </a>
                     </li>
                     <li>
@@ -245,9 +286,14 @@
                         </li>
                         <li>
                             <a href="<?php echo U('Guanli/reward');?>">
-                                <span class="am-icon-trophy">月分红</span>
+                                <span class="am-icon-database">月分红</span>
                             </a>
                         </li>
+                     <!--    <li>
+                         <a href="<?php echo U('Guanli/zhoulixi');?>">
+                             <span class="am-icon-money">周利息</span>
+                         </a>
+                     </li> -->
                         <li>
                             <a href="<?php echo U('News/index');?>">
                                 <span class="am-icon-newspaper-o"></span>新闻管理
@@ -294,6 +340,7 @@
             <div class="am-cf am-padding">
                 <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">个人中心</strong> / <small>团队结构</small></div>
             </div>
+           
             <div class="am-g">
             	<div class="box">
                     <div class="team box1" tree="1"></div>
@@ -304,19 +351,25 @@
                     <div class="team box6" tree="6"></div>
                     <div class="team box7" tree="7"></div>
                 </div>
-                <!-- <ul class="am-avg-sm-3 boxes">
-					  <li class="box box-2">1</li>
-					  <li class="box box-3">3</li>
-					  <li class="box box-4">4</li>
-					  <li class="box box-5">5</li>
-					  <li class="box box-6">6</li>
-					  <li class="box box-7">7</li>
-					  <li class="box box-8">8</li>
-					  <li class="box box-9">9</li>
-				</ul> -->
+               <div class="zl">
+            	<div class="zl1">金星会员</div>
+            	<div class="zl2">白金会员</div>
+            	<div class="zl3">钻石会员</div>
+            	<div class="zl4">水星会员</div>
+            </div>
             </div>
         </div>
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+        </footer>
+    </div>
+    <!-- content end -->
 
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+</a>
 
 
 <footer class="admin-content-footer">
@@ -366,8 +419,10 @@
 	                if (!data['memberinfo'].length) {
 	                    $('.box2').html(cont);
 	                    $('.box2').attr('id','');
+	                    $('.box2').attr('ulevel','');
 	                    $('.box3').html(cont);
 	                    $('.box3').attr('id','');
+	                    $('.box3').attr('ulevel','');
 	                }else if (data['memberinfo'].length =='1') {
 	                    if (data['memberinfo'][0]['treeplace'] == '0') {
 	                         $('.box2').html(data['memberinfo'][0]['username']);
@@ -375,6 +430,7 @@
                              $('.box2').attr('ulevel',data['memberinfo'][0]['ulevel']);
 	                         $('.box3').html(cont);
 	                         $('.box3').attr('id','');
+	                         $('.box3').attr('ulevel','');
 	                    }
 	                    if (data['memberinfo'][0]['treeplace'] == '1') {
 	                         $('.box3').html(data['memberinfo'][0]['username']);
@@ -415,12 +471,14 @@
                             $('.box4').attr('ulevel',left[0]['ulevel']);
 	                        $('.box5').html(cont);
 	                        $('.box5').attr('id','');
+	                        $('.box5').attr('ulevel','');
 	                    }else{
 	                        $('.box5').html(left[0]['username']);
 	                        $('.box5').attr('id',left[0]['id']);
                             $('.box5').attr('ulevel',left[0]['ulevel']);
 	                        $('.box4').html(cont);
 	                        $('.box4').attr('id','');
+	                        $('.box4').attr('ulevel','');
 	                    }
 	                }else if (left.length=='2') { //左右同时存在
 	                    $.each(left,function(i,item){
@@ -433,7 +491,7 @@
 	                            case '1':
 	                                $('.box5').html(item['username']);
 	                                $('.box5').attr('id',item['id']);
-                                    $('.box5').attr('id',item['id']);
+                                    $('.box5').attr('ulevel',item['ulevel']);
 	                            break;
 	                            default:
 	                            break;
@@ -445,11 +503,15 @@
 	                		$('.box5').html('');
 	                		$('.box4').attr('id','');
 	                		$('.box5').attr('id','');
+	                		$('.box4').attr('ulevel','');
+	                		$('.box5').attr('ulevel','');
 	                	}else{
 	                		$('.box4').html(cont);
 	                		$('.box4').attr('id','');
 	                		$('.box5').html(cont);
 	                		$('.box5').attr('id','');
+	                		$('.box4').attr('ulevel','');
+	                		$('.box5').attr('ulevel','');
 	                	}
 	                }
 
@@ -458,8 +520,10 @@
 	                    if (right[0]['treeplace']==0) {
 	                        $('.box6').html(right[0]['username']);
 	                        $('.box6').attr('id',right[0]['id']);
+	                        $('.box6').attr('ulevel',right[0]['ulevel']);
 	                        $('.box7').html(cont);
 	                        $('.box7').attr('id','');
+	                        $('.box7').attr('ulevel','');
 	                    }else{
 	                        $('.box7').html(right[0]['username']);
 	                        $('.box7').attr('id',right[0]['id']);
@@ -472,10 +536,12 @@
 	                            case '0':
 	                                $('.box6').html(item['username']);
 	                                $('.box6').attr('id',item['id']);
+	                                $('.box6').attr('ulevel',item['ulevel']);
 	                            break;
 	                            case '1':
 	                                $('.box7').html(item['username']);
 	                                $('.box7').attr('id',item['id']);
+	                                $('.box7').attr('ulevel',item['ulevel']);
 	                            break;
 	                            default:
 	                            break;
@@ -485,15 +551,40 @@
 	                    if (!$('.box3').attr('id')) {
 	                		$('.box6').html('');
 	                		$('.box6').attr('id','');
+	                		$('.box6').attr('ulevel','');
 	                		$('.box7').html('');
 	                		$('.box7').attr('id','');
+	                		$('.box7').attr('ulevel','');
 	                	}else{
 	                		$('.box6').html(cont);
 	                		$('.box6').attr('id','');
+	                		$('.box6').attr('ulevel','');
 	                		$('.box7').html(cont);
 	                		$('.box7').attr('id','');
+	                		$('.box7').attr('ulevel','');
 	                	}
 	                }
+	                var team = $('.team');
+	                $.each(team,function(i,item){
+	                    var color = $(item).attr('ulevel'); 
+	                    switch(color){
+	                        case "1":
+	                           $(item).css('background','#eabf56');
+	                           break;
+	                        case "2":
+	                           $(item).css('background','#d9d9d9');
+	                           break; 
+	                        case "3":
+	                           $(item).css('background','#9ec5f8');
+	                           break;
+	                        case "4":
+	                           $(item).css('background','#87d5d1');
+	                           break; 
+	                        default :
+	                           $(item).css('background','#FA8072');
+	                           break;  
+	                    }
+	                })
 	            })
 	        },
             getcolor:function(){
@@ -526,29 +617,28 @@
 
         //获取团队信息
         obj.getteam(id);
-        obj.getcolor();
         $('.team').on('click',function(){
             var id = $(this).attr('id');
             if (!id) {
             	if ($(this).html()) {
             		switch($(this).attr('tree')){
             			case '2':
-            				location.href = "register?fatherMan="+$('.box1').html();
+            				location.href = "register?fatherMan="+$('.box1').html()+'&seat=0';
             				break;
             			case '3':
-            				location.href = "register?fatherMan="+$('.box1').html();
+            				location.href = "register?fatherMan="+$('.box1').html()+'&seat=1';
             				break;
             			case '4':
-            				location.href = "register?fatherMan="+$('.box2').html();
+            				location.href = "register?fatherMan="+$('.box2').html()+'&seat=0';
             				break;
             			case '5':
-            				location.href = "register?fatherMan="+$('.box2').html();
+            				location.href = "register?fatherMan="+$('.box2').html()+'&seat=1';
             				break;
             			case '6':
-            				location.href = "register?fatherMan="+$('.box3').html();
+            				location.href = "register?fatherMan="+$('.box3').html()+'&seat=0';
             				break;
             			case '7':
-            				location.href = "register?fatherMan="+$('.box3').html();
+            				location.href = "register?fatherMan="+$('.box3').html()+'&seat=1';
             				break;
             			default:
             				break;
@@ -560,7 +650,7 @@
                 obj.getteam(id);
             }
         })
-		$('.team').on('mouseover',function(){
+		/*$('.team').on('mouseover',function(){
 			var id = $(this).attr('id');
 			if (!id) {return false;};
 			var self = $(this);
@@ -570,6 +660,6 @@
 				   time: 4000
 				});
 			})
-		})
+		})*/
         
 </script>

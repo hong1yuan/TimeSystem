@@ -111,7 +111,7 @@
                     </li>
                     <li>
                         <a href="<?php echo U('Caiwu/change');?>">
-                            <span class="am-icon-database"></span>货币转账
+                            <span class="am-icon-database"></span>货币转换
                         </a>
                     </li>
                     <li>
@@ -183,9 +183,14 @@
                         </li>
                         <li>
                             <a href="<?php echo U('Guanli/reward');?>">
-                                <span class="am-icon-trophy">月分红</span>
+                                <span class="am-icon-database">月分红</span>
                             </a>
                         </li>
+                     <!--    <li>
+                         <a href="<?php echo U('Guanli/zhoulixi');?>">
+                             <span class="am-icon-money">周利息</span>
+                         </a>
+                     </li> -->
                         <li>
                             <a href="<?php echo U('News/index');?>">
                                 <span class="am-icon-newspaper-o"></span>新闻管理
