@@ -73,23 +73,9 @@ class GuanliController extends Controller {
             $user_after['isLock'] = $_POST['isLock'];           
             $user_after['isBadGuy'] = $_POST['isBadGuy'];  
 
-
-            /*$pwd = trim(I('post.password'));
-            if($pwd==false){
-               // unset($user_after['password']);              
-            }else{
-                $user_after['password'] = substr(md5($pwd),8,16);                
-            } 
-            $pwd2 = trim(I('post.password2'));
-           if($pwd2==false){
-               // unset($user_after['password']);              
-            }else{
-                $user_after['safekey'] = substr(md5($pwd2),8,16);                
-            }*/
-
-           // unset($user_after['safekey']);
-
-            $result_all = M('Member')->where("id = '$id' ")->save($user_after);
+            $result_all = M('Member')->where("id = '$id' ")->fetchSql(true)->save($user_after);
+            //echo $result_all;
+            //die;
 
             if($result_all){
                 $this->success('修改成功',U('member'));
@@ -113,9 +99,9 @@ class GuanliController extends Controller {
         $arr['isLock'] = 1 ;
         $res = M('Member')->where("id = '$id'")->save($arr);
         if($res){
-            $this->success('用户已锁定',U('member'),2);
+            $this->success('操作成功,该用户已锁定');
         }else{
-            $this->error('锁定失败',U('member'),2);
+            $this->error('操作成功,该用户未能锁定');
         }
 
     }
@@ -128,9 +114,9 @@ class GuanliController extends Controller {
         $arr['isLock'] = 0 ;
         $res = M('Member')->where("id = '$id'")->save($arr);
         if($res){
-            $this->success('用户已解锁',U('member'),2);
+            $this->success('用户已解锁');
         }else{
-            $this->error('解锁失败',U('member'),2);
+            $this->error('解锁失败');
         }
 
     }
@@ -468,18 +454,17 @@ class GuanliController extends Controller {
         $pwd = substr(md5($pwd),8,16);
 
         if($safekey == $pwd) {
-
             $arr = D('gee_fee')->where("id = '$id'")->create();
             if ($arr) {
                 $res = D('gee_fee')->where("id = '$id'")->save();
                 if ($res) {
                     $this->success('修改成功', U('jibie'));
                 } else {
-                    $this->error('修改失败', U('editjibie', array('id' => $id)));
+                    $this->error('修改失败');
                 }
             }
         }else{
-            $this->error('密码错误', U('editjibie', array('id' => $id)));
+            $this->error('密码错误');
         }
 
 
@@ -513,6 +498,29 @@ class GuanliController extends Controller {
             );
         }
         echo json_encode($data);
+    }
+
+
+  
+  
+    public function login(){
+
+    $id = intval($_GET['id']);
+    $user = M("Member")->field('id,username,isboss,ispay')->where("id = $id")->find();
+    if(!$user['ispay']){
+        $this->error("该用户还没有激活");
+    }
+    if(!$user['isboss']){
+    session('member',array('id' => $user['id'],'member'=>'member','name'=>$user['username']));
+    $this->redirect('Index/index');
+
+    }else{
+    session('member',array('id' => $user['id'],'member'=>'admin','name'=>$user['username']));
+     $this->redirect('Index/index');
+    }
+        /*session(null);*/
+
+         
     }
 
 

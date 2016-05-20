@@ -12,7 +12,7 @@ class MsgController extends Controller {
         $pages = ceil($count/10);
         $curr = $_GET['page'] ? intval($_GET['page']) : 1;
 
-        $msg_list = $msg->limit(($curr-1)*10,15)->order('id DESC')->select();
+        $msg_list = $msg->limit(($curr-1)*10,10)->order('id DESC')->select();
 
         $this->assign('pages',$pages);
         $this->assign('count',$count);
@@ -103,5 +103,8 @@ class MsgController extends Controller {
         $info = array('status' => 0,'info'=>'操作成功');
         $this->ajaxReturn($info);
     }
+
+
+  
 
 }

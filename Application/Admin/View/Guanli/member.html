@@ -61,19 +61,23 @@
                                                     </a>
                                                     &nbsp;
 
-                                                    <a href="{:U('lock',array('id'=>$v['id']))}">
+                                                    <a id="adddd" href="">
                                                     锁定
-                                                </a>
+                                                    </a>
+                                                   
 
                                                     <else/>
 
                                                     已锁定 &nbsp;
 
-                                                    <a href="{:U('unlock',array('id'=>$v['id']))}">
+                                                    <a id="jiesou" href="">
                                                         解锁
                                                     </a>
 
                                                 </if>
+                                                 <a id="abbbb" href="">
+                                                    登陆
+                                                </a>
 
                                             </div>
                                         </div>
@@ -111,12 +115,18 @@
                                             <a href="{:U('lock',array('id'=>$v['id']))}">
                                                 锁定
                                             </a>
+                                             <a href="{:U('login',array('id'=>$v['id']))}">
+                                                登陆
+                                            </a>
                                                 <else/>
 
                                                     已锁定 &nbsp;
 
                                                 <a href="{:U('unlock',array('id'=>$v['id']))}">
                                                     解锁
+                                                </a>
+                                                <a href="{:U('login',array('id'=>$v['id']))}">
+                                                登陆
                                                 </a>
 
                                             </if>
@@ -204,8 +214,14 @@
                     $('#tr > td:eq(2)').html(data['user'].regtime);
                     $('#tr > td:eq(3)').html(data['user'].rename);
                     var kk = data['user'].id;
-                    var i = "/houtai/index.php/Admin/Guanli/detail/id/"+kk+".html";
+                    var i = "/index.php/Admin/Guanli/detail/id/"+kk+".html";
+                    var j = "/index.php/Admin/Guanli/lock/id/"+kk+".html";        
+                    var g = "/index.php/Admin/Guanli/unlock/id/"+kk+".html";        
+                    var h = "/index.php/Admin/Guanli/login/id/"+kk+".html";        
                     $('#afff').attr("href",i);
+                    $('#adddd').attr("href",j);
+                    $('#jiesou').attr("href",g);
+                    $('#abbbb').attr("href",h);
                 }
 
 

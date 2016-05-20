@@ -13,7 +13,8 @@ return array(
     'DB_FIELDS_CACHE'       =>  true,        // 启用字段缓存
     'DB_CHARSET'            =>  'utf8',      // 数据库编码默认采用utf8
     'URL_MODEL'             =>  '2',
-
+//删除缓存
+   // 'TMPL_CACHE_ON'         =>  false,
     'DEFAULT_MODULE' => 'Admin',  // 默认模块
     //'SHOW_PAGE_TRACE'       =>  true
     'error' => array(

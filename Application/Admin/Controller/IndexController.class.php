@@ -29,13 +29,17 @@ class IndexController extends Controller {
     			if (substr(md5($password),8,16)!= $rst[0]['password']) {
     				$this->error('用户名或密码错误');
     			}else{
-    				if (!$rst[0]['isboss']) {
-    					session('member',array('id' => $rst[0]['id'],'member'=>'member','name'=>$username));
-    					$this->redirect('index');
-    				}else{
-                        session('member',array('id' => $rst[0]['id'],'member'=>'admin','name'=>$username));
-    					$this->redirect('index');
-    				}
+                    if(!$rst[0]['ispay']){
+                       $this->error('您的账号尚未激活,禁止登陆');
+                    }
+        				if (!$rst[0]['isboss']) {
+        					session('member',array('id' => $rst[0]['id'],'member'=>'member','name'=>$username));
+        					$this->redirect('index');
+        				}else{
+                            session('member',array('id' => $rst[0]['id'],'member'=>'admin','name'=>$username));
+        					$this->redirect('index');
+        				}
+
     			}
     		}
     	}else{
