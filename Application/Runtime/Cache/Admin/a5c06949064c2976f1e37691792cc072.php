@@ -111,7 +111,7 @@
                     </li>
                     <li>
                         <a href="<?php echo U('Caiwu/change');?>">
-                            <span class="am-icon-database"></span>货币转账
+                            <span class="am-icon-database"></span>货币转换
                         </a>
                     </li>
                     <li>
@@ -183,9 +183,14 @@
                         </li>
                         <li>
                             <a href="<?php echo U('Guanli/reward');?>">
-                                <span class="am-icon-trophy">月分红</span>
+                                <span class="am-icon-database">月分红</span>
                             </a>
                         </li>
+                     <!--    <li>
+                         <a href="<?php echo U('Guanli/zhoulixi');?>">
+                             <span class="am-icon-money">周利息</span>
+                         </a>
+                     </li> -->
                         <li>
                             <a href="<?php echo U('News/index');?>">
                                 <span class="am-icon-newspaper-o"></span>新闻管理
@@ -277,7 +282,6 @@
                                 <input type="number" pattern="[0-9]*" id="user-QQ" placeholder="输入你的QQ号码">
                             </div>-->
                          <div class="am-u-sm-9" style="text-align: center">
-
                          </div>
                      </div>
 
@@ -288,6 +292,48 @@
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <table class="am-table am-table-striped am-table-hover table-main">
+                        <thead>
+                        <tr>
+                            <th class="table-id" style="width:10%;">编号</th>
+                            <th class="table-title" style="width:10%;">类型</th>
+                            <th class="table-type" style="width:15%;">转换数量</th>
+                            <th class="table-author am-hide-sm-only" style="width:15%;">现金币余额</th>
+                            <th class="table-date am-hide-sm-only" style="width:30%;">备注</th>
+                            <th class="table-set" style="width:30%;">操作日期</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
+                                <td><?php echo ($vo["id"]); ?></td>
+                                <td>
+                                    <?php switch($vo["type"]): case "1": ?>现金币转报单币<?php break;?>
+                                    <?php case "2": ?>现金币转洲际币<?php break;?>
+                                    <?php default: endswitch;?>
+                                </td>
+                                <td><?php echo ($vo["num"]); ?></td>
+                                <td class="am-hide-sm-only"><?php echo ($vo["total"]); ?></td>
+                                <td class="am-hide-sm-only">
+                                    <code>€<?php echo ($vo["remark"]); ?></code>
+                                </td>
+                                <td>
+                                    <?php echo (date("Y-m-d H:i:s",$vo["addtime"])); ?>
+                                </td>
+                            </tr><?php endforeach; endif; ?>
+                        
+
+                        </tbody>
+                    </table>
+                    <div class="am-cf">
+                        共 <?php echo ($count); ?> 条记录
+                        <div class="am-fr" id="page" pages="<?php echo ($pages); ?>">
+                          
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -341,4 +387,20 @@
 		};
 		return true;
 	}
+    laypage({
+        cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+        pages: $('#page').attr('pages'), //总页数
+        //first:false,
+        skin: '#AF0000',
+        groups: 7,//连续显示分页数
+        curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+            var page = location.search.match(/page=(\d+)/);
+            return page ? page[1] : 1;
+        }(), 
+        jump: function(e, first){ //触发分页后的回调
+            if(!first){ //一定要加此判断，否则初始时会无限刷新
+                location.href = '?page='+e.curr;
+            }
+        }
+    });
 </script>

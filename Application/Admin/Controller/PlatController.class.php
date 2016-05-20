@@ -16,14 +16,14 @@ class PlatController extends Controller {
 
     public function webxiugai(){
         $arr = $_POST;
-        if (!$_SESSION['member']['mobile_code']) {
+       /* if (!$_SESSION['member']['mobile_code']) {
             $this->error('短信验证码已失效,请重新获取');
         }
         if ($arr['mobile_code'] != $_SESSION['member']['mobile_code']) {
             $this->error('短信验证码有误,请重新输入');
         }
 
-        $_SESSION['member']['mobile_code'] = NULL;
+        $_SESSION['member']['mobile_code'] = NULL;*/
 
         //var_dump('验证码匹配');
         //$arr['fenhong']
@@ -31,7 +31,7 @@ class PlatController extends Controller {
         if($result){
             $this->success('修改成功',U('index'));
         }else{
-            $this->error('验证码匹配,修改失败',U('index'));
+            $this->error('修改失败',U('index'));
         }
     }
 

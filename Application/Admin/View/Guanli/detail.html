@@ -31,7 +31,15 @@
                                 会员密码
                             </label>
                             <div class="am-u-sm-9">
-                                <input type="password" name="password" id="user-pwd" placeholder="会员的登录密码">
+                                <input type="password" name="password" id="user-pwd" placeholder="会员的登录密码" >
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="user-pwd" class="am-u-sm-3 am-form-label">
+                                二级密码
+                            </label>
+                            <div class="am-u-sm-9">
+                                <input type="password" name="password2" id="user-pwd" placeholder="会员的二级密码" >
                             </div>
                         </div>
 
@@ -232,16 +240,7 @@
                                 <input type="text" name="zongji" id="user-zongji" value="{$user.zongji}">
                             </div>
                         </div>
-                        <div class="am-form-group">
-                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
-                                密码
-                            </label>
-                            <div class="am-u-sm-9">
-                                <input type="password" id="user-yanzheng" name="safekey" placeholder="请输入二级密码">
-                                <br/>
-                            </div>
-
-                        </div>
+                       
                     <div class="am-form-group">
                         <label  class="am-u-sm-3 am-form-label">
                             是否锁定
@@ -260,7 +259,16 @@
                                 <input type="radio" name="isBadGuy" value="0 " checked/>否
                             </div>
                     </div>
+                        <div class="am-form-group">
+                            <label for="user-yanzheng" class="am-u-sm-3 am-form-label">
+                                密码
+                            </label>
+                            <div class="am-u-sm-9">
+                                <input type="password" id="user-yanzheng" name="safekey" placeholder="请输入二级密码">
+                                <br/>
+                            </div>
 
+                        </div>
                         <input type="hidden" name="id" value="{$user.id}"/>
                         <div class="am-form-group">
 

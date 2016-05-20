@@ -29,6 +29,7 @@ class MemberController extends Controller {
       $arry["bankname"] = I('post.ibankname');
       $arry["bankuser"] = I('post.ibankuser');
       $arry["bankcard"] = I('post.ibankcard');
+      $arry["telephone"] = I('post.phone');
       
       $value = M('member');
 

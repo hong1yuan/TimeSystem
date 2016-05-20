@@ -47,7 +47,7 @@
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-3 am-form-label">手机号码</label>
                             <div class="am-u-sm-9">
-                                <input type="text" id="user-phone"  placeholder="" readonly value="{$value.telephone}">
+                                <input type="text" id="user-phone" name="phone" placeholder=""  value="{$value.telephone}">
                             </div>
                         </div>
                         <br/>
@@ -91,15 +91,13 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    
-=======
+
         <footer class="admin-content-footer">
             <hr>
             <p class="am-padding-left">© 1998-2016 InterContinental Investment Bank All rights reserved.</p>
         </footer>
     </div>
->>>>>>> 0d51148f8bfd9f614ab746b015cb6e970d2d3bc2
+
     <!-- content end -->
 
 </div>
@@ -138,7 +136,7 @@
 
  function submitAdd(){
        
-      $('#dify').attr("action","activate");
+      $('#dify').attr("action","updata");
       $('#dify').submit();
       
      

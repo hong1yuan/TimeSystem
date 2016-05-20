@@ -73,6 +73,10 @@ class CaiwuController extends Controller {
     /**
      * 会员转账
      */
+
+    /**
+     * 会员转账
+     */
     public function exchange(){
         $id = intval($_SESSION['member']['id']);
         $member = M('member');
@@ -84,10 +88,10 @@ class CaiwuController extends Controller {
              $num = intval($_POST['xianjin']); //转账数量
              $xianjin = intval(ceil($num*1.01)); //扣除现金币
 
-             $xianjin = intval($_POST['xianjin']);
-
              $password = trim($_POST['password']);
-
+             if($memberinfo['islock']){
+                $this->error('账户已锁定');
+             }
              //获取用户信息
              $rst = $member->where("username='{$username}'")->select();
              if (!$rst) {
@@ -96,7 +100,6 @@ class CaiwuController extends Controller {
              if (substr(md5($password),8,16) != $memberinfo['safekey']) {
                     $this->error('交易密码输入错误');
              }else{
-
                     if ($memberinfo['xianjin'] < $xianjin) {
                         $this->error('您的可用现金币不足');
                     }
@@ -124,14 +127,6 @@ class CaiwuController extends Controller {
                     }else{
                         $this->success('操作失败');
                     }
-
-                if ($memberinfo['xianjin'] * 0.99 < $xianjin) {
-                    $this->error('您的洲际币余额不足');
-                }
-                //扣除1%慈善基金
-                $member->where('id='.$id)->setField('xianjin',$memberinfo['xianjin'] *0.99 -$xianjin);
-                $member->where("id={$rst[0]['id']}")->setInc('xianjin',$xianjin);
-                $this->success('操作成功');
              }
         }else{
              $count = $exchange->where("uid=$id AND type=3")->count();
@@ -145,8 +140,6 @@ class CaiwuController extends Controller {
              $this->assign('memberinfo',$memberinfo);
              $this->display();
         }
-       
-
     }
 
     /**
@@ -158,6 +151,9 @@ class CaiwuController extends Controller {
         $exchange = M('exchange');     
         $memberinfo = $member->where('id='.$id)->find();
         if (!empty($_POST)) {
+            if($memberinfo['islock']){
+                $this->error('账户已锁定');
+             }
         	$qian = M('webconfig') ->where("id = 1") -> find();
         	$safekey = trim($_POST['password']); //验证码
         	if (substr(md5($safekey),8,16) != $memberinfo['safekey']) {
@@ -234,6 +230,9 @@ class CaiwuController extends Controller {
         $memberinfo = M('member')->where('id='.$id)->find();
         $tiqu = M('tiqu');
         if (!empty($_POST)) {
+            if($memberinfo['islock']){
+                $this->error('账户已锁定');
+             }
            if (substr(trim(md5($_POST['pwd'])),8,16) != $memberinfo['safekey']) {
                $this->error('交易密码输入错误');
            }

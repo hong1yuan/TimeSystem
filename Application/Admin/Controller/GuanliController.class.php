@@ -43,140 +43,63 @@ class GuanliController extends Controller {
         $user_safe = M('Member')->where("id = '$userid'")->getField('safekey');
         if($user_safe == $safe){
             $id=$_POST['id'];
-            $user_before = M('Member')->where("id='$id' and islock = 0 ")->find();
-            //资金的修改记录
-            $user_after = $_POST;
-            $pwd = trim(I('post.password'));
-            if($pwd==false){
-                unset($user_after['password']);
-            }else{
-                $user_after['password'] = substr(md5($pwd),8,16);
-            }
+            $user_before = M('Member')->where("id='$id'")->find();
+            $pwd = $_POST['password'];
+            $pwd2 = $_POST['password2'];
 
-            //dump($user_after);
-            //  die;
+            $user_after['password'] = $_POST['password'] ? substr(md5(trim($pwd)),8,16) : $user_before['password'];
+            
+             $user_after['safekey'] = $_POST['password2'] ? substr(md5(trim($pwd2)),8,16) : $user_before['safekey'];
+            //资金的修改记录
+            $user_after['ulevel'] = $_POST['ulevel'];           
+            $user_after['telephone'] = $_POST['telephone'];           
+            $user_after['bankname'] = $_POST['bankname'];           
+            $user_after['bankuser'] = $_POST['bankuser'];           
+            $user_after['bankcard'] = $_POST['bankcard'];           
+            $user_after['regtime'] = $_POST['regtime'];           
+            $user_after['zuhe'] = $_POST['zuhe'];           
+            $user_after['guquan'] = $_POST['guquan'];           
+            $user_after['zhoujibi'] = $_POST['zhoujibi'];           
+            $user_after['tuijian'] = $_POST['tuijian'];           
+            $user_after['duipeng'] = $_POST['duipeng'];           
+            $user_after['guanli'] = $_POST['guanli'];           
+            $user_after['lixi'] = $_POST['lixi'];           
+            $user_after['fenhong'] = $_POST['fenhong'];           
+            $user_after['cishan'] = $_POST['cishan'];           
+            $user_after['huanqiu'] = $_POST['huanqiu'];           
+            $user_after['xianjin'] = $_POST['xianjin'];           
+            $user_after['baodan'] = $_POST['baodan'];           
+            $user_after['zongji'] = $_POST['zongji'];           
+            $user_after['isLock'] = $_POST['isLock'];           
+            $user_after['isBadGuy'] = $_POST['isBadGuy'];  
+
+
+            /*$pwd = trim(I('post.password'));
+            if($pwd==false){
+               // unset($user_after['password']);              
+            }else{
+                $user_after['password'] = substr(md5($pwd),8,16);                
+            } 
+            $pwd2 = trim(I('post.password2'));
+           if($pwd2==false){
+               // unset($user_after['password']);              
+            }else{
+                $user_after['safekey'] = substr(md5($pwd2),8,16);                
+            }*/
+
+           // unset($user_after['safekey']);
 
             $result_all = M('Member')->where("id = '$id' ")->save($user_after);
+
             if($result_all){
-
-                $zongji = $user_before['zuhe']-$user_after['zuhe'];
-                if($zongji != 0){
-
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整币值组合";
-                    $arr['epoints'] = $zongji;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result1= M('History')->where("uid = '$id'")->add($arr);
-                //调整股权
-                $guquan = $user_before['guquan']-$user_after['guquan'];
-                if($guquan != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整股权";
-                    $arr['epoints'] = $guquan;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_guquan= M('History')->where("uid = '$id'")->add($arr);
-                //调整洲际比
-                $zhoujibi = $user_before['zhoujibi'] - $user_after['zhoujibi'];
-                if($zhoujibi != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整洲际币";
-                    $arr['epoints'] = $zhoujibi;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_zhoujibi = M('History')->where("uid = '$id'")->add($arr);
-                //调整推荐奖
-                $tuijian = $user_before['tuijian'] - $user_after['tuijian'];
-                if($tuijian != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整推荐奖";
-                    $arr['epoints'] = $tuijian;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_tuijian = M('History')->where("uid = '$id'")->add($arr);
-                //调整管理奖
-                $guanli = $user_before['guanli'] - $user_after['guanli'];
-                if($guanli != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整管理奖";
-                    $arr['epoints'] = $guanli;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-
-                //调整对碰奖
-                $duipeng = $user_before['duipeng'] - $user_after['duipeng'];
-                if($duipeng != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整洲际币";
-                    $arr['epoints'] = $duipeng;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_duipeng = M('History')->where("uid = '$id'")->add($arr);
-                //调整周利息
-                $lixi = $user_before['lixi'] - $user_after['lixi'];
-                if($lixi != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整周利息";
-                    $arr['epoints'] = $lixi;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_lixi = M('History')->where("uid = '$id'")->add($arr);
-                //调整月分红
-                $fenhong = $user_before['fenhong'] - $user_after['fenhong'];
-                if($fenhong != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整月分红";
-                    $arr['epoints'] = $fenhong;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_fenhong = M('History')->where("uid = '$id'")->add($arr);
-                //调整慈善基金
-                $cishan = $user_before['cishan'] - $user_after['cishan'];
-                if($cishan != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整慈善基金";
-                    $arr['epoints'] = $cishan;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_cishan = M('History')->where("uid = '$id'")->add($arr);
-                //调整环球奖
-                $huanqiu = $user_before['huanqiu'] - $user_after['huanqiu'];
-                if($huanqiu != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整环球奖";
-                    $arr['epoints'] = $huanqiu;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_huanqiu = M('History')->where("uid = '$id'")->add($arr);
-
-                //调整现金币
-                $xianjin = $user_before['xianjin'] - $user_after['xianjin'];
-                if($xianjin != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整现金币";
-                    $arr['epoints'] = $xianjin;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_xianjin = M('History')->where("uid = '$id'")->add($arr);
-
-                ////调整报单币
-                $baoban = $user_before['baoban'] - $user_after['baoban'];
-                if($baoban != 0){
-                    $arr['action1'] = 1;
-                    $arr['escript'] = "调整报单币";
-                    $arr['epoints'] = $baoban;
-                    $arr['PDT'] = date('Y-m-d H:i:s',time());
-                }
-                $result_baoban = M('History')->where("uid = '$id'")->add($arr);
-
-
                 $this->success('修改成功',U('member'));
             }else{
-                $this->error('修改失败',U('exchange'));
+                $this->error('修改失败');
             }
+            
+
         }else{
-            $this->error('密码错误',U('detail',array('id'=>$userid)));
+            $this->error('密码错误');
         }
 
 
@@ -290,71 +213,7 @@ class GuanliController extends Controller {
                     }
 
         }
-       // exit;
-       /* $level1 = intval($_POST[1]);
-        $level2 = intval($_POST[2]);
-        $level3 = intval($_POST[3]);
-        $level4 = intval($_POST[4]);
-
-        $mem1 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level1")->select();
-
-        foreach($mem1 as $key=>$value){
-            $id=$value['id'];
-            $income1 = $value['guquan'] * $_POST['jibie1'] /1000;
-            $value['xianjin']= $value['xianjin'] +$income1;
-            $value['fenhong'] = $value['fenhong']+$income1;
-
-            if(M('Member')->where("id = $id")->save($value)){
-            }else{
-                $this->error("$id 修改失败",U('reward'));
-            }
-        }
-
-        $mem2 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level2")->select();
-        //dump($mem2);
-
-
-        foreach($mem2 as $key=>$value){
-            $id=$value['id'];
-            $income2 = $value['guquan'] * $_POST['jibie2'] /1000;
-            $value['xianjin'] = (string)($value['xianjin'] +$income2);
-            $value['fenhong'] = (string)($value['fenhong']+$income2);
-            if($income2 != 0){
-                if(M('Member')->where("id = $id")->save($value)){
-                }else{
-                    $this->error("$id 修改失败",U('reward'));
-                }
-            }
-        }
-
-
-        $mem3 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level3")->select();
-
-        foreach($mem3 as $key=>$value){
-            $id=$value['id'];
-            $income3 = $value['guquan'] * $_POST['jibie3'] /1000;
-            $value['xianjin']= $value['xianjin'] +$income3;
-            $value['fenhong'] = $value['fenhong']+$income3;
-
-            if(M('Member')->where("id = $id")->save($value)){
-            }else{
-                $this->error("$id 修改失败",U('reward'));
-            }
-        }
-
-        $mem4 = M('Member')->field('id,ulevel,guquan,fenhong,xianjin')->where("ulevel = $level4")->select();
-
-        foreach($mem4 as $key=>$value){
-            $id=$value['id'];
-            $income4 = $value['guquan'] * $_POST['jibie4'] /1000;
-            $value['xianjin']= $value['xianjin'] +$income4;
-            $value['fenhong'] = $value['fenhong']+$income4;
-
-            if(M('Member')->where("id = $id")->save($value)){
-            }else{
-                $this->error("$id 修改失败",U('reward'));
-            }
-        }*/
+     
 
         $this->success("操作成功 ",U('reward'));
 
